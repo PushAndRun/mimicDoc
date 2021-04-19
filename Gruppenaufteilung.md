@@ -7,6 +7,7 @@
 - Paul
 - Til
 - Felicitas
+- Yousef
 
 ### Frontend
 - Felix
