@@ -9,8 +9,10 @@ const HOST = '0.0.0.0';
 // App
 const app = express();
 
-app.get('/', (req, res) => {
-  res.send('Welcome to Robodoc');
+app.get('/', express.static("./static"));
+
+app.get('/stay_prognose', (req, res, next) => {
+  res.send("Thank you, next!");
 });
 
 app.listen(PORT, HOST);

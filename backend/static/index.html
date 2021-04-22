@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>TAIJI Board Creator</title>
+
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <meta
+      name="description"
+      content="Gererate simple board strings for a TAIJI game"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        background-color: #52796F;
+        color: whitesmoke;
+      }
+      #content {
+        display: flex;
+        justify-content: center;
+      }
+      input {
+        width: 1em;
+        margin-right: 5px;
+      }
+      .menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding: 5px 0;
+      }
+      .title {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        font-size: 2em;
+      }
+      #info {
+        font-size: 1.4em;
+        width: 100%;
+        padding-bottom: 10px;
+        display: flex;
+        justify-content: center;
+      }
+      #table{
+        height: 70vh;
+        width: 70vh;
+      }
+      td {
+        height: 6vh;
+        width: 6vh;
+
+        border: solid #2F3E46;
+      }
+      .neutral {
+        background: #84A98C;
+      }
+      .black {
+        background: #2F3E46;
+      }
+
+      .white {
+        background: #CAD2C5;
+      }
+      #board_string_dump {
+        flex: 1;
+      }
+      #string_container {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="title">
+      <h1>TAIJI Board String Generator</h1>
+    </div>
+    <span id="info"
+      >change board by clicking tiles and copy string || paste board string and click "VISUALIZE BOARD"</span
+    >
+    <div class="menu">
+      <div>
+        <label for="select_size" >board size</label>
+        <select name="size" id="select_size" onchange="generateBoard()">
+          <option value="7">7x7</option>
+          <option value="9">9x9</option>
+          <option value="11">11x11</option>
+        </select>
+      </div>
+      <div class="menu">
+        SYMBOLS: &emsp;
+
+        <label for="n_symbol_input">neutral/empty</label>
+        <input
+          id="n_symbol_input"
+          value="-"
+          onchange="changeSymbol(this, 'neutral')"
+        />
+
+        <label for="w_symbol_input">white</label>
+        <input
+          id="w_symbol_input"
+          value="w"
+          onchange="changeSymbol(this, 'white')"
+        />
+
+        <label for="b_symbol_input">black</label>
+        <input
+          id="b_symbol_input"
+          value="b"
+          onchange="changeSymbol(this, 'black')"
+        />
+
+        <label for="row_symbol_input">row break</label>
+        <input
+          id="row_symbol_input"
+          value="/"
+          onchange="changeSymbol(this, 'row')"
+        />
+      </div>
+    </div>
+
+    <div id="content">
+      <table id="table"></table>
+      <div id="string_container">
+        <textarea id="board_string_dump"></textarea>
+        <button id="show_board_btn" onclick="showBoard()">
+          VISUALIZE BOARD
+        </button>
+      </div>
+    </div>
+  </body>
+  <script>
+    var print_dict = {
+      neutral: "-",
+      white: "w",
+      black: "b",
+      row: "/",
+    };
+
+    function generateBoard() {
+      var size = document.getElementById("select_size").value;
+      let t = document.getElementById("table");
+      t.innerHTML = "";
+      for (let i = 0; i < size; i++) {
+        let row = document.createElement("tr");
+        for (let j = 0; j < size; j++) {
+          let cell = document.createElement("td");
+          cell.classList.toggle("neutral");
+          cell.addEventListener("click", function switch_color(c) {
+            if (this.classList.contains("neutral")) {
+              this.classList.replace("neutral", "white");
+            } else if (this.classList.contains("white")) {
+              this.classList.replace("white", "black");
+            } else {
+              this.classList.replace("black", "neutral");
+            }
+            print_board_string();
+          });
+          row.appendChild(cell);
+        }
+        t.appendChild(row);
+      }
+      document.getElementById("table").firstChild.firstChild.innerHTML = "*click*";
+      print_board_string();
+    }
+
+    function print_board_string() {
+      var str = "";
+      var rows = document.getElementById("table").children;
+      for (let i = 0; i < rows.length; i++) {
+        str += print_dict["row"];
+        let cells = rows[i].children;
+        for (let j = 0; j < cells.length; j++) {
+          str += print_dict[cells[j].className];
+        }
+      }
+      document.getElementById("board_string_dump").value = str.slice(1);
+    }
+
+    function showBoard() {
+      let reverse_dict = {};
+      //Iterate over dict and get key for each step
+      for (var k in print_dict) {
+        //Return the value for the current key
+        reverse_dict[print_dict[k]] = k;
+      }
+      let str = document.getElementById("board_string_dump").value.replaceAll(print_dict["row"],"");
+      var rows = document.getElementById("table").children;
+      for (let i = 0; i < rows.length; i++) {
+        let cells = rows[i].children;
+        for (let j = 0; j < cells.length; j++) {
+          let size = document.getElementById("select_size").value;
+          let index = i*size+j;
+          console.log("index:"+index+" content:"+str[index]);
+          cells[j].className = reverse_dict[str[index]];
+        }
+      }
+    }
+
+    function changeSymbol(el, symbol_type) {
+      print_dict[symbol_type] = el.value;
+      print_board_string();
+    }
+
+    document.addEventListener("DOMContentLoaded", (event) => {
+      generateBoard();
+      print_board_string();
+    });
+  </script>
+</html>
