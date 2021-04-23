@@ -1,0 +1,795 @@
+code,short_title,long_title
+0010,Cholera d/t vib cholerae,Cholera due to vibrio cholerae
+0011,Cholera d/t vib el tor,Cholera due to vibrio cholerae el tor
+0021,Paratyphoid fever a,Paratyphoid fever A
+0022,Paratyphoid fever b,Paratyphoid fever B
+0023,Paratyphoid fever c,Paratyphoid fever C
+0031,Salmonella septicemia,Salmonella septicemia
+0039,Salmonella infection NOS,"Salmonella infection, unspecified"
+0040,Shigella dysenteriae,Shigella dysenteriae
+0041,Shigella flexneri,Shigella flexneri
+0042,Shigella boydii,Shigella boydii
+0043,Shigella sonnei,Shigella sonnei
+0048,Shigella infection NEC,Other specified shigella infections
+0050,Staph food poisoning,Staphylococcal food poisoning
+0051,Botulism food poisoning,Botulism food poisoning
+0052,Food pois d/t c. perfrin,Food poisoning due to Clostridium perfringens (C. welchii)
+0053,Food pois: clostrid NEC,Food poisoning due to other Clostridia
+0054,Food pois: v. parahaem,Food poisoning due to Vibrio parahaemolyticus
+0059,Food poisoning NOS,"Food poisoning, unspecified"
+0060,Ac amebiasis w/o abscess,Acute amebic dysentery without mention of abscess
+0061,Chr amebiasis w/o absces,Chronic intestinal amebiasis without mention of abscess
+0062,Amebic nondysent colitis,Amebic nondysenteric colitis
+0063,Amebic liver abscess,Amebic liver abscess
+0064,Amebic lung abscess,Amebic lung abscess
+0065,Amebic brain abscess,Amebic brain abscess
+0066,Amebic skin ulceration,Amebic skin ulceration
+0069,Amebiasis NOS,"Amebiasis, unspecified"
+0070,Balantidiasis,Balantidiasis
+0071,Giardiasis,Giardiasis
+0072,Coccidiosis,Coccidiosis
+0073,Intest trichomoniasis,Intestinal trichomoniasis
+0074,Cryptosporidiosis,Cryptosporidiosis
+0075,Cyclosporiasis,Cyclosporiasis
+0081,Arizona enteritis,Intestinal infection due to arizona group of paracolon bacilli
+0082,Aerobacter enteritis,Intestinal infection due to aerobacter aerogenes
+0083,Proteus enteritis,Intestinal infection due to proteus (mirabilis) (morganii)
+0091,Enteritis of infect orig,"Colitis, enteritis, and gastroenteritis of presumed infectious origin"
+0092,Infectious diarrhea NOS,Infectious diarrhea
+0093,Diarrhea of infect orig,Diarrhea of presumed infectious origin
+0202,Septicemic plague,Septicemic plague
+0203,Primary pneumonic plague,Primary pneumonic plague
+0204,Secondary pneumon plague,Secondary pneumonic plague
+0205,Pneumonic plague NOS,"Pneumonic plague, unspecified"
+0211,Enteric tularemia,Enteric tularemia
+0212,Pulmonary tularemia,Pulmonary tularemia
+0221,Pulmonary anthrax,Pulmonary anthrax
+0222,Gastrointestinal anthrax,Gastrointestinal anthrax
+0231,Brucella abortus,Brucella abortus
+0233,Brucella canis,Brucella canis
+0239,Brucellosis NOS,"Brucellosis, unspecified"
+0302,Indeterminate leprosy,Indeterminate leprosy [group I]
+0309,Leprosy NOS,"Leprosy, unspecified"
+0329,Diphtheria NOS,"Diphtheria, unspecified"
+0331,Bordetella parapertussis,Whooping cough due to bordetella parapertussis [B. parapertussis]
+0339,Whooping cough NOS,"Whooping cough, unspecified organism"
+0390,Cutaneous actinomycosis,Cutaneous actinomycotic infection
+0391,Pulmonary actinomycosis,Pulmonary actinomycotic infection
+0392,Abdominal actinomycosis,Abdominal actinomycotic infection
+0394,Madura foot,Madura foot
+0398,Actinomycosis NEC,Actinomycotic infection of other specified sites
+0399,Actinomycosis NOS,Actinomycotic infection of unspecified site
+0401,Rhinoscleroma,Rhinoscleroma
+0402,Whipple's disease,Whipple's disease
+0403,Necrobacillosis,Necrobacillosis
+0412,Pneumococcus infect NOS,Pneumococcus infection in conditions classified elsewhere and of unspecified site
+042,Human immuno virus dis,Human immunodeficiency virus [HIV] disease
+0479,Viral meningitis NOS,Unspecified viral meningitis
+0529,Varicella uncomplicated,Varicella without mention of complication
+0601,Urban yellow fever,Urban yellow fever
+0609,Yellow fever NOS,"Yellow fever, unspecified"
+0639,Tick-borne enceph NOS,"Tick-borne viral encephalitis, unspecified"
+064,Vir enceph arthropod NEC,Viral encephalitis transmitted by other and unspecified arthropods
+0651,Omsk hemorrhagic fever,Omsk hemorrhagic fever
+0652,Kyasanur forest disease,Kyasanur forest disease
+0721,Mumps meningitis,Mumps meningitis
+0722,Mumps encephalitis,Mumps encephalitis
+0729,Mumps uncomplicated,Mumps without mention of complication
+0761,"Trachoma, active stage","Trachoma, active stage"
+0771,Epidem keratoconjunctiv,Epidemic keratoconjunctivitis
+0772,Pharyngoconjunct fever,Pharyngoconjunctival fever
+0780,Molluscum contagiosum,Molluscum contagiosum
+0782,Sweating fever,Sweating fever
+0811,Brill's disease,Brill's disease
+0820,Spotted fevers,Spotted fevers
+0851,Cutan leishmanias urban,"Cutaneous leishmaniasis, urban"
+0852,Cutan leishmanias asian,"Cutaneous leishmaniasis, Asian desert"
+0859,Leishmaniasis NOS,"Leishmaniasis, unspecified"
+0861,Chagas dis of oth organ,Chagas' disease with other organ involvement
+0869,Trypanosomiasis NOS,"Trypanosomiasis, unspecified"
+0889,Arthropod-borne dis NOS,"Arthropod-borne disease, unspecified"
+0942,Syphilitic meningitis,Syphilitic meningitis
+0999,Venereal disease NOS,"Venereal disease, unspecified"
+101,Vincent's angina,Vincent's angina
+1149,Coccidioidomycosis NOS,"Coccidioidomycosis, unspecified"
+1273,Trichuriasis,Trichuriasis
+1281,Gnathostomiasis,Gnathostomiasis
+1341,Arthropod infest NEC,Other arthropod infestation
+1371,Late effect cns TB,Late effects of central nervous system tuberculosis
+1422,Malig neo sublingual,Malignant neoplasm of sublingual gland
+1441,Mal neo lat floor mouth,Malignant neoplasm of lateral portion of floor of mouth
+1454,Malignant neoplasm uvula,Malignant neoplasm of uvula
+1459,Malig neoplasm mouth NOS,"Malignant neoplasm of mouth, unspecified"
+1473,Mal neo ant nasopharynx,Malignant neoplasm of anterior wall of nasopharynx
+1479,Mal neo nasopharynx NOS,"Malignant neoplasm of nasopharynx, unspecified site"
+1609,Mal neo access sinus NOS,"Malignant neoplasm of accessory sinus, unspecified"
+1631,Mal neo visceral pleura,Malignant neoplasm of visceral pleura
+1649,Mal neo mediastinum NOS,"Malignant neoplasm of mediastinum, part unspecified"
+1659,Mal neo resp system NOS,Malignant neoplasm of ill-defined sites within the respiratory system
+1741,Mal neo breast-central,Malignant neoplasm of central portion of female breast
+1742,Mal neo breast up-inner,Malignant neoplasm of upper-inner quadrant of female breast
+1809,Mal neo cervix uteri NOS,"Malignant neoplasm of cervix uteri, unspecified site"
+1821,Mal neo uterine isthmus,Malignant neoplasm of isthmus
+1839,Mal neo adnexa NOS,"Malignant neoplasm of uterine adnexa, unspecified site"
+1879,Mal neo male genital NOS,"Malignant neoplasm of male genital organ, site unspecified"
+2100,Benign neoplasm lip,Benign neoplasm of lip
+2101,Benign neoplasm tongue,Benign neoplasm of tongue
+2102,Ben neo major salivary,Benign neoplasm of major salivary glands
+2103,Benign neo mouth floor,Benign neoplasm of floor of mouth
+2109,Benign neo pharynx NOS,"Benign neoplasm of pharynx, unspecified"
+2121,Benign neo larynx,Benign neoplasm of larynx
+2122,Benign neo trachea,Benign neoplasm of trachea
+2130,Ben neo skull/face bone,Benign neoplasm of bones of skull and face
+2132,Benign neo vertebrae,"Benign neoplasm of vertebral column, excluding sacrum and coccyx"
+2161,Benign neo skin eyelid,"Benign neoplasm of eyelid, including canthus"
+2162,Benign neo skin ear,Benign neoplasm of ear and external auditory canal
+2169,Benign neoplasm skin NOS,"Benign neoplasm of skin, site unspecified"
+2181,Intramural leiomyoma,Intramural leiomyoma of uterus
+2189,Uterine leiomyoma NOS,"Leiomyoma of uterus, unspecified"
+2211,Benign neoplasm vagina,Benign neoplasm of vagina
+2219,Ben neo fem genital NOS,"Benign neoplasm of female genital organ, site unspecified"
+2241,Benign neoplasm orbit,Benign neoplasm of orbit
+2242,Ben neo lacrimal gland,Benign neoplasm of lacrimal gland
+2250,Benign neoplasm brain,Benign neoplasm of brain
+2252,Ben neo cerebr meninges,Benign neoplasm of cerebral meninges
+2279,Benign neo endocrine NOS,"Benign neoplasm of endocrine gland, site unspecified"
+2301,Ca in situ esophagus,Carcinoma in situ of esophagus
+2309,Ca in situ GI NEC/NOS,Carcinoma in situ of other and unspecified digestive organs
+2311,Ca in situ trachea,Carcinoma in situ of trachea
+2319,Ca in situ resp sys NOS,"Carcinoma in situ of respiratory system, part unspecified"
+2373,Unc behav neo paragang,Neoplasm of uncertain behavior of paraganglia
+2411,Nontox multinodul goiter,Nontoxic multinodular goiter
+2559,Adrenal disorder NOS,Unspecified disorder of adrenal glands
+2592,Carcinoid syndrome,Carcinoid syndrome
+260,Kwashiorkor,Kwashiorkor
+2630,Malnutrition mod degree,Malnutrition of moderate degree
+2631,Malnutrition mild degree,Malnutrition of mild degree
+2632,Arrest devel d/t malnutr,Arrested development following protein-calorie malnutrition
+2691,Vitamin Deficiency NEC,Deficiency of other vitamins
+2699,Nutrition deficiency NOS,Unspecified nutritional deficiency
+2722,Mixed hyperlipidemia,Mixed hyperlipidemia
+2723,Hyperchylomicronemia,Hyperchylomicronemia
+2724,Hyperlipidemia NEC/NOS,Other and unspecified hyperlipidemia
+2731,Monoclon paraproteinemia,Monoclonal paraproteinemia
+2749,Gout NOS,"Gout, unspecified"
+2751,Dis copper metabolism,Disorders of copper metabolism
+2752,Dis magnesium metabolism,Disorders of magnesium metabolism
+2753,Dis phosphorus metabol,Disorders of phosphorus metabolism
+2755,Hungry bone syndrome,Hungry bone syndrome
+2759,Dis mineral metabol NOS,Unspecified disorder of mineral metabolism
+2761,Hyposmolality,Hyposmolality and/or hyponatremia
+2769,Electrolyt/fluid dis NEC,Electrolyte and fluid disorders not elsewhere classified
+2772,Purine/pyrimid dis NEC,Other disorders of purine and pyrimidine metabolism
+2792,Combined immunity defic,Combined immunity deficiency
+2811,B12 defic anemia NEC,Other vitamin B12 deficiency anemia
+2911,Alcohol amnestic disordr,Alcohol-induced persisting amnestic disorder
+2912,Alcohol persist dementia,Alcohol-induced persisting dementia
+2931,Subacute delirium,Subacute delirium
+2939,Transient mental dis NOS,Unspecified transient mental disorder in conditions classified elsewhere
+3009,Nonpsychotic disord NOS,Unspecified nonpsychotic mental disorder
+3029,Psychosexual dis NOS,Unspecified psychosexual disorder
+311,Depressive disorder NEC,"Depressive disorder, not elsewhere classified"
+3129,Conduct disturbance NOS,Unspecified disturbance of conduct
+3141,Hyperkinet w devel delay,Hyperkinesis with developmental delay
+3142,Hyperkinetic conduct dis,Hyperkinetic conduct disorder
+3148,Other hyperkinetic synd,Other specified manifestations of hyperkinetic syndrome
+3149,Hyperkinetic synd NOS,Unspecified hyperkinetic syndrome
+3201,Pneumococcal meningitis,Pneumococcal meningitis
+3209,Bacterial meningitis NOS,Meningitis due to unspecified bacterium
+3220,Nonpyogenic meningitis,Nonpyogenic meningitis
+3222,Chronic meningitis,Chronic meningitis
+3229,Meningitis NOS,"Meningitis, unspecified"
+3239,Encephalitis NOS,"Unspecified causes of encephalitis, myelitis, and encephalomyelitis"
+3241,Intraspinal abscess,Intraspinal abscess
+3249,Cns abscess NOS,Intracranial and intraspinal abscess of unspecified site
+325,Phlebitis intrcran sinus,Phlebitis and thrombophlebitis of intracranial venous sinuses
+326,Late eff cns abscess,Late effects of intracranial abscess or pyogenic infection
+3320,Paralysis agitans,Paralysis agitans
+3321,Secondary parkinsonism,Secondary parkinsonism
+3334,Huntington's chorea,Huntington's chorea
+3341,Hered spastic paraplegia,Hereditary spastic paraplegia
+3342,Primary cerebellar degen,Primary cerebellar degeneration
+3343,Cerebellar ataxia NEC,Other cerebellar ataxia
+3348,Spinocerebellar dis NEC,Other spinocerebellar diseases
+3349,Spinocerebellar dis NOS,"Spinocerebellar disease, unspecified"
+3371,Aut neuropthy in oth dis,Peripheral autonomic neuropathy in disorders classified elsewhere
+3373,Autonomic dysreflexia,Autonomic dysreflexia
+3379,Autonomic nerve dis NEC,Unspecified disorder of autonomic nervous system
+3393,Drug induce headache NEC,"Drug induced headache, not elsewhere classified"
+3452,Petit mal status,Petit mal status
+3481,Anoxic brain damage,Anoxic brain damage
+3482,Pseudotumor cerebri,Benign intracranial hypertension
+3484,Compression of brain,Compression of brain
+3491,Complication cns device,Nervous system complications from surgically implanted device
+3492,Disorder of meninges NEC,"Disorders of meninges, not elsewhere classified"
+3499,Cns disorder NOS,Unspecified disorders of nervous system
+3511,Geniculate ganglionitis,Geniculate ganglionitis
+3521,Glossopharyng neuralgia,Glossopharyngeal neuralgia
+3522,Glossophar nerve dis NEC,Other disorders of glossopharyngeal [9th] nerve
+3523,Pneumogastric nerve dis,Disorders of pneumogastric [10th] nerve
+3524,Accessory nerve disorder,Disorders of accessory [11th] nerve
+3525,Hypoglossal nerve dis,Disorders of hypoglossal [12th] nerve
+3531,Lumbosacral plex lesion,Lumbosacral plexus lesions
+3532,Cervical root lesion NEC,"Cervical root lesions, not elsewhere classified"
+3533,Thoracic root lesion NEC,"Thoracic root lesions, not elsewhere classified"
+3535,Neuralgic amyotrophy,Neuralgic amyotrophy
+3539,Nerv root/plexus dis NOS,Unspecified nerve root and plexus disorder
+3541,Median nerve lesion NEC,Other lesion of median nerve
+3542,Ulnar nerve lesion,Lesion of ulnar nerve
+3550,Sciatic nerve lesion,Lesion of sciatic nerve
+3551,Meralgia paresthetica,Meralgia paresthetica
+3552,Femoral nerve lesion NEC,Other lesion of femoral nerve
+3553,Lat popliteal nerve les,Lesion of lateral popliteal nerve
+3555,Tarsal tunnel syndrome,Tarsal tunnel syndrome
+3561,Peroneal muscle atrophy,Peroneal muscular atrophy
+3562,Hered sensory neuropathy,Hereditary sensory neuropathy
+3570,Ac infect polyneuritis,Acute infective polyneuritis
+3571,Neurpthy in col vasc dis,Polyneuropathy in collagen vascular disease
+3572,Neuropathy in diabetes,Polyneuropathy in diabetes
+3582,Toxic myoneural disorder,Toxic myoneural disorders
+3591,Hered prog musc dystrphy,Hereditary progressive muscular dystrophy
+3593,Periodic paralysis,Periodic paralysis
+3595,Myopathy in endocrin dis,Myopathy in endocrine diseases classified elsewhere
+3596,Infl myopathy in oth dis,Symptomatic inflammatory myopathy in diseases classified elsewhere
+3599,Myopathy NOS,"Myopathy, unspecified"
+3609,Disorder of globe NOS,Unspecified disorder of globe
+3612,Serous retina detachment,Serous retinal detachment
+3619,Retinal detachment NOS,Unspecified retinal detachment
+3699,Visual loss NOS,Unspecified visual loss
+3729,Conjunctiva disorder NOS,Unspecified disorder of conjunctiva
+3732,Chalazion,Chalazion
+3734,Infect derm lid w deform,Infective dermatitis of eyelid of types resulting in deformity
+3736,Parasitic infest eyelid,Parasitic infestation of eyelid
+3749,Disorder of eyelid NOS,Unspecified disorder of eyelid
+3766,"Old foreign body, orbit",Retained (old) foreign body following penetrating wound of orbit
+3779,Optic nerve disorder NOS,Unspecified disorder of optic nerve and visual pathways
+3789,Eye movemnt disorder NOS,Unspecified disorder of eye movements
+3798,Eye disorders NEC,Other specified disorders of eye and adnexa
+3804,Impacted cerumen,Impacted cerumen
+3809,Dis external ear NOS,Unspecified disorder of external ear
+3814,Nonsupp otitis media NOS,"Nonsuppurative otitis media, not specified as acute or chronic"
+3821,Chr tubotympan suppur OM,Chronic tubotympanic suppurative otitis media
+3822,Chr atticoantral sup OM,Chronic atticoantral suppurative otitis media
+3829,Otitis media NOS,Unspecified otitis media
+3859,Dis mid ear/mastoid NOS,Unspecified disorder of middle ear and mastoid
+3862,Central origin vertigo,Vertigo of central origin
+3868,Disorders labyrinth NEC,Other disorders of labyrinth
+3869,Vertiginous synd NOS,Unspecified vertiginous syndromes and labyrinthine disorders
+3882,Sudden hearing loss NOS,"Sudden hearing loss, unspecified"
+3885,Acoustic nerve disorders,Disorders of acoustic nerve
+3888,Disorders of ear NEC,Other disorders of ear
+3889,Disorder of ear NOS,Unspecified disorder of ear
+3897,"Deaf, nonspeaking NEC","Deaf, nonspeaking, not elsewhere classifiable"
+3898,Hearing loss NEC,Other specified forms of hearing loss
+3899,Hearing loss NOS,Unspecified hearing loss
+3929,Rheumatic chorea NOS,Rheumatic chorea without mention of heart involvement
+3941,Rheumatic mitral insuff,Rheumatic mitral insufficiency
+3942,Mitral stenosis w insuff,Mitral stenosis with insufficiency
+3949,Mitral valve dis NEC/NOS,Other and unspecified mitral valve diseases
+3950,Rheumat aortic stenosis,Rheumatic aortic stenosis
+3951,Rheumatic aortic insuff,Rheumatic aortic insufficiency
+3952,Rheum aortic sten/insuff,Rheumatic aortic stenosis with insufficiency
+3959,Rheum aortic dis NEC/NOS,Other and unspecified rheumatic aortic diseases
+3961,Mitral stenos/aort insuf,Mitral valve stenosis and aortic valve insufficiency
+3962,Mitral insuf/aort stenos,Mitral valve insufficiency and aortic valve stenosis
+3963,Mitral/aortic val insuff,Mitral valve insufficiency and aortic valve insufficiency
+3971,Rheum pulmon valve dis,Rheumatic diseases of pulmonary valve
+3979,Rheum endocarditis NOS,"Rheumatic diseases of endocardium, valve unspecified"
+4011,Benign hypertension,Benign essential hypertension
+4019,Hypertension NOS,Unspecified essential hypertension
+412,Old myocardial infarct,Old myocardial infarction
+4131,Prinzmetal angina,Prinzmetal angina
+4139,Angina pectoris NEC/NOS,Other and unspecified angina pectoris
+4142,Chr tot occlus cor artry,Chronic total occlusion of coronary artery
+4143,Cor ath d/t lpd rch plaq,Coronary atherosclerosis due to lipid rich plaque
+4210,Ac/subac bact endocard,Acute and subacute bacterial endocarditis
+4211,Ac endocardit in oth dis,Acute and subacute infective endocarditis in diseases classified elsewhere
+4232,Constrictiv pericarditis,Constrictive pericarditis
+4233,Cardiac tamponade,Cardiac tamponade
+4240,Mitral valve disorder,Mitral valve disorders
+4241,Aortic valve disorder,Aortic valve disorders
+4242,Nonrheum tricusp val dis,"Tricuspid valve disorders, specified as nonrheumatic"
+4252,Obsc afric cardiomyopath,Obscure cardiomyopathy of Africa
+4254,Prim cardiomyopathy NEC,Other primary cardiomyopathies
+4255,Alcoholic cardiomyopathy,Alcoholic cardiomyopathy
+4258,Cardiomyopath in oth dis,Cardiomyopathy in other diseases classified elsewhere
+4259,Second cardiomyopath NOS,"Secondary cardiomyopathy, unspecified"
+4262,Left bb hemiblock,Left bundle branch hemiblock
+4269,Conduction disorder NOS,"Conduction disorder, unspecified"
+4281,Left heart failure,Left heart failure
+4289,Heart failure NOS,"Heart failure, unspecified"
+4291,Myocardial degeneration,Myocardial degeneration
+4292,Ascvd,"Cardiovascular disease, unspecified"
+430,Subarachnoid hemorrhage,Subarachnoid hemorrhage
+436,Cva,"Acute, but ill-defined, cerebrovascular disease"
+4389,Late effect CV dis NOS,Unspecified late effects of cerebrovascular disease
+4400,Aortic atherosclerosis,Atherosclerosis of aorta
+4401,Renal artery atheroscler,Atherosclerosis of renal artery
+4411,Ruptur thoracic aneurysm,"Thoracic aneurysm, ruptured"
+4412,Thoracic aortic aneurysm,Thoracic aneurysm without mention of rupture
+4413,Rupt abd aortic aneurysm,"Abdominal aneurysm, ruptured"
+4414,Abdom aortic aneurysm,Abdominal aneurysm without mention of rupture
+4415,Rupt aortic aneurysm NOS,"Aortic aneurysm of unspecified site, ruptured"
+4419,Aortic aneurysm NOS,Aortic aneurysm of unspecified site without mention of rupture
+4422,Iliac artery aneurysm,Aneurysm of iliac artery
+4429,Aneurysm NOS,Aneurysm of unspecified site
+4431,Thromboangiit obliterans,Thromboangiitis obliterans [Buerger's disease]
+4439,Periph vascular dis NOS,"Peripheral vascular disease, unspecified"
+4441,Thoracic aortic embolism,Embolism and thrombosis of thoracic aorta
+4449,Arterial embolism NOS,Embolism and thrombosis of unspecified artery
+4461,Mucocutan lymph node syn,Acute febrile mucocutaneous lymph node syndrome [MCLS]
+4463,Lethal midline granuloma,Lethal midline granuloma
+4464,Wegener's granulomatosis,Wegener's granulomatosis
+4466,Thrombot microangiopathy,Thrombotic microangiopathy
+4467,Takayasu's disease,Takayasu's disease
+4512,Thrombophlebitis leg NOS,"Phlebitis and thrombophlebitis of lower extremities, unspecified"
+4519,Thrombophlebitis NOS,Phlebitis and thrombophlebitis of unspecified site
+4530,Budd-chiari syndrome,Budd-chiari syndrome
+4531,Thrombophlebitis migrans,Thrombophlebitis migrans
+4533,Renal vein thrombosis,Other venous embolism and thrombosis of renal vein
+4541,Leg varicosity w inflam,Varicose veins of lower extremities with inflammation
+4542,Varicos leg ulcer/inflam,Varicose veins of lower extremities with ulcer and inflammation
+4549,Asympt varicose veins,Asymptomatic varicose veins
+4551,Int thrombos hemorrhoid,Internal thrombosed hemorrhoids
+4552,Int hemrrhoid w comp NEC,Internal hemorrhoids with other complication
+4561,Esoph varices w/o bleed,Esophageal varices without mention of bleeding
+4563,Sublingual varices,Sublingual varices
+4571,Other lymphedema,Other lymphedema
+4572,Lymphangitis,Lymphangitis
+4579,Noninfect lymph dis NOS,Unspecified noninfectious disorder of lymphatic channels
+4581,Chronic hypotension,Chronic hypotension
+4590,Hemorrhage NOS,"Hemorrhage, unspecified"
+4592,Compression of vein,Compression of vein
+4610,Ac maxillary sinusitis,Acute maxillary sinusitis
+4611,Ac frontal sinusitis,Acute frontal sinusitis
+4613,Ac sphenoidal sinusitis,Acute sphenoidal sinusitis
+4719,Nasal polyp NOS,Unspecified nasal polyp
+4829,Bacterial pneumonia NOS,"Bacterial pneumonia, unspecified"
+485,Bronchopneumonia org NOS,"Bronchopneumonia, organism unspecified"
+4871,Flu w resp manifest NEC,Influenza with other respiratory manifestations
+4911,Mucopurul chr bronchitis,Mucopurulent chronic bronchitis
+500,Coal workers' pneumocon,Coal workers' pneumoconiosis
+503,Inorg dust pneumocon NEC,Pneumoconiosis due to other inorganic dust
+504,Dust pneumonopathy NEC,Pneumonopathy due to inhalation of other dust
+5061,Fum/vapor ac pulm edema,Acute pulmonary edema due to fumes and vapors
+5069,Fum/vapor resp cond NOS,Unspecified respiratory conditions due to fumes and vapors
+5110,Pleurisy w/o effus or TB,Pleurisy without mention of effusion or current tuberculosis
+5111,Bact pleur/effus not TB,"Pleurisy with effusion, with mention of a bacterial cause other than tuberculosis"
+5121,Iatrogenic pneumothorax,Iatrogenic pneumothorax
+5122,Postoperative air leak,Postoperative air leak
+5162,Pulm alveolar microlith,Pulmonary alveolar microlithiasis
+5164,Lymphangioleiomyomatosis,Lymphangioleiomyomatosis
+5169,Alveol pneumonopathy NOS,Unspecified alveolar and parietoalveolar pneumonopathy
+5183,Pulmonary eosinophilia,Pulmonary eosinophilia
+5184,Acute lung edema NOS,"Acute edema of lung, unspecified"
+5186,Alrgc brncpul asprglosis,Allergic bronchopulmonary aspergillosis
+5187,Transfsn rel ac lung inj,Transfusion related acute lung injury (TRALI)
+5193,Mediastinum disease NEC,"Other diseases of mediastinum, not elsewhere classified"
+5194,Disorders of diaphragm,Disorders of diaphragm
+5198,Resp system disease NEC,"Other diseases of respiratory system, not elsewhere classified"
+5199,Resp system disease NOS,Unspecified disease of respiratory system
+5201,Supernumerary teeth,Supernumerary teeth
+5209,Tooth devel/erup dis NOS,Unspecified disorder of tooth development and eruption
+5219,Hard tiss dis teeth NOS,Unspecified disease of hard tissues of teeth
+5221,Necrosis of tooth pulp,Necrosis of the pulp
+5222,Tooth pulp degeneration,Pulp degeneration
+5253,Retained dental root,Retained dental root
+5259,Dental disorder NOS,Unspecified disorder of the teeth and supporting structures
+5282,Oral aphthae,Oral aphthae
+5283,Cellulitis/abscess mouth,Cellulitis and abscess of oral soft tissues
+5292,Med rhomboid glossitis,Median rhomboid glossitis
+5293,Hypertroph tongue papill,Hypertrophy of tongue papillae
+5295,Plicated tongue,Plicated tongue
+5296,Glossodynia,Glossodynia
+5298,Tongue disorder NEC,Other specified conditions of the tongue
+5299,Tongue disorder NOS,Unspecified condition of the tongue
+5300,Achalasia & cardiospasm,Achalasia and cardiospasm
+5303,Esophageal stricture,Stricture and stenosis of esophagus
+5304,Perforation of esophagus,Perforation of esophagus
+5305,Dyskinesia of esophagus,Dyskinesia of esophagus
+5361,Ac dilation of stomach,Acute dilatation of stomach
+5362,Persistent vomiting,Persistent vomiting
+5369,Stomach function dis NOS,Unspecified functional disorder of stomach
+5371,Gastric diverticulum,Gastric diverticulum
+5372,Chronic duodenal ileus,Chronic duodenal ileus
+5521,Umbilical hernia w obstr,Umbilical hernia with obstruction
+5523,Diaphragm hernia w obstr,Diaphragmatic hernia with obstruction
+5539,Hernia NOS,Hernia of unspecified site without mention of obstruction or gangrene
+5551,"Reg enteritis, lg intest",Regional enteritis of large intestine
+5569,Ulceratve colitis unspcf,"Ulcerative colitis, unspecified"
+5581,Radiation gastroenterit,Gastroenteritis and colitis due to radiation
+5641,Irritable bowel syndrome,Irritable bowel syndrome
+5642,Postgastric surgery synd,Postgastric surgery syndromes
+5651,Anal fistula,Anal fistula
+5671,Pneumococcal peritonitis,Pneumococcal peritonitis
+5689,Peritoneal disorder NOS,Unspecified disorder of peritoneum
+5691,Rectal prolapse,Rectal prolapse
+570,Acute necrosis of liver,Acute and subacute necrosis of liver
+5711,Ac alcoholic hepatitis,Acute alcoholic hepatitis
+5718,Chronic liver dis NEC,Other chronic nonalcoholic liver disease
+5719,Chronic liver dis NOS,Unspecified chronic liver disease without mention of alcohol
+5731,Hepatitis in viral dis,Hepatitis in viral diseases classified elsewhere
+5732,Hepatitis in oth inf dis,Hepatitis in other infectious diseases classified elsewhere
+5733,Hepatitis NOS,"Hepatitis, unspecified"
+5734,Hepatic infarction,Hepatic infarction
+5759,Dis of gallbladder NOS,Unspecified disorder of gallbladder
+5771,Chronic pancreatitis,Chronic pancreatitis
+5779,Pancreatic disease NOS,Unspecified disease of pancreas
+5781,Blood in stool,Blood in stool
+5789,Gastrointest hemorr NOS,"Hemorrhage of gastrointestinal tract, unspecified"
+5792,Blind loop syndrome,Blind loop syndrome
+5793,Intest postop nonabsorb,Other and unspecified postsurgical nonabsorption
+5794,Pancreatic steatorrhea,Pancreatic steatorrhea
+5822,Chr membranoprolif nephr,Chronic glomerulonephritis with lesion of membranoproliferative glomerulonephritis
+5831,Membranous nephritis NOS,"Nephritis and nephropathy, not specified as acute or chronic, with lesion of membranous glomerulonephritis"
+5839,Nephritis NOS,"Nephritis and nephropathy, not specified as acute or chronic, with unspecified pathological lesion in kidney"
+586,Renal failure NOS,"Renal failure, unspecified"
+5891,Bilateral small kidneys,Bilateral small kidneys
+5902,Renal/perirenal abscess,Renal and perinephric abscess
+5909,Infection of kidney NOS,"Infection of kidney, unspecified"
+5993,Urethral caruncle,Urethral caruncle
+5994,Urethral false passage,Urethral false passage
+5995,Prolapse urethral mucosa,Prolapsed urethral mucosa
+5999,Urinary tract dis NOS,Unspecified disorder of urethra and urinary tract
+6011,Chronic prostatitis,Chronic prostatitis
+6012,Abscess of prostate,Abscess of prostate
+6021,Prostatic congest/hemorr,Congestion or hemorrhage of prostate
+6029,Prostatic disorder NOS,Unspecified disorder of prostate
+605,Redun prepuce & phimosis,Redundant prepuce and phimosis
+6071,Balanoposthitis,Balanoposthitis
+6141,Chr salpingo-oophoritis,Chronic salpingitis and oophoritis
+6142,Salpingo-oophoritis NOS,"Salpingitis and oophoritis not specified as acute, subacute, or chronic"
+6149,Fem pelv inflam dis NOS,Unspecified inflammatory disease of female pelvic organs and tissues
+6241,Atrophy of vulva,Atrophy of vulva
+6261,Scanty menstruation,Scanty or infrequent menstruation
+6269,Menstrual disorder NOS,Unspecified disorders of menstruation and other abnormal bleeding from female genital tract
+6299,Female genital dis NOS,Unspecified disorder of female genital organs
+632,Missed abortion,Missed abortion
+6381,Attem abort w hemorrhage,Failed attempted abortion complicated by delayed or excessive hemorrhage
+6823,Cellulitis of arm,Cellulitis and abscess of upper arm and forearm
+6825,Cellulitis of buttock,Cellulitis and abscess of buttock
+6829,Cellulitis NOS,Cellulitis and abscess of unspecified sites
+683,Acute lymphadenitis,Acute lymphadenitis
+684,Impetigo,Impetigo
+6851,Pilonidal cyst w/o absc,Pilonidal cyst without mention of abscess
+6869,Local skin infection NOS,Unspecified local infection of skin and subcutaneous tissue
+6929,Dermatitis NOS,"Contact dermatitis and other eczema, unspecified cause"
+6941,Subcorneal pust dermatos,Subcorneal pustular dermatosis
+6949,Bullous dermatoses NOS,Unspecified bullous dermatoses
+6952,Erythema nodosum,Erythema nodosum
+6959,Erythematous cond NOS,Unspecified erythematous condition
+700,Corns and callosities,Corns and callosities
+7012,Acq acanthosis nigricans,Acquired acanthosis nigricans
+7050,Anhidrosis,Anhidrosis
+7051,Prickly heat,Prickly heat
+7061,Acne NEC,Other acne
+7062,Sebaceous cyst,Sebaceous cyst
+7079,Chronic skin ulcer NOS,Chronic ulcer of unspecified site
+7092,Scar & fibrosis of skin,Scar conditions and fibrosis of skin
+7109,Diff connect tis dis NOS,Unspecified diffuse connective tissue disease
+7171,Derang ant med meniscus,Derangement of anterior horn of medial meniscus
+7179,Int derangement knee NOS,Unspecified internal derangement of knee
+734,Flat foot,Flat foot
+7359,Acq deformity of toe NOS,Unspecified acquired deformity of toe
+7534,Ureteral anomaly NEC,Other specified anomalies of ureter
+7569,Musculoskel anom NEC/NOS,Other and unspecified anomalies of musculoskeletal system
+7599,Congenital anomaly NOS,"Congenital anomaly, unspecified"
+7601,Matern urine dis aff NB,Maternal renal and urinary tract diseases affecting fetus or newborn
+7609,Maternal cond NOS aff NB,Unspecified maternal condition affecting fetus or newborn
+7611,Premat rupt memb aff NB,Premature rupture of membranes affecting fetus or newborn
+7631,Malpos/dispro NEC aff NB,"Other malpresentation, malposition, and disproportion during labor and delivery affecting fetus or newborn"
+7639,Compl deliv NOS aff NB,Unspecified complication of labor and delivery affecting fetus or newborn
+7672,Clavicle fx at birth,Fracture of clavicle due to birth trauma
+7673,Bone injury NEC at birth,Other injuries to skeleton due to birth trauma
+7674,Spinal cord inj at birth,Injury to spine and spinal cord due to birth trauma
+7675,Facial nerve inj-birth,Facial nerve injury due to birth trauma
+7676,Brach plexus inj-birth,Injury to brachial plexus due to birth trauma
+7677,Nerve inj NEC at birth,Other cranial and peripheral nerve injuries due to birth trauma
+7678,Birth trauma NEC,Other specified birth trauma
+7679,Birth trauma NOS,"Birth trauma, unspecified"
+7702,NB interstit emphysema,Interstitial emphysema and related conditions
+7709,NB respiratory cond NOS,Unspecified respiratory condition of fetus and newborn
+7711,Cong cytomegalovirus inf,Congenital cytomegalovirus infection
+7712,Congenital infec NEC,Other congenital infections specific to the perinatal period
+7731,NB hemolyt dis-abo isoim,Hemolytic disease of fetus or newborn due to ABO isoimmunization
+7733,Hydrops fetalis:isoimm,Hydrops fetalis due to isoimmunization
+7735,NB late anemia:isoimmun,Late anemia of fetus or newborn due to isoimmunization
+7741,Perinat jaund:hemolysis,Perinatal jaundice from other excessive hemolysis
+7742,Neonat jaund preterm del,Neonatal jaundice associated with preterm delivery
+7745,Perinatal jaundice NEC,Perinatal jaundice from other causes
+7747,NB kernicterus,Kernicterus of fetus or newborn not due to isoimmunization
+7756,Neonatal hypoglycemia,Neonatal hypoglycemia
+7759,Transient met dis NB NOS,Unspecified endocrine and metabolic disturbances specific to the fetus and newborn
+7760,NB hemorrhagic disease,Hemorrhagic disease of newborn
+7761,Neonatal thrombocytopen,Transient neonatal thrombocytopenia
+7762,Dissem intravasc coag NB,Disseminated intravascular coagulation in newborn
+7763,Oth neonatal coag dis,Other transient neonatal disorders of coagulation
+7764,Polycythemia neonatorum,Polycythemia neonatorum
+7765,Congenital anemia,Congenital anemia
+7766,Anemia of prematurity,Anemia of prematurity
+7767,Neonatal neutropenia,Transient neonatal neutropenia
+7768,Transient hemat dis NEC,Other specified transient hematological disorders of fetus or newborn
+7769,NB hematological dis NOS,Unspecified hematological disorder specific to newborn
+7771,Meconium obstruction,Meconium obstruction in fetus or newborn
+7773,Swallowed blood syndrome,Hematemesis and melena of newborn due to swallowed maternal blood
+7778,Perinat GI sys dis NEC,Other specified perinatal disorders of digestive system
+7779,Perinat GI sys dis NOS,Unspecified perinatal disorder of digestive system
+7781,Sclerema neonatorum,Sclerema neonatorum
+7782,NB cold injury syndrome,Cold injury syndrome of newborn
+7784,NB temp regulat dis NEC,Other disturbances of temperature regulation of newborn
+7785,Edema of newborn NEC/NOS,Other and unspecified edema of newborn
+7787,NB breast engorgement,Breast engorgement in newborn
+7788,NB integument cond NEC,Other specified conditions involving the integument of fetus and newborn
+7789,NB integument cond NOS,Unspecified condition involving the integument and temperature regulation of fetus and newborn
+7791,NB cereb irrit NEC/NOS,Other and unspecified cerebral irritability in newborn
+7795,NB drug withdrawal syndr,Drug withdrawal syndrome in newborn
+7799,Perinatal condition NOS,Unspecified condition originating in the perinatal period
+7802,Syncope and collapse,Syncope and collapse
+7804,Dizziness and giddiness,Dizziness and giddiness
+7808,Generalizd hyperhidrosis,Generalized hyperhidrosis
+7811,Smell & taste disturb,Disturbances of sensation of smell and taste
+7812,Abnormality of gait,Abnormality of gait
+7813,Lack of coordination,Lack of coordination
+7814,Transient limb paralysis,Transient paralysis of limb
+7815,Clubbing of fingers,Clubbing of fingers
+7816,Meningismus,Meningismus
+7817,Tetany,Tetany
+7818,Neurologic neglect syndr,Neurologic neglect syndrome
+7823,Edema,Edema
+7829,Integument tiss symp NEC,Other symptoms involving skin and integumentary tissues
+7833,Feeding problem,Feeding difficulties and mismanagement
+7837,Failure to thrive-adult,Adult failure to thrive
+7841,Throat pain,Throat pain
+7843,Aphasia,Aphasia
+7847,Epistaxis,Epistaxis
+7848,Hemorrhage from throat,Hemorrhage from throat
+7851,Palpitations,Palpitations
+7852,Cardiac murmurs NEC,Undiagnosed cardiac murmurs
+7853,Abnorm heart sounds NEC,Other abnormal heart sounds
+7854,Gangrene,Gangrene
+7856,Enlargement lymph nodes,Enlargement of lymph nodes
+7859,Cardiovas sys symp NEC,Other symptoms involving cardiovascular system
+7861,Stridor,Stridor
+7862,Cough,Cough
+7864,Abnormal sputum,Abnormal sputum
+7866,Chest swelling/mass/lump,"Swelling, mass, or lump in chest"
+7867,Abnormal chest sounds,Abnormal chest sounds
+7868,Hiccough,Hiccough
+7869,Resp sys/chest symp NEC,Other symptoms involving respiratory system and chest
+7901,Elevated sediment rate,Elevated sedimentation rate
+7903,Excess blood-alcohol lev,Excessive blood level of alcohol
+7904,Elev transaminase/ldh,Nonspecific elevation of levels of transaminase or lactic acid dehydrogenase [LDH]
+7905,Abn serum enzy level NEC,Other nonspecific abnormal serum enzyme levels
+7906,Abn blood chemistry NEC,Other abnormal blood chemistry
+7907,Bacteremia,Bacteremia
+7908,Viremia NOS,"Viremia, unspecified"
+7911,Chyluria,Chyluria
+7912,Hemoglobinuria,Hemoglobinuria
+7913,Myoglobinuria,Myoglobinuria
+7914,Biliuria,Biliuria
+7915,Glycosuria,Glycosuria
+7916,Acetonuria,Acetonuria
+7917,Oth cells/casts in urine,Other cells and casts in urine
+7919,Abn urine findings NEC,Other nonspecific findings on examination of urine
+7921,Abn find-stool contents,Nonspecific abnormal findings in stool contents
+7922,Abn findings-semen,Nonspecific abnormal findings in semen
+7925,Cloudy dialysis effluent,Cloudy (hemodialysis) (peritoneal) dialysis effluent
+7929,Abn find-body subst NEC,Other nonspecific abnormal findings in body substances
+7932,Nonsp abn intrathor NEC,Nonspecific (abnormal) findings on radiological and other examination of other intrathoracic organs
+7933,Nonsp abn fd-bilry tract,Nonspecific (abnormal) findings on radiological and other examination of biliary tract
+7934,Nonsp abn find-gi tract,Nonspecific (abnormal) findings on radiological and other examination of gastrointestinal tract
+7935,Nonsp abn find-gu organs,Nonspecific (abnormal) findings on radiological and other examination of genitourinary organs
+7936,Nonsp abn fnd-abdom area,"Nonspecific (abnormal) findings on radiological and other examination of abdominal area, including retroperitoneum"
+7937,Nonsp abn find-ms system,Nonspecific (abnormal) findings on radiological and other examination of musculoskeletal system
+7942,Abn pulmonary func study,Nonspecific abnormal results of pulmonary function study
+7946,Abn endocrine study NEC,Nonspecific abnormal results of other endocrine function study
+7952,Abn chromosomal analysis,Nonspecific abnormal findings on chromosomal analysis
+7956,False pos sero test-syph,False positive serological test for syphilis
+7961,Abnormal reflex,Abnormal reflex
+7962,Elev bl pres w/o hypertn,Elevated blood pressure reading without diagnosis of hypertension
+7963,Low blood press reading,Nonspecific low blood pressure reading
+7964,Abn clinical finding NEC,Other abnormal clinical findings
+7965,Abn find antenatl screen,Abnormal finding on antenatal screening
+7966,Abnorm neonate screening,Abnormal findings on neonatal screening
+7969,Abnormal findings NEC,Other nonspecific abnormal findings
+7982,Death within 24 hr sympt,"Death occurring in less than 24 hours from onset of symptoms, not otherwise explained"
+7989,Unattended death,Unattended death
+8021,Nasal bone fx-open,Open fracture of nasal bones
+8026,Fx orbital floor-closed,Closed fracture of orbital floor (blow-out)
+8054,Fx lumbar vertebra-close,Closed fracture of lumbar vertebra without mention of spinal cord injury
+8073,Fracture of sternum-open,Open fracture of sternum
+8075,Fx larynx/trachea-closed,Closed fracture of larynx and trachea
+8076,Fx larynx/trachea-open,Open fracture of larynx and trachea
+8081,Fracture acetabulum-open,Open fracture of acetabulum
+8082,Fracture of pubis-closed,Closed fracture of pubis
+8083,Fracture of pubis-open,Open fracture of pubis
+8088,Pelvic fracture NOS-clos,Closed unspecified fracture of pelvis
+8089,Pelvic fracture NOS-open,Open unspecified fracture of pelvis
+8091,Fracture trunk bone-open,"Fracture of bones of trunk, open"
+8171,Multiple fx hand-open,Multiple open fractures of hand bones
+8180,Fx arm mult/NOS-closed,Ill-defined closed fractures of upper limb
+8181,Fx arm mult/NOS-open,Ill-defined open fractures of upper limb
+8191,Fx arms w rib/stern-open,"Multiple open fractures involving both upper limbs, and upper limb with rib(s) and sternum"
+8209,Fx neck of femur NOS-opn,Open fracture of unspecified part of neck of femur
+8221,Fracture patella-open,Open fracture of patella
+8241,Fx medial malleolus-open,"Fracture of medial malleolus, open"
+8243,Fx lateral malleolus-opn,"Fracture of lateral malleolus, open"
+8244,Fx bimalleolar-closed,"Bimalleolar fracture, closed"
+8245,Fx bimalleolar-open,"Bimalleolar fracture, open"
+8246,Fx trimalleolar-closed,"Trimalleolar fracture, closed"
+8251,Fracture calcaneus-open,"Fracture of calcaneus, open"
+8281,Fx legs w arm/rib-open,"Open multiple fractures involving both lower limbs, lower with upper limb, and lower limb(s) with rib(s) and sternum"
+8291,Fracture NOS-open,"Fracture of unspecified bone, open"
+8301,Dislocation jaw-open,Open dislocation of jaw
+8361,Tear lat menisc knee-cur,"Tear of lateral cartilage or meniscus of knee, current"
+8362,Tear meniscus NEC-curren,"Other tear of cartilage or meniscus of knee, current"
+8363,Dislocat patella-closed,"Dislocation of patella, closed"
+8364,Dislocation patella-open,"Dislocation of patella, open"
+8401,Sprain coracoclavicular,Coracoclavicular (ligament) sprain
+8402,Sprain coracohumeral,Coracohumeral (ligament) sprain
+8403,Sprain infraspinatus,Infraspinatus (muscle) (tendon) sprain
+8404,Sprain rotator cuff,Rotator cuff (capsule) sprain
+8405,Sprain subscapularis,Subscapularis (muscle) sprain
+8407,Sup glenoid labrm lesion,Superior glenoid labrum lesion
+8408,Sprain shoulder/arm NEC,Sprains and strains of other specified sites of shoulder and upper arm
+8411,Sprain ulnar collat lig,Ulnar collateral ligament sprain
+8412,Sprain radiohumeral,Radiohumeral (joint) sprain
+8418,Sprain elbow/forearm NEC,Sprains and strains of other specified sites of elbow and forearm
+8419,Sprain elbow/forearm NOS,Sprains and strains of unspecified site of elbow and forearm
+8448,Sprain of knee & leg NEC,Sprains and strains of other specified sites of knee and leg
+8471,Sprain thoracic region,Sprain of thoracic
+8472,Sprain lumbar region,Sprain of lumbar
+8473,Sprain of sacrum,Sprain of sacrum
+8482,Sprain of thyroid region,Sprain of thyroid region
+8601,Traum pneumothorax-open,Traumatic pneumothorax with open wound into thorax
+8602,Traum hemothorax-closed,Traumatic hemothorax without mention of open wound into thorax
+8603,Traum hemothorax-open,Traumatic hemothorax with open wound into thorax
+8604,Traum pneumohemothor-cl,Traumatic pneumohemothorax without mention of open wound into thorax
+8605,Traum pneumohemothor-opn,Traumatic pneumohemothorax with open wound into thorax
+8621,Diaphragm injury-open,"Injury to diaphragm, with open wound into cavity"
+8628,Intrathoracic inj NOS-cl,"Injury to multiple and unspecified intrathoracic organs, without mention of open wound into cavity"
+8670,Bladder/urethra inj-clos,"Injury to bladder and urethra, without mention of open wound into cavity"
+8671,Bladder/urethra inj-open,"Injury to bladder and urethra, with open wound into cavity"
+8672,Ureter injury-closed,"Injury to ureter, without mention of open wound into cavity"
+8673,Ureter injury-open,"Injury to ureter, with open wound into cavity"
+8674,Uterus injury-closed,"Injury to uterus, without mention of open wound into cavity"
+8675,Uterus injury-open,"Injury to uterus, with open wound into cavity"
+8690,Internal inj NOS-closed,Internal injury to unspecified or ill-defined organs without mention of open wound into cavity
+8703,Penetr wnd orbit w/o FB,"Penetrating wound of orbit, without mention of foreign body"
+8709,Opn wnd ocular adnex NOS,Unspecified open wound of ocular adnexa
+8744,Open wound of pharynx,"Open wound of pharynx, without mention of complication"
+8751,Open wound chest-compl,"Open wound of chest (wall), complicated"
+8761,Open wound back-compl,"Open wound of back, complicated"
+8840,Open wound arm mult/NOS,"Multiple and unspecified open wound of upper limb, without mention of complication"
+8841,Open wound arm NOS-compl,"Multiple and unspecified open wound of upper limb, complicated"
+8842,Opn wnd arm NOS w tendon,"Multiple and unspecified open wound of upper limb, with tendon involvement"
+8850,Amputation thumb,"Traumatic amputation of thumb (complete)(partial), without mention of complication"
+8851,Amputation thumb-compl,"Traumatic amputation of thumb (complete)(partial), complicated"
+8860,Amputation finger,"Traumatic amputation of other finger(s) (complete) (partial), without mention of complication"
+8861,Amputation finger-compl,"Traumatic amputation of other finger(s) (complete) (partial), complicated"
+8871,"Amp below elb, unil-comp","Traumatic amputation of arm and hand (complete) (partial), unilateral, below elbow, complicated"
+8872,"Amput abv elbow, unilat","Traumatic amputation of arm and hand (complete) (partial), unilateral, at or above elbow, without mention of complication"
+8873,"Amput abv elb, unil-comp","Traumatic amputation of arm and hand (complete) (partial), unilateral, at or above elbow, complicated"
+8874,"Amputat arm, unilat NOS","Traumatic amputation of arm and hand (complete) (partial), unilateral, level not specified, without mention of complication"
+8875,"Amput arm, unil NOS-comp","Traumatic amputation of arm and hand (complete) (partial), unilateral, level not specified, complicated"
+8876,"Amputation arm, bilat","Traumatic amputation of arm and hand (complete) (partial), bilateral [any level], without mention of complication"
+8877,"Amputat arm, bilat-compl","Traumatic amputation of arm and hand (complete) (partial), bilateral [any level], complicated"
+8922,Open wound foot w tendon,"Open wound of foot except toe(s) alone, with tendon involvement"
+8932,Open wound toe w tendon,"Open wound of toe(s), with tendon involvement"
+8941,Open wound leg NEC-compl,"Multiple and unspecified open wound of lower limb, complicated"
+8950,Amputation toe,"Traumatic amputation of toe(s) (complete) (partial), without mention of complication"
+8960,"Amputation foot, unilat","Traumatic amputation of foot (complete) (partial), unilateral, without mention of complication"
+8961,"Amput foot, unilat-compl","Traumatic amputation of foot (complete) (partial), unilateral, complicated"
+8962,"Amputation foot, bilat","Traumatic amputation of foot (complete) (partial), bilateral, without mention of complication"
+8963,"Amputat foot, bilat-comp","Traumatic amputation of foot (complete) (partial), bilateral, complicated"
+9146,Foreign body hand,"Superficial foreign body (splinter) of hand(s) except finger(s) alone, without major open wound and without mention of infection"
+9163,Blister hip & leg-infect,"Blister of hip, thigh, leg, and ankle, infected"
+9172,Blister foot & toe,"Blister of foot and toe(s), without mention of infection"
+9224,Contusion genital organs,Contusion of genital organs
+9229,Contusion trunk NOS,Contusion of unspecified part of trunk
+9239,Contusion upper limb NOS,Contusion of unspecified part of upper limb
+9308,Foreign bdy ext eye NEC,Foreign body in other and combined sites on external eye
+9341,Foreign body bronchus,Foreign body in main bronchus
+9351,Foreign body esophagus,Foreign body in esophagus
+9352,Foreign body in stomach,Foreign body in stomach
+9390,FB bladder & urethra,Foreign body in bladder and urethra
+9391,Foreign body uterus,"Foreign body in uterus, any part"
+9393,Foreign body penis,Foreign body in penis
+9399,Foreign bdy gu tract NOS,Foreign body in unspecified site in genitourinary tract
+9462,2nd deg burn mult site,"Blisters, epidermal loss [second degree] of multiple specified sites"
+9463,3rd deg burn mult site,Full-thickness skin loss [third degree NOS] of multiple specified sites
+9465,3rd brn w loss-mult site,"Deep necrosis of underlying tissues [deep third degree] with loss of a body part, of multiple specified sites"
+9503,Injury to visual cortex,Injury to visual cortex
+9601,Pois-antifungal antibiot,Poisoning by antifungal antibiotics
+9602,Poison-chloramphenicol,Poisoning by chloramphenicol group
+9604,Poisoning-tetracycline,Poisoning by tetracycline group
+9605,Pois-cephalosporin group,Poisoning of cephalosporin group
+9606,Pois-antimycobac antibio,Poisoning of antimycobacterial antibiotics
+9607,Pois-antineop antibiotic,Poisoning by antineoplastic antibiotics
+9608,Poisoning-antibiotic NEC,Poisoning by other specified antibiotics
+9609,Poisoning-antibiotic NOS,Poisoning by unspecified antibiotic
+9614,Poisoning-antimalarials,Poisoning by antimalarials and drugs acting on other blood protozoa
+9618,Pois-antimycobac drg NEC,Poisoning by other antimycobacterial drugs
+9619,Pois-anti-infect NEC/NOS,Poisoning by other and unspecified anti-infectives
+9622,Poisoning-ovarian hormon,Poisoning by ovarian hormones and synthetic substitutes
+9623,Poison-insulin/antidiab,Poisoning by insulins and antidiabetic agents
+9624,Pois-ant pituitary horm,Poisoning by anterior pituitary hormones
+9626,Poisoning-parathyroids,Poisoning by parathyroid and parathyroid derivatives
+9627,Poisoning-thyroid/deriv,Poisoning by thyroid and thyroid derivatives
+9633,Poisoning-alkalizing agt,Poisoning by alkalizing agents
+9634,Poisoning-enzymes NEC,"Poisoning by enzymes, not elsewhere classified"
+9635,Poisoning-vitamins NEC,"Poisoning by vitamins, not elsewhere classified"
+9638,Poisoning-system agt NEC,Poisoning by other specified systemic agents
+9639,Poisoning-system agt NOS,Poisoning by unspecified systemic agent
+9641,Poison-liver/antianemics,Poisoning by liver preparations and other antianemic agents
+9648,Poisoning-blood agt NEC,Poisoning by other specified agents affecting blood constituents
+9649,Poisoning-blood agt NOS,Poisoning by unspecified agent affecting blood constituents
+9654,Pois-arom analgesics NEC,"Poisoning by aromatic analgesics, not elsewhere classified"
+9655,Poisoning-pyrazole deriv,Poisoning by pyrazole derivatives
+9657,Pois-no-narc analges NEC,Poisoning by other non-narcotic analgesics
+9658,Pois-analges/antipyr NEC,Poisoning by other specified analgesics and antipyretics
+9659,Pois-analges/antipyr NOS,Poisoning by unspecified analgesic and antipyretic
+9670,Poisoning-barbiturates,Poisoning by barbiturates
+9671,Poisoning-chloral hydrat,Poisoning by chloral hydrate group
+9672,Poisoning-paraldehyde,Poisoning by paraldehyde
+9701,Poison-opiate antagonist,Poisoning by opiate antagonists
+9711,Pois-parasympatholytics,Poisoning by parasympatholytics (anticholinergics and antimuscarinics) and spasmolytics
+9712,Poison-sympathomimetics,Poisoning by sympathomimetics [adrenergics]
+9723,Pois-ganglion block agt,Poisoning by ganglion-blocking agents
+9729,Pois-cardiovasc agt NEC,Poisoning by other and unspecified agents primarily affecting the cardiovascular system
+9732,Pois-emollient cathartic,Poisoning by emollient cathartics
+9733,Poisoning-cathartic NEC,"Poisoning by other cathartics, including intestinal atonia"
+9735,Poisoning-antidiarrh agt,Poisoning by antidiarrheal drugs
+9738,Poisoning-gi agents NEC,Poisoning by other specified agents primarily affecting the gastrointestinal system
+9739,Poisoning-gi agent NOS,Poisoning by unspecified agent primarily affecting the gastrointestinal system
+9741,Pois-purine diuretics,Poisoning by purine derivative diuretics
+9744,Poisoning-diuretics NEC,Poisoning by other diuretics
+9751,Pois-smooth muscle relax,Poisoning by smooth muscle relaxants
+9752,Pois-skelet muscle relax,Poisoning by skeletal muscle relaxants
+9753,Poison-muscle agent NEC,Poisoning by other and unspecified drugs acting on muscles
+9754,Poisoning-antitussives,Poisoning by antitussives
+9755,Poisoning-expectorants,Poisoning by expectorants
+9756,Pois-anti-cold drugs,Poisoning by anti-common cold drugs
+9761,Poisoning-antipruritics,Poisoning by antipruritics
+9762,Pois-loc astring/deterg,Poisoning by local astringents and local detergents
+9764,Poison-hair/scalp prep,"Poisoning by keratolytics, keratoplastics, other hair treatment drugs and preparations"
+9771,Poison-lipotropic drugs,Poisoning by lipotropic drugs
+9782,Poisoning-cholera vaccin,Poisoning by cholera vaccine
+9785,Pois-diphtheria vaccine,Poisoning by diphtheria vaccine
+9788,Pois-bact vaccin NEC/NOS,Poisoning by other and unspecified bacterial vaccines
+9789,Pois-mix bacter vaccines,"Poisoning by mixed bacterial vaccines, except combinations with a pertussis component"
+9802,Toxic eff isopropyl alc,Toxic effect of isopropyl alcohol
+9803,Toxic effect fusel oil,Toxic effect of fusel oil
+9820,Toxic effect benzene,Toxic effect of benzene and homologues
+9821,Toxic eff carbon tetrach,Toxic effect of carbon tetrachloride
+9822,Toxic eff carbon disulfi,Toxic effect of carbon disulfide
+9851,Toxic effect arsenic,Toxic effect of arsenic and its compounds
+9910,Frostbite of face,Frostbite of face
+9911,Frostbite of hand,Frostbite of hand
+9912,Frostbite of foot,Frostbite of foot
+9914,Immersion foot,Immersion foot
+9915,Chilblains,Chilblains
+9916,Hypothermia,Hypothermia
+9919,Effect reduced temp NOS,Unspecified effect of reduced temperature
+9920,Heat stroke & sunstroke,Heat stroke and sunstroke
+9921,Heat syncope,Heat syncope
+9922,Heat cramps,Heat cramps
+9923,Heat exhaust-anhydrotic,"Heat exhaustion, anhydrotic"
+9924,Heat exhaust-salt deple,Heat exhaustion due to salt depletion
+9925,Heat exhaustion NOS,"Heat exhaustion, unspecified"
+9926,"Heat fatigue, transient","Heat fatigue, transient"
+9928,Heat effect NEC,Other specified heat effects
+9929,Heat effect NOS,Unspecified effects of heat and light
+9939,Effect air pressure NOS,Unspecified effect of air pressure
+9941,Drowning/nonfatal submer,Drowning and nonfatal submersion
+9945,Exhaustion-excess exert,Exhaustion due to excessive exertion
+9953,"Allergy, unspecified","Allergy, unspecified, not elsewhere classified"
+9957,Adverse food react NEC,"Other adverse food reactions, not elsewhere classified"
+9961,Malfunc vasc device/graf,"Mechanical complication of other vascular device, implant, and graft"
+9962,Malfun neuro device/graf,"Mechanical complication of nervous system device, implant, and graft"
+9971,Surg compl-heart,"Cardiac complications, not elsewhere classified"
+9972,Surg comp-peri vasc syst,"Peripheral vascular complications, not elsewhere classified"
+9975,Surg compl-urinary tract,"Urinary complications, not elsewhere classified"
+9982,Accidental op laceration,"Accidental puncture or laceration during a procedure, not elsewhere classified"
+9984,FB left during procedure,Foreign body accidentally left during a procedure
+9999,Complic med care NEC/NOS,"Other and unspecified complications of medical care, not elsewhere classified"
