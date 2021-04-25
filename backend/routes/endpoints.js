@@ -25,11 +25,11 @@ router.get('/diagnoses', (req,res,next) => {
 
 router.get('/searchdiagnose/:diagnose', (req,res,next) => {
     let filteredDiags = csvData.filter(e => e.long_title.toLowerCase().includes(req.params.diagnose.toLowerCase()))
-    console.log(filteredDiags)
-    if(filteredDiags){
+
+    if(filteredDiags.length>0){
         res.status(200).send(filteredDiags)
     } else {
-        res.status(404).send('false')
+        res.status(404).send('No Results.')
     }
     return
 })
@@ -40,4 +40,4 @@ router.get('/reloadDiagnoses', (req,res,next) => {
     return
 })
 
-module.exports = router
+module.exports = {router, csvData}
