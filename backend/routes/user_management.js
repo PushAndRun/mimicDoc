@@ -1,9 +1,11 @@
 var express = require('express')
-var mongo = require('mongodb').MongoClient
+var mongo = require('mongodb')
 var router = express.Router()
 
-// TODO add mongodb to package.json
-const user_db_url = "mongodb://localhost:27017/" // placeholder
+
+// TODO add mongodb to package.json and secure db password
+const user_db_uri = "mongodb+srv://dbRobo:3ZLyF8iZ5MVrVFn@robodoc.tshsc.mongodb.net/RoboDoc?retryWrites=true&w=majority"; 
+const mongo_client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 function isEmptyObject(obj) {
     return !Object.keys(obj).length;
@@ -52,19 +54,26 @@ router.get('/register',(req,res,next) => {
       if (err) throw err;
       var dbo = db.db("users"); // placeholder
       // check if user is already registered
-      // TODO imporve structure
-      dbo.collection("users").findOne({ username: req.body.username}, function (err, result) {
-          if (err) throw err;
-          if (result) {res.send("username already in use")
-        
-        } else {
-            var new_user = { username:req.body.username, pw: req.body.pw };
-            dbo.collection("users").insertOne(new_user, function(err, res) {
-              if (err) throw err;
-              console.log("1 document inserted");
-              db.close();
-            });
-        }
+      client.connect(err => {
+        const users = client.db("RoboDoc").collection("users");
+        users.findOne({ username: req.body.username}, function (err, result) {
+            if (err) throw err;
+            if (result) {res.send("username already in use")}
+            // break?
+        });
+        client.close();
+      });
+      // else
+      var new_user = { username:req.body.username, pw: req.body.pw };
+      client.connect(err => {
+        const users = client.db("RoboDoc").collection("users");
+        new_user = { username: req.body.username, pw: req.body.pw}
+        users.insertOne(new_user, function (err, result) {
+            if (err) throw err;
+            console.log("1 document inserted");
+            res.send("Added user: "+ new_user)
+        });
+        client.close();
       });
     }); 
 })
@@ -76,7 +85,7 @@ router.get('/register',(req,res,next) => {
 
 //Pseudo-Output
 router.get('/',(req,res,next) => {
-    res.send(`Patient will spend ${getRandomInt(365)} days on ICU with a certainty of ${getRandomInt(100)}%.`)
+    res.send(`under construction`)
 })
 
 module.exports = router
