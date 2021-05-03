@@ -52,9 +52,11 @@ router.get('/register',(req,res,next) => {
       if (err) throw err;
       var dbo = db.db("users"); // placeholder
       // check if user is already registered
+      // TODO imporve structure
       dbo.collection("users").findOne({ username: req.body.username}, function (err, result) {
           if (err) throw err;
           if (result) {res.send("username already in use")
+        
         } else {
             var new_user = { username:req.body.username, pw: req.body.pw };
             dbo.collection("users").insertOne(new_user, function(err, res) {
