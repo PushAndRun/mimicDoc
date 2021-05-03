@@ -67,7 +67,6 @@ router.get('/register',(req,res,next) => {
       var new_user = { username:req.body.username, pw: req.body.pw };
       client.connect(err => {
         const users = client.db("RoboDoc").collection("users");
-        new_user = { username: req.body.username, pw: req.body.pw}
         users.insertOne(new_user, function (err, result) {
             if (err) throw err;
             console.log("1 document inserted");
