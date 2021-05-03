@@ -49,32 +49,26 @@ router.get('/',(req,res,next) => {
 
 //TODO: Register
 router.get('/register',(req,res,next) => {
-    
-    mongo.connect(url, function(err, db) {
-      if (err) throw err;
-      var dbo = db.db("users"); // placeholder
-      // check if user is already registered
-      client.connect(err => {
+    // check if user is already registered
+    client.connect(err => {
         const users = client.db("RoboDoc").collection("users");
         users.findOne({ username: req.body.username}, function (err, result) {
             if (err) throw err;
-            if (result) {res.send("username already in use")}
+            if (result) {
+                res.send("username already in use")
+            } else {
+                var new_user = { username:req.body.username, pw: req.body.pw };
+                users.insertOne(new_user, function (err, result) {
+                    if (err) throw err;
+                    console.log("1 document inserted");
+                    res.send("Added user: "+ new_user)
+                });
+            }
             // break?
         });
         client.close();
-      });
-      // else
-      var new_user = { username:req.body.username, pw: req.body.pw };
-      client.connect(err => {
-        const users = client.db("RoboDoc").collection("users");
-        users.insertOne(new_user, function (err, result) {
-            if (err) throw err;
-            console.log("1 document inserted");
-            res.send("Added user: "+ new_user)
-        });
-        client.close();
-      });
-    }); 
+    });
+    next();
 })
 
 //TODO: Login
