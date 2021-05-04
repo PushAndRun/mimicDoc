@@ -5,7 +5,7 @@ var router = express.Router()
 
 // TODO add mongodb to package.json and secure db password
 const user_db_uri = "mongodb+srv://dbRobo:3ZLyF8iZ5MVrVFn@robodoc.tshsc.mongodb.net/RoboDoc?retryWrites=true&w=majority"; 
-const mongo_client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+const mongo_client = new mongo.MongoClient(user_db_uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 function isEmptyObject(obj) {
     return !Object.keys(obj).length;
@@ -22,7 +22,7 @@ const format = {
 }
 
 //check if request is empty
-router.get('/',(req,res,next) => {
+router.use('/',(req,res,next) => {
     if(isEmptyObject(req.body)){
         res.send(format)
     } else {
@@ -31,7 +31,7 @@ router.get('/',(req,res,next) => {
 })
 
 //check if request has required parameter keys
-router.get('/',(req,res,next) => {
+router.use('/',(req,res,next) => {
     console.log(Object.keys(format))
     console.log(Object.keys(req.body))
     missing = ''
@@ -48,10 +48,11 @@ router.get('/',(req,res,next) => {
 })
 
 //TODO: Register
-router.get('/register',(req,res,next) => {
+router.use('/register',(req,res,next) => {
+    console.log("registering");
     // check if user is already registered
-    client.connect(err => {
-        const users = client.db("RoboDoc").collection("users");
+    mongo_client.connect(err => {
+        const users = mongo_client.db("RoboDoc").collection("users");
         users.findOne({ username: req.body.username}, function (err, result) {
             if (err) throw err;
             if (result) {
@@ -66,7 +67,7 @@ router.get('/register',(req,res,next) => {
             }
             // break?
         });
-        client.close();
+        mongo_client.close();
     });
     next();
 })
@@ -77,7 +78,7 @@ router.get('/register',(req,res,next) => {
 
 
 //Pseudo-Output
-router.get('/',(req,res,next) => {
+router.use('/',(req,res,next) => {
     res.send(`under construction`)
 })
 

@@ -11,7 +11,7 @@ const HOST = '0.0.0.0'
 const app = express();
 const endpointRouter = require('./routes/endpoints').router
 const requestRouter = require('./routes/request')
-const usertRouter = require('./routes/user_management.js')
+const userRouter = require('./routes/user_management.js')
 
 app.use(logger('dev'))
 app.use(
@@ -24,7 +24,7 @@ app.use(express.json())
 
 app.use('/',endpointRouter)
 app.use('/request',requestRouter)
-app.use('/user',requestRouter)
+app.use('/user',userRouter)
 app.get('/', express.static("./static"))
 
 app.listen(PORT, HOST);
