@@ -1,11 +1,14 @@
-var express = require('express')
-var mongo = require('mongodb')
-var router = express.Router()
+var express = require('express');
+//var mongo = require('mongodb');
+var mongoose = require('mongoose');
+var router = express.Router();
+
 
 
 // TODO add mongodb to package.json and secure db password
 const user_db_uri = "mongodb+srv://dbRobo:3ZLyF8iZ5MVrVFn@robodoc.tshsc.mongodb.net/RoboDoc?retryWrites=true&w=majority"; 
-const mongo_client = new mongo.MongoClient(user_db_uri, { useNewUrlParser: true, useUnifiedTopology: true });
+//const mongo_client = new mongo.MongoClient(user_db_uri, { useNewUrlParser: true, useUnifiedTopology: true });
+
 
 function isEmptyObject(obj) {
     return !Object.keys(obj).length;
@@ -20,6 +23,13 @@ const format = {
     // TODO: WARNING - clear text passwort - DO CHANGE!
     pw: 'string',
 }
+
+const userSchema = new mongoose.Schema({
+    username: { type: String, unique: true, required: true },
+    pw: { type: String, required: true}
+});
+
+const User = mongoose.model('User', userSchema);
 
 //check if request is empty
 router.use('/',(req,res,next) => {
@@ -48,29 +58,39 @@ router.use('/',(req,res,next) => {
 })
 
 //TODO: Register
+
 router.use('/register',(req,res,next) => {
     console.log("registering");
     // check if user is already registered
-    mongo_client.connect(err => {
-        const users = mongo_client.db("RoboDoc").collection("users");
-        users.findOne({ username: req.body.username}, function (err, result) {
-            if (err) throw err;
-            if (result) {
-                res.send("username already in use")
-            } else {
-                var new_user = { username:req.body.username, pw: req.body.pw };
-                users.insertOne(new_user, function (err, result) {
-                    if (err) throw err;
-                    console.log("1 document inserted");
-                    res.send("Added user: "+ new_user)
-                });
-            }
-            // break?
+
+    mongoose.connect(user_db_uri, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useFindAndModify: false,
+        useCreateIndex: true
+    }).then(() => {
+        console.log('MongoDB connected!!');
+        /* const user = new User({
+            username: req.body.username,
+            pw: req.body.pw
+        }); */
+        /* user.save().then(() => {
+            console.log('User successfully added.');
+        }).catch(err => {
+            console.log('Failed to add user', err)
+        }) */
+        User.find({
+            username: req.body.username
+        }).then(() => {
+            console.log('User found.');
+        }).catch(err => {
+            console.log('User not found.', err)
         });
-        mongo_client.close();
+    }).catch(err => {
+        console.log('Failed to connect to MongoDB', err);
     });
     next();
-})
+});
 
 //TODO: Login
 
@@ -78,8 +98,8 @@ router.use('/register',(req,res,next) => {
 
 
 //Pseudo-Output
-router.use('/',(req,res,next) => {
+/* router.use('/',(req,res,next) => {
     res.send(`under construction`)
-})
+}); */
 
-module.exports = router
+module.exports = router;
