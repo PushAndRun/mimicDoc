@@ -1,17 +1,16 @@
 <template>
   <div id="app">
-    <RoboDoc></RoboDoc>
+    
+    <router-view/>
   </div>
 </template>
 
 <script>
-import RoboDoc from './components/RoboDoc.vue'
+
 
 export default {
   name: 'App',
-  components: {
-    RoboDoc
-  }
+  
 }
 </script>
 

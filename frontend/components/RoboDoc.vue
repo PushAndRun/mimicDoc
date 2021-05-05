@@ -1,6 +1,7 @@
 <template>
   <div class = "roboDoc">
-  <NavBar></NavBar>
+  
+  <Registration  @login-User=loginUser @register-Employee=registerEmployee ></Registration>
 
   <Form @create-Patient=createPatient></Form>
   </div>
@@ -9,19 +10,21 @@
 <script>
 
 import Form from './Form.vue'
-import NavBar from './NavBar.vue'
+import Registration from './Registration.vue'
+
 
 export default {
   
   components: { 
-    NavBar, 
-    Form
+     
+    Form,
+    Registration
     },
   name: 'RoboDoc',
   props: {
     msg: String
   },
-  methods:{
+ methods:{
     createPatient(form){
       
       /*Patient Objekt wird in der Ebene RoboDoc erstellt, dieser kann zur höheren Ebene App.vue weitergeleitet werden und dort mittels http an den Server gesendet werden*/ 
@@ -38,6 +41,21 @@ export default {
       console.log(JSON.stringify(this.patient));
       alert(JSON.stringify(this.patient));
 
+    },
+    loginUser(registration){
+      this.user.username = registration.username
+      this.user.password = registration.password
+      console.log(JSON.stringify(this.uses));
+      alert(JSON.stringify(this.user));
+    },
+    registerEmployee(registration) {
+      this.employee.name = registration.name
+      this.employee.email = registration.email
+      this.employee.username = registration.username
+      this.employee.password = registration.password
+      console.log(JSON.stringify(this.employee));
+      alert(JSON.stringify(this.employee));
+
     }
   },
   data() {
@@ -52,6 +70,16 @@ export default {
         diagnoses:'', 
         bloodtype:[], 
         bmi:''
+      },
+      user:{
+        username:'',
+        password:'',
+      },
+      employee:{
+        name:'',
+        email:'',
+        username:'',
+        password:'',
       }
     }
   }
