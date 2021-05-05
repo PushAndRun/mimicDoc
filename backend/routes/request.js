@@ -1,3 +1,4 @@
+// path mit dem er aufgerufen wurde: /api/request
 var express = require('express')
 var router = express.Router()
 const diagnoses = require('./endpoints').csvData
