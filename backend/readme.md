@@ -14,7 +14,7 @@
 | /api/reloaddiagnoses | GET | CSV Datei mit Diagnosen neu laden, falls geändert | ✅ |
 |/api/request | GET | Patientendaten einreichen -> vorerst Pseudoantwort | ✅ |
 |/api/request | GET | Patientendaten-Format ausgeben bei leerem request | ✅ |
-#
+
 ##### Regular startup:
 - npm install
   
