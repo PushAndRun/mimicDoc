@@ -8,16 +8,20 @@
         "start": "node server.js"
     },
     "dependencies": {
+        "bcryptjs": "^2.4.3",
         "cookie-parser": "^1.4.5",
         "csv-parser": "^3.0.0",
         "debug": "^2.6.9",
         "express": "^4.17.1",
         "http-errors": "^1.7.2",
         "jade": "^0.29.0",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^5.12.7",
         "morgan": "^1.10.0",
         "winston": "^3.3.3"
     },
     "devDependencies": {
-        "assume": "^2.3.0"
+        "assume": "^2.3.0",
+        "nodemon": "^2.0.7"
     }
 }
