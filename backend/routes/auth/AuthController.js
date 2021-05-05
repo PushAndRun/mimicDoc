@@ -1,3 +1,4 @@
+// path mit dem er aufgerufen wurde: /api/auth
 var express = require('express');
 var router = express.Router();
 
