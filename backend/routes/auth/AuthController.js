@@ -16,11 +16,11 @@ var bcrypt = require('bcryptjs');
 var config = require('../../config'); // get config file
 
 router.post('/login', function(req, res) {
-  console.log(req.body.email)
+  console.log(req.body.name)
   console.log(req.body.password)
-  User.findOne({ email: req.body.email }, function (err, user) {
+  User.findOne({ name: req.body.name }, function (err, user) {
     if (err) return res.status(500).send('Error on the server.');
-    if (!user) return res.status(404).send('No user found.');
+    if (!user) return res.status(404).send('user not found');
     
     // check if the password is valid
     // console.log(req.body.password)
@@ -71,7 +71,7 @@ router.get('/me', VerifyToken, function(req, res, next) {
 
   User.findById(req.userId, { password: 0 }, function (err, user) {
     if (err) return res.status(500).send("There was a problem finding the user.");
-    if (!user) return res.status(404).send("No user found.");
+    if (!user) return res.status(404).send("User not found.");
     res.status(200).send(user);
   });
 

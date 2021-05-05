@@ -19,7 +19,8 @@ router.post('/', function (req, res) {
             password : hashedPassword
         }, 
         function (err, user) {
-            if (err) return res.status(500).send("There was a problem adding the information to the database.");
+            // zurueckgeben warum anlegen nicht funktioniert hat - username vergeben, passwort zu kurz,... -> wichtig fuer user
+            if (err) return res.status(500).send("There was a problem adding the information to the database.", req.body.name, req.body.password);
             res.status(200).send(user);
         });
 });
@@ -27,22 +28,40 @@ router.post('/', function (req, res) {
 // RETURNS ALL THE USERS IN THE DATABASE
 router.get('/', function (req, res) {
     User.find({}, function (err, users) {
-        if (err) return res.status(500).send("There was a problem listing all users.");
+        if (err) return res.status(500).send("There was a problem finding all users.");
+        if (!users) return res.status(404).send("No users found.");
         res.status(200).send(users);
     });
 });
 
-// GETS A SINGLE USER FROM THE DATABASE
-router.get('/:id', function (req, res) {
+// GETS A SINGLE USER FROM THE DATABASE BY ID
+router.get('/id/:id', function (req, res) {
     User.findById(req.params.id, function (err, user) {
-        if (err) return res.status(500).send("There was a problem finding the user.");
+        if (err) return res.status(500).send("There was a problem finding the user with id:", req.params.id);
         if (!user) return res.status(404).send("No user found.");
         res.status(200).send(user);
     });
 });
 
-// DELETES A USER FROM THE DATABASE
-router.delete('/:id', function (req, res) {
+// GETS A SINGLE USER FROM THE DATABASE BY USERNAME
+router.get('/username/:username', function (req, res) {
+    User.findOne(req.params.username, function (err, user) {
+        if (err) return res.status(500).send("There was a problem finding the user:", req.params.username);
+        if (!user) return res.status(404).send("No user found.");
+        res.status(200).send(user);
+    });
+});
+
+// DELETES A USER FROM THE DATABASE BY ID
+router.delete('/id/:id', function (req, res) {
+    User.findByIdAndRemove(req.params.id, function (err, user) {
+        if (err) return res.status(500).send("There was a problem deleting the user.");
+        res.status(200).send("User: "+ user.email +" was deleted.");
+    });
+});
+
+// DELETES A USER FROM THE DATABASE BY USERNAME
+router.delete('/username/:username', function (req, res) {
     User.findByIdAndRemove(req.params.id, function (err, user) {
         if (err) return res.status(500).send("There was a problem deleting the user.");
         res.status(200).send("User: "+ user.email +" was deleted.");
