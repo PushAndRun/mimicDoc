@@ -12,10 +12,12 @@ const HOST = '0.0.0.0'
 // App
 const app = express();
 const endpointRouter = require('./routes/endpoints').router
-const requestRouter = require('./routes/request')
-
+const requestRouter = require('./routes/request').router
+// db and user management
 const UserController = require('./routes/user/UserController')
+// autehtification encryption and json webtokens
 const AuthController = require('./routes/auth/AuthController')
+// mongoose db connection
 const db = require('./db')
 
 app.use(logger('dev'))
