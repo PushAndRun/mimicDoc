@@ -12,7 +12,7 @@ const HOST = '0.0.0.0'
 // App
 const app = express();
 const endpointRouter = require('./routes/endpoints').router
-const requestRouter = require('./routes/request').router
+const requestRouter = require('./routes/request')
 // db and user management
 const UserController = require('./routes/user/UserController')
 // autehtification encryption and json webtokens
