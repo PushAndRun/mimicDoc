@@ -1,5 +1,12 @@
 <template>
   <div>
+
+    <b-navbar toggleable="false" type="dark" variant="info">
+
+      <b-navbar-brand href = "#"><b>RoboDoc</b></b-navbar-brand>
+    </b-navbar>
+
+    <h1> Hi {{username}} </h1>
     <b-form id="formular" @submit="submitPatient" @reset="onReset">
       <br>
       <h2>Form for patient's assessment</h2>
@@ -107,6 +114,9 @@
 </template>
 
 <script>
+
+import AuthService from '@/services/AuthService.js'
+
   export default {
 
     computed: {
@@ -123,6 +133,12 @@
 
     data() {
       return {
+
+        
+        secretMessage:"", 
+        username:"",
+
+        
         form: {
           email: '',
           name: '',
@@ -138,11 +154,25 @@
         
       }
     },
+    async created(){
+          if(!this.$store.getters.isLoggedIn){
+            this.$router.push('/registration')
+          }
+        this.username = this.$store.getters.getUser.username;
+
+        this.secretMessage = await AuthService.getSecretContent();
+    },
+
     methods: {
       submitPatient (event){
           event.preventDefault();
           this.$emit("create-Patient", this.form);
       },
+      logout(){
+        this.$store.dispatch('logout'); 
+        this.$router.push('registration'); 
+      },
+
       onReset(event) {
         event.preventDefault()
         // Reset our form values
@@ -180,3 +210,4 @@
 }
 
 </style>
+

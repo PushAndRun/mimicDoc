@@ -7,7 +7,7 @@
 
     <div class="Modal-Register">
     <b-button v-b-modal.modal-1 size="sm" variant="outline-light">Register</b-button>
-    <b-modal id="modal-1" title="Register Hospital Employee" @ok="registration">
+    <b-modal id="modal-1" title="Register Hospital Employee" @ok="signUp">
 		
       <b-form-group id="Hospital Employee" 
           label="Your Name" 
@@ -91,10 +91,15 @@
 
 
     </b-navbar>
+
+    <b-container class="bv-container">
+      <b-row>
+        <b-col>
+
     <b-card
     id = "register-card"
     title="Register"
-    img-src="https://picsum.photos/600/300/?image=25"
+    img-src=https://picsum.photos/seed/picsum/600/300
     img-alt="Image"
     img-top
     tag="article"
@@ -102,17 +107,20 @@
     class="mb-2"
   >
     <b-card-text>
-      If you do not have an account set up yet you will need to register first to access RoboDoc
+      If you do not have an account set up yet you will need to register first to access RoboDoc 
+      
     </b-card-text>
     
 
     <b-button v-b-modal.modal-1 variant="primary">Register</b-button>
   </b-card>
+        </b-col>
+        <b-col>
 
   <b-card
     id = "register2-card"
     title="Log In "
-    img-src="https://picsum.photos/600/300/?image=25"
+    img-src=https://picsum.photos/seed/picsum/600/300
     img-alt="Image"
     img-top
     tag="article"
@@ -122,10 +130,14 @@
     <b-card-text>
       Log in to account to fill the form to assess patient
     </b-card-text>
+    <br>
     
 
     <b-button v-b-modal.modal-2 variant="primary">Log in</b-button>
   </b-card>
+        </b-col>
+      </b-row>
+    </b-container>
     </div>
     
 </div>
@@ -133,7 +145,7 @@
 
 
 <script>
-
+import AuthService from '@/services/AuthService.js'
 
 export default {
     name: 'Registration', 
@@ -143,7 +155,9 @@ export default {
     },
  
     data(){
+      
       return {
+        msg:"",
         employee:{
           name:"", 
           email:"", 
@@ -163,31 +177,65 @@ export default {
     },
   
   methods: {
-      login(event){
-          event.preventDefault();
-          this.$emit("login-User", this.user);
-        
-      },
+     
 
       registration(event){
         event.preventDefault();
-        this.$emit("register-Employee", this.employee);
-       
         
+        this.$emit("register-Employee", this.employee);
+      },
+
+      async signUp (){
+        try {
+          const credentials = {
+            name:this.employee.username, 
+            email: this.employee.email,
+            password: this.employee.password 
+          };
+          const response = await AuthService.signUp(credentials);
+          this.msg = response.msg; 
+          
+          
+        } catch (error){
+            this.msg = error.response.data.msg;
+        }
+      }, 
+      async login (){
+        try {
+          const credentials = {
+            name:this.user.username, 
+            password: this.user.password
+          }; 
+          const response = await AuthService.login(credentials); 
+
+          this.msg = response.msg; 
+
+          const token = response.token; 
+          const user = response.user;
+
+          this.$store.dispatch('login',{token,user}); 
+
+          this.$router.push('form'); 
+
+
+        }catch (error){
+            this.message = error.response.data.msg
+        }
+        }
 
       }
-     
     }
-  }
+
 </script>
 
 <style scoped>
     #register-card{
-        
+        margin-top: 30%; 
         
 
     }
     #register2-card{
-         
+         margin-top:30%;
     }
 </style>
+
