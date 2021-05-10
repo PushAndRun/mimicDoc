@@ -3,6 +3,7 @@
 global.__root   = __dirname + '/'; 
 const express = require('express')
 var logger = require('morgan')
+const cors = require('cors')
 
 
 // Constants
@@ -20,6 +21,7 @@ const AuthController = require('./routes/auth/AuthController')
 // mongoose db connection
 const db = require('./db')
 
+app.use(cors())
 app.use(logger('dev'))
 app.use(
   express.urlencoded({
