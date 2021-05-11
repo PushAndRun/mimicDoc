@@ -1,54 +1,42 @@
-COPY (
-SELECT 	Q1.hadm_id, 
-		date_part('year',age) as age, 
-		gender, 
-		weight, 
-		Q2.icd9_code as patient_history, 
-		length_of_stay, 
-		died_in_hospital, 
-		array_agg(diagnoses) as diagnoses
-FROM
-			/*Create a table with all patient details and diagnoses*/
-			(SELECT 
-			 mimiciii.admissions.hadm_id, 
-			 AGE(admittime, dob) as age, 
-			 gender, 
-			 ROUND(AVG(patientweight)) as weight, 
-			 los as length_of_stay, 
-			 hospital_expire_flag as died_in_hospital, 
-			 mimiciii.diagnoses_icd.icd9_code as diagnoses
+COPY (SELECT 		Q1.patient_id,
+			Q1.hadm_id, 
+			Q1.icustay_id,
+			hospstay_seq,
+			icustay_seq,
+			age, 
+			gender, 
+			ROUND(weight) as weight, 
+			ROUND(height) as height,
+			ROUND(meanbp_mean) as meanbp_mean,
+		 	ROUND(meanbp_min) as meanbp_min,
+			ROUND(meanbp_max) as meanbp_max,
+			resprate_min,
+			resprate_max,
+			ROUND(resprate_mean) as resprate_mean,
+			tempc_mean,
+			glucose_min,
+			glucose_max,
+			ROUND(glucose_mean) as glucose_mean,
+			Q2.icd9_code as patient_history, 
+			Q3.icd9_code as diagnoses,
+			ROUND(los_hospital,2) as length_of_stay_hospital, 
+			ROUND(los_icu,2) as length_of_stay_icu, 
+			hospital_expire_flag as died_in_hospital
 			
-			 FROM mimiciii.admissions
-					JOIN mimiciii.patients ON mimiciii.patients.subject_id = mimiciii.admissions.subject_id
-					JOIN mimiciii.icustays ON mimiciii.admissions.hadm_id = mimiciii.icustays.hadm_id
-					FULL JOIN mimiciii.inputevents_mv ON mimiciii.admissions.hadm_id = mimiciii.inputevents_mv.hadm_id
-					JOIN mimiciii.diagnoses_icd ON mimiciii.admissions.hadm_id = mimiciii.diagnoses_icd.hadm_id
-			
-			 /*Exclude patient history codes from diagnoses*/
-			 WHERE 	mimiciii.diagnoses_icd.icd9_code NOT LIKE '%V%' AND
-	 				mimiciii.diagnoses_icd.icd9_code NOT LIKE '%E%' AND
-			 
-			 /*Exclude organ donors*/
-			 		los > 0
-			
-			 GROUP BY mimiciii.admissions.hadm_id, age, gender, los, hospital_expire_flag, diagnoses
-			) 
-		AS Q1
-
-FULL JOIN 	
-			/*Create a table that contains only the patient history, aggregated in an array*/
-			(SELECT hadm_id,
-			 		array_agg(icd9_code) as icd9_code
-			FROM mimiciii.diagnoses_icd
-			WHERE 	mimiciii.diagnoses_icd.icd9_code LIKE '%V%' 
-			GROUP BY hadm_id
-		) AS Q2
-ON Q1.hadm_id = Q2.hadm_id
-
-/*Filter certain patients and cases*/
-WHERE 	(weight < 400 OR weight = NULL) AND 
-		age < '89 years 0 mons 01 days 00:00:00'
-GROUP BY Q1.hadm_id, patient_history, age, gender, weight, length_of_stay, died_in_hospital)
+	FROM extended_patient_details AS Q1
+	
+	/* Add diagnoses and patient history*/
+	FULL JOIN patient_history_aggregated AS Q2 ON Q1.hadm_id = Q2.hadm_id
+	FULL JOIN diagnoses_aggregated AS Q3 ON Q3.hadm_id = Q1.hadm_id		
+	
+	/* Add vital signs and demographics*/
+	FULL JOIN public.vitals_first_day ON Q1.icustay_id = public.vitals_first_day.icustay_id
+	FULL JOIN public.weight_first_day ON Q1.icustay_id = public.weight_first_day.icustay_id
+	FULL JOIN public.height_first_day ON Q1.icustay_id = public.height_first_day.icustay_id
+	
+	/*Filter certain patients and cases*/
+	WHERE age < 89
+	)
 
 /*Export to*/
 TO 'C:\Users\Public\admissions.csv' DELIMITER ',' CSV HEADER;

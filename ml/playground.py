@@ -2,18 +2,52 @@ import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 import collections
+import numpy as np
 
 matplotlib.use('tkagg')
 
-def visualize_data():
+def get_admissions_data():
     with open('../db/admissions.csv', 'r') as f:
         data = []
 
         for line in f:
             data.extend([line.strip('\n').split(',')])
 
-    admissions = clean_data(data)
+    return data
+
+def generate_heatmap(lst: list):
+    HM = np.zeros((42, 90))
+
+    for x in lst:
+        HM[int(x[1] * 2)][int(x[0])] += 1
+
+    return HM
+
+def create_heatmap():
+    data = get_admissions_data()
+    admissions = clean_data_for_heatmap(data)
+
+    alive = [adm for adm in admissions if adm[2] == 0]
+    dead = [adm for adm in admissions if adm[2] == 1]
+
+    aliveHM = generate_heatmap(alive)
+    deadHM = generate_heatmap(dead)
+
+    totalHM = aliveHM + deadHM
+    fractionHM = aliveHM / totalHM
+
+    fig, ax = plt.subplots()
+    im = ax.imshow(fractionHM)
+
+    plt.show()
+
+
+def visualize_data_distribution():
+
+    data = get_admissions_data()
+    admissions = clean_data_for_distributions(data)
     print(admissions[0])
+
     alive = [adm for adm in admissions if adm[5] == 0]
     dead = [adm for adm in admissions if adm[5] == 1]
 
@@ -65,7 +99,33 @@ def visualize_data():
     plt.xlabel('length of stay in days')
     plt.show()
 
-def clean_data(data: list):
+def clean_data_for_heatmap(data: list):
+    data.pop(0)
+
+    good_data = []
+
+    for adm in data:
+        good_adm = []
+
+        age = adm[1].split(' ')
+        good_adm.append(float(age[0]))
+
+        if good_adm[0] > 100:
+            continue
+
+        good_adm.append(round(round(float(adm[4]) * 2, 0) / 2, 1))
+
+        if good_adm[1] >= 21:
+            continue
+
+        good_adm.append(float(adm[5]))
+
+        good_data.append(good_adm)
+
+    return good_data
+
+
+def clean_data_for_distributions(data: list):
     data.pop(0)
 
     good_data = []
@@ -103,4 +163,5 @@ def calculate_average(lst: list):
 
 
 if __name__ == '__main__':
-    visualize_data()
+    # visualize_data_distribution()
+    create_heatmap()

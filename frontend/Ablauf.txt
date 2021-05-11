@@ -1,0 +1,21 @@
+1. 
+--> Neuer Nutzer --> Profil erstellen
+	--> Eingabe des Namens (mind. 4 Zeichen)
+	--> Wahl des Geschlechts (male or female)
+	--> Eingabe der E-Mail Adresse (muss mind. ein @ enthalten)
+	--> Wahl des Geburtsdatums (muss älter als 17 sein)
+	--> Eingabe beliebig vieler vordiagnostizierter Krankheiten 
+	--> Eingabe des gewünschten Usernames (muss mind. 5 Zeichen lang sein)
+	--> Eingabe eines Passworts (muss 8-20 characters haben, Zahlen und Buchstaben enthalten, und darf keine Spaces enthalten)
+	--> Wenn alle Eingaben korrekt sind, wird Benutzer erstellt und dieser an den Server übermittelt damit sich später mit Username und Passwort angemeldet werden kann
+
+--> Nutzer ist bereits registriert --> Einloggen
+	--> Eingabe des Nutzernamens (auf Server hinterlegt)
+	--> Eingabe des Passworts (Ebenfalls auf Server hinterlegt)
+	--> Kann username-password Tupel nicht gefunden werden auf Server
+		--> "Username oder Passwort falsch, bitte versuchen sie es erneut" 
+
+2. 
+Eingabe der Symptome ...
+
+	
