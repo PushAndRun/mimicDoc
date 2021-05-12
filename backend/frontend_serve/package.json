@@ -1,0 +1,20 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "vuejs frontend for robodoc",
+  "main": "main.js",
+  "dependencies": {
+    "@vue/cli": "^4.5.13",
+    "axios": "^0.21.1",
+    "bootstrap-vue": "^2.21.2",
+    "vue-router": "^3.5.1",
+    "vuex": "^3.6.2",
+    "vuex-persistedstate": "^4.0.0-beta.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ODS Group 1 Robodoc",
+  "license": "ISC"
+}

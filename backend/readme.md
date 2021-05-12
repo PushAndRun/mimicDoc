@@ -22,6 +22,10 @@
 - oder: npx nodemon server.js (startet automatisch neu bei geänderter source)
 	-runs on port 8080
 
+##### frontend host
+- npm install
+- vue serve -p PORT
+
 ##### Dockerized startup:
 - docker build -t robotdocbackend .
 - docker run -p /* YOUR DESIRED PORT*/:8080 -d robodocbackend
