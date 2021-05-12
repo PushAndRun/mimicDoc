@@ -15,7 +15,7 @@ RUN npm install
 COPY . .
 
 # Open Port
-EXPOSE 8080
+EXPOSE 8081
 
 #Run
 CMD [ "node", "server.js" ]

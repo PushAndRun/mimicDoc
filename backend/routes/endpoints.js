@@ -1,3 +1,4 @@
+// path mit dem er aufgerufen wurde: /api
 var express = require('express')
 var router = express.Router()
 const csv = require('csv-parser')
