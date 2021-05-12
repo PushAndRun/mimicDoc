@@ -1,33 +1,35 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Form from '../components/Form.vue'
+import Form from '../components/Form'
 import Registration from '../components/Registration'
 import Patients from '../components/Patients'
-import Robodoc from '../components/RoboDoc.vue'
+import Homepage from '../components/Homepage'
 
 Vue.use(Router)
 
 export default new Router ({
+  
     routes:[
-        {
-        path: '/',
-        name: 'Robodoc',
-        component: Robodoc
-        },
         {
         path: '/form',
         name: 'Form',
         component: Form 
         }, 
         {
-        path: '/registration' ,
+        path: '/' ,
         name: 'Registration', 
         component: Registration
         }, 
         {
-            path: '/patients', 
-            name:'patients', 
-            component:Patients
+        path: '/patients', 
+        name:'Patients', 
+        component:Patients
+        }, 
+        {
+        path:'/homepage',
+        name:'Homepage',
+        component: Homepage
         }
     ]
 })
+
