@@ -336,24 +336,24 @@ import PatientService from '@/services/PatientService.js'
       onReset(event) {
         event.preventDefault()
         // Reset our form values
-        this.form.name: '',
-        this.form.age: '',
-         this.form.gender: '',
-          this.form.weight: '',
-          this.form.height: '',
-          this.form.bloodtypes: null,
-          this.form.meanbp_mean:'', 
-          this.form.meanbp_min:'', 
-          this.form.meanbp_max:'', 
-          this.form.resprate_min:'',
-          this.form.resprate_max:'', 
-          this.form.resprate_mean:'', 
-          this.form.tempc_mean:'',
-          this.form.glucose_min:'',
-          this.form.glucose_max: '',
-          this.form.glucose_mean: '',
-          this.form.patient_history:[],
-          this.form.diagnoses:[],
+        this.form.name= ''
+        this.form.age= ''
+         this.form.gender= ''
+          this.form.weight= ''
+          this.form.height= ''
+          this.form.bloodtypes= null
+          this.form.meanbp_mean=''
+          this.form.meanbp_min=''
+          this.form.meanbp_max=''
+          this.form.resprate_min=''
+          this.form.resprate_max=''
+          this.form.resprate_mean=''
+          this.form.tempc_mean=''
+          this.form.glucose_min=''
+          this.form.glucose_max= ''
+          this.form.glucose_mean= ''
+          this.form.patient_history=[]
+          this.form.diagnoses=[]
        
       }
     }
