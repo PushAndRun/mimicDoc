@@ -3,10 +3,12 @@ import Router from 'vue-router'
 import Form from '../components/Form'
 import Registration from '../components/Registration'
 import Patients from '../components/Patients'
+import Homepage from '../components/Homepage'
 
 Vue.use(Router)
 
 export default new Router ({
+  
     routes:[
         {
         path: '/form',
@@ -14,14 +16,19 @@ export default new Router ({
         component: Form 
         }, 
         {
-        path: '/registration' ,
+        path: '/' ,
         name: 'Registration', 
         component: Registration
         }, 
         {
-            path: '/patients', 
-            name:'patients', 
-            component:Patients
+        path: '/patients', 
+        name:'Patients', 
+        component:Patients
+        }, 
+        {
+        path:'/homepage',
+        name:'Homepage',
+        component: Homepage
         }
     ]
 })
