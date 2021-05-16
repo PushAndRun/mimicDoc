@@ -5,32 +5,31 @@
 
       <b-navbar-brand href = "#"><b><router-link to="/homepage" style="text-decoration: none; color:inherit ">RoboDoc</router-link></b></b-navbar-brand>
     <!-- logout button -->
-      <b-button variant="secondary" @click="logout">Logout</b-button>
+      <b-button variant="transparent" @click="logout">Logout</b-button>
     </b-navbar>
         <br>
         <h1>All Patients of {{username}}</h1>
-        <b-button @click=fetchAllPatients> Display all Patients </b-button>
-
+        
          <ul>
          <li v-for="patient in patients" v-bind:key="patient.name">
-           <p> Name: {{ patient.name }} </p><br>
-           <p> Age: {{ patient.age }} </p><br>
-            <p> Gender: {{ patient.gender }} </p><br>
-            <p> Weight: {{ patient.weight }} </p><br>
-            <p>Height: {{ patient.height }} </p><br>
-            <p> Bloodtypes: {{ patient.bloodtypes }} </p><br>
-            <p> Mean blood pressure: {{ patient.meanpb_mean }} </p><br>
-            <p> Min blood pressure: {{ patient.meanbp_min }} </p><br>
-            <p> Max blood pressure: {{ patient.meanpb_max }} </p><br>
-            <p> Mean resprate: {{ patient.resprate_mean }} </p><br>
-            <p> Min reesprate: {{ patient.resprate_min }} </p><br>
-            <p> Max resprate:{{ patient.resprate_max }} </p><br>
-            <p> Mean temperature in C°: {{ patient.tempc_mean }} </p><br>
-            <p> Mean glucose: {{ patient.glucose_mean }} </p><br>
-            <p> Min glucose: {{ patient.glucose_min }} </p><br>
-            <p> Max glucose: {{ patient.glucose_max }} </p><br>
-            <p> Patient History: {{ patient.patient_history }} </p><br>
-            <p> Diagnoses: {{ patient.diagnoses }} </p><br>
+           <p> Name: {{ patient.name }} <br>
+            Age: {{ patient.age }} <br>
+            Gender: {{ patient.gender }} <br>
+            Weight: {{ patient.weight }} <br>
+            Height: {{ patient.height }} <br>
+            Bloodtype: {{ patient.bloodtype }} <br>
+            Mean blood pressure: {{ patient.meanpb_mean }} <br>
+            Min blood pressure: {{ patient.meanbp_min }} <br>
+            Max blood pressure: {{ patient.meanpb_max }} <br>
+            Mean resprate: {{ patient.resprate_mean }} <br>
+            Min reesprate: {{ patient.resprate_min }} <br>
+            Max resprate: {{ patient.resprate_max }} <br>
+            Mean temperature in C°: {{ patient.tempc_mean }} <br>
+            Mean glucose: {{ patient.glucose_mean }} <br>
+            Min glucose: {{ patient.glucose_min }} <br>
+            Max glucose: {{ patient.glucose_max }} <br>
+            Patient History: {{ patient.patient_history }} <br>
+            Diagnoses: {{ patient.diagnoses }} </p><br>
           </li>
           </ul>
     </div>
@@ -45,16 +44,16 @@ export default {
       return {
         message:'',
         username:'', 
-        patients:[{name: "Max", age: "18",  gender:"male", weigth:"80", height:"180", bloodtype: "B-",
-        meanbp_mean: "100", meanbp_min: "80", meanbp_max: "120", resprate_min:'123',
-          resprate_max:'123', 
-          resprate_mean:'123', 
-          tempc_mean:'123',
-          glucose_min:'13',
-          glucose_max: '123',
-          glucose_mean: '123',
-          patient_history:['covid'],
-          diagnoses:['covid']}]
+        patients:[{name: "John Doe", age: "46",  gender:"male", weight:"85", height:"180", bloodtype: "0-",
+        meanpb_mean: "130", meanbp_min: "120", meanpb_max: "140", resprate_min:"12",
+          resprate_max:'20', 
+          resprate_mean:'16', 
+          tempc_mean:'36.5',
+          glucose_min:'70',
+          glucose_max: '130',
+          glucose_mean: '100',
+          patient_history:['Eye dosorders NEC', 'Rheumatic aortic insufficiency'],
+          diagnoses:['Covid-19']}]
 
       }
     },

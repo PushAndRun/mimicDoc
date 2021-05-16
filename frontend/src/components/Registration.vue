@@ -6,7 +6,7 @@
       <b-navbar-brand href = "#"><b>RoboDoc</b></b-navbar-brand>
 
     <div class="Modal-Register">
-    <b-button class= "registerButton"  v-b-modal.modal-1 size="sm" variant="outline-light" >Register</b-button>
+    
     <b-modal id="modal-1" title="Register Hospital Employee" @ok="signUp">
 		<p v-if="msg">{{ msg }}</p>
       <b-form-group id="Hospital Employee" 
@@ -52,9 +52,10 @@
   </div>
 
   <div class="Modal-login">
+    <b-button class= "registerButton"  v-b-modal.modal-1 size="sm" variant="outline-light" >Register</b-button>
     <b-button v-b-modal.modal-2 size="sm" variant="outline-light">Login</b-button>
     <b-modal id="modal-2" title="Login" @ok="login">
-      <p v-if="msg">{{ msg }}</p>
+      
 
 
      <b-form-group
@@ -297,7 +298,7 @@ export default {
 
 .registerButton {
 
-  position: left;
+  margin-right: 5px;
 
 }
 
@@ -316,6 +317,4 @@ p {
    
 
 </style>
-
-
 

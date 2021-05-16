@@ -5,7 +5,7 @@
 
       <b-navbar-brand href = "#"><b><router-link to="/homepage"  style="text-decoration: none; color:inherit ">RoboDoc</router-link></b></b-navbar-brand>
 
-      <b-button @click=logout>Logout</b-button> 
+       <b-button variant="transparent" @click="logout">Logout</b-button>
     </b-navbar>
      <br>
      <h1> Hi {{username}} </h1>
@@ -293,25 +293,36 @@ import PatientService from '@/services/PatientService.js'
         try {
           const credentials = {
            
-          name:this.form.name,
-          age:this.form.age,
-          gender:this.form.gender,
-          weight:this.form.weight,
-          height:this.form.height,
-          bloodtypes:this.form.bloodtypes,
-          meanbp_mean:this.form.meanbp_mean, 
-          meanbp_min:this.form.meanbp_min, 
-          meanbp_max:this.form.meanbp_max, 
-          resprate_min:this.form.resprate_min,
-          resprate_max:this.form.resprate_max, 
-          resprate_mean:this.form.resprate_mean, 
-          tempc_mean:this.form.tempc_mean,
-          glucose_min:this.form.glucose_min,
-          glucose_max:this.form.glucose_max,
-          glucose_mean:this.form.glucose_mean,
-          patient_history:this.form.patient_history,
-          diagnoses:this.form.diagnoses,
-            
+         patient:{
+              name:this.form.name,
+              age:this.form.age,
+              gender:this.form.gender,
+              weight:this.form.weight,
+              height:this.form.height,
+                medicalData:{
+                  bloodtypes:this.form.bloodtypes,
+                  bloodpressure:{
+                    mean:this.form.meanbp_mean, 
+                    min:this.form.meanbp_min, 
+                    max:this.form.meanbp_max
+                  }, 
+                  resprate:{ 
+                  min:this.form.resprate_min,
+                  max:this.form.resprate_max, 
+                  mean:this.form.resprate_mean
+                  }, 
+                  temperature:{
+                  mean:this.form.tempc_mean,
+                  }, 
+                  glucose:{
+                  min:this.form.glucose_min,
+                  max:this.form.glucose_max,
+                  mean:this.form.glucose_mean
+                  },
+                  patient_history:this.form.patient_history,
+                  diagnoses:this.form.diagnoses
+                }
+            }
           };
           const response = await PatientService.createPatient(credentials);
           
@@ -333,7 +344,7 @@ import PatientService from '@/services/PatientService.js'
       },
      
 
-      onReset(event) {
+     onReset(event) {
         event.preventDefault()
         // Reset our form values
         this.form.name= ''
@@ -356,6 +367,7 @@ import PatientService from '@/services/PatientService.js'
           this.form.diagnoses=[]
        
       }
+
     }
   }
 </script>
@@ -381,4 +393,3 @@ import PatientService from '@/services/PatientService.js'
 
 
 </style>
-

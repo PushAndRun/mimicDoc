@@ -5,7 +5,7 @@
 
       <b-navbar-brand href = "#"><b>RoboDoc</b></b-navbar-brand>
     <!-- logout button -->
-      <b-button variant="secondary" @click="logout">Logout</b-button>
+      <b-button variant="transparent" @click="logout">Logout</b-button>
     </b-navbar>
 
         <br>
