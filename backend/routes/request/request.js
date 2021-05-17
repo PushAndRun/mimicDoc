@@ -69,10 +69,7 @@ router.post('/', verifyToken, async (req,res,next) => {
     let death_prediction = prediction[0];
     let stay_prediction = prediction[1];
 
-    let prediction = predict.predict("76,M,97,76,40,259,5,24,17,37.002880708670915,136,306,232,,0389;78559;5849;4275;41071;4280;6826;4254;2639").split("\n");
-
-    let death_prediction = prediction[0]
-    let stay_prediction = prediction[1]
+    //let prediction = predict.predict("76,M,97,76,40,259,5,24,17,37.002880708670915,136,306,232,,0389;78559;5849;4275;41071;4280;6826;4254;2639").split("\n");
 
     // Request in der DB ablegen
     RequestModel.create({
