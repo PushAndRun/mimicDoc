@@ -1,14 +1,14 @@
 <template>
 <div class="registration">
-   <div class = "navigation">
-   <b-navbar toggleable="false" type="dark" variant="info">
+   <div class = "navigation" >
+   <b-navbar toggleable="false" type="dark" variant="transparent">
 
       <b-navbar-brand href = "#"><b>RoboDoc</b></b-navbar-brand>
 
     <div class="Modal-Register">
-    <b-button v-b-modal.modal-1 size="sm" variant="outline-light">Register</b-button>
+    
     <b-modal id="modal-1" title="Register Hospital Employee" @ok="signUp">
-		
+		<p v-if="msg">{{ msg }}</p>
       <b-form-group id="Hospital Employee" 
           label="Your Name" 
           label-for="input-employee">
@@ -52,8 +52,10 @@
   </div>
 
   <div class="Modal-login">
+    <b-button class= "registerButton"  v-b-modal.modal-1 size="sm" variant="outline-light" >Register</b-button>
     <b-button v-b-modal.modal-2 size="sm" variant="outline-light">Login</b-button>
     <b-modal id="modal-2" title="Login" @ok="login">
+      
 
 
      <b-form-group
@@ -92,48 +94,77 @@
 
     </b-navbar>
 
+     <b-carousel
+      id="carousel"
+      v-model="slide"
+      :interval="4000"
+      background="#ababab"
+      img-width="1024"
+      img-height="488"
+      style="text-shadow: 1px 1px 2px #333;"
+      @sliding-start="onSlideStart"
+      @sliding-end="onSlideEnd"
+    >
+     
+      <!-- Slides with custom text -->
+      <b-carousel-slide 
+      img-src="https://picsum.photos/id/733/1024/488">
+        <h1>RoboDoc</h1>
+      </b-carousel-slide>
+
+       <!-- Text slides with image -->
+      <b-carousel-slide
+        img-src="https://picsum.photos/id/668/1024/488"
+      > <h2>The smart way to manage your patients</h2>
+      </b-carousel-slide>
+
+
+          
+    </b-carousel>
+
+
+    <p>Discover RoboDoc
+      <br>
+     The latest innovation in the field of hospital management</p>
+
+
+
+
     <b-container class="bv-container">
       <b-row>
         <b-col>
 
-    <b-card
+    <b-card 
+    class="card"
     id = "register-card"
     title="Register"
-    img-src=https://picsum.photos/seed/picsum/600/300
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2"
-  >
-    <b-card-text>
-      If you do not have an account set up yet you will need to register first to access RoboDoc 
+    >
+      <b-card-text>
+         If you do not have an account set up yet you will need to register first to access RoboDoc 
       
-    </b-card-text>
+      </b-card-text>
+    
+    
+   
     
 
-    <b-button v-b-modal.modal-1 variant="primary">Register</b-button>
+    <b-button v-b-modal.modal-1 variant="outline-dark">Register</b-button>
   </b-card>
         </b-col>
         <b-col>
 
-  <b-card
-    id = "register2-card"
-    title="Log In "
-    img-src=https://picsum.photos/seed/picsum/600/300
-    img-alt="Image"
-    img-top
-    tag="article"
-    style="max-width: 20rem;"
-    class="mb-2"
-  >
-    <b-card-text>
-      Log in to account to fill the form to assess patient
-    </b-card-text>
+  <b-card 
+  class="card"
+  id = "register2-card"
+  title="Log In ">
+      <b-card-text>
+        Log in to account to fill the form to assess patient
+
+      </b-card-text>
+
     <br>
     
-
-    <b-button v-b-modal.modal-2 variant="primary">Log in</b-button>
+    <b-button v-b-modal.modal-2 variant="outline-dark">Log in</b-button>
   </b-card>
         </b-col>
       </b-row>
@@ -211,11 +242,11 @@ export default {
           this.msg = response.msg; 
 
           const token = response.token; 
-          const user = response.user;
+          const user = this.user;
 
           this.$store.dispatch('login',{token,user}); 
 
-          this.$router.push('form'); 
+          this.$router.push('/homepage'); 
 
 
         }catch (error){
@@ -237,5 +268,53 @@ export default {
     #register2-card{
          margin-top:30%;
     }
+
+    h1 {
+      color: black;
+      margin-bottom: 300px;
+      font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+    }
+    h2 {
+      color: black;
+      margin-bottom: 300px;
+      font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+    }
+
+   
+.carousel {
+  position:relative;
+    top:0;    
+}
+.navbar {
+    position:absolute;
+    top:0px;
+    z-index:10;
+    background:#fff;
+    width:100%;
+}
+.navbar-inner {
+    background:transparent;
+}
+
+.registerButton {
+
+  margin-right: 5px;
+
+}
+
+.card {
+  
+  margin-bottom: 50px;
+}
+
+p {
+  margin-top: 50px;
+}
+
+
+
+
+   
+
 </style>
 
