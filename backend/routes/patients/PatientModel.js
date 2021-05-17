@@ -1,11 +1,5 @@
 var mongoose = require('mongoose');  
 var PatientSchema = new mongoose.Schema({  
-  id: {
-        type: Number
-      , required: true
-      , unique: true
-      , min : [10, "id must be 10 figures long"]
-  },
   name: {
     type: String
   , required: true
