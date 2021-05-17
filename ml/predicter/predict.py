@@ -1,26 +1,9 @@
-import os
-import tempfile
-import time
-
-import matplotlib as mpl
-import matplotlib.pyplot as plt
-import numpy as np
-
-import tensorflow as tf
-from tensorflow import keras
-
 import pandas as pd
-pd.options.mode.chained_assignment = None
-
-import sklearn
-from sklearn import preprocessing
-from sklearn.metrics import confusion_matrix
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-import joblib
 import pickle as pk
-from sklearn.decomposition import PCA
-
+import sys
+import numpy as np
+from tensorflow import keras
+pd.options.mode.chained_assignment = None
 
 def load_diagnose_data():
     diagnoses = []
@@ -61,13 +44,13 @@ def diagnoses_to_matrix(diagnoses, patient_history, diagnoses_dict, patient_hist
 
     return X
 
-def classify():
+
+def predict():
     # input = line as a string with the following headers separated by ',':
     # age,gender,weight,meanbp_mean,meanbp_min,meanbp_max,resprate_min,resprate_max,resprate_mean,tempc_mean,
-    # glucose_min,glucose_max,glucose_mean,length_of_stay_hospital,length_of_stay_icu,diagnoses,patient_history
-    # age,gender,weight,meanbp_mean,meanbp_min,meanbp_max,resprate_min,resprate_max,resprate_mean,tempc_mean,glucose_min,glucose_max,glucose_mean,patient_history,diagnoses,died_in_hospital
-    # Bsp.: input = '76,M,97,76,40,259,5,24,17,37.002880708670915,136,306,232,,0389;78559;5849;4275;41071;4280;6826;4254;2639,0'
-    patient_data = input('Patient string:')
+    # glucose_min,glucose_max,glucose_mean,diagnoses,patient_history
+    # Bsp.: input = '76,M,97,76,40,259,5,24,17,37.002880708670915,136,306,232,,0389;78559;5849;4275;41071;4280;6826;4254;2639'
+    patient_data = sys.argv[1]
     datapoint = np.zeros((453,))
     data = patient_data.split(',')
     datapoint[0] = float(data[0])
@@ -88,7 +71,6 @@ def classify():
     datapoint[12] = float(data[12])
     patient_history = [data[13]]
     diagnoses = [data[14]]
-    # datapoint[13] = float(data[15])
 
     diagnoses_dict, patient_history_dict = load_diagnose_data()
     diagnoses_vector = diagnoses_to_matrix(diagnoses, patient_history, diagnoses_dict, patient_history_dict)
@@ -105,16 +87,16 @@ def classify():
     normed_datapoint = scaler.transform(datapoint)
     print(normed_datapoint.shape)
 
-    model = keras.models.load_model("weighted_model")
-    result = model.predict(normed_datapoint)
-    if round(float(result)) == 0:
-        print(0)
-    else:
-        print(1)
+    model_class = keras.models.load_model("model_class")
+    result_class = model_class.predict(normed_datapoint)
+    print(float(result_class))
+
+    model_reg = keras.models.load_model("model_reg")
+    result_reg = model_reg.predict(normed_datapoint)
+    print(float(result_reg))
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    #patient_data = input('Patient string:')
-    classify()
+    predict()
 
 
