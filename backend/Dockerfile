@@ -6,17 +6,10 @@ WORKDIR /usr/src/app
 # Install dependencies
 COPY package*.json ./
 
-RUN file="$(apt-get update && \
-            apt-get install -y apt-utils && \
-            apt-get install -y curl && \
-            apt-get update && \
-            apt-get install -y software-properties-common && \
-            apt-get update && \
-            add-apt-repository ppa:deadsnakes/ppa -y && \
-            apt update && \
-            apt install -y python3.7 && \
-            curl https://bootstrap.pypa.io/get-pip.py | python3.7 &&\
-            apt-get update)" && echo $file
+ENV PYTHONUNBUFFERED=1
+RUN apk add --update --no-cache python3.7 && ln -sf python3.7 /usr/bin/python
+RUN python3.7 -m ensurepip
+RUN pip3 install --no-cache --upgrade pip setuptools
 RUN pip3 --version
 RUN python3.7 -m pip install pandas
 RUN python3.7 -m pip install --no-cache-dir tensorflow
