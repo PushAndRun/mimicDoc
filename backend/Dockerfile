@@ -7,8 +7,8 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 RUN apt-get update && apt-get install -y \
-python3.8 python3.8-dev \
-python3.8-pip
+python3 python3-dev \
+python3-pip
 RUN pip install pandas
 RUN pip install --upgrade tensorflow
 RUN npm install
