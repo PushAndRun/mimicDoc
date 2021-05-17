@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');  
 var RequestSchema = new mongoose.Schema({
   survival: Number,
+  stay : Number,
   bloodpressure: {
     meanbp_mean: Number,
     meanbp_min: Number,
