@@ -7,12 +7,12 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 ENV PYTHONUNBUFFERED=1
-RUN apk add --update --no-cache python3.7 && ln -sf python3.7 /usr/bin/python
-RUN python3.7 -m ensurepip
+RUN apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python
+RUN python3 -m ensurepip
 RUN pip3 install --no-cache --upgrade pip setuptools
 RUN pip3 --version
-RUN python3.7 -m pip install pandas
-RUN python3.7 -m pip install --no-cache-dir tensorflow
+RUN python3 -m pip install pandas
+RUN python3 -m pip install --no-cache-dir tensorflow
 RUN npm install
 
 # Only for Production
