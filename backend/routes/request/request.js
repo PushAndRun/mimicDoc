@@ -6,9 +6,7 @@ const DiagnosisModel = require('./DiagnosisModel')
 const Patient = require('../patients/PatientModel')
 const RequestModel = require('./RequestModel')
 const verifyToken = require('../auth/VerifyToken')
-
-const predict = require('../predict')
-
+//const predict = require('../../ml/predict')
 
 function isEmptyObject(obj) {
     return !Object.keys(obj).length;
@@ -63,13 +61,10 @@ router.post('/', verifyToken, async (req,res,next) => {
     }
 
     // TODO: Prediction von ML einholen - placeholder for now
-
-    let prediction = await predict("76,M,97,76,40,259,5,24,17,37.002880708670915,136,306,232,,0389;78559;5849;4275;41071;4280;6826;4254;2639");
-    console.log("prediction: death:"+prediction[0]+" - stay: "+prediction[1]);
-    let death_prediction = prediction[0];
-    let stay_prediction = prediction[1];
-
-    //let prediction = predict.predict("76,M,97,76,40,259,5,24,17,37.002880708670915,136,306,232,,0389;78559;5849;4275;41071;4280;6826;4254;2639").split("\n");
+    // let prediction = predict.predict("76,M,97,76,40,259,5,24,17,37.002880708670915,136,306,232,,0389;78559;5849;4275;41071;4280;6826;4254;2639").split("\n");
+    let prediction = [0,14]   //pseudo
+    let death_prediction = prediction[0]
+    let stay_prediction = prediction[1]
 
     // Request in der DB ablegen
     RequestModel.create({
