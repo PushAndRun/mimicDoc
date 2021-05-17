@@ -11,7 +11,7 @@ function predict(params) {
     python.on('close', (code) => {
     console.log(`child process close all stdio with code ${code}`);
     // send data to browser
-    return dataToSend;
+    return dataToSend.split("\n");
     });
 }
 
