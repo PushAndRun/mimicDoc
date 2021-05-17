@@ -5,6 +5,7 @@ const diagnoses = require('../endpoints').csvData
 const Patient = require('../patients/PatientModel')
 const RequestModel = require('./RequestModel')
 const verifyToken = require('../auth/VerifyToken')
+const predict = require('../../ml/predict')
 
 function isEmptyObject(obj) {
     return !Object.keys(obj).length;
@@ -25,7 +26,6 @@ router.post('/', verifyToken, async (req,res,next) => {
     // Wenn Patient noch nicht angelegt wurde (check mit name+geburtsdatum)
     if(!newPatient){
         newPatient  = await Patient.create({
-            id: 1, // What's the deal with the id here?
             name: req.body.patient.name,
             email: "not implemented in Frontend yet",
             medicalData: {
@@ -37,13 +37,12 @@ router.post('/', verifyToken, async (req,res,next) => {
                 diagnoses: req.body.patient.medicalData.diagnoses
             },
             user: req.userId
-
         })
 
     }
 
-    // TODO: Prediction von ML einholen
-    let prediction = 1
+    // TODO: Prediction von ML einholen - placeholder for now
+    let prediction = predict.predict("76,M,97,76,40,259,5,24,17,37.002880708670915,136,306,232,,0389;78559;5849;4275;41071;4280;6826;4254;2639")
 
     // Request in der DB ablegen
     RequestModel.create({
@@ -67,13 +66,17 @@ router.post('/', verifyToken, async (req,res,next) => {
         patient_history: req.body.patient.medicalData.patient_history,
         diagnoses: req.body.patient.medicalData.diagnoses,
         created: new Date(),
-        patient: newPatient.id
+        patient: newPatient._id
     }, 
     function (err, request) {
         if (err) {
             console.log(err)
             return res.status(500).send("There was a problem putting the request into DB`.");}
-
+        Patient.findByIdAndUpdate(newPatient._id, { "$push": { "requests": request._id} },
+        function (err, patient) {
+            if (err) return res.status(500).send("There was a problem updating the patient."+ err);
+            return
+        });
         // On success send back full request including survival prediction
         res.status(200).send(request);
       })
