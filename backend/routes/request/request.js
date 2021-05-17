@@ -2,6 +2,7 @@
 var express = require('express')
 var router = express.Router()
 const diagnoses = require('../endpoints').csvData
+const DiagnosisModel = require('./DiagnosisModel')
 const Patient = require('../patients/PatientModel')
 const RequestModel = require('./RequestModel')
 const verifyToken = require('../auth/VerifyToken')
@@ -41,8 +42,26 @@ router.post('/', verifyToken, async (req,res,next) => {
 
     }
 
+    let unconvertedDiagnoses = req.body.patient.medicalData.diagnoses;
+    const convertedDiagnoses = [String];
+    for (x in unconvertedDiagnoses){
+        console.log("looking for:" + x);
+        if (!isNaN(x)){
+            let diagToNum = null;
+            DiagnosisModel.findOne({$or: [{short_title: x}, {long_titel: x}]}, function(err, diagnosisRes){
+                if (err) {console.log("error while searching " + x + " in our db" + err)};
+                if (!diagnosisRes){console.log(x + ' is not a short_titel diagnosis')};
+                diagToNum = diagnosisRes.icd9_code;
+                console.log("found " + x + " in Db as" + diagToNum);
+            })
+            if (diagToNum != null){
+                convertedDiagnoses.push(diagToNum)
+            }
+        }
+    }
+
     // TODO: Prediction von ML einholen - placeholder for now
-    let survival_prediction, stay_prediction = predict.predict("76,M,97,76,40,259,5,24,17,37.002880708670915,136,306,232,,0389;78559;5849;4275;41071;4280;6826;4254;2639").split(",");
+    //let survival_prediction, stay_prediction = predict.predict("76,M,97,76,40,259,5,24,17,37.002880708670915,136,306,232,,0389;78559;5849;4275;41071;4280;6826;4254;2639").split(",");
 
     // Request in der DB ablegen
     RequestModel.create({
