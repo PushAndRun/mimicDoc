@@ -20,4 +20,4 @@ var PatientSchema = new mongoose.Schema({
   requests : [{type: mongoose.Schema.ObjectId, ref: 'Request' }]
 });
 mongoose.model('Patient', PatientSchema);
-module.exports = mongoose.model('Patient1');
+module.exports = mongoose.model('Patient');
