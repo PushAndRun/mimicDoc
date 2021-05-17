@@ -7,10 +7,9 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 RUN apt-get update && apt-get install -y \
-python3.9 python3.9-dev \
-python3.9-pip
-RUN pip3 install pandas
-RUN pip3 install --upgrade tensorflow
+python3.9
+RUN python -m pip install pandas
+RUN python -m pip install tensorflow
 RUN npm3 install
 
 # Only for Production
