@@ -6,12 +6,17 @@ WORKDIR /usr/src/app
 # Install dependencies
 COPY package*.json ./
 
-RUN apt-get update && apt-get --assume-yes install gnupg2 -qqq
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys F23C5A6CF475977595C89F51BA6932366A755776
-RUN apt-get --assume-yes install software-properties-common
-RUN add-apt-repository ppa:deadsnakes/ppa -y
-RUN apt-get --assume-yes install -y python3.7 python3-venv python3-pip
-RUN python3.7 -m pip install pip
+RUN file="$(apt-get update && \
+            apt-get install -y apt-utils && \
+            apt-get install -y curl && \
+            apt-get update && \
+            apt-get install -y software-properties-common && \
+            apt-get update && \
+            add-apt-repository ppa:deadsnakes/ppa -y && \
+            apt update && \
+            apt install -y python3.7 && \
+            curl https://bootstrap.pypa.io/get-pip.py | python3.7 &&\
+            apt-get update)" && echo $file
 RUN pip3 --version
 RUN python3.7 -m pip install pandas
 RUN python3.7 -m pip install --no-cache-dir tensorflow
