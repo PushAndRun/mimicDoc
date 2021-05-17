@@ -15,4 +15,4 @@ function predict(params) {
     });
 }
 
-module.exports = predict
+module.exports = predict;

@@ -20,7 +20,7 @@ var RequestSchema = new mongoose.Schema({
   patient_history: [String],
   diagnoses: [String],
   created: Date,
-  patient: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
+  patient: { type: mongoose.Schema.ObjectId, ref: 'Patient', required: true }
 });
 mongoose.model('Request', RequestSchema);
 module.exports = mongoose.model('Request');

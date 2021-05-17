@@ -1,11 +1,5 @@
 var mongoose = require('mongoose');  
 var PatientSchema = new mongoose.Schema({  
-  id: {
-        type: Number
-      , required: true
-      , unique: true
-      , min : [10, "id must be 10 figures long"]
-  },
   name: {
     type: String
   , required: true
@@ -22,7 +16,8 @@ var PatientSchema = new mongoose.Schema({
       bloodType: String,
       diagnoses: [String]
   },
-  user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
+  user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true },
+  requests : [{type: mongoose.Schema.ObjectId, ref: 'Request' }]
 });
 mongoose.model('Patient', PatientSchema);
-module.exports = mongoose.model('Patient');
+module.exports = mongoose.model('Patient1');
