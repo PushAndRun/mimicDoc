@@ -9,7 +9,7 @@ COPY package*.json ./
 RUN apt-get update
 RUN apt-get --assume-yes install software-properties-common
 RUN add-apt-repository ppa:deadsnakes/ppa
-RUN apt-get --assume-yes install -y python3.5
+RUN apt-get --assume-yes install -y python3.5 python3-venv python3-pip
 RUN python3.5 -m pip install pip
 RUN python3.5 -m pip install pandas
 RUN python3.5 -m pip install --no-cache-dir tensorflow
