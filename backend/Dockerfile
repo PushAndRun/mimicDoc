@@ -11,7 +11,7 @@ RUN apt-get --assume-yes install software-properties-common
 RUN add-apt-repository ppa:deadsnakes/ppa
 RUN apt-get --assume-yes install -y python3.9 python3-pip
 RUN pip3 install pandas
-RUN pip3 install tensorflow
+RUN pip3 install --no-cache-dir tensorflow
 RUN npm install
 
 # Only for Production
