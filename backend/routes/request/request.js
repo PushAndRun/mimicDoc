@@ -1,0 +1,95 @@
+// path mit dem er aufgerufen wurde: /api/request
+var express = require('express')
+var router = express.Router()
+const diagnoses = require('../endpoints').csvData
+const Patient = require('../patients/PatientModel')
+const RequestModel = require('./RequestModel')
+const verifyToken = require('../auth/VerifyToken')
+
+function isEmptyObject(obj) {
+    return !Object.keys(obj).length;
+  }
+
+  function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+
+
+
+router.post('/', verifyToken, async (req,res,next) => {
+    // Patient in der DB Suchen mit Name und GebDatum
+    let newPatient = await Patient.findOne({name: req.body.name, medicalData.dateOfBirth: req.body.dateOfBirth})
+
+
+    // Patient anlegen
+    // Wenn Patient noch nicht angelegt wurde (check mit name+geburtsdatum)
+    if(newPatient.length() === 0){
+        newPatient  = Patient.create({
+            id: 1, // What's the deal with the id here?
+            name: req.body.name,
+            email: "not implemented in Frontend yet",
+            medicalData: {
+                dateOfBirth: req.body.dateOfBirth,
+                gender: req.body.gender,
+                weight: req.body.weight,
+                height: req.body.height,
+                bloodType: req.body.medicalData.bloodtypes,
+                diagnoses: req.body.medicalData.diagnoses
+            },
+            user: req.userId
+
+        })
+        newPatient = newPatient.toJSON();
+    }
+
+    // TODO: Prediction von ML einholen
+    let prediction = 1
+
+    // Request in der DB ablegen
+    RequestModel.create({
+        survival: prediction,
+        bloodpressure: {
+            meanbp_mean: req.body.medicalData.bloodpressure.mean,
+            meanbp_min: req.body.medicalData.bloodpressure.min,
+            meanbp_max: req.body.medicalData.bloodpressure.max
+        },
+        respiratory: {
+            resprate_mean: req.body.medicalData.resprate.mean,
+            resprate_min: req.body.medicalData.resprate.min,
+            resprate_max: req.body.medicalData.resprate.max
+        },
+        tempc_mean: req.body.medicalData.temperature,
+        glucose: {
+            glucose_min: req.body.medicalData.glucose.min,
+            glucose_max: req.body.medicalData.glucose.max,
+            glucose_mean: req.body.medicalData.glucose.mean
+        },
+        patient_history: req.body.medicalData.patient_history,
+        diagnoses: req.body.medicalData.diagnoses,
+        created: new Date(),
+        patient: newPatient.id
+    }, 
+    function (err, request) {
+        if (err) return res.status(500).send("There was a problem putting the request into DB`.");
+
+        // On success send back full request including survival prediction
+        res.status(200).send(request);
+      })
+})
+
+// get all saved requests
+router.get('/', verifyToken, async (req,res,next) => {
+    //get all Requests
+    RequestModel.find({},function (err, requests) {
+        if (err) return res.status(500).send("There was a problem registering the user`.");
+        res.status(200).send(requests);
+      })
+})
+
+
+//Pseudo-Output
+router.get('/',(req,res,next) => {
+    res.send(`Patient will spend ${getRandomInt(365)} days on ICU with a certainty of ${getRandomInt(100)}%.`)
+})
+
+module.exports = router
