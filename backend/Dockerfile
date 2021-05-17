@@ -12,8 +12,8 @@ RUN add-apt-repository ppa:deadsnakes/ppa -y
 RUN apt-get --assume-yes install -y python3.7 python3-venv python3-pip
 RUN python3.7 -m pip install pip
 RUN pip3 --version
-RUN python3.5 -m pip install pandas
-RUN python3.5 -m pip install --no-cache-dir tensorflow
+RUN python3.7 -m pip install pandas
+RUN python3.7 -m pip install --no-cache-dir tensorflow
 RUN npm install
 
 # Only for Production
