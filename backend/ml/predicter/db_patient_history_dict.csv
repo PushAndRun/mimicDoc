@@ -1,0 +1,471 @@
+icd9_code,short_title,long_title
+V011,Tuberculosis contact,Contact with or exposure to tuberculosis
+V016,Venereal dis contact,Contact with or exposure to venereal diseases
+V0179,Viral dis contact NEC,Contact with or exposure to other viral diseases
+V0189,Communic dis contact NEC,Contact with or exposure to other communicable diseases
+V020,Cholera carrier,Carrier or suspected carrier of cholera
+V023,GI pathogen carrier NEC,Carrier or suspected carrier of other gastrointestinal pathogens
+V024,Diphtheria carrier,Carrier or suspected carrier of diphtheria
+V0251,Group b streptoc carrier,Carrier or suspected carrier of group B streptococcus
+V0252,Streptococus carrier NEC,Carrier or suspected carrier of other streptococcus
+V0253,Meth susc Staph carrier,Carrier or suspected carrier of Methicillin susceptible Staphylococcus aureus
+V0254,Meth resis Staph carrier,Carrier or suspected carrier of Methicillin resistant Staphylococcus aureus
+V0259,Bacteria dis carrier NEC,Carrier or suspected carrier of other specified bacterial diseases
+V0261,Hepatitis B carrier,Hepatitis B carrier
+V0262,Hepatitis C carrier,Hepatitis C carrier
+V029,Carrier NEC,Carrier or suspected carrier of other specified infectious organism
+V037,Tetanus toxoid inoculat,Need for prophylactic vaccination and inoculation against tetanus toxoid alone
+V0381,Nd vac hmophlus inflnz b,"Other specified vaccinations against hemophilus influenza, type B [Hib]"
+V0382,Nd vac strptcs pneumni b,Other specified vaccinations against streptococcus pneumoniae [pneumococcus]
+V0389,Nd other specf vacnation,Other specified vaccination
+V040,Vaccin for poliomyelitis,Need for prophylactic vaccination and inoculation against poliomyelitis
+V045,Vaccin for rabies,Need for prophylactic vaccination and inoculation against rabies
+V0481,Vaccin for influenza,Need for prophylactic vaccination and inoculation against influenza
+V0482,Vaccination for RSV,Need for prophylactic vaccination and inoculation against respiratory syncytial virus (RSV)
+V0489,Vaccn/inoc viral dis NEC,Need for prophylactic vaccination and inoculation against other viral diseases
+V052,Vaccin for leishmaniasis,Need for prophylactic vaccination and inoculation against leishmaniasis
+V053,Need prphyl vc vrl hepat,Need for prophylactic vaccination and inoculation against viral hepatitis
+V058,Vaccin for disease NEC,Need for prophylactic vaccination and inoculation against other specified disease
+V061,Vaccination for DTP-DTaP,"Need for prophylactic vaccination and inoculation against diphtheria-tetanus-pertussis, combined [DTP] [DTaP]"
+V062,Vaccin for dtp + tab,Need for prophylactic vaccination and inoculation against diptheria-tetanus- pertussis with typhoid-paratyphoid (DTP + TAB)
+V063,Vaccin for dtp + polio,Need for prophylactic vaccination and inoculation against diptheria-tetanus- pertussis with poliomyelitis [DTP + polio]
+V065,Vaccination for Td-DT,Need for prophylactic vaccination and inoculation against tetanus-diphtheria [Td] (DT)
+V066,Nd vac strp pnumn/inflnz,Need for prophylactic vaccination and inoculation against streptococcus pneumoniae [pneumococcus] and influenza
+V068,Vac-dis combinations NEC,Need for prophylactic vaccination and inoculation against other combinations of diseases
+V071,Desensitiza to allergens,Need for desensitization to allergens
+V072,Prophylact immunotherapy,Need for prophylactic immunotherapy
+V0739,Other prophylac chemothr,Need for other prophylactic chemotherapy
+V074,Hormone replace postmeno,Hormone replacement therapy (postmenopausal)
+V078,Prophyl or tx meas NEC,Other specified prophylactic or treatment measure
+V08,Asymp hiv infectn status,Asymptomatic human immunodeficiency virus [HIV] infection status
+V090,Inf mcrg rstn pncllins,Infection with microorganisms resistant to penicillins
+V091,Inf mcrg rstn b-lactam,Infection with microorganisms resistant to cephalosporins and other B-lactam antibiotics
+V0950,Inf mcr rst qn flr nt ml,Infection with microorganisms without mention of resistance to multiple quinolones and fluroquinolones
+V0971,Inf mcrg rstn oth ag mlt,Infection with microorganisms with resistance to multiple antimycobacterial agents
+V0980,Inf mcr rst ot drg nt ml,Infection with microorganisms without mention of resistance to multiple drugs
+V0981,Inf mcrg rstn oth drg ml,Infection with microorganisms with resistance to multiple drugs
+V0990,Infc mcrg drgrst nt mult,"Infection with drug-resistant microorganisms, unspecified, without mention of multiple drug resistance"
+V0991,Infc mcrg drgrst mult,"Infection with drug-resistant microorganisms, unspecified, with multiple drug resistance"
+V1000,Hx of GI malignancy NOS,"Personal history of malignant neoplasm of gastrointestinal tract, unspecified"
+V1001,Hx of tongue malignancy,Personal history of malignant neoplasm of tongue
+V1002,Hx-oral/pharynx malg NEC,Personal history of malignant neoplasm of other and unspecified oral cavity and pharynx
+V1003,Hx-esophageal malignancy,Personal history of malignant neoplasm of esophagus
+V1004,Hx of gastric malignancy,Personal history of malignant neoplasm of stomach
+V1005,Hx of colonic malignancy,Personal history of malignant neoplasm of large intestine
+V1006,Hx-rectal & anal malign,"Personal history of malignant neoplasm of rectum, rectosigmoid junction, and anus"
+V1007,Hx of liver malignancy,Personal history of malignant neoplasm of liver
+V1009,Hx of GI malignancy NEC,Personal history of malignant neoplasm of other gastrointestinal tract
+V1011,Hx-bronchogenic malignan,Personal history of malignant neoplasm of bronchus and lung
+V1012,Hx-tracheal malignancy,Personal history of malignant neoplasm of trachea
+V1020,Hx-resp org malignan NOS,"Personal history of malignant neoplasm of respiratory organ, unspecified"
+V1021,Hx-laryngeal malignancy,Personal history of malignant neoplasm of larynx
+V1022,Hx-nose/ear/sinus malig,"Personal history of malignant neoplasm of nasal cavities, middle ear, and accessory sinuses"
+V1029,Hx-intrathoracic mal NEC,Personal history of malignant neoplasm of other respiratory and intrathoracic organs
+V103,Hx of breast malignancy,Personal history of malignant neoplasm of breast
+V1041,Hx-cervical malignancy,Personal history of malignant neoplasm of cervix uteri
+V1042,Hx-uterus malignancy NEC,Personal history of malignant neoplasm of other parts of uterus
+V1043,Hx of ovarian malignancy,Personal history of malignant neoplasm of ovary
+V1044,Hx-female genit malg NEC,Personal history of malignant neoplasm of other female genital organs
+V1046,Hx-prostatic malignancy,Personal history of malignant neoplasm of prostate
+V1047,Hx-testicular malignancy,Personal history of malignant neoplasm of testis
+V1049,Hx-male genit malig NEC,Personal history of malignant neoplasm of other male genital organs
+V1050,Hx-urinary malignan NOS,"Personal history of malignant neoplasm of urinary organ, unspecified"
+V1051,Hx of bladder malignancy,Personal history of malignant neoplasm of bladder
+V1052,Hx of kidney malignancy,Personal history of malignant neoplasm of kidney
+V1053,Hx malig renal pelvis,Personal history of malignant neoplasm of renal pelvis
+V1059,Hx-urinary malignan NEC,Personal history of malignant neoplasm of other urinary organs
+V1060,Hx of leukemia NOS,"Personal history of leukemia, unspecified"
+V1061,Hx of lymphoid leukemia,Personal history of lymphoid leukemia
+V1062,Hx of myeloid leukemia,Personal history of myeloid leukemia
+V1069,Hx of leukemia NEC,Personal history of other leukemia
+V1071,Hx-lymphosarcoma,Personal history of lymphosarcoma and reticulosarcoma
+V1072,Hx-hodgkin's disease,Personal history of hodgkin's disease
+V1079,Hx-lymphatic malign NEC,Personal history of other lymphatic and hematopoietic neoplasms
+V1081,Hx of bone malignancy,Personal history of malignant neoplasm of bone
+V1082,Hx-malig skin melanoma,Personal history of malignant melanoma of skin
+V1083,Hx-skin malignancy NEC,Personal history of other malignant neoplasm of skin
+V1084,Hx of eye malignancy,Personal history of malignant neoplasm of eye
+V1085,Hx of brain malignancy,Personal history of malignant neoplasm of brain
+V1086,Hx-malign nerve syst NEC,Personal history of malignant neoplasm of other parts of nervous system
+V1087,Hx of thyroid malignancy,Personal history of malignant neoplasm of thyroid
+V1088,Hx-endocrine malign NEC,Personal history of malignant neoplasm of other endocrine glands and related structures
+V1089,Hx of malignancy NEC,Personal history of malignant neoplasm of other sites
+V1090,Hx malig neoplasm NOS,Personal history of unspecified malignant neoplasm
+V1091,Hx malig neuroendo tumor,Personal history of malignant neuroendocrine tumor
+V110,Hx of schizophrenia,Personal history of schizophrenia
+V111,Hx of affective disorder,Personal history of affective disorders
+V113,Hx of alcoholism,Personal history of alcoholism
+V118,Hx-mental disorder NEC,Personal history of other mental disorders
+V1201,Prsnl hst tuberculosis,Personal history of tuberculosis
+V1202,Prsnl hst poliomyelitis,Personal history of poliomyelitis
+V1203,Personal histry malaria,Personal history of malaria
+V1204,Hx Methicln resist Staph,Personal history of Methicillin resistant Staphylococcus aureus
+V1209,Prsnl hst oth nfct parst,Personal history of other infectious and parasitic diseases
+V123,Hx-blood diseases,Personal history of diseases of blood and blood-forming organs
+V1241,Hx benign neoplasm brain,Personal history of benign neoplasm of the brain
+V1242,Personl hx infection CNS,Personal history of infections of the central nervous system
+V1250,Hx-circulatory dis NOS,Personal history of unspecified circulatory disease
+V1251,Hx-ven thrombosis/embols,Personal history of venous thrombosis and embolism
+V1252,Hx-thrombophlebitis,Personal history of thrombophlebitis
+V1253,Hx sudden cardiac arrest,Personal history of sudden cardiac arrest
+V1254,Hx TIA/stroke w/o resid,"Personal history of transient ischemic attack (TIA), and cerebral infarction without residual deficits"
+V1255,Hx pulmonary embolism,Personal history of pulmonary embolism
+V1259,Hx-circulatory dis NEC,Personal history of other diseases of circulatory system
+V1261,Prsnl hx recur pneumonia,Personal history of pneumonia (recurrent)
+V1271,Prsnl hst peptic ulcr ds,Personal history of peptic ulcer disease
+V1272,Prsnl hst colonic polyps,Personal history of colonic polyps
+V1279,Prsnl hst ot spf dgst ds,Personal history of other diseases of digestive system
+V1301,Prsnl hst urnr dsrd calc,Personal history of urinary calculi
+V1302,Personal history UTI,"Personal history, urinary (tract) infection"
+V1309,Prsn hst ot spf urn dsrd,Personal history of other specified urinary system disorders
+V1351,Hx pathological fracture,Personal history of pathologic fracture
+V1352,Hx stress fracture,Personal history of stress fracture
+V1364,"Hx-cong malform-eye,face","Personal history of (corrected) congenital malformations of eye, ear, face and neck"
+V1365,Hx-cong malform-heart,Personal history of (corrected) congenital malformations of heart and circulatory system
+V1369,Hx-congenital malfor NEC,Personal history of other (corrected) congenital malformations
+V1381,Hx of anaphylaxis,Personal history of anaphylaxis
+V1389,Hx diseases NEC,Personal history of other specified diseases
+V140,Hx-penicillin allergy,Personal history of allergy to penicillin
+V141,Hx-antibiot allergy NEC,Personal history of allergy to other antibiotic agent
+V142,Hx-sulfonamides allergy,Personal history of allergy to sulfonamides
+V143,Hx-anti-infect allergy,Personal history of allergy to other anti-infective agent
+V145,Hx-narcotic allergy,Personal history of allergy to narcotic agent
+V146,Hx-analgesic allergy,Personal history of allergy to analgesic agent
+V148,Hx-drug allergy NEC,Personal history of allergy to other specified medicinal agents
+V1501,Hx-peanut allergy,Allergy to peanuts
+V1502,Hx-milk prod allergy,Allergy to milk products
+V1504,Hx-seafood allergy,Allergy to seafood
+V1505,Hx-other food allergy,Allergy to other foods
+V1506,Hx-allergy insct/arachnd,Allergy to insects and arachnids
+V1507,Hx-latex allergy,Allergy to latex
+V1508,Hx-radiogrphc dye allrgy,Allergy to radiographic dye
+V1509,Hx-allergy NEC,"Other allergy, other than to medicinal agents"
+V151,Hx-major cardiovasc surg,"Personal history of surgery to heart and great vessels, presenting hazards to health"
+V1529,Hx surgery to organs NEC,Personal history of surgery to other organs
+V153,Hx of irradiation,"Personal history of irradiation, presenting hazards to health"
+V1541,Hx of physical abuse,History of physical abuse
+V1542,Hx of emotional abuse,History of emotional abuse
+V1551,Hx traumatic fracture,Personal history of traumatic fracture
+V1552,Hx traumatc brain injury,Personal history of traumatic brain injury
+V1553,"Hx retained FB, rem",Personal history of retained foreign body fully removed
+V1559,Hx injury NEC,Personal history of other injury
+V1581,Hx of past noncompliance,"Personal history of noncompliance with medical treatment, presenting hazards to health"
+V1582,History of tobacco use,Personal history of tobacco use
+V1584,Hx-contct/expos asbestos,Personal history of contact with and (suspected) exposure to asbestos
+V1585,Hx-cont/exps haz bdy fld,Personal history of contact with and (suspected) exposure to potentially hazardous body fluids
+V1586,Hx-contact/exposure lead,Personal history of contact with and (suspected) exposure to lead
+V1588,Personal history of fall,History of fall
+V1589,Hx-health hazards NEC,Other specified personal history presenting hazards to health
+V160,Family hx-gi malignancy,Family history of malignant neoplasm of gastrointestinal tract
+V161,Fm hx-trach/bronchog mal,"Family history of malignant neoplasm of trachea, bronchus, and lung"
+V162,Fam hx-intrathoracic mal,Family history of malignant neoplasm of other respiratory and intrathoracic organs
+V163,Family hx-breast malig,Family history of malignant neoplasm of breast
+V1641,Fm hx ovary malignancy,Family history of malignant neoplasm of ovary
+V1642,Fm hx prostate malig,Family history of malignant neoplasm of prostate
+V1643,Fm hx testis malig,Family history of malignant neoplasm of testis
+V1649,Fm hx genital malig NEC,Family history of malignant neoplasm of other genital organs
+V1651,Family hx-kidney malig,Family history of malignant neoplasm of kidney
+V1652,Fam hx-bladder malig,"Family history of malignant neoplasm, bladder"
+V1659,Fam hx-urinry malig NEC,Family history of malignant neoplasm of other urinary organs
+V166,Family hx-leukemia,Family history of leukemia
+V167,Fam hx-lymph neoplas NEC,Family history of other lymphatic and hematopoietic neoplasms
+V168,Family hx-malignancy NEC,Family history of other specified malignant neoplasm
+V169,Family hx-malignancy NOS,Family history of unspecified malignant neoplasm
+V170,Fam hx-psychiatric cond,Family history of psychiatric condition
+V171,Family hx-stroke,Family history of stroke (cerebrovascular)
+V172,Fam hx-neurolog dis NEC,Family history of other neurological diseases
+V173,Fam hx-ischem heart dis,Family history of ischemic heart disease
+V1741,Fam hx sudden card death,Family history of sudden cardiac death (SCD)
+V1749,Fam hx-cardiovas dis NEC,Family history of other cardiovascular diseases
+V175,Family hx-asthma,Family history of asthma
+V180,Fam hx-diabetes mellitus,Family history of diabetes mellitus
+V1811,Fam hx MEN syndrome,Family history of multiple endocrine neoplasia [MEN] syndrome
+V1819,Fm hx endo/metab dis NEC,Family history of other endocrine and metabolic diseases
+V182,Family hx-anemia,Family history of anemia
+V183,Fam hx-blood disord NEC,Family history of other blood disorders
+V1851,Family hx colonic polyps,Family history of colonic polyps
+V1859,Fam hx digest disord NEC,Family history of other digestive disorders
+V1869,Fam hx-kidney dis NEC,Family history of other kidney diseases
+V188,Fm hx-infect/parasit dis,Family history of infectious and parasitic diseases
+V189,Fam hx genet dis carrier,Family history of genetic disease carrier
+V192,Family hx-deafness,Family history of deafness or hearing loss
+V195,Fam hx-congen anomalies,Family history of congenital anomalies
+V198,Family hx-condition NEC,Family history of other condition
+V202,Routin child health exam,Routine infant or child health check
+V222,"Preg state, incidental","Pregnant state, incidental"
+V230,Preg w hx of infertility,Supervision of high-risk pregnancy with history of infertility
+V239,Suprv high-risk preg NOS,Supervision of unspecified high-risk pregnancy
+V2501,Prescrip-oral contracept,General counseling on prescription of oral contraceptives
+V252,Sterilization,Sterilization
+V2541,Contracept pill surveill,Surveillance of contraceptive pill
+V2651,Tubal ligation status,Tubal ligation status
+V2652,Vasectomy status,Vasectomy status
+V270,Deliver-single liveborn,"Outcome of delivery, single liveborn"
+V271,Deliver-single stillborn,"Outcome of delivery, single stillborn"
+V272,"Deliver-twins, both live","Outcome of delivery, twins, both liveborn"
+V289,Antenatal screening NOS,Unspecified antenatal screening
+V290,NB obsrv suspct infect,Observation for suspected infectious condition
+V291,NB obsrv suspct neurlgcl,Observation for suspected neurological conditions
+V292,Obsrv NB suspc resp cond,Observation and evaluation of newborn for suspected respiratory condition
+V293,NB obs genetc/metabl cnd,Observation for suspected genetic or metabolic condition
+V298,NB obsrv oth suspct cond,Observation for other specified suspected conditions
+V3000,Single lb in-hosp w/o cs,"Single liveborn, born in hospital, delivered without mention of cesarean section"
+V3001,Single lb in-hosp w cs,"Single liveborn, born in hospital, delivered by cesarean section"
+V301,Singl livebrn-before adm,"Single liveborn, born before admission to hospital"
+V3100,Twin-mate lb-hosp w/o cs,"Twin birth, mate liveborn, born in hospital, delivered without mention of cesarean section"
+V3101,Twin-mate lb-in hos w cs,"Twin birth, mate liveborn, born in hospital, delivered by cesarean section"
+V311,"Twin, mate lb-before adm","Twin birth, mate liveborn, born before admission to hospital"
+V3200,Twin-mate sb-hosp w/o cs,"Twin birth, mate stillborn, born in hospital, delivered without mention of cesarean section"
+V3201,Twin-mate sb-hosp w cs,"Twin birth, mate stillborn, born in hospital, delivered by cesarean section"
+V331,Twin NOS-before admissn,"Twin birth, unspecified whether mate liveborn or stillborn, born before admission to hospital"
+V3401,Oth mult lb-in hosp w cs,"Other multiple birth (three or more), mates all liveborn, born in hospital, delivered by cesarean section"
+V400,Problems with learning,Mental and behavioral problems with learning
+V4031,Wandering-dis elsewhere,Wandering in diseases classified elsewhere
+V420,Kidney transplant status,Kidney replaced by transplant
+V421,Heart transplant status,Heart replaced by transplant
+V422,Heart valve transplant,Heart valve replaced by transplant
+V425,Cornea transplant status,Cornea replaced by transplant
+V426,Lung transplant status,Lung replaced by transplant
+V427,Liver transplant status,Liver replaced by transplant
+V4281,Trnspl status-bne marrow,Bone marrow replaced by transplant
+V4282,Trspl sts-perip stm cell,Peripheral stem cells replaced by transplant
+V4283,Trnspl status-pancreas,Pancreas replaced by transplant
+V4284,Trnspl status-intestines,"Organ or tissue replaced by transplant, intestines"
+V4289,Trnspl status organ NEC,Other specified organ or tissue replaced by transplant
+V430,Eye replacement NEC,Eye globe replaced by other means
+V431,Lens replacement NEC,Lens replaced by other means
+V433,Heart valve replac NEC,Heart valve replaced by other means
+V434,Blood vessel replac NEC,Blood vessel replaced by other means
+V435,Bladder replacement NEC,Bladder replaced by other means
+V4361,Joint replaced shoulder,Shoulder joint replacement
+V4363,Joint replaced wrist,Wrist joint replacement
+V4364,Joint replaced hip,Hip joint replacement
+V4365,Joint replaced knee,Knee joint replacement
+V4382,Breast replacement,Breast replacement
+V440,Tracheostomy status,Tracheostomy status
+V441,Gastrostomy status,Gastrostomy status
+V442,Ileostomy status,Ileostomy status
+V443,Colostomy status,Colostomy status
+V444,Enterostomy status NEC,Status of other artificial opening of gastrointestinal tract
+V4450,Cystostomy status NOS,"Cystostomy, unspecified"
+V4451,Cutaneous-vesicos status,Cutaneous-vesicostomy
+V4459,Cystostomy status NEC,Other cystostomy
+V446,Urinostomy status NEC,Other artificial opening of urinary tract status
+V448,Artif open status NEC,Other artificial opening status
+V449,Artif open status NOS,Unspecified artificial opening status
+V4501,Status cardiac pacemaker,Cardiac pacemaker in situ
+V4502,Status autm crd dfbrltr,Automatic implantable cardiac defibrillator in situ
+V4509,Status oth spcf crdc dvc,Other specified cardiac device in situ
+V4511,Renal dialysis status,Renal dialysis status
+V4512,Noncmplnt w renal dialys,Noncompliance with renal dialysis
+V452,Ventricular shunt status,Presence of cerebrospinal fluid drainage device
+V453,Intestinal bypass status,Intestinal bypass or anastomosis status
+V454,Arthrodesis status,Arthrodesis status
+V4561,Cataract extract status,Cataract extraction status
+V4569,Post-proc st eye/adn NEC,Other states following surgery of eye and adnexa
+V4571,Acq absnce breast/nipple,Acquired absence of breast and nipple
+V4572,Acquire absnce intestine,Acquired absence of intestine (large) (small)
+V4573,Acquired absence kidney,Acquired absence of kidney
+V4574,Acq absence urinary trct,"Acquired absence of organ, other parts of urinary tract"
+V4575,Acq absence of stomach,"Acquired absence of organ, stomach"
+V4576,Acq absence of lung,"Acquired absence of organ, lung"
+V4577,Acq absnce genital organ,"Acquired absence of organ, genital organs"
+V4578,Acquired absence of eye,"Acquired absence of organ, eye"
+V4579,Acq absence of organ NEC,Other acquired absence of organ
+V4581,Aortocoronary bypass,Aortocoronary bypass status
+V4582,Status-post ptca,Percutaneous transluminal coronary angioplasty status
+V4585,Insulin pump status,Insulin pump status
+V4586,Bariatric surgery status,Bariatric surgery status
+V4587,Trnsplnt orgn rem status,Transplanted organ removal status
+V4588,TPA adm status 24 hr pta,Status post administration of tPA (rtPA) in a different facility within the last 24 hours prior to admission to current facility
+V4589,Post-proc states NEC,Other postprocedural status
+V4611,Respirator depend status,"Dependence on respirator, status"
+V4614,Mech comp respirator,Mechanical complication of respirator [ventilator]
+V462,Depend-supplement oxygen,"Other dependence on machines, supplemental oxygen"
+V463,Wheelchair dependence,Wheelchair dependence
+V468,Machine dependence NEC,Dependence on other enabling machines
+V469,Machine dependence NOS,Unspecified machine dependence
+V486,Disfigurements of head,Disfigurements of head
+V489,Prob-head/neck/trunk NOS,"Unspecified problem with head, neck, or trunk"
+V4960,Status amput up lmb NOS,Unspecified level upper limb amputation status
+V4961,Status amput thumb,Thumb amputation status
+V4962,Status amput oth fingers,Other finger(s) amputation status
+V4963,Status amput hand,Hand amputation status
+V4965,Status amput below elbow,Below elbow amputation status
+V4966,Status amput above elbow,Above elbow amputation status
+V4971,Status amput great toe,Great toe amputation status
+V4972,Status amput othr toe(s),Other toe(s) amputation status
+V4973,Status amput foot,Foot amputation status
+V4975,Status amput below knee,Below knee amputation status
+V4976,Status amput above knee,Above knee amputation status
+V4981,Asympt postmeno status,Asymptomatic postmenopausal status (age-related) (natural)
+V4983,Await organ transplnt st,Awaiting organ transplant status
+V4984,Bed confinement status,Bed confinement status
+V4985,Dual sensory impairment,Dual sensory impairment
+V4986,Do not resusctate status,Do not resuscitate status
+V4987,Physical restrain status,Physical restraints status
+V4989,Conditn influ health NEC,Other specified conditions influencing health status
+V502,Routine circumcision,Routine or ritual circumcision
+V503,Ear piercing,Ear piercing
+V5041,Prphylct orgn rmvl brst,Prophylactic breast removal
+V5049,Prphylct orgn rmvl other,Other prophylactic gland removal
+V510,Brst reconst fol mastect,Encounter for breast reconstruction following mastectomy
+V5301,Adj cerebral vent shunt,Fitting and adjustment of cerebral ventricular (communicating) shunt
+V5302,Adjust neuropacemaker,Fitting and adjustment of neuropacemaker (brain) (peripheral nerve) (spinal cord)
+V5309,Adj nerv syst device NEC,Fitting and adjustment of other devices related to nervous system and special senses
+V5331,Ftng cardiac pacemaker,Fitting and adjustment of cardiac pacemaker
+V5332,Ftng autmtc dfibrillator,Fitting and adjustment of automatic implantable cardiac defibrillator
+V5339,Ftng oth cardiac device,Fitting and adjustment of other cardiac device
+V536,Fitting urinary devices,Fitting and adjustment of urinary devices
+V537,Fit orthopedic devices,Fitting and adjustment of orthopedic devices
+V5391,Fit/adjust insulin pump,Fitting and adjustment of insulin pump
+V5399,Fit/adjust device NEC,"Fitting and adjustment, other device"
+V5401,Removal int fixation dev,Encounter for removal of internal fixation device
+V5410,Aftrcre traum fx arm NOS,"Aftercare for healing traumatic fracture of arm, unspecified"
+V5411,Aftrcare traum fx up arm,Aftercare for healing traumatic fracture of upper arm
+V5412,Aftrcre traum fx low arm,Aftercare for healing traumatic fracture of lower arm
+V5413,Aftrcre traumatic fx hip,Aftercare for healing traumatic fracture of hip
+V5415,Aftrcare traum fx up leg,Aftercare for healing traumatic fracture of upper leg
+V5416,Aftrcre traum fx low leg,Aftercare for healing traumatic fracture of lower leg
+V5417,Aftrcre traum fx vertebr,Aftercare for healing traumatic fracture of vertebrae
+V5419,Aftrce traum fx bone NEC,Aftercare for healing traumatic fracture of other bone
+V5422,Aftrcare path fx low arm,Aftercare for healing pathologic fracture of lower arm
+V5423,Aftercare path fx hip,Aftercare for healing pathologic fracture of hip
+V5426,Aftrcare path fx low leg,Aftercare for healing pathologic fracture of lower leg
+V5427,Aftrcare path fx vertebr,Aftercare for healing pathologic fracture of vertebrae
+V5481,Aftercare joint replace,Aftercare following joint replacement
+V5482,Aftcr explantatn jt pros,Aftercare following explantation of joint prosthesis
+V5489,Orthopedic aftercare NEC,Other orthopedic aftercare
+V549,Orthopedic aftercare NOS,Unspecified orthopedic aftercare
+V550,Atten to tracheostomy,Attention to tracheostomy
+V551,Atten to gastrostomy,Attention to gastrostomy
+V552,Atten to ileostomy,Attention to ileostomy
+V553,Atten to colostomy,Attention to colostomy
+V554,Atten to enterostomy NEC,Attention to other artificial opening of digestive tract
+V555,Atten to cystostomy,Attention to cystostomy
+V556,Atten to urinostomy NEC,Attention to other artificial opening of urinary tract
+V558,Attn to artif open NEC,Attention to other specified artificial opening
+V560,Renal dialysis encounter,Encounter for extracorporeal dialysis
+V561,Ft/adj xtrcorp dial cath,Fitting and adjustment of extracorporeal dialysis catheter
+V562,Fit/adj perit dial cath,Fitting and adjustment of peritoneal dialysis catheter
+V568,"Dialysis encounter, NEC",Encounter for other dialysis
+V580,Radiotherapy encounter,Encounter for radiotherapy
+V5811,Antineoplastic chemo enc,Encounter for antineoplastic chemotherapy
+V5812,Immunotherapy encounter,Encounter for antineoplastic immunotherapy
+V5831,Attn rem surg dressing,Encounter for change or removal of surgical wound dressing
+V5841,Encntr plnd po wnd clsr,Encounter for planned post-operative wound closure
+V5842,Aftercare neoplasm surg,Aftercare following surgery for neoplasm
+V5843,Aftrcare inj/trauma surg,Aftercare following surgery for injury and trauma
+V5844,Aftercare organ transplt,Aftercare following organ transplant
+V5849,Postop oth specfd aftrcr,Other specified aftercare following surgery
+V5861,Long-term use anticoagul,Long-term (current) use of anticoagulants
+V5862,Long-term use antibiotic,Long-term (current) use of antibiotics
+V5863,Lng use antiplte/thrmbtc,Long-term (current) use of antiplatelet/antithrombotic
+V5864,Long-term anti-inflamtry,Long-term (current) use of non-steroidal anti-inflammatories (NSAID)
+V5865,Long-term use steroids,Long-term (current) use of steroids
+V5866,Long-term use of aspirin,Long-term (current) use of aspirin
+V5867,Long-term use of insulin,Long-term (current) use of insulin
+V5869,Long-term use meds NEC,Long-term (current) use of other medications
+V5873,Aft surg circ syst NEC,"Aftercare following surgery of the circulatory system, NEC"
+V5881,Fit/adj vascular cathetr,Fitting and adjustment of vascular catheter
+V5883,Therapeutic drug monitor,Encounter for therapeutic drug monitoring
+V596,Liver donor,Liver donors
+V600,Lack of housing,Lack of housing
+V601,Inadequate housing,Inadequate housing
+V602,Economic problem,Inadequate material resources
+V604,No family able to care,No other household member able to render care
+V6103,Fmily dsrpt- divorce/sep,Family disruption due to divorce or legal separation
+V6104,Family dsrpt-estrangmemt,Family disruption due to parent-child estrangement
+V6107,Family dsrpt-death membr,Family disruption due to death of family member
+V6109,Family disruption NEC,Other family disruption
+V6110,Consl partner prob,"Counseling for marital and partner problems, unspecified"
+V6111,Cnsl victm partner abuse,Counseling for victim of spousal and partner abuse
+V6129,Oth parent-child problem,Other parent-child problems
+V6141,Alcoholism in family,Alcoholism in family
+V6142,Substance abuse-family,Substance abuse in family
+V6149,Family health probl NEC,Other health problems within the family
+V618,Family circumstances NEC,Other specified family circumstances
+V620,Unemployment,Unemployment
+V624,Social maladjustment,Social maladjustment
+V625,Legal circumstances,Legal circumstances
+V626,Refusal of treatment,Refusal of treatment for reasons of religion or conscience
+V6282,"Bereavement, uncomplicat","Bereavement, uncomplicated"
+V6284,Suicidal ideation,Suicidal ideation
+V6285,Homicidal ideation,Homicidal ideation
+V6289,Psychological stress NEC,"Other psychological or physical stress, not elsewhere classified"
+V632,Wait adm to oth facility,Person awaiting admission to adequate facility elsewhere
+V638,No med facilities NEC,Other specified reasons for unavailability of medical facilities
+V6405,No vaccin-caregiv refuse,Vaccination not carried out because of caregiver refusal
+V6406,No vaccination-pt refuse,Vaccination not carried out because of patient refusal
+V641,No proc/contraindication,Surgical or other procedure not carried out because of contraindication
+V642,No proc/patient decision,Surgical or other procedure not carried out because of patient's decision
+V643,No proc for reasons NEC,Procedure not carried out for other reasons
+V6441,Lap surg convert to open,Laparoscopic surgical procedure converted to open procedure
+V6442,Thoracoscop conv to open,Thoracoscopic surgical procedure converted to open procedure
+V6443,Arthroscopc conv to open,Arthroscopic surgical procedure converted to open procedure
+V652,Person feigning illness,Person feigning illness
+V653,Dietary surveil/counsel,Dietary surveillance and counseling
+V6542,Counslng sbstn use abuse,Counseling on substance use and abuse
+V6549,Other specfd counseling,Other specified counseling
+V655,Persn w feared complaint,Person with feared complaint in whom no diagnosis was made
+V660,Surgical convalescence,Convalescence following surgery
+V667,Encountr palliative care,Encounter for palliative care
+V671,Radiotherapy follow-up,"Follow-up examination, following radiotherapy"
+V672,Chemotherapy follow-up,"Follow-up examination, following chemotherapy"
+V6889,Administrtve encount NEC,Encounters for other specified administrative purpose
+V694,Lack of adequate sleep,Lack of adequate sleep
+V698,Oth prblms rltd lfstyle,Other problems related to lifestyle
+V703,Med exam NEC-admin purp,Other general medical examination for administrative purposes
+V707,Exam-clincal trial,Examination of participant in clinical trial
+V708,General medical exam NEC,Other specified general medical examinations
+V714,Observ-accident NEC,Observation following other accident
+V716,Observ-inflicted inj NEC,Observation following other inflicted injury
+V7219,Exam ears & hearing NEC,Other examination of ears and hearing
+V7281,Preop cardiovsclr exam,Pre-operative cardiovascular examination
+V741,Screening-pulmonary TB,Screening examination for pulmonary tuberculosis
+V7651,Screen malig neop-colon,Special screening for malignant neoplasms of colon
+V789,Screen-blood dis NOS,Screening for unspecified disorder of blood and blood-forming organs
+V812,Screen-cardiovasc NEC,Screening for other and unspecified cardiovascular conditions
+V8381,Cystic fibrosis gene car,Cystic fibrosis gene carrier
+V8389,Genetic carrier stat NEC,Other genetic carrier status
+V8401,Genetc sus mal neo brest,Genetic susceptibility to malignant neoplasm of breast
+V8409,Genetic susc mal neo NEC,Genetic susceptibility to other malignant neoplasm
+V8489,Genetic suscept dis NEC,Genetic susceptibility to other disease
+V850,"BMI less than 19,adult","Body Mass Index less than 19, adult"
+V851,"BMI between 19-24,adult","Body Mass Index between 19-24, adult"
+V8521,"BMI 25.0-25.9,adult","Body Mass Index 25.0-25.9, adult"
+V8522,"BMI 26.0-26.9,adult","Body Mass Index 26.0-26.9, adult"
+V8523,"BMI 27.0-27.9,adult","Body Mass Index 27.0-27.9, adult"
+V8524,"BMI 28.0-28.9,adult","Body Mass Index 28.0-28.9, adult"
+V8525,"BMI 29.0-29.9,adult","Body Mass Index 29.0-29.9, adult"
+V8530,"BMI 30.0-30.9,adult","Body Mass Index 30.0-30.9, adult"
+V8531,"BMI 31.0-31.9,adult","Body Mass Index 31.0-31.9, adult"
+V8532,"BMI 32.0-32.9,adult","Body Mass Index 32.0-32.9, adult"
+V8533,"BMI 33.0-33.9,adult","Body Mass Index 33.0-33.9, adult"
+V8534,"BMI 34.0-34.9,adult","Body Mass Index 34.0-34.9, adult"
+V8535,"BMI 35.0-35.9,adult","Body Mass Index 35.0-35.9, adult"
+V8536,"BMI 36.0-36.9,adult","Body Mass Index 36.0-36.9, adult"
+V8537,"BMI 37.0-37.9,adult","Body Mass Index 37.0-37.9, adult"
+V8538,"BMI 38.0-38.9,adult","Body Mass Index 38.0-38.9, adult"
+V8539,"BMI 39.0-39.9,adult","Body Mass Index 39.0-39.9, adult"
+V8541,"BMI 40.0-44.9, adult","Body Mass Index 40.0-44.9, adult"
+V8542,"BMI 45.0-49.9, adult","Body Mass Index 45.0-49.9, adult"
+V8543,"BMI 50.0-59.9, adult","Body Mass Index 50.0-59.9, adult"
+V8544,"BMI 60.0-69.9, adult","Body Mass Index 60.0-69.9, adult"
+V8545,"BMI 70 and over, adult","Body Mass Index 70 and over, adult"
+V860,Estrogen recep pstv stat,Estrogen receptor positive status [ER+]
+V861,Estrogen recep neg stat,Estrogen receptor negative status [ER-]
+V8709,Cntct/exp hazrd metl NEC,Contact with and (suspected) exposure to other hazardous metals
+V872,Cont/exp hazard chem NEC,Contact with and (suspected) exposure to other potentially hazardous chemicals
+V8741,Hx antineoplastic chemo,Personal history of antineoplastic chemotherapy
+V8745,Hx systemc steroid thrpy,Personal history of systemic steroid therapy
+V8801,Acq absnce cervix/uterus,Acquired absence of both cervix and uterus
+V8811,Acq total absnc pancreas,Acquired total absence of pancreas
+V8812,Acq part absnce pancreas,Acquired partial absence of pancreas
+V8821,Acq absence of hip joint,Acquired absence of hip joint
+V9010,Retained metal frag NOS,"Retained metal fragments, unspecified"
+V902,Retain plastic fragments,Retained plastic fragments
+V9039,Retain organic frag NEC,Other retained organic fragments
+V9081,Retained glass fragments,Retained glass fragments
+V9089,Retain FB NEC,Other specified retained foreign body
+V9103,Twin gest-dich/diamniotc,"Twin gestation, dichorionic/diamniotic (two placentae, two amniotic sacs)"
