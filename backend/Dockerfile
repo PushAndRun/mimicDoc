@@ -12,7 +12,7 @@ RUN python3 --version
 RUN python3 -m ensurepip
 RUN pip3 install --no-cache --upgrade pip setuptools
 RUN pip3 --version
-RUN ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future python3 -m pip install pandas
+RUN ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future pip3 install pandas
 RUN ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future python3 -m pip install --no-cache-dir tensorflow
 RUN npm install
 
