@@ -6,6 +6,9 @@ WORKDIR /usr/src/app
 # Install dependencies
 COPY package*.json ./
 
+RUN apt-get update || : && apt-get install python3-dev python3-pip -y
+RUN pip install pandas
+RUN pip install --upgrade tensorflow
 RUN npm install
 
 # Only for Production
