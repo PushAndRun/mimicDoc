@@ -6,9 +6,10 @@ WORKDIR /usr/src/app
 # Install dependencies
 COPY package*.json ./
 
+RUN apt-get update
 RUN apt-get install software-properties-common
 RUN add-apt-repository ppa:deadsnakes/ppa
-RUN apt-get update && apt-get install -y python3.9
+RUN apt-get install -y python3.9
 RUN python -m pip install pandas
 RUN python -m pip install tensorflow
 RUN npm3 install
