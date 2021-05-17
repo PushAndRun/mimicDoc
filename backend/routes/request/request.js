@@ -43,12 +43,12 @@ router.post('/', verifyToken, async (req,res,next) => {
 
     // TODO: Prediction von ML einholen - placeholder for now
     let prediction = predict.predict("76,M,97,76,40,259,5,24,17,37.002880708670915,136,306,232,,0389;78559;5849;4275;41071;4280;6826;4254;2639").split("\n");
-    let survival_prediction = prediction[0]
+    let death_prediction = prediction[0]
     let stay_prediction = prediction[1]
 
     // Request in der DB ablegen
     RequestModel.create({
-        survival: survival_prediction,
+        survival: death_prediction,
         stay: stay_prediction,
         bloodpressure: {
             meanbp_mean: req.body.patient.medicalData.bloodpressure.mean,
