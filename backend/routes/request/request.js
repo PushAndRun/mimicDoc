@@ -39,6 +39,12 @@ router.post('/', verifyToken, async (req,res,next) => {
             },
             user: req.userId
         })
+        // push patient to user
+        User.findByIdAndUpdate(req.userId, 
+            { "$push": { "patients": p._id} },
+            function (err, user) {
+                if (err) return res.status(500).send("There was a problem updating the user."+ err);
+            })
 
     }
     /*
