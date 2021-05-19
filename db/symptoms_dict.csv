@@ -1,0 +1,1142 @@
+icd9_code,short_title,long_title
+700,Corns and callosities,Corns and callosities
+7010,Circumscribe scleroderma,Circumscribed scleroderma
+7011,"Keratoderma, acquired","Keratoderma, acquired"
+7012,Acq acanthosis nigricans,Acquired acanthosis nigricans
+7013,Striae atrophicae,Striae atrophicae
+7014,Keloid scar,Keloid scar
+7015,Abnormal granulation NEC,Other abnormal granulation tissue
+7018,Skin hypertro/atroph NEC,Other specified hypertrophic and atrophic conditions of skin
+7019,Skin hypertro/atroph NOS,Unspecified hypertrophic and atrophic conditions of skin
+7020,Actinic keratosis,Actinic keratosis
+70219,Other sborheic keratosis,Other seborrheic keratosis
+7028,Other specf dermatoses,Other specified dermatoses
+7030,Ingrowing nail,Ingrowing nail
+7038,Diseases of nail NEC,Other specified diseases of nail
+70400,Alopecia NOS,"Alopecia, unspecified"
+70401,Alopecia areata,Alopecia areata
+70409,Alopecia NEC,Other alopecia
+7041,Hirsutism,Hirsutism
+7042,Abnormalities of hair,Abnormalities of the hair
+7048,Hair diseases NEC,Other specified diseases of hair and hair follicles
+7051,Prickly heat,Prickly heat
+70521,Primary focal hyprhidros,Primary focal hyperhidrosis
+70583,Hidradenitis,Hidradenitis
+7061,Acne NEC,Other acne
+7062,Sebaceous cyst,Sebaceous cyst
+7068,Sebaceous gland dis NEC,Other specified diseases of sebaceous glands
+7069,Sebaceous gland dis NOS,Unspecified disease of sebaceous glands
+70700,"Pressure ulcer, site NOS","Pressure ulcer, unspecified site"
+70701,"Pressure ulcer, elbow","Pressure ulcer, elbow"
+70702,"Pressure ulcer, upr back","Pressure ulcer, upper back"
+70703,"Pressure ulcer, low back","Pressure ulcer, lower back"
+70704,"Pressure ulcer, hip","Pressure ulcer, hip"
+70705,"Pressure ulcer, buttock","Pressure ulcer, buttock"
+70706,"Pressure ulcer, ankle","Pressure ulcer, ankle"
+70707,"Pressure ulcer, heel","Pressure ulcer, heel"
+70709,"Pressure ulcer, site NEC","Pressure ulcer, other site"
+70710,Ulcer of lower limb NOS,"Ulcer of lower limb, unspecified"
+70711,Ulcer of thigh,Ulcer of thigh
+70712,Ulcer of calf,Ulcer of calf
+70713,Ulcer of ankle,Ulcer of ankle
+70714,Ulcer of heel & midfoot,Ulcer of heel and midfoot
+70715,Ulcer other part of foot,Ulcer of other part of foot
+70719,Ulcer oth part low limb,Ulcer of other part of lower limb
+70720,"Pressure ulcer,stage NOS","Pressure ulcer, unspecified stage"
+70721,"Pressure ulcer, stage I","Pressure ulcer, stage I"
+70722,"Pressure ulcer, stage II","Pressure ulcer, stage II"
+70723,"Pressure ulcer,stage III","Pressure ulcer, stage III"
+70724,"Pressure ulcer, stage IV","Pressure ulcer, stage IV"
+70725,"Pressure ulcer,unstagebl","Pressure ulcer, unstageable"
+7078,Chronic skin ulcer NEC,Chronic ulcer of other specified sites
+7079,Chronic skin ulcer NOS,Chronic ulcer of unspecified site
+7080,Allergic urticaria,Allergic urticaria
+7083,Dermatographic urticaria,Dermatographic urticaria
+7088,Urticaria NEC,Other specified urticaria
+7089,Urticaria NOS,"Urticaria, unspecified"
+70900,"Dyschromia, unspecified","Dyschromia, unspecified"
+70901,Vitiligo,Vitiligo
+70909,Other dyschromia,Other dyschromia
+7092,Scar & fibrosis of skin,Scar conditions and fibrosis of skin
+7093,Degenerative skin disord,Degenerative skin disorders
+7094,Foreign body granul-skin,Foreign body granuloma of skin and subcutaneous tissue
+7098,Skin disorders NEC,Other specified disorders of skin
+7099,Skin disorder NOS,Unspecified disorder of skin and subcutaneous tissue
+7100,Syst lupus erythematosus,Systemic lupus erythematosus
+7101,Systemic sclerosis,Systemic sclerosis
+7102,Sicca syndrome,Sicca syndrome
+7103,Dermatomyositis,Dermatomyositis
+7104,Polymyositis,Polymyositis
+7105,Eosinophilia myalgia snd,Eosinophilia myalgia syndrome
+7108,Diff connect tis dis NEC,Other specified diffuse diseases of connective tissue
+7109,Diff connect tis dis NOS,Unspecified diffuse connective tissue disease
+71101,Pyogen arthritis-shlder,"Pyogenic arthritis, shoulder region"
+71102,Pyogen arthritis-up/arm,"Pyogenic arthritis, upper arm"
+71103,Pyogen arthritis-forearm,"Pyogenic arthritis, forearm"
+71104,Pyogen arthritis-hand,"Pyogenic arthritis, hand"
+71105,Pyogen arthritis-pelvis,"Pyogenic arthritis, pelvic region and thigh"
+71106,Pyogen arthritis-l/leg,"Pyogenic arthritis, lower leg"
+71107,Pyogen arthritis-ankle,"Pyogenic arthritis, ankle and foot"
+71108,Pyogen arthritis NEC,"Pyogenic arthritis, other specified sites"
+71109,Pyogen arthritis-mult,"Pyogenic arthritis, multiple sites"
+71120,Behcet arthritis-unspec,"Arthropathy in Behcet's syndrome, site unspecified"
+71155,Viral arthritis-pelvis,"Arthropathy associated with other viral diseases, pelvic region and thigh"
+71180,Inf arthritis NEC-unspec,"Arthropathy associated with other infectious and parasitic diseases, site unspecified"
+71191,Inf arthritis NOS-shlder,"Unspecified infective arthritis, shoulder region"
+71195,Inf arthrit NOS-pelvis,"Unspecified infective arthritis, pelvic region and thigh"
+71198,Inf arthrit NOS-oth site,"Unspecified infective arthritis, other specified sites"
+71213,Dicalc phos crys-forearm,"Chondrocalcinosis, due to dicalcium phosphate crystals, forearm"
+71216,Dicalc phos cryst-l/leg,"Chondrocalcinosis, due to dicalcium phosphate crystals, lower leg"
+71222,Pyrophosph cryst-up/arm,"Chondrocalcinosis, due to pyrophosphate crystals, upper arm"
+71226,Pyrophosph cryst-l/leg,"Chondrocalcinosis, due to pyrophosphate crystals, lower leg"
+71230,Chondrocalcin NOS-unspec,"Chondrocalcinosis, unspecified, site unspecified"
+71233,Chondrocalc NOS-forearm,"Chondrocalcinosis, unspecified, forearm"
+71235,Chondrocalcin NOS-pelvis,"Chondrocalcinosis, unspecified, pelvic region and thigh"
+71236,Chondrocalcin NOS-l/leg,"Chondrocalcinosis, unspecified, lower leg"
+71237,Chondrocalcin NOS-ankle,"Chondrocalcinosis, unspecified, ankle and foot"
+71238,Chondrocalc NOS-oth site,"Chondrocalcinosis, unspecified, other specified sites"
+71239,Chondrocalcin NOS-mult,"Chondrocalcinosis, unspecified, multiple sites"
+71296,Cryst arthrop NOS-l/leg,"Unspecified crystal arthropathy, lower leg"
+7131,Arthrop w noninf GI dis,Arthropathy associated with gastrointestinal conditions other than infections
+7132,Arthropath w hematol dis,Arthropathy associated with hematological disorders
+7135,Arthropathy w nerve dis,Arthropathy associated with neurological disorders
+7138,Arthrop w oth dis NEC,Arthropathy associated with other conditions classifiable elsewhere
+7140,Rheumatoid arthritis,Rheumatoid arthritis
+7141,Felty's syndrome,Felty's syndrome
+7142,Syst rheum arthritis NEC,Other rheumatoid arthritis with visceral or systemic involvement
+71430,Juv rheum arthritis NOS,"Polyarticular juvenile rheumatoid arthritis, chronic or unspecified"
+71432,Pauciart juv rheum arthr,Pauciarticular juvenile rheumatoid arthritis
+71481,Rheumatoid lung,Rheumatoid lung
+71489,Inflamm polyarthrop NEC,Other specified inflammatory polyarthropathies
+7149,Inflamm polyarthrop NOS,Unspecified inflammatory polyarthropathy
+71500,General osteoarthrosis,"Osteoarthrosis, generalized, site unspecified"
+71504,Gen osteoarthros-hand,"Osteoarthrosis, generalized, hand"
+71509,General osteoarthrosis,"Osteoarthrosis, generalized, multiple sites"
+71515,Loc prim osteoart-pelvis,"Osteoarthrosis, localized, primary, pelvic region and thigh"
+71516,Loc prim osteoart-l/leg,"Osteoarthrosis, localized, primary, lower leg"
+71530,Loc osteoarth NOS-unspec,"Osteoarthrosis, localized, not specified whether primary or secondary, site unspecified"
+71531,Loc osteoarth NOS-shlder,"Osteoarthrosis, localized, not specified whether primary or secondary, shoulder region"
+71533,Loc osteoart NOS-forearm,"Osteoarthrosis, localized, not specified whether primary or secondary, forearm"
+71534,Loc osteoarth NOS-hand,"Osteoarthrosis, localized, not specified whether primary or secondary, hand"
+71535,Loc osteoarth NOS-pelvis,"Osteoarthrosis, localized, not specified whether primary or secondary, pelvic region and thigh"
+71536,Loc osteoarth NOS-l/leg,"Osteoarthrosis, localized, not specified whether primary or secondary, lower leg"
+71537,Loc osteoarth NOS-ankle,"Osteoarthrosis, localized, not specified whether primary or secondary, ankle and foot"
+71580,Osteoarthrosis-mult site,"Osteoarthrosis involving, or with mention of more than one site, but not specified as generalized, site unspecified"
+71589,Osteoarthrosis-mult site,"Osteoarthrosis involving, or with mention of more than one site, but not specified as generalized, multiple sites"
+71590,Osteoarthros NOS-unspec,"Osteoarthrosis, unspecified whether generalized or localized, site unspecified"
+71591,Osteoarthros NOS-shlder,"Osteoarthrosis, unspecified whether generalized or localized, shoulder region"
+71592,Osteoarthros NOS-up/arm,"Osteoarthrosis, unspecified whether generalized or localized, upper arm"
+71593,Osteoarthros NOS-forearm,"Osteoarthrosis, unspecified whether generalized or localized, forearm"
+71594,Osteoarthros NOS-hand,"Osteoarthrosis, unspecified whether generalized or localized, hand"
+71595,Osteoarthros NOS-pelvis,"Osteoarthrosis, unspecified whether generalized or localized, pelvic region and thigh"
+71596,Osteoarthros NOS-l/leg,"Osteoarthrosis, unspecified whether generalized or localized, lower leg"
+71597,Osteoarthros NOS-ankle,"Osteoarthrosis, unspecified whether generalized or localized, ankle and foot"
+71598,Osteoarthro NOS-oth site,"Osteoarthrosis, unspecified whether generalized or localized, other specified sites"
+71615,Traum arthropathy-pelvis,"Traumatic arthropathy, pelvic region and thigh"
+71616,Traum arthropathy-l/leg,"Traumatic arthropathy, lower leg"
+71650,Polyarthritis NOS-unspec,"Unspecified polyarthropathy or polyarthritis, site unspecified"
+71666,Monoarthritis NOS-l/leg,"Unspecified monoarthritis, lower leg"
+71680,Arthropathy NEC-unspec,"Other specified arthropathy, site unspecified"
+71687,Arthropathy NEC-ankle,"Other specified arthropathy, ankle and foot"
+71690,Arthropathy NOS-unspec,"Arthropathy, unspecified, site unspecified"
+71691,Arthropathy NOS-shlder,"Arthropathy, unspecified, shoulder region"
+71693,Arthropathy NOS-forearm,"Arthropathy, unspecified, forearm"
+71694,Arthropathy NOS-hand,"Arthropathy, unspecified, hand"
+71695,Arthropathy NOS-pelvis,"Arthropathy, unspecified, pelvic region and thigh"
+71696,Arthropathy NOS-l/leg,"Arthropathy, unspecified, lower leg"
+71697,Arthropathy NOS-ankle,"Arthropathy, unspecified, ankle and foot"
+71698,Arthropathy NOS-oth site,"Arthropathy, unspecified, other specified sites"
+71699,Arthropathy NOS-mult,"Arthropathy, unspecified, multiple sites"
+7176,Loose body in knee,Loose body in knee
+71784,Old disrupt post cruciat,Old disruption of posterior cruciate ligament
+71815,Loose body-pelvis,"Loose body in joint, pelvic region and thigh"
+71821,Pathol dislocat-shlder,"Pathological dislocation of joint, shoulder region"
+71828,Pathol dislocat-jt NEC,"Pathological dislocation of joint, other specified sites"
+71831,Recur dislocat-shlder,"Recurrent dislocation of joint, shoulder region"
+71835,Recur dislocat-pelvis,"Recurrent dislocation of joint, pelvic region and thigh"
+71836,Recur dislocat-l/leg,"Recurrent dislocation of joint, lower leg"
+71840,Jt contracture-unspec,"Contracture of joint, site unspecified"
+71842,Jt contracture-up/arm,"Contracture of joint, upper arm"
+71843,Jt contracture-forearm,"Contracture of joint, forearm"
+71844,Jt contracture-hand,"Contracture of joint, hand"
+71845,Jt contracture-pelvis,"Contracture of joint, pelvic region and thigh"
+71846,Jt contracture-l/leg,"Contracture of joint, lower leg"
+71847,Jt contracture-ankle,"Contracture of joint, ankle and foot"
+71848,Jt contracture-jt NEC,"Contracture of joint, other specified sites"
+71849,Jt contracture-mult jts,"Contracture of joint, multiple sites"
+71855,Ankylosis-pelvis,"Ankylosis of joint, pelvic region and thigh"
+71856,Ankylosis-lower/leg,"Ankylosis of joint, lower leg"
+71865,Protrusio acetabuli NOS,"Unspecified intrapelvic protrusion of acetabulum, pelvic region and thigh"
+71884,Jt derangement NEC-hand,"Other joint derangement, not elsewhere classified, hand"
+71887,Jt derangement NEC-ankle,"Other joint derangement, not elsewhere classified, ankle and foot"
+71888,Jt derangment NEC-oth jt,"Other joint derangement, not elsewhere classified, other specified sites"
+71891,Jt derangment NOS-shlder,"Unspecified derangement of joint, shoulder region"
+71895,Jt derangment NOS-pelvis,"Unspecified derangement of joint, pelvic region and thigh"
+71897,Jt derangement NOS-ankle,"Unspecified derangement of joint, ankle and foot"
+71901,Joint effusion-shlder,"Effusion of joint, shoulder region"
+71902,Joint effusion-up/arm,"Effusion of joint, upper arm"
+71903,Joint effusion-forearm,"Effusion of joint, forearm"
+71904,Joint effusion-hand,"Effusion of joint, hand"
+71905,Joint effusion-pelvis,"Effusion of joint, pelvic region and thigh"
+71906,Joint effusion-l/leg,"Effusion of joint, lower leg"
+71907,Joint effusion-ankle,"Effusion of joint, ankle and foot"
+71909,Joint effusion-mult jts,"Effusion of joint, multiple sites"
+71911,Hemarthrosis-shlder,"Hemarthrosis, shoulder region"
+71912,Hemarthrosis-up/arm,"Hemarthrosis, upper arm"
+71913,Hemarthrosis-forearm,"Hemarthrosis, forearm"
+71916,Hemarthrosis-l/leg,"Hemarthrosis, lower leg"
+71917,Hemarthrosis-ankle,"Hemarthrosis, ankle and foot"
+71918,Hemarthrosis-jt NEC,"Hemarthrosis, other specified sites"
+71926,Villonod synovit-l/leg,"Villonodular synovitis, lower leg"
+71930,Palindrom rheum-unspec,"Palindromic rheumatism, site unspecified"
+71940,Joint pain-unspec,"Pain in joint, site unspecified"
+71941,Joint pain-shlder,"Pain in joint, shoulder region"
+71942,Joint pain-up/arm,"Pain in joint, upper arm"
+71943,Joint pain-forearm,"Pain in joint, forearm"
+71944,Joint pain-hand,"Pain in joint, hand"
+71945,Joint pain-pelvis,"Pain in joint, pelvic region and thigh"
+71946,Joint pain-l/leg,"Pain in joint, lower leg"
+71947,Joint pain-ankle,"Pain in joint, ankle and foot"
+71949,Joint pain-mult jts,"Pain in joint, multiple sites"
+71950,Jt stiffness NEC-unspec,"Stiffness of joint, not elsewhere classified, site unspecified"
+71954,Jt stiffness NEC-hand,"Stiffness of joint, not elsewhere classified, hand"
+71958,Jt stiffness NEC-oth jt,"Stiffness of joint, not elsewhere classified, other specified sites"
+71965,Joint symptom NEC-pelvis,"Other symptoms referable to joint, pelvic region and thigh"
+71966,Joint symptom NEC-l/leg,"Other symptoms referable to joint, lower leg"
+7197,Difficulty in walking,Difficulty in walking
+71985,Joint dis NEC-pelvis,"Other specified disorders of joint, pelvic region and thigh"
+71986,Joint dis NEC-l/leg,"Other specified disorders of joint, lower leg"
+71990,Joint dis NOS-unspec jt,"Unspecified disorder of joint, site unspecified"
+71996,Joint dis NOS-l/leg,"Unspecified disorder of joint, lower leg"
+7200,Ankylosing spondylitis,Ankylosing spondylitis
+7202,Sacroiliitis NEC,"Sacroiliitis, not elsewhere classified"
+7209,Inflam spondylopathy NOS,Unspecified inflammatory spondylopathy
+7210,Cervical spondylosis,Cervical spondylosis without myelopathy
+7211,Cerv spondyl w myelopath,Cervical spondylosis with myelopathy
+7212,Thoracic spondylosis,Thoracic spondylosis without myelopathy
+7213,Lumbosacral spondylosis,Lumbosacral spondylosis without myelopathy
+72141,Spond compr thor sp cord,"Spondylosis with myelopathy, thoracic region"
+72142,Spond compr lumb sp cord,"Spondylosis with myelopathy, lumbar region"
+7217,Traumatic spondylopathy,Traumatic spondylopathy
+7218,Spinal disorders NEC,Other allied disorders of spine
+72190,Spondylos NOS w/o myelop,"Spondylosis of unspecified site, without mention of myelopathy"
+72191,Spondylosis NOS w myelop,"Spondylosis of unspecified site, with myelopathy"
+7220,Cervical disc displacmnt,Displacement of cervical intervertebral disc without myelopathy
+72210,Lumbar disc displacement,Displacement of lumbar intervertebral disc without myelopathy
+72211,Thoracic disc displacmnt,Displacement of thoracic intervertebral disc without myelopathy
+7222,Disc displacement NOS,"Displacement of intervertebral disc, site unspecified, without myelopathy"
+72230,Schmorl's nodes NOS,"Schmorl's nodes, unspecified region"
+7224,Cervical disc degen,Degeneration of cervical intervertebral disc
+72251,Thoracic disc degen,Degeneration of thoracic or thoracolumbar intervertebral disc
+72252,Lumb/lumbosac disc degen,Degeneration of lumbar or lumbosacral intervertebral disc
+7226,Disc degeneration NOS,"Degeneration of intervertebral disc, site unspecified"
+72270,Disc dis w myelopath NOS,"Intervertebral disc disorder with myelopathy, unspecified region"
+72271,Cerv disc dis w myelopat,"Intervertebral disc disorder with myelopathy, cervical region"
+72272,Thor disc dis w myelopat,"Intervertebral disc disorder with myelopathy, thoracic region"
+72273,Lumb disc dis w myelopat,"Intervertebral disc disorder with myelopathy, lumbar region"
+72283,Postlaminect synd-lumbar,"Postlaminectomy syndrome, lumbar region"
+72290,Disc dis NEC/NOS-unspec,"Other and unspecified disc disorder, unspecified region"
+72291,Disc dis NEC/NOS-cerv,"Other and unspecified disc disorder, cervical region"
+72292,Disc dis NEC/NOS-thorac,"Other and unspecified disc disorder, thoracic region"
+72293,Disc dis NEC/NOS-lumbar,"Other and unspecified disc disorder, lumbar region"
+7230,Cervical spinal stenosis,Spinal stenosis in cervical region
+7231,Cervicalgia,Cervicalgia
+7234,Brachial neuritis NOS,Brachial neuritis or radiculitis NOS
+7235,Torticollis NOS,"Torticollis, unspecified"
+7236,Panniculitis of neck,Panniculitis specified as affecting neck
+7237,Ossification cerv lig,Ossification of posterior longitudinal ligament in cervical region
+7238,Cervical syndrome NEC,Other syndromes affecting cervical region
+72400,Spinal stenosis NOS,"Spinal stenosis, unspecified region"
+72401,Spinal stenosis-thoracic,"Spinal stenosis, thoracic region"
+72402,"Spin sten,lumbr wo claud","Spinal stenosis, lumbar region, without neurogenic claudication"
+72403,"Spin sten,lumbr w claud","Spinal stenosis, lumbar region, with neurogenic claudication"
+72409,Spinal stenosis-oth site,"Spinal stenosis, other region"
+7242,Lumbago,Lumbago
+7243,Sciatica,Sciatica
+7244,Lumbosacral neuritis NOS,"Thoracic or lumbosacral neuritis or radiculitis, unspecified"
+7245,Backache NOS,"Backache, unspecified"
+7246,Disorders of sacrum,Disorders of sacrum
+7248,Other back symptoms,Other symptoms referable to back
+7249,Back disorder NOS,Other unspecified back disorders
+725,Polymyalgia rheumatica,Polymyalgia rheumatica
+7260,Adhesive capsulit shlder,Adhesive capsulitis of shoulder
+72610,Rotator cuff synd NOS,"Disorders of bursae and tendons in shoulder region, unspecified"
+72611,Calcif tendinitis shlder,Calcifying tendinitis of shoulder
+72612,Bicipital tenosynovitis,Bicipital tenosynovitis
+72619,Rotator cuff dis NEC,Other specified disorders of bursae and tendons in shoulder region
+7262,Shoulder region dis NEC,"Other affections of shoulder region, not elsewhere classified"
+72632,Lateral epicondylitis,Lateral epicondylitis
+72633,Olecranon bursitis,Olecranon bursitis
+7265,Enthesopathy of hip,Enthesopathy of hip region
+72660,Enthesopathy of knee NOS,"Enthesopathy of knee, unspecified"
+72664,Patellar tendinitis,Patellar tendinitis
+72665,Prepatellar bursitis,Prepatellar bursitis
+72669,Enthesopathy of knee NEC,Other enthesopathy of knee
+72671,Achilles tendinitis,Achilles bursitis or tendinitis
+72672,Tibialis tendinitis,Tibialis tendinitis
+72673,Calcaneal spur,Calcaneal spur
+72679,Ankle enthesopathy NEC,Other enthesopathy of ankle and tarsus
+72690,"Enthesopathy, site NOS",Enthesopathy of unspecified site
+72691,"Exostosis, site NOS",Exostosis of unspecified site
+72700,Synovitis NOS,"Synovitis and tenosynovitis, unspecified"
+72703,Trigger finger,Trigger finger (acquired)
+72704,Radial styloid tenosynov,Radial styloid tenosynovitis
+72705,Tenosynov hand/wrist NEC,Other tenosynovitis of hand and wrist
+72706,Tenosynovitis foot/ankle,Tenosynovitis of foot and ankle
+72709,Synovitis NEC,Other synovitis and tenosynovitis
+7271,Bunion,Bunion
+7273,Bursitis NEC,Other bursitis
+72740,Synovial cyst NOS,"Synovial cyst, unspecified"
+72741,Ganglion of joint,Ganglion of joint
+72742,Ganglion of tendon,Ganglion of tendon sheath
+72743,Ganglion NOS,"Ganglion, unspecified"
+72751,Popliteal synovial cyst,Synovial cyst of popliteal space
+72761,Rotator cuff rupture,Complete rupture of rotator cuff
+72762,Biceps tendon rupture,Nontraumatic rupture of tendons of biceps (long head)
+72763,Rupt exten tendon hand,Nontraumatic rupture of extensor tendons of hand and wrist
+72781,Contracture of tendon,Contracture of tendon (sheath)
+72782,Calcium deposit tendon,Calcium deposits in tendon and bursa
+72789,Synov/tend/bursa dis NEC,"Other disorders of synovium, tendon, and bursa"
+7279,Synov/tend/bursa dis NOS,"Unspecified disorder of synovium, tendon, and bursa"
+7280,Infective myositis,Infective myositis
+72813,Postop heterotopic calc,Postoperative heterotopic calcification
+7282,Musc disuse atrophy NEC,"Muscular wasting and disuse atrophy, not elsewhere classified"
+7283,Muscle disorders NEC,Other specific muscle disorders
+7284,Laxity of ligament,Laxity of ligament
+7286,Contracted palmar fascia,Contracture of palmar fascia
+72871,Plantar fibromatosis,Plantar fascial fibromatosis
+72879,Fibromatoses NEC,"Other fibromatoses of muscle, ligament, and fascia"
+72882,FB granuloma of muscle,Foreign body granuloma of muscle
+72883,Nontraum muscle rupture,"Rupture of muscle, nontraumatic"
+72884,Diastasis of muscle,Diastasis of muscle
+72885,Spasm of muscle,Spasm of muscle
+72886,Necrotizing fasciitis,Necrotizing fasciitis
+72887,Muscle weakness-general,Muscle weakness (generalized)
+72888,Rhabdomyolysis,Rhabdomyolysis
+72889,Muscle/ligament dis NEC,"Other disorders of muscle, ligament, and fascia"
+7289,Muscle/ligament dis NOS,"Unspecified disorder of muscle, ligament, and fascia"
+7291,Myalgia and myositis NOS,"Myalgia and myositis, unspecified"
+7292,Neuralgia/neuritis NOS,"Neuralgia, neuritis, and radiculitis, unspecified"
+72930,"Panniculitis, unsp site","Panniculitis, unspecified site"
+72939,"Panniculitis, site NEC","Panniculitis, other site"
+7294,Fasciitis NOS,"Fasciitis, unspecified"
+7295,Pain in limb,Pain in limb
+7296,Old FB in soft tissue,Residual foreign body in soft tissue
+72971,Nontraum comp syn-up ext,Nontraumatic compartment syndrome of upper extremity
+72972,Nontraum comp syn-low ex,Nontraumatic compartment syndrome of lower extremity
+72973,Nontrauma comp syn-abd,Nontraumatic compartment syndrome of abdomen
+72981,Swelling of limb,Swelling of limb
+72982,Cramp in limb,Cramp of limb
+72989,Muscskel sympt limb NEC,Other musculoskeletal symptoms referable to limbs
+72990,Soft tissue disord NOS,"Disorders of soft tissue, unspecified"
+72991,Post-traumatic seroma,Post-traumatic seroma
+72992,Nontrauma hema soft tiss,Nontraumatic hematoma of soft tissue
+72999,Soft tissue disorder NEC,Other disorders of soft tissue
+73001,Ac osteomyelitis-shlder,"Acute osteomyelitis, shoulder region"
+73002,Ac osteomyelitis-up/arm,"Acute osteomyelitis, upper arm"
+73004,Ac osteomyelitis-hand,"Acute osteomyelitis, hand"
+73005,Ac osteomyelitis-pelvis,"Acute osteomyelitis, pelvic region and thigh"
+73006,Ac osteomyelitis-l/leg,"Acute osteomyelitis, lower leg"
+73007,Ac osteomyelitis-ankle,"Acute osteomyelitis, ankle and foot"
+73008,Ac osteomyelitis NEC,"Acute osteomyelitis, other specified sites"
+73009,Ac osteomyelitis-mult,"Acute osteomyelitis, multiple sites"
+73012,Chr osteomyelit-up/arm,"Chronic osteomyelitis, upper arm"
+73013,Chr osteomyelit-forearm,"Chronic osteomyelitis, forearm"
+73015,Chr osteomyelit-pelvis,"Chronic osteomyelitis, pelvic region and thigh"
+73016,Chr osteomyelit-l/leg,"Chronic osteomyelitis, lower leg"
+73017,Chr osteomyelit-ankle,"Chronic osteomyelitis, ankle and foot"
+73018,Chr osteomyelit NEC,"Chronic osteomyelitis, other specified sites"
+73019,Chr osteomyelit-mult,"Chronic osteomyelitis, multiple sites"
+73020,Osteomyelitis NOS-unspec,"Unspecified osteomyelitis, site unspecified"
+73022,Osteomyelitis NOS-up/arm,"Unspecified osteomyelitis, upper arm"
+73023,Osteomyelit NOS-forearm,"Unspecified osteomyelitis, forearm"
+73024,Osteomyelitis NOS-hand,"Unspecified osteomyelitis, hand"
+73025,Osteomyelitis NOS-pelvis,"Unspecified osteomyelitis, pelvic region and thigh"
+73026,Osteomyelitis NOS-l/leg,"Unspecified osteomyelitis, lower leg"
+73027,Osteomyelitis NOS-ankle,"Unspecified osteomyelitis, ankle and foot"
+73028,Osteomyelit NOS-oth site,"Unspecified osteomyelitis, other specified sites"
+73029,Osteomyelitis NOS-mult,"Unspecified osteomyelitis, multiple sites"
+73088,Bone infect NEC-oth site,"Other infections involving bone in diseases classified elsewhere, other specified sites"
+73089,Bone infect NEC-mult,"Other infections involving bone in diseases classified elsewhere, multiple sites"
+73097,Bone infect NOS-ankle,"Unspecified infection of bone, ankle and foot"
+7310,Osteitis deformans NOS,Osteitis deformans without mention of bone tumor
+7313,Major osseous defects,Major osseous defects
+7318,Bone involv in oth dis,Other bone involvement in diseases classified elsewhere
+7320,Juv osteochondros spine,Juvenile osteochondrosis of spine
+7321,Juv osteochondros pelvis,Juvenile osteochondrosis of hip and pelvis
+7323,Juv osteochondrosis arm,Juvenile osteochondrosis of upper extremity
+7324,Juv osteochondrosis leg,"Juvenile osteochondrosis of lower extremity, excluding foot"
+7325,Juv osteochondrosis foot,Juvenile osteochondrosis of foot
+73300,Osteoporosis NOS,"Osteoporosis, unspecified"
+73301,Senile osteoporosis,Senile osteoporosis
+73302,Idiopathic osteoporosis,Idiopathic osteoporosis
+73309,Osteoporosis NEC,Other osteoporosis
+73311,Path fx humerus,Pathologic fracture of humerus
+73312,Path fx dstl radius ulna,Pathologic fracture of distal radius and ulna
+73313,Path fx vertebrae,Pathologic fracture of vertebrae
+73314,Path fx neck of femur,Pathologic fracture of neck of femur
+73315,Path fx oth spcf prt fmr,Pathologic fracture of other specified part of femur
+73316,Path fx tibia fibula,Pathologic fracture of tibia or fibula
+73319,Path fx oth specif site,Pathologic fracture of other specified site
+73320,Cyst of bone NOS,"Cyst of bone (localized), unspecified"
+73329,Bone cyst NEC,Other bone cyst
+7333,Hyperostosis of skull,Hyperostosis of skull
+73340,Asept necrosis bone NOS,"Aseptic necrosis of bone, site unspecified"
+73341,Aseptic necrosis humerus,Aseptic necrosis of head of humerus
+73342,Aseptic necrosis femur,Aseptic necrosis of head and neck of femur
+73345,Aseptic necrosis of jaw,"Aseptic necrosis of bone, jaw"
+73349,Asept necrosis bone NEC,"Aseptic necrosis of bone, other"
+7335,Osteitis condensans,Osteitis condensans
+7336,Tietze's disease,Tietze's disease
+73381,Malunion of fracture,Malunion of fracture
+73382,Nonunion of fracture,Nonunion of fracture
+73390,Bone & cartilage dis NOS,"Disorder of bone and cartilage, unspecified"
+73393,Stress fx tibia/fibula,Stress fracture of tibia or fibula
+73396,Stress fx femoral neck,Stress fracture of femoral neck
+73399,Bone & cartilage dis NEC,Other disorders of bone and cartilage
+734,Flat foot,Flat foot
+7350,Hallux valgus,Hallux valgus (acquired)
+7354,Other hammer toe,Other hammer toe (acquired)
+7355,Claw toe,Claw toe (acquired)
+7358,Acq deformity of toe NEC,Other acquired deformities of toe
+7359,Acq deformity of toe NOS,Unspecified acquired deformity of toe
+73600,Forearm deformity NOS,"Unspecified deformity of forearm, excluding fingers"
+73605,Wrist drop,Wrist drop (acquired)
+73609,Forearm deformity NEC,"Other acquired deformities of forearm, excluding fingers"
+73620,Acq finger deformity NOS,Unspecified deformity of finger
+73629,Acq finger deformity NEC,Other acquired deformities of finger
+73630,Acq hip deformity NOS,Unspecified acquired deformity of hip
+7366,Acq knee deformity NEC,Other acquired deformities of knee
+73670,Acq ankle-foot def NOS,"Unspecified deformity of ankle and foot, acquired"
+73671,Acq equinovarus,Acquired equinovarus deformity
+73672,Acq equinus deformity,"Equinus deformity of foot, acquired"
+73679,Acq ankle-foot def NEC,Other acquired deformities of ankle and foot
+73681,Unequal leg length,Unequal leg length (acquired)
+73689,Oth acq limb deformity,Other acquired deformity of other parts of limb
+73710,Kyphosis NOS,Kyphosis (acquired) (postural)
+73711,Radiation kyphosis,Kyphosis due to radiation
+73712,Postlaminectomy kyphosis,"Kyphosis, postlaminectomy"
+73719,Kyphosis NEC,Other kyphosis (acquired)
+73722,Oth postsurgery lordosis,Other postsurgical lordosis
+73729,Lordosis NEC,Other lordosis (acquired)
+73730,Idiopathic scoliosis,"Scoliosis [and kyphoscoliosis], idiopathic"
+73732,Progr idiopath scoliosis,Progressive infantile idiopathic scoliosis
+73733,Radiation scoliosis,Scoliosis due to radiation
+73734,Thoracogenic scoliosis,Thoracogenic scoliosis
+73739,Scoliosis NEC,Other kyphoscoliosis and scoliosis
+73741,Kyphosis in oth dis,Kyphosis associated with other conditions
+73743,Scoliosis in oth dis,Scoliosis associated with other conditions
+7380,Acq nose deformity,Acquired deformity of nose
+73810,Unspf acq deformity head,Unspecified acquired deformity of head
+73819,Oth spcf deformity head,Other specified acquired deformity of head
+7383,Acq chest deformity,Acquired deformity of chest and rib
+7384,Acq spondylolisthesis,Acquired spondylolisthesis
+7385,Other acq back deformity,Other acquired deformity of back or spine
+7386,Acq pelvic deformity,Acquired deformity of pelvis
+7388,Acq deformity NEC,Acquired deformity of other specified site
+7402,Iniencephaly,Iniencephaly
+74100,Spin bif w hydroceph NOS,"Spina bifida with hydrocephalus, unspecified region"
+74101,Spin bif w hydrceph-cerv,"Spina bifida with hydrocephalus, cervical region"
+74103,Spin bif w hydrceph-lumb,"Spina bifida with hydrocephalus, lumbar region"
+74190,Spina bifida,"Spina bifida without mention of hydrocephalus, unspecified region"
+74193,Spina bifida-lumbar,"Spina bifida without mention of hydrocephalus, lumbar region"
+7420,Encephalocele,Encephalocele
+7421,Microcephalus,Microcephalus
+7422,"Reduction deform, brain",Congenital reduction deformities of brain
+7423,Congenital hydrocephalus,Congenital hydrocephalus
+7424,Brain anomaly NEC,Other specified congenital anomalies of brain
+74259,Spinal cord anomaly NEC,Other specified congenital anomalies of spinal cord
+7428,Nervous system anom NEC,Other specified congenital anomalies of nervous system
+7429,Nervous system anom NOS,"Unspecified congenital anomaly of brain, spinal cord, and nervous system"
+74320,Buphthalmos NOS,"Buphthalmos, unspecified"
+74322,Buphthal w oth eye anom,Buphthalmos associated with other ocular anomalies
+74330,Congenital cataract NOS,"Congenital cataract, unspecified"
+74343,Cong corneal opacit NEC,"Other corneal opacities, congenital"
+74349,Anom anter seg NEC-eye,Other congenital anomalies of anterior segment
+74353,Cong chorioretinal degen,"Chorioretinal degeneration, congenital"
+74359,Post segmnt anom NEC-eye,Other congenital anomalies of posterior segment
+74361,Congenital ptosis,Congenital ptosis
+74362,Congenital eyelid deform,Congenital deformities of eyelids
+74363,Spec anom of eyelid NEC,Other specified congenital anomalies of eyelid
+74365,Spec lacrimal pass anom,Specified congenital anomalies of lacrimal passages
+7439,Eye anomaly NOS,Unspecified anomaly of eye
+74401,Cong absence ext ear,Absence of external ear
+74402,Ex ear anm NEC-impr hear,Other anomalies of external ear with impairment of hearing
+74405,Anomalies of inner ear,Anomalies of inner ear
+7441,Accessory auricle,Accessory auricle
+74423,Microtia,Microtia
+74429,Ear anomalies NEC,Other specified anomalies of ear
+7443,Ear anomaly NOS,Unspecified anomaly of ear
+74441,Branch cleft sinus/fistu,Branchial cleft sinus or fistula
+74442,Branchial cleft cyst,Branchial cleft cyst
+74483,Macrostomia,Macrostomia
+74489,Cong face/neck anom NEC,Other specified congenital anomalies of face and neck
+7449,Cong face/neck anom NOS,Unspecified congenital anomalies of face and neck
+7450,Common truncus,Common truncus
+74510,Compl transpos great ves,Complete transposition of great vessels
+74511,Double outlet rt ventric,Double outlet right ventricle
+74512,Correct transpos grt ves,Corrected transposition of great vessels
+7452,Tetralogy of fallot,Tetralogy of fallot
+7454,Ventricular sept defect,Ventricular septal defect
+7455,Secundum atrial sept def,Ostium secundum type atrial septal defect
+74560,Endocard cushion def NOS,"Endocardial cushion defect, unspecified type"
+74561,Ostium primum defect,Ostium primum defect
+74569,Endocard cushion def NEC,Other endocardial cushion defects
+7458,Septal closure anom NEC,Other bulbus cordis anomalies and anomalies of cardiac septal closure
+7459,Septal closure anom NOS,Unspecified defect of septal closure
+74600,Pulmonary valve anom NOS,"Congenital pulmonary valve anomaly, unspecified"
+74601,Cong pulmon valv atresia,"Atresia of pulmonary valve, congenital"
+74602,Cong pulmon valve stenos,"Stenosis of pulmonary valve, congenital"
+74609,Pulmonary valve anom NEC,Other congenital anomalies of pulmonary valve
+7461,Cong tricusp atres/sten,"Tricuspid atresia and stenosis, congenital"
+7462,Ebstein's anomaly,Ebstein's anomaly
+7463,Cong aorta valv stenosis,Congenital stenosis of aortic valve
+7464,Cong aorta valv insuffic,Congenital insufficiency of aortic valve
+7466,Cong mitral insufficienc,Congenital mitral insufficiency
+7467,Hypoplas left heart synd,Hypoplastic left heart syndrome
+74681,Cong subaortic stenosis,Subaortic stenosis
+74682,Cor triatriatum,Cor triatriatum
+74683,Infundib pulmon stenosis,Infundibular pulmonic stenosis
+74684,Obstruct heart anom NEC,"Obstructive anomalies of heart, not elsewhere classified"
+74685,Coronary artery anomaly,Coronary artery anomaly
+74686,Congenital heart block,Congenital heart block
+74687,Malposition of heart,Malposition of heart and cardiac apex
+74689,Cong heart anomaly NEC,Other specified congenital anomalies of heart
+7469,Cong heart anomaly NOS,Unspecified congenital anomaly of heart
+7470,Patent ductus arteriosus,Patent ductus arteriosus
+74710,Coarctation of aorta,Coarctation of aorta (preductal) (postductal)
+74711,Interrupt of aortic arch,Interruption of aortic arch
+74720,Cong anom of aorta NOS,"Anomaly of aorta, unspecified"
+74721,Anomalies of aortic arch,Anomalies of aortic arch
+74722,Aortic atresia/stenosis,Atresia and stenosis of aorta
+74729,Cong anom of aorta NEC,Other anomalies of aorta
+74732,Pulmonary AV malformatn,Pulmonary arteriovenous malformation
+74740,Great vein anomaly NOS,"Anomaly of great veins, unspecified"
+74741,Tot anom pulm ven connec,Total anomalous pulmonary venous connection
+74742,Part anom pulm ven conn,Partial anomalous pulmonary venous connection
+74749,Great vein anomaly NEC,Other anomalies of great veins
+7475,Umbilical artery absence,Absence or hypoplasia of umbilical artery
+74761,Gstrontest vesl anomaly,Gastrointestinal vessel anomaly
+74762,Renal vessel anomaly,Renal vessel anomaly
+74763,Upr limb vessel anomaly,Upper limb vessel anomaly
+74769,Oth spcf prph vscl anoml,Anomalies of other specified sites of peripheral vascular system
+74781,Cerebrovascular anomaly,Anomalies of cerebrovascular system
+74782,Spinal vessel anomaly,Spinal vessel anomaly
+74783,Persistent fetal circ,Persistent fetal circulation
+74789,Circulatory anomaly NEC,Other specified anomalies of circulatory system
+7480,Choanal atresia,Choanal atresia
+7481,Nose anomaly NEC,Other anomalies of nose
+7482,Laryngeal web,Web of larynx
+7483,Laryngotrach anomaly NEC,"Other anomalies of larynx, trachea, and bronchus"
+7484,Congenital cystic lung,Congenital cystic lung
+7485,Agenesis of lung,"Agenesis, hypoplasia, and dysplasia of lung"
+74860,Lung anomaly NOS,"Anomaly of lung, unspecified"
+74861,Congen bronchiectasis,Congenital bronchiectasis
+74869,Lung anomaly NEC,Other congenital anomalies of lung
+7488,Respiratory anomaly NEC,Other specified anomalies of respiratory system
+74900,Cleft palate NOS,"Cleft palate, unspecified"
+74902,Unilat cleft palate-inc,"Cleft palate, unilateral, incomplete"
+74910,Cleft lip NOS,"Cleft lip, unspecified"
+74912,Unilat cleft lip-imcompl,"Cleft lip, unilateral, incomplete"
+74920,Cleft palate & lip NOS,"Cleft palate with cleft lip, unspecified"
+74921,Unil cleft palat/lip-com,"Cleft palate with cleft lip, unilateral, complete"
+74922,Unil cleft palat/lip-inc,"Cleft palate with cleft lip, unilateral, incomplete"
+74923,Bilat clft palat/lip-com,"Cleft palate with cleft lip, bilateral, complete"
+74924,Bilat clft palat/lip-inc,"Cleft palate with cleft lip, bilateral, incomplete"
+74925,Cleft palate & lip NEC,Other combinations of cleft palate with cleft lip
+7500,Tongue tie,Tongue tie
+75010,Tongue anomaly NOS,"Congenital anomaly of tongue, unspecified"
+75016,Microglossia,Microglossia
+75019,Tongue anomaly NEC,Other congenital anomalies of tongue
+75026,Mouth anomaly NEC,Other specified anomalies of mouth
+75029,Pharyngeal anomaly NEC,Other specified anomalies of pharynx
+7503,Cong esoph fistula/atres,"Tracheoesophageal fistula, esophageal atresia and stenosis"
+7504,Esophageal anomaly NEC,Other specified anomalies of esophagus
+7505,Cong pyloric stenosis,Congenital hypertrophic pyloric stenosis
+7508,Upper GI anomaly NEC,Other specified anomalies of upper alimentary tract
+7509,Upper GI anomaly NOS,Unspecified anomaly of upper alimentary tract
+7510,Meckel's diverticulum,Meckel's diverticulum
+7511,Atresia small intestine,Atresia and stenosis of small intestine
+7512,Atresia large intestine,"Atresia and stenosis of large intestine, rectum, and anal canal"
+7513,Hirschsprung's disease,Hirschsprung's disease and other congenital functional disorders of colon
+7514,Intestinal fixation anom,Anomalies of intestinal fixation
+7515,Intestinal anomaly NEC,Other anomalies of intestine
+75160,Biliary & liver anom NOS,"Unspecified anomaly of gallbladder, bile ducts, and liver"
+75162,Cong cystic liver dis,Congenital cystic disease of liver
+75169,Biliary & liver anom NEC,"Other anomalies of gallbladder, bile ducts, and liver"
+7517,Pancreas anomalies,Anomalies of pancreas
+7520,Anomalies of ovaries,Anomalies of ovaries
+75219,Tubal/broad lig anom NEC,Other anomalies of fallopian tubes and broad ligaments
+7522,Doubling of uterus,Doubling of uterus
+75240,Cervix/fem gen anom NOS,"Unspecified anomaly of cervix, vagina, and external female genitalia"
+75249,Cervix/fem gen anom NEC,"Other anomalies of cervix, vagina, and external female genitalia"
+75251,Undescended testis,Undescended testis
+75261,Hypospadias,Hypospadias
+75262,Epispadias,Epispadias
+75263,Congenital chordee,Congenital chordee
+75265,Hidden penis,Hidden penis
+75269,Penile anomalies NEC,Other penile anomalies
+75289,Genital organ anom NEC,Other specified anomalies of genital organs
+7529,Genital organ anom NOS,Unspecified anomaly of genital organs
+7530,Renal agenesis,Renal agenesis and dysgenesis
+75310,Cystic kidney diseas NOS,"Cystic kidney disease, unspecified"
+75311,Congenital renal cyst,Congenital single renal cyst
+75312,Polycystic kidney NOS,"Polycystic kidney, unspecified type"
+75313,Polycyst kid-autosom dom,"Polycystic kidney, autosomal dominant"
+75314,Polycyst kid-autosom rec,"Polycystic kidney, autosomal recessive"
+75315,Renal dysplasia,Renal dysplasia
+75317,Medullary sponge kidney,Medullary sponge kidney
+75319,Cystic kidney diseas NEC,Other specified cystic kidney disease
+75320,Obs dfct ren plv&urt NOS,Unspecified obstructive defect of renal pelvis and ureter
+75321,Congen obst urtroplv jnc,Congenital obstruction of ureteropelvic junction
+75322,Cong obst ureteroves jnc,Congenital obstruction of ureterovesical junction
+75323,Congenital ureterocele,Congenital ureterocele
+75329,Obst def ren plv&urt NEC,Other obstructive defects of renal pelvis and ureter
+7533,Kidney anomaly NEC,Other specified anomalies of kidney
+7534,Ureteral anomaly NEC,Other specified anomalies of ureter
+7535,Bladder exstrophy,Exstrophy of urinary bladder
+7536,Congen urethral stenosis,Atresia and stenosis of urethra and bladder neck
+7537,Anomalies of urachus,Anomalies of urachus
+7538,Cystourethral anom NEC,Other specified anomalies of bladder and urethra
+7539,Urinary anomaly NOS,Unspecified anomaly of urinary system
+7540,Cong skull/face/jaw def,"Congenital musculoskeletal deformities of skull, face, and jaw"
+7541,Congenital torticollis,Congenital musculoskeletal deformities of sternocleidomastoid muscle
+7542,Cong postural deformity,Congenital musculoskeletal deformities of spine
+75430,"Cong hip disloc, unilat","Congenital dislocation of hip, unilateral"
+75431,"Congen hip disloc, bilat","Congenital dislocation of hip, bilateral"
+75432,"Cong hip sublux, unilat","Congenital subluxation of hip, unilateral"
+75433,"Cong hip sublux, bilat","Congenital subluxation of hip, bilateral"
+75435,Cong hip disloc w sublux,Congenital dislocation of one hip with subluxation of other hip
+75440,Cong genu recurvatum,Genu recurvatum
+75441,Cong knee dislocation,Congenital dislocation of knee (with genu recurvatum)
+75444,Cong bowing leg NOS,Congenital bowing of unspecified long bones of leg
+75450,Talipes varus,Talipes varus
+75451,Talipes equinovarus,Talipes equinovarus
+75453,Metatarsus varus,Metatarsus varus
+75460,Talipes valgus,Talipes valgus
+75461,Congenital pes planus,Congenital pes planus
+75470,Talipes NOS,"Talipes, unspecified"
+75479,Cong foot deform NEC,Other deformities of feet
+75481,Pectus excavatum,Pectus excavatum
+75482,Pectus carinatum,Pectus carinatum
+75489,Nonteratogenic anom NEC,Other specified nonteratogenic anomalies
+75500,Polydactyly NOS,"Polydactyly, unspecified digits"
+75501,"Polydactyly, fingers",Polydactyly of fingers
+75502,"Polydactyly, toes",Polydactyly of toes
+75510,"Syndactyly, multiple/NOS",Syndactyly of multiple and unspecified sites
+75511,Syndactyl fing-no fusion,Syndactyly of fingers without fusion of bone
+75513,Syndactyl toe-no fusion,Syndactyly of toes without fusion of bone
+75520,Reduc deform up limb NOS,Unspecified reduction deformity of upper limb
+75521,Transverse defic arm,Transverse deficiency of upper limb
+75522,Longitud defic arm NEC,"Longitudinal deficiency of upper limb, not elsewhere classified"
+75526,Longitud defic radius,"Longitudinal deficiency, radial, complete or partial (with or without distal deficiencies, incomplete)"
+75529,Longitud defic phalanges,"Longitudinal deficiency, phalanges, complete or partial"
+75530,Reduction deform leg NOS,Unspecified reduction deformity of lower limb
+75531,Transverse defic leg,Transverse deficiency of lower limb
+75537,Longitudin defic fibula,"Longitudinal deficiency, fibular, complete or partial (with or without distal deficiencies, incomplete)"
+75539,Longitud defic phalanges,"Longitudinal deficiency, phalanges, complete or partial"
+75550,Upper limb anomaly NOS,Unspecified anomaly of upper limb
+75555,Acrocephalosyndactyly,Acrocephalosyndactyly
+75557,Macrodactylia (fingers),Macrodactylia (fingers)
+75559,Upper limb anomaly NEC,"Other anomalies of upper limb, including shoulder girdle"
+75560,Lower limb anomaly NOS,Unspecified anomaly of lower limb
+75563,Cong hip deformity NEC,Other congenital deformity of hip (joint)
+75564,Cong knee deformity,Congenital deformity of knee (joint)
+75566,Anomalies of toes NEC,Other anomalies of toes
+75567,Anomalies of foot NEC,"Anomalies of foot, not elsewhere classified"
+75569,Lower limb anomaly NEC,"Other anomalies of lower limb, including pelvic girdle"
+7560,Anomal skull/face bones,Anomalies of skull and face bones
+75610,Anomaly of spine NOS,"Anomaly of spine, unspecified"
+75611,Lumbosacr spondylolysis,"Spondylolysis, lumbosacral region"
+75612,Spondylolisthesis,Spondylolisthesis
+75613,Cong absence of vertebra,"Absence of vertebra, congenital"
+75614,Hemivertebra,Hemivertebra
+75615,Congen fusion of spine,"Fusion of spine (vertebra), congenital"
+75616,Klippel-feil syndrome,Klippel-Feil syndrome
+75617,Spina bifida occulta,Spina bifida occulta
+75619,Anomaly of spine NEC,Other anomalies of spine
+7563,Rib & sternum anomal NEC,Other anomalies of ribs and sternum
+7564,Chondrodystrophy,Chondrodystrophy
+75651,Osteogenesis imperfecta,Osteogenesis imperfecta
+7566,Anomalies of diaphragm,Anomalies of diaphragm
+75671,Prune belly syndrome,Prune belly syndrome
+75679,Congn anoml abd wall NEC,Other congenital anomalies of abdominal wall
+75683,Ehlers-danlos syndrome,Ehlers-Danlos syndrome
+75689,Soft tissue anomaly NEC,"Other specified anomalies of muscle, tendon, fascia, and connective tissue"
+7569,Musculoskel anom NEC/NOS,Other and unspecified anomalies of musculoskeletal system
+7570,Hereditary edema of legs,Hereditary edema of legs
+7571,Ichthyosis congenita,Ichthyosis congenita
+7572,Dermatoglyphic anomalies,Dermatoglyphic anomalies
+75732,Vascular hamartomas,Vascular hamartomas
+75733,Cong skin pigment anomal,Congenital pigmentary anomalies of skin
+75739,Skin anomaly NEC,Other specified anomalies of skin
+7575,Nail anomalies NEC,Specified anomalies of nails
+7576,Cong breast anomaly NEC,Specified congenital anomalies of breast
+7580,Down's syndrome,Down's syndrome
+7581,Patau's syndrome,Patau's syndrome
+7582,Edwards' syndrome,Edwards' syndrome
+75839,Autosomal deletions NEC,Other autosomal deletions
+7585,Autosomal anomalies NEC,Other conditions due to autosomal anomalies
+7586,Gonadal dysgenesis,Gonadal dysgenesis
+7587,Klinefelter's syndrome,Klinefelter's syndrome
+75881,Oth cond due to sex chrm,Other conditions due to sex chromosome anomalies
+75889,Oth con d/t chrm anm NEC,Other conditions due to chromosome anomalies
+7589,Chromosome anomaly NOS,Conditions due to anomaly of unspecified chromosome
+7590,Anomalies of spleen,Anomalies of spleen
+7592,Endocrine anomaly NEC,Anomalies of other endocrine glands
+7593,Situs inversus,Situs inversus
+7595,Tuberous sclerosis,Tuberous sclerosis
+7596,Hamartoses NEC,"Other hamartoses, not elsewhere classified"
+7597,Mult congen anomal NEC,"Multiple congenital anomalies, so described"
+75981,Prader-willi syndrome,Prader-Willi syndrome
+75982,Marfan syndrome,Marfan syndrome
+75983,Fragile x syndrome,Fragile X syndrome
+75989,Specfied cong anomal NEC,Other specified congenital anomalies
+7599,Congenital anomaly NOS,"Congenital anomaly, unspecified"
+7600,Matern hyperten aff NB,Maternal hypertensive disorders affecting fetus or newborn
+7601,Matern urine dis aff NB,Maternal renal and urinary tract diseases affecting fetus or newborn
+7602,Maternal infec aff NB,Maternal infections affecting fetus or newborn
+76070,Nox sub NOS aff NB/fetus,Unspecified noxious substance affecting fetus or newborn via placenta or breast milk
+76072,Matern narc aff NB/fetus,Narcotics affecting fetus or newborn via placenta or breast milk
+76075,Mat cocaine aff NB/fet,Cocaine affecting fetus or newborn via placenta or breast milk
+76076,Maternal DES af NB/fetus,Diethylstilbestrol [DES] affecting fetus or newborn via placenta or breast milk
+76077,Mat anticonv aff NB/fet,Anticonvulsants affecting fetus or newborn via placenta or breast milk
+76079,Nox sub NEC aff NB/fetus,Other noxious influences affecting fetus or newborn via placenta or breast milk
+7608,Maternal cond NEC aff NB,Other specified maternal conditions affecting fetus or newborn
+7610,Incompetnt cervix aff NB,Incompetent cervix affecting fetus or newborn
+7611,Premat rupt memb aff NB,Premature rupture of membranes affecting fetus or newborn
+7612,Oligohydramnios aff NB,Oligohydramnios affecting fetus or newborn
+7613,Polyhydramnios aff NB,Polyhydramnios affecting fetus or newborn
+7615,Mult pregnancy aff NB,Multiple pregnancy affecting fetus or newborn
+7617,Antepart malpres aff NB,Malpresentation before labor affecting fetus or newborn
+7618,Matern compl NEC aff NB,Other specified maternal complications of pregnancy affecting fetus or newborn
+7620,Placenta previa aff NB,Placenta previa affecting fetus or newborn
+7621,Placenta hem NEC aff NB,Other forms of placental separation and hemorrhage affecting fetus or newborn
+7622,Abn plac NEC/NOS aff NB,Other and unspecified morphological and functional abnormalities of placenta affecting fetus or newborn
+7623,Placent transfusion syn,Placental transfusion syndromes affecting fetus or newborn
+7624,Prolapsed cord aff NB,Prolapsed umbilical cord affecting fetus or newborn
+7625,Oth umbil cord compress,Other compression of umbilical cord affecting fetus or newborn
+7626,Umbil cond NEC aff NB,Other and unspecified conditions of umbilical cord affecting fetus or newborn
+7627,Chorioamnionitis aff NB,Chorioamnionitis affecting fetus or newborn
+7628,Abn amnion NEC aff NB,Other specified abnormalities of chorion and amnion affecting fetus or newborn
+7630,Breech del/extrac aff NB,Breech delivery and extraction affecting fetus or newborn
+7631,Malpos/dispro NEC aff NB,"Other malpresentation, malposition, and disproportion during labor and delivery affecting fetus or newborn"
+7633,Vacuum extrac del aff NB,Delivery by vacuum extractor affecting fetus or newborn
+7634,Cesarean delivery aff NB,Cesarean delivery affecting fetus or newborn
+7635,Mat anesth/analg aff NB,Maternal anesthesia and analgesia affecting fetus or newborn
+7636,Precipitate del aff NB,Precipitate delivery affecting fetus or newborn
+76381,Ab ftl hrt rt/rh b/f lab,Abnormality in fetal heart rate or rhythm before the onset of labor
+76382,Ab ftl hrt rt/rh dur lab,Abnormality in fetal heart rate or rhythm during labor
+76383,Ab ftl hrt rt/rhy NOS,"Abnormality in fetal heart rate or rhythm, unspecified as to time of onset"
+76384,Meconium dur del aff NB,Meconium passage during delivery
+76389,Compl del NEC aff NB,Other specified complications of labor and delivery affecting fetus or newborn
+76401,Light-for-dates <500g,"""Light-for-dates"" without mention of fetal malnutrition, less than 500 grams"
+76402,Lt-for-dates 500-749g,"""Light-for-dates"" without mention of fetal malnutrition, 500-749 grams"
+76403,Lt-for-dates 750-999g,"""Light-for-dates"" without mention of fetal malnutrition, 750-999 grams"
+76404,Lt-for-dates 1000-1249g,"""Light-for-dates"" without mention of fetal malnutrition, 1,000- 1,249 grams"
+76405,Lt-for-dates 1250-1499g,"""Light-for-dates""without mention of fetal malnutrition, 1,250- 1,499 grams"
+76406,Lt-for-dates 1500-1749g,"""Light-for-dates"" without mention of fetal malnutrition, 1,500- 1,749 grams"
+76407,Lt-for-dates 1750-1999g,"""Light-for-dates"" without mention of fetal malnutrition, 1,750- 1,999 grams"
+76408,Lt-for-dates 2000-2499g,"""Light-for-dates"" without mention of fetal malnutrition, 2,000- 2,499 grams"
+76409,Lt-for-dates 2500+g,"""Light-for-dates"" without mention of fetal malnutrition, 2,500 grams and over"
+76416,Lt-date w/mal 1500-1749g,"""Light-for-dates"" with signs of fetal malnutrition, 1,500-1,749 grams"
+76418,Lt-date w/mal 2000-2499g,"""Light-for-dates""with signs of fetal malnutrition, 2,000-2,499 grams"
+76491,Fet growth retard <500g,"Fetal growth retardation, unspecified, less than 500 grams"
+76492,Fet growth ret 500-749g,"Fetal growth retardation, unspecified, 500-749 grams"
+76493,Fet growth ret 750-999g,"Fetal growth retardation, unspecified, 750-999 grams"
+76494,Fet grwth ret 1000-1249g,"Fetal growth retardation, unspecified, 1,000-1,249 grams"
+76495,Fet grwth ret 1250-1499g,"Fetal growth retardation, unspecified, 1,250-1,499 grams"
+76496,Fet grwth ret 1500-1749g,"Fetal growth retardation, unspecified, 1,500-1,749 grams"
+76497,Fet grwth ret 1750-1999g,"Fetal growth retardation, unspecified, 1,750-1,999 grams"
+76498,Fet grwth ret 2000-2499g,"Fetal growth retardation, unspecified, 2,000-2,499 grams"
+76499,Fet growth ret 2500+g,"Fetal growth retardation, unspecified, 2,500 grams and over"
+76500,Extreme immatur wtNOS,"Extreme immaturity, unspecified [weight]"
+76501,Extreme immatur <500g,"Extreme immaturity, less than 500 grams"
+76502,Extreme immatur 500-749g,"Extreme immaturity, 500-749 grams"
+76503,Extreme immatur 750-999g,"Extreme immaturity, 750-999 grams"
+76504,Extreme immat 1000-1249g,"Extreme immaturity, 1,000-1,249 grams"
+76505,Extreme immat 1250-1499g,"Extreme immaturity, 1,250-1,499 grams"
+76506,Extreme immat 1500-1749g,"Extreme immaturity, 1,500-1,749 grams"
+76508,Extreme immat 2000-2499g,"Extreme immaturity, 2,000-2,499 grams"
+76510,Preterm infant NEC wtNOS,"Other preterm infants, unspecified [weight]"
+76511,Preterm NEC <500g,"Other preterm infants, less than 500 grams"
+76512,Preterm NEC 500-749g,"Other preterm infants, 500-749 grams"
+76513,Preterm NEC 750-999g,"Other preterm infants, 750-999 grams"
+76514,Preterm NEC 1000-1249g,"Other preterm infants, 1,000-1,249 grams"
+76515,Preterm NEC 1250-1499g,"Other preterm infants, 1,250-1,499 grams"
+76516,Preterm NEC 1500-1749g,"Other preterm infants, 1,500-1,749 grams"
+76517,Preterm NEC 1750-1999g,"Other preterm infants, 1,750-1,999 grams"
+76518,Preterm NEC 2000-2499g,"Other preterm infants, 2,000-2,499 grams"
+76519,Preterm NEC 2500+g,"Other preterm infants, 2,500 grams and over"
+76521,<24 comp wks gestation,Less than 24 completed weeks of gestation
+76522,24 comp weeks gestation,24 completed weeks of gestation
+76523,25-26 comp wks gestation,25-26 completed weeks of gestation
+76524,27-28 comp wks gestation,27-28 completed weeks of gestation
+76525,29-30 comp wks gestation,29-30 completed weeks of gestation
+76526,31-32 comp wks gestation,31-32 completed weeks of gestation
+76527,33-34 comp wks gestation,33-34 completed weeks of gestation
+76528,35-36 comp wks gestation,35-36 completed weeks of gestation
+76529,37+ comp wks gestation,37 or more completed weeks of gestation
+7660,Exceptionally large baby,Exceptionally large baby
+7661,Heavy-for-date infan NEC,"Other ""heavy-for-dates"" infants"
+76621,Post-term infant,Post-term infant
+7670,Cerebral hem at birth,Subdural and cerebral hemorrhage
+76711,Epicranial subapo hemorr,Epicranial subaponeurotic hemorrhage (massive)
+76719,Injuries to scalp NEC,Other injuries to scalp
+7672,Clavicle fx at birth,Fracture of clavicle due to birth trauma
+7673,Bone injury NEC at birth,Other injuries to skeleton due to birth trauma
+7675,Facial nerve inj-birth,Facial nerve injury due to birth trauma
+7676,Brach plexus inj-birth,Injury to brachial plexus due to birth trauma
+7678,Birth trauma NEC,Other specified birth trauma
+7683,Fetal distrs dur lab/del,"Fetal distress first noted during labor and delivery, in liveborn infant"
+7685,Severe birth asphyxia,Severe birth asphyxia
+7686,Mild/mod birth asphyxia,Mild or moderate birth asphyxia
+7689,Birth asphyxia NOS,Unspecified severity of birth asphyxia in liveborn infant
+769,Respiratory distress syn,Respiratory distress syndrome in newborn
+7700,Congenital pneumonia,Congenital pneumonia
+77012,Meconium asp w resp symp,Meconium aspiration with respiratory symptoms
+77016,Blood asp w resp sympt,Aspiration of blood with respiratory symptoms
+77018,NB asp w resp symp NEC,Other fetal and newborn aspiration with respiratory symptoms
+7702,NB interstit emphysema,Interstitial emphysema and related conditions
+7703,NB pulmonary hemorrhage,Pulmonary hemorrhage
+7704,Primary atelectasis,Primary atelectasis
+7705,NB atelectasis NEC/NOS,Other and unspecified atelectasis
+7706,NB transitory tachypnea,Transitory tachypnea of newborn
+7707,Perinatal chr resp dis,Chronic respiratory disease arising in the perinatal period
+77081,Primary apnea of newborn,Primary apnea of newborn
+77082,Other apnea of newborn,Other apnea of newborn
+77083,"Cyanotic attack, newborn",Cyanotic attacks of newborn
+77084,Resp failure of newborn,Respiratory failure of newborn
+77087,NB respiratory arrest,Respiratory arrest of newborn
+77088,NB hypoxia,Hypoxemia of newborn
+77089,Resp prob after brth NEC,Other respiratory problems after birth
+7709,NB respiratory cond NOS,Unspecified respiratory condition of fetus and newborn
+7711,Cong cytomegalovirus inf,Congenital cytomegalovirus infection
+7712,Congenital infec NEC,Other congenital infections specific to the perinatal period
+7714,Omphalitis of newborn,Omphalitis of the newborn
+7716,Neonatal conjunctivitis,Neonatal conjunctivitis and dacryocystitis
+7717,Neonatal candida infect,Neonatal Candida infection
+77181,NB septicemia [sepsis],Septicemia [sepsis] of newborn
+77182,NB urinary tract infectn,Urinary tract infection of newborn
+77183,Bacteremia of newborn,Bacteremia of newborn
+77189,Perinatal infection NEC,Other infections specific to the perinatal period
+7720,NB fetal blood loss NEC,Fetal blood loss
+77210,NB intraven hem NOS,Intraventricular hemorrhage unspecified grade
+77211,"NB intraven hem,grade i","Intraventricular hemorrhage, grade I"
+77212,"NB intraven hem,grade ii","Intraventricular hemorrhage, grade II"
+77213,"NB intravn hem,grade iii","Intraventricular hemorrhage, grade III"
+77214,"NB intraven hem,grade iv","Intraventricular hemorrhage, grade IV"
+7722,NB subarachnoid hemorr,Subarachnoid hemorrhage of fetus or newborn
+7723,Post-birth umbil hemorr,Umbilical hemorrhage after birth
+7724,NB GI hemorrhage,Gastrointestinal hemorrhage of fetus or newborn
+7726,NB cutaneous hemorrhage,Cutaneous hemorrhage of fetus or newborn
+7728,Neonatal hemorrhage NEC,Other specified hemorrhage of fetus or newborn
+7730,NB hemolyt dis:rh isoimm,Hemolytic disease of fetus or newborn due to Rh isoimmunization
+7731,NB hemolyt dis-abo isoim,Hemolytic disease of fetus or newborn due to ABO isoimmunization
+7732,NB hemolyt dis-isoim NEC,Hemolytic disease of fetus or newborn due to other and unspecified isoimmunization
+7741,Perinat jaund:hemolysis,Perinatal jaundice from other excessive hemolysis
+7742,Neonat jaund preterm del,Neonatal jaundice associated with preterm delivery
+77430,Delay conjugat jaund NOS,"Neonatal jaundice due to delayed conjugation, cause unspecified"
+77431,Neonat jaund in oth dis,Neonatal jaundice due to delayed conjugation in diseases classified elsewhere
+77439,Delay conjugat jaund NEC,Other neonatal jaundice due to delayed conjugation from other causes
+7744,Fetal/neonatal hepatitis,Perinatal jaundice due to hepatocellular damage
+7746,Fetal/neonatal jaund NOS,Unspecified fetal and neonatal jaundice
+7750,Infant diabet mother syn,"Syndrome of ""infant of a diabetic mother"""
+7751,Neonat diabetes mellitus,Neonatal diabetes mellitus
+7753,Neonatal thyrotoxicosis,Neonatal thyrotoxicosis
+7754,Hypocalcem/hypomagnes NB,Hypocalcemia and hypomagnesemia of newborn
+7755,Neonatal dehydration,Other transitory neonatal electrolyte disturbances
+7756,Neonatal hypoglycemia,Neonatal hypoglycemia
+7757,Late metab acidosis NB,Late metabolic acidosis of newborn
+77581,NB acidosis NEC,Other acidosis of newborn
+77589,Neonat endo/met dis NEC,Other neonatal endocrine and metabolic disturbances
+7759,Transient met dis NB NOS,Unspecified endocrine and metabolic disturbances specific to the fetus and newborn
+7760,NB hemorrhagic disease,Hemorrhagic disease of newborn
+7761,Neonatal thrombocytopen,Transient neonatal thrombocytopenia
+7762,Dissem intravasc coag NB,Disseminated intravascular coagulation in newborn
+7763,Oth neonatal coag dis,Other transient neonatal disorders of coagulation
+7764,Polycythemia neonatorum,Polycythemia neonatorum
+7765,Congenital anemia,Congenital anemia
+7766,Anemia of prematurity,Anemia of prematurity
+7767,Neonatal neutropenia,Transient neonatal neutropenia
+7768,Transient hemat dis NEC,Other specified transient hematological disorders of fetus or newborn
+7771,Meconium obstruction,Meconium obstruction in fetus or newborn
+7773,Swallowed blood syndrome,Hematemesis and melena of newborn due to swallowed maternal blood
+7774,Transitory ileus of NB,Transitory ileus of newborn
+7776,Perinatal intest perfor,Perinatal intestinal perforation
+7778,Perinat GI sys dis NEC,Other specified perinatal disorders of digestive system
+7779,Perinat GI sys dis NOS,Unspecified perinatal disorder of digestive system
+7780,Hydrops fetalis no isoim,Hydrops fetalis not due to isoimmunization
+7782,NB cold injury syndrome,Cold injury syndrome of newborn
+7783,NB hypothermia NEC,Other hypothermia of newborn
+7784,NB temp regulat dis NEC,Other disturbances of temperature regulation of newborn
+7785,Edema of newborn NEC/NOS,Other and unspecified edema of newborn
+7786,Congenital hydrocele,Congenital hydrocele
+7788,NB integument cond NEC,Other specified conditions involving the integument of fetus and newborn
+7789,NB integument cond NOS,Unspecified condition involving the integument and temperature regulation of fetus and newborn
+7790,Convulsions in newborn,Convulsions in newborn
+7791,NB cereb irrit NEC/NOS,Other and unspecified cerebral irritability in newborn
+7792,Cns dysfunction syn NB,"Cerebral depression, coma, and other abnormal cerebral signs in fetus or newborn"
+7795,NB drug withdrawal syndr,Drug withdrawal syndrome in newborn
+7796,Termination of pregnancy,Termination of pregnancy (fetus)
+7797,Perivent leukomalacia,Periventricular leukomalacia
+77981,Neonatal bradycardia,Neonatal bradycardia
+77982,Neonatal tachycardia,Neonatal tachycardia
+77984,Meconium staining,Meconium staining
+77985,NB cardiac arrest,Cardiac arrest of newborn
+77989,Perinatal condition NEC,Other specified conditions originating in the perinatal period
+7799,Perinatal condition NOS,Unspecified condition originating in the perinatal period
+78001,Coma,Coma
+78002,Trans alter awareness,Transient alteration of awareness
+78003,Persistent vegtv state,Persistent vegetative state
+78009,Other alter consciousnes,Other alteration of consciousness
+7801,Hallucinations,Hallucinations
+7802,Syncope and collapse,Syncope and collapse
+78031,Febrile convulsions NOS,"Febrile convulsions (simple), unspecified"
+78033,Post traumatic seizures,Post traumatic seizures
+78039,Convulsions NEC,Other convulsions
+7804,Dizziness and giddiness,Dizziness and giddiness
+78050,Sleep disturbance NOS,"Sleep disturbance, unspecified"
+78051,Insomn w sleep apnea NOS,"Insomnia with sleep apnea, unspecified"
+78052,Insomnia NOS,"Insomnia, unspecified"
+78053,Hypersom w slp apnea NOS,"Hypersomnia with sleep apnea, unspecified"
+78054,Hypersomnia NOS,"Hypersomnia, unspecified"
+78055,Irreg sleep-wake rhy NOS,"Disruption of 24 hour sleep wake cycle, unspecified"
+78057,Sleep apnea NOS,Unspecified sleep apnea
+78059,Sleep disturbances NEC,Other sleep disturbances
+78060,Fever NOS,"Fever, unspecified"
+78061,Fever in other diseases,Fever presenting with conditions classified elsewhere
+78062,Postprocedural fever,Postprocedural fever
+78064,Chills (without fever),Chills (without fever)
+78065,Hypothrm-wo low env tmp,Hypothermia not associated with low environmental temperature
+78066,Feb nonhemo transf react,Febrile nonhemolytic transfusion reaction
+78071,Chronic fatigue syndrome,Chronic fatigue syndrome
+78072,Functional quadriplegia,Functional quadriplegia
+78079,Malaise and fatigue NEC,Other malaise and fatigue
+7808,Generalizd hyperhidrosis,Generalized hyperhidrosis
+78093,Memory loss,Memory loss
+78094,Early satiety,Early satiety
+78096,Generalized pain,Generalized pain
+78097,Altered mental status,Altered mental status
+78099,Other general symptoms,Other general symptoms
+7810,Abn involun movement NEC,Abnormal involuntary movements
+7811,Smell & taste disturb,Disturbances of sensation of smell and taste
+7812,Abnormality of gait,Abnormality of gait
+7813,Lack of coordination,Lack of coordination
+7816,Meningismus,Meningismus
+7817,Tetany,Tetany
+7818,Neurologic neglect syndr,Neurologic neglect syndrome
+78194,Facial weakness,Facial weakness
+78199,Nerve/musculskel sym NEC,Other symptoms involving nervous and musculoskeletal systems
+7820,Skin sensation disturb,Disturbance of skin sensation
+7821,Nonspecif skin erupt NEC,Rash and other nonspecific skin eruption
+7822,Local suprficial swellng,"Localized superficial swelling, mass, or lump"
+7823,Edema,Edema
+7824,Jaundice NOS,"Jaundice, unspecified, not of newborn"
+7825,Cyanosis,Cyanosis
+78261,Pallor,Pallor
+78262,Flushing,Flushing
+7827,Spontaneous ecchymoses,Spontaneous ecchymoses
+7828,Changes in skin texture,Changes in skin texture
+7830,Anorexia,Anorexia
+7831,Abnormal weight gain,Abnormal weight gain
+78321,Abnormal loss of weight,Loss of weight
+7833,Feeding problem,Feeding difficulties and mismanagement
+78340,Lack norm physio dev NOS,"Lack of normal physiological development, unspecified"
+78341,Failure to thrive-child,Failure to thrive
+78343,Short stature,Short stature
+7835,Polydipsia,Polydipsia
+7836,Polyphagia,Polyphagia
+7837,Failure to thrive-adult,Adult failure to thrive
+7840,Headache,Headache
+7841,Throat pain,Throat pain
+7842,Swelling in head & neck,"Swelling, mass, or lump in head and neck"
+7843,Aphasia,Aphasia
+78441,Aphonia,Aphonia
+78442,Dysphonia,Dysphonia
+78443,Hypernasality,Hypernasality
+78449,Voice/resonance dis NEC,Other voice and resonance disorders
+78451,Dysarthria,Dysarthria
+78459,Speech disturbance NEC,Other speech disturbance
+78461,Alexia and dyslexia,Alexia and dyslexia
+78469,Symbolic dysfunction NEC,Other symbolic dysfunction
+7847,Epistaxis,Epistaxis
+7848,Hemorrhage from throat,Hemorrhage from throat
+78491,Postnasal drip,Postnasal drip
+78492,Jaw pain,Jaw pain
+78499,Head & neck symptoms NEC,Other symptoms involving head and neck
+7850,Tachycardia NOS,"Tachycardia, unspecified"
+7851,Palpitations,Palpitations
+7852,Cardiac murmurs NEC,Undiagnosed cardiac murmurs
+7854,Gangrene,Gangrene
+78550,Shock NOS,"Shock, unspecified"
+78551,Cardiogenic shock,Cardiogenic shock
+78552,Septic shock,Septic shock
+78559,Shock w/o trauma NEC,Other shock without mention of trauma
+7856,Enlargement lymph nodes,Enlargement of lymph nodes
+7859,Cardiovas sys symp NEC,Other symptoms involving cardiovascular system
+78600,Respiratory abnorm NOS,"Respiratory abnormality, unspecified"
+78601,Hyperventilation,Hyperventilation
+78602,Orthopnea,Orthopnea
+78603,Apnea,Apnea
+78604,Cheyne-stokes respiratn,Cheyne-Stokes respiration
+78605,Shortness of breath,Shortness of breath
+78606,Tachypnea,Tachypnea
+78607,Wheezing,Wheezing
+78609,Respiratory abnorm NEC,Other respiratory abnormalities
+7861,Stridor,Stridor
+7862,Cough,Cough
+78630,Hemoptysis NOS,"Hemoptysis, unspecified"
+78639,Hemoptysis NEC,Other hemoptysis
+7864,Abnormal sputum,Abnormal sputum
+78650,Chest pain NOS,"Chest pain, unspecified"
+78651,Precordial pain,Precordial pain
+78652,Painful respiration,Painful respiration
+78659,Chest pain NEC,Other chest pain
+7866,Chest swelling/mass/lump,"Swelling, mass, or lump in chest"
+7868,Hiccough,Hiccough
+7869,Resp sys/chest symp NEC,Other symptoms involving respiratory system and chest
+78701,Nausea with vomiting,Nausea with vomiting
+78702,Nausea alone,Nausea alone
+78703,Vomiting alone,Vomiting alone
+78704,Bilious emesis,Bilious emesis
+7871,Heartburn,Heartburn
+78720,Dysphagia NOS,"Dysphagia, unspecified"
+78721,"Dysphagia, oral phase","Dysphagia, oral phase"
+78722,"Dysphagia, oropharyngeal","Dysphagia, oropharyngeal phase"
+78723,"Dysphagia, pharyngeal","Dysphagia, pharyngeal phase"
+78724,"Dysphagia,pharyngoesoph","Dysphagia, pharyngoesophageal phase"
+78729,Dysphagia NEC,Other dysphagia
+7873,Flatul/eructat/gas pain,"Flatulence, eructation, and gas pain"
+7874,Visible peristalsis,Visible peristalsis
+78760,Full incontinence-feces,Full incontinence of feces
+78791,Diarrhea,Diarrhea
+78799,Digestve syst symptm NEC,Other symptoms involving digestive system
+7881,Dysuria,Dysuria
+78820,Retention urine NOS,"Retention of urine, unspecified"
+78821,Incmplet bldder emptying,Incomplete bladder emptying
+78829,Oth spcf retention urine,Other specified retention of urine
+78830,Urinary incontinence NOS,"Urinary incontinence, unspecified"
+78831,Urge incontinence,Urge incontinence
+78832,Stress incontinence male,"Stress incontinence, male"
+78833,Mixed incontinence,Mixed incontinence (male) (female)
+78834,Incontnce wo sensr aware,Incontinence without sensory awareness
+78837,Continuous leakage,Continuous leakage
+78838,Overflow incontinence,Overflow incontinence
+78839,Oth urinry incontinence,Other urinary incontinence
+78841,Urinary frequency,Urinary frequency
+78842,Polyuria,Polyuria
+78843,Nocturia,Nocturia
+7885,Oliguria & anuria,Oliguria and anuria
+78862,Slowing urinary stream,Slowing of urinary stream
+78863,Urgency of urination,Urgency of urination
+78864,Urinary hesitancy,Urinary hesitancy
+78865,Straining on urination,Straining on urination
+78869,Oth abnormalt urination,Other abnormality of urination
+7887,Urethral discharge,Urethral discharge
+7888,Extravasation of urine,Extravasation of urine
+78891,Fnctnl urinary incontnce,Functional urinary incontinence
+78899,Oth symptm urinary systm,Other symptoms involving urinary system
+78900,Abdmnal pain unspcf site,"Abdominal pain, unspecified site"
+78901,Abdmnal pain rt upr quad,"Abdominal pain, right upper quadrant"
+78902,Abdmnal pain lft up quad,"Abdominal pain, left upper quadrant"
+78903,Abdmnal pain rt lwr quad,"Abdominal pain, right lower quadrant"
+78904,Abdmnal pain lt lwr quad,"Abdominal pain, left lower quadrant"
+78905,Abdmnal pain periumbilic,"Abdominal pain, periumbilic"
+78906,Abdmnal pain epigastric,"Abdominal pain, epigastric"
+78907,Abdmnal pain generalized,"Abdominal pain, generalized"
+78909,Abdmnal pain oth spcf st,"Abdominal pain, other specified site"
+7891,Hepatomegaly,Hepatomegaly
+7892,Splenomegaly,Splenomegaly
+78930,Abdmnal mass unspcf site,"Abdominal or pelvic swelling, mass, or lump, unspecified site"
+78931,Abdmnal mass rt upr quad,"Abdominal or pelvic swelling, mass, or lump, right upper quadrant"
+78932,Abdmnal mass lft up quad,"Abdominal or pelvic swelling, mass, or lump, left upper quadrant"
+78933,Abdmnal mass rt lwr quad,"Abdominal or pelvic swelling, mass, or lump, right lower quadrant"
+78934,Abdmnal mass lt lwr quad,"Abdominal or pelvic swelling, mass, or lump, left lower quadrant"
+78937,Abdmnal mass generalized,"Abdominal or pelvic swelling, mass, or lump, generalized"
+78939,Abdmnal mass oth spcf st,"Abdominal or pelvic swelling, mass, or lump, other specified site"
+78940,Abdmnal rgdt unspcf site,"Abdominal rigidity, unspecified site"
+78947,Abdmnal rgdt generalized,"Abdominal rigidity, generalized"
+78951,Malignant ascites,Malignant ascites
+78959,Ascites NEC,Other ascites
+78960,Abdmnal tndr unspcf site,"Abdominal tenderness, unspecified site"
+78961,Abdmnal tndr rt upr quad,"Abdominal tenderness, right upper quadrant"
+79001,"Drop, hematocrit, precip",Precipitous drop in hematocrit
+79009,Abnormal RBC NEC,Other abnormality of red blood cells
+7901,Elevated sediment rate,Elevated sedimentation rate
+79021,Impaired fasting glucose,Impaired fasting glucose
+79022,Impaired oral glucse tol,Impaired glucose tolerance test (oral)
+79029,Abnormal glucose NEC,Other abnormal glucose
+7904,Elev transaminase/ldh,Nonspecific elevation of levels of transaminase or lactic acid dehydrogenase [LDH]
+7905,Abn serum enzy level NEC,Other nonspecific abnormal serum enzyme levels
+7906,Abn blood chemistry NEC,Other abnormal blood chemistry
+7907,Bacteremia,Bacteremia
+7908,Viremia NOS,"Viremia, unspecified"
+79092,Abnrml coagultion prfile,Abnormal coagulation profile
+79093,Elvtd prstate spcf antgn,Elevated prostate specific antigen [PSA]
+79094,Euthyroid sick syndrome,Euthyroid sick syndrome
+79095,Elev C-reactive protein,Elevated C-reactive protein (CRP)
+79099,Oth nspcf finding blood,Other nonspecific findings on examination of blood
+7910,Proteinuria,Proteinuria
+7912,Hemoglobinuria,Hemoglobinuria
+7913,Myoglobinuria,Myoglobinuria
+7915,Glycosuria,Glycosuria
+7916,Acetonuria,Acetonuria
+7919,Abn urine findings NEC,Other nonspecific findings on examination of urine
+7920,Abn fnd-cerebrospinal fl,Nonspecific abnormal findings in cerebrospinal fluid
+7921,Abn find-stool contents,Nonspecific abnormal findings in stool contents
+7929,Abn find-body subst NEC,Other nonspecific abnormal findings in body substances
+7930,Nonsp abn fd-skull/head,Nonspecific (abnormal) findings on radiological and other examination of skull and head
+79311,Solitary pulmonry nodule,Solitary pulmonary nodule
+79319,Ot nonsp ab fnd lung fld,Other nonspecific abnormal finding of lung field
+7932,Nonsp abn intrathor NEC,Nonspecific (abnormal) findings on radiological and other examination of other intrathoracic organs
+7933,Nonsp abn fd-bilry tract,Nonspecific (abnormal) findings on radiological and other examination of biliary tract
+7934,Nonsp abn find-gi tract,Nonspecific (abnormal) findings on radiological and other examination of gastrointestinal tract
+7935,Nonsp abn find-gu organs,Nonspecific (abnormal) findings on radiological and other examination of genitourinary organs
+7936,Nonsp abn fnd-abdom area,"Nonspecific (abnormal) findings on radiological and other examination of abdominal area, including retroperitoneum"
+7937,Nonsp abn find-ms system,Nonspecific (abnormal) findings on radiological and other examination of musculoskeletal system
+79380,Ab mammogram NOS,"Abnormal mammogram, unspecified"
+79381,Mammographic microcalcif,Mammographic microcalcification
+79389,Abn finding-breast NEC,Other (abnormal) findings on radiological examination of breast
+79399,Nonsp abn find-body NEC,Other nonspecific (abnormal) findings on radiological and other examinations of body structure
+79400,Abn cns funct study NOS,"Abnormal function study of brain and central nervous system, unspecified"
+79401,Abnorm echoencephalogram,Nonspecific abnormal echoencephalogram
+79402,Abn electroencephalogram,Nonspecific abnormal electroencephalogram [EEG]
+79409,Abn cns funct study NEC,Other nonspecific abnormal results of function study of brain and central nervous system
+79415,Abn auditory funct study,Nonspecific abnormal auditory function studies
+7942,Abn pulmonary func study,Nonspecific abnormal results of pulmonary function study
+79431,Abnorm electrocardiogram,Nonspecific abnormal electrocardiogram [ECG] [EKG]
+79439,Abn cardiovasc study NEC,Other nonspecific abnormal results of function study of cardiovascular system
+7944,Abn kidney funct study,Nonspecific abnormal results of function study of kidney
+7945,Abn thyroid funct study,Nonspecific abnormal results of function study of thyroid
+7946,Abn endocrine study NEC,Nonspecific abnormal results of other endocrine function study
+7947,Abn basal metabol study,Nonspecific abnormal results of function study of basal metabolism
+7948,Abn liver function study,Nonspecific abnormal results of function study of liver
+7949,Abn function study NEC,Nonspecific abnormal results of other specified function study
+79500,Abn glandular pap smear,Abnormal glandular Papanicolaou smear of cervix
+79509,Abn pap cervix HPV NEC,Other abnormal Papanicolaou smear of cervix and cervical HPV
+79510,Abn gland pap smr vagina,Abnormal glandular Papanicolaou smear of vagina
+79539,Nonsp positive cult NEC,Other nonspecific positive culture findings
+79551,Nonsp rea skn test wo tb,Nonspecific reaction to tuberculin skin test without active tuberculosis
+79552,Nonsp rea gma interferon,Nonspecific reaction to cell mediated immunity measurement of gamma interferon antigen response without active tuberculosis
+79579,Oth unspcf nspf imun fnd,Other and unspecified nonspecific immunological findings
+79589,Abnorml tumor marker NEC,Other abnormal tumor markers
+7960,Abn toxicologic finding,Nonspecific abnormal toxicological findings
+7961,Abnormal reflex,Abnormal reflex
+7962,Elev bl pres w/o hypertn,Elevated blood pressure reading without diagnosis of hypertension
+7963,Low blood press reading,Nonspecific low blood pressure reading
+7964,Abn clinical finding NEC,Other abnormal clinical findings
+79671,Pap smear anus w ASC-US,Papanicolaou smear of anus with atypical squamous cells of undetermined significance (ASC-US)
+7969,Abnormal findings NEC,Other nonspecific abnormal findings
+7981,Instantaneous death,Instantaneous death
+79901,Asphyxia,Asphyxia
+79902,Hypoxemia,Hypoxemia
+7991,Respiratory arrest,Respiratory arrest
+79923,Impulsiveness,Impulsiveness
+79929,Emotional state sym NEC,Other signs and symptoms involving emotional state
+7993,Debility NOS,"Debility, unspecified"
+7994,Cachexia,Cachexia
+79953,Visuospatial deficit,Visuospatial deficit
+79955,Frontal lobe deficit,Frontal lobe and executive function deficit
+79959,Cognition sign/sympt NEC,Other signs and symptoms involving cognition
+79989,Ill-define condition NEC,Other ill-defined conditions

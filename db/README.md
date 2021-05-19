@@ -44,8 +44,9 @@ The following columns are included in the export
 	- glucose_min
 	- glucose_max
 	- glucose_mean
-- patient_history -> This column holds a string with icd9 codes, separated by ';', the column includes only icd9 codes that begin with a 'V' and that affects the patients medical history, a dictionary in the db folder allows to get a description to each code
-- diagnoses -> This column holds all diagnoses as icd9 codes (except for codes 'V' and 'E') separated by ';', the diagnoses are associated to a hospital admission which means that a diagnosis could be unknown or not applicable yet when the patient was admitted to the ICU
+- syptoms -> This column holds a string with icd9 codes, separated by ';', the column includes only icd9 codes that begin with '7' which covers all sympton related codes, a dictionary in the db folder allows to get a description to each code
+- patient_history -> This column holds a string with icd9 codes, separated by ';', the column includes only icd9 codes that begin with a 'V' and that classify factors influencing health status and contact with health services, a dictionary in the db folder allows to get a description to each code
+- diagnoses -> This column holds all diagnoses as icd9 codes (except for codes beginning with 'V', 'E' or '7') separated by ';', the diagnoses are associated to a hospital admission which means that a diagnosis could be unknown or not applicable yet when the patient was admitted to the ICU
 - length_of_stay_hospital -> length of stay in the hospital for this specific admission
 - number_of_icu_stays -> number of icu stays during this hospital admission
 - length_of_stay_icu -> the length of stay of the first ICU stay in fractional days, double precision

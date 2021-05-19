@@ -1,4 +1,5 @@
-SELECT 		Q1.patient_id,
+SELECT 		
+	  		Q1.patient_id,
 			Q1.hadm_id, 
 			Q1.icustay_id,
 			hospstay_seq,
@@ -17,6 +18,7 @@ SELECT 		Q1.patient_id,
 			glucose_min,
 			glucose_max,
 			ROUND(glucose_mean) as glucose_mean,
+	  		Q5.icd9_code as symptoms,
 			Q2.icd9_code as patient_history, 
 			Q3.icd9_code as diagnoses,
 			ROUND(los_hospital,2) as length_of_stay_hospital,
@@ -28,10 +30,11 @@ SELECT 		Q1.patient_id,
 			
 	FROM extended_patient_details AS Q1
 	
-	/* Add diagnoses and patient history*/
+	/* Add symptoms, diagnoses and patient history*/
 	FULL JOIN patient_history_aggregated AS Q2 ON Q1.hadm_id = Q2.hadm_id
 	FULL JOIN diagnoses_aggregated AS Q3 ON Q3.hadm_id = Q1.hadm_id		
 	FULL JOIN extended_stay_details AS Q4 ON Q4.hadm_id = Q1.hadm_id
+	FULL JOIN diagnoses_aggregated AS Q5 ON Q5.hadm_id = Q1.hadm_id  
 	
 	/* Add vital signs and demographics*/
 	FULL JOIN public.vitals_first_day ON Q1.icustay_id = public.vitals_first_day.icustay_id

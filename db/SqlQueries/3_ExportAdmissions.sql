@@ -1,0 +1,49 @@
+COPY (SELECT 		
+	  		Q1.patient_id,
+			Q1.hadm_id, 
+			Q1.icustay_id,
+			hospstay_seq,
+			icustay_seq,
+			age, 
+			gender, 
+			ROUND(weight) as weight, 
+			ROUND(height) as height,
+			ROUND(meanbp_mean) as meanbp_mean,
+		 	ROUND(meanbp_min) as meanbp_min,
+			ROUND(meanbp_max) as meanbp_max,
+			resprate_min,
+			resprate_max,
+			ROUND(resprate_mean) as resprate_mean,
+			tempc_mean,
+			glucose_min,
+			glucose_max,
+			ROUND(glucose_mean) as glucose_mean,
+	  		Q5.icd9_code as symptoms,
+			Q2.icd9_code as patient_history, 
+			Q3.icd9_code as diagnoses,
+			ROUND(los_hospital,2) as length_of_stay_hospital,
+			Q4.number_of_icu_stays,
+			ROUND(los_icu,2) as length_of_stay_icu, 
+			Q4.total_length_of_stay_icu,
+			Q4.days_to_death,
+			hospital_expire_flag as died_in_hospital
+			
+	FROM extended_patient_details AS Q1
+	
+	/* Add symptoms, diagnoses and patient history*/
+	FULL JOIN patient_history_aggregated AS Q2 ON Q1.hadm_id = Q2.hadm_id
+	FULL JOIN diagnoses_aggregated AS Q3 ON Q3.hadm_id = Q1.hadm_id		
+	FULL JOIN extended_stay_details AS Q4 ON Q4.hadm_id = Q1.hadm_id
+	FULL JOIN symptoms_aggregated AS Q5 ON Q5.hadm_id = Q1.hadm_id  
+	
+	/* Add vital signs and demographics*/
+	FULL JOIN public.vitals_first_day ON Q1.icustay_id = public.vitals_first_day.icustay_id
+	FULL JOIN public.weight_first_day ON Q1.icustay_id = public.weight_first_day.icustay_id
+	FULL JOIN public.height_first_day ON Q1.icustay_id = public.height_first_day.icustay_id
+	
+	/*Filter certain patients and cases*/
+	WHERE age > 0
+	)
+
+/*Export to*/
+TO 'C:\Users\Public\admissions.csv' DELIMITER ',' CSV HEADER;
