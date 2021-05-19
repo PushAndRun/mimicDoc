@@ -4,5 +4,5 @@ var DiagnosisSchema = new mongoose.Schema({
     short_title: String,
     long_title: String
 });
-mongoose.model('diagnoses_dict', DiagnosisSchema);
-module.exports = mongoose.model('diagnoses_dict');
+mongoose.model("Diagnosis", DiagnosisSchema,'diagnoses_dict');
+module.exports = mongoose.model('Diagnosis');
