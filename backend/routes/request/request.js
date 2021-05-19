@@ -47,7 +47,7 @@ router.post('/', verifyToken, async (req,res,next) => {
             })
 
     }
-    /*
+    
     let unconvertedDiagnoses = req.body.patient.medicalData.diagnoses;
     const convertedDiagnoses = [String];
     console.log(unconvertedDiagnoses.length);
@@ -76,7 +76,7 @@ router.post('/', verifyToken, async (req,res,next) => {
         });
         console.log('fun middle log');
     }
-    */
+
     // TODO: Prediction von ML einholen - placeholder for now
     let prediction = await predict("76,M,97,76,40,259,5,24,17,37.002880708670915,136,306,232,,0389;78559;5849;4275;41071;4280;6826;4254;2639");
     //let prediction = [0,14]   //pseudo
