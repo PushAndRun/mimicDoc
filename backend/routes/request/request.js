@@ -44,21 +44,33 @@ router.post('/', verifyToken, async (req,res,next) => {
 
     let unconvertedDiagnoses = req.body.patient.medicalData.diagnoses;
     const convertedDiagnoses = [String];
+    console.log(unconvertedDiagnoses.length);
+    console.log('hier' + unconvertedDiagnoses);
     for (x in unconvertedDiagnoses){
+        console.log('jetzt hier ' + x);
+        x = unconvertedDiagnoses[x]; 
         console.log("looking for:" + x);
-        if (!isNaN(x)){
-            let diagToNum = null;
-            DiagnosisModel.findOne({$or: [{short_title: x}, {long_titel: x}]}, function(err, diagnosisRes){
-                if (err) {console.log("error while searching " + x + " in our db" + err)};
-                if (!diagnosisRes){console.log(x + ' is not a short_titel diagnosis')};
-                diagToNum = diagnosisRes.icd9_code;
-                console.log("found " + x + " in Db as" + diagToNum);
-            })
-            if (diagToNum != null){
-                convertedDiagnoses.push(diagToNum)
+        //if (isNaN(x)){console.log(x + ' is not a number');}
+        let diagToNum = null;
+        console.log('typeof ' + x + ' is ' + typeof(x));
+        DiagnosisModel.find({short_title: x}, function(err, diagnosisRes){
+            if (err) {console.log("error while searching " + x + " in our db" + err)}
+            else if (!diagnosisRes){console.log(x + ' is not a short_titel diagnosis')}
+            else {
+                diagToNum = diagnosisRes.code;
+                console.log("found " + x + " in Db as" + diagnosisRes.short_title);
+                if (diagToNum != null){
+                    convertedDiagnoses.push(diagToNum)
+                }
             }
-        }
+            console.log('now here ' + x);
+            console.log('diag ' + diagnosisRes);
+            console.log('err ' + err);
+        
+        });
+        console.log('fun middle log');
     }
+    console.log("done diags: " + convertedDiagnoses);
 
     // TODO: Prediction von ML einholen - placeholder for now
     // let prediction = predict.predict("76,M,97,76,40,259,5,24,17,37.002880708670915,136,306,232,,0389;78559;5849;4275;41071;4280;6826;4254;2639").split("\n");
