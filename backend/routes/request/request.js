@@ -139,13 +139,9 @@ router.post('/', verifyToken, async (req, res, next) => {
                 console.log(err)
                 return res.status(500).send("There was a problem putting the request into DB`.");
             }
-            Patient.findByIdAndUpdate(newPatient._id, { "$push": { "requests": request._id } },
-                function (err, patient) {
-                    if (err) return res.status(500).send("There was a problem updating the patient." + err);
-                    
-                }).populate('requests').exec(function (err, patient){
+            request.populate('patient').exec(function (err, request){
                  // On success send back full request including survival prediction
-                 res.status(200).send(patient);   
+                 res.status(200).send(request);   
                 })
         })
 })
