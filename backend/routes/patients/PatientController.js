@@ -98,8 +98,10 @@ router.get('/getPatientsByUser', VerifyToken, function (req, res) {
     Patient.find({user: req.userId}, function (err, patients) {
         if (err) return res.status(500).send("There was a problem finding all users.");
         if (!patients) return res.status(404).send("No patients found.");
+    }).populate("requests").exec(function(err, patients) {
+        if (err) return res.status(500).send("There was a problem finding all users.");
         res.status(200).send(patients);
-    });
+    })
     
 });
 
