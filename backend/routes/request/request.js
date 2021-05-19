@@ -119,7 +119,7 @@ router.post('/', verifyToken, async (req,res,next) => {
             return
         });
         // On success send back full request including survival prediction
-        res.status(200).send(request);
+        res.status(200).send(newPatient.populate('reqeusts'));
       })
 })
 
