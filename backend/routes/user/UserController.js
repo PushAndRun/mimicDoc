@@ -44,6 +44,15 @@ router.get('/id/:id', function (req, res) {
     });
 });
 
+// RETURNS ALL PATIENTS FROM USER
+router.get('/getOwnPatients', VerifyToken, function (req, res) {
+    User.findOne({_id: req.userId}, function (err, user) {
+        if (err) return res.status(500).send("There was a problem finding all users.");
+        if (!user) return res.status(404).send("No users found.");
+        res.status(200).send(user.populate('patients').patients);
+    });
+});
+
 // GETS A SINGLE USER FROM THE DATABASE BY USERNAME
 router.get('/username/:username', function (req, res) {
     User.findOne({name: req.params.username}, function (err, user) {
