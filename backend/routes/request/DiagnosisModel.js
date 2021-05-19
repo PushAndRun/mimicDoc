@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');  
 var DiagnosisSchema = new mongoose.Schema({
-    code: Number,
+    icd9_code: Number,
     short_title: String,
     long_title: String
 });
