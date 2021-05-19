@@ -16,6 +16,7 @@ const endpointRouter = require('./routes/endpoints').router
 const requestRouter = require('./routes/request/request')
 // db and user management
 const UserController = require('./routes/user/UserController')
+const PatientController = require('./routes/patients/PatientController')
 // autehtification encryption and json webtokens
 const AuthController = require('./routes/auth/AuthController')
 // mongoose db connection
@@ -37,6 +38,7 @@ app.get('/', express.static("./static"))
 
 app.use('/api/user',UserController)
 app.use('/api/auth',AuthController)
+app.use('/api/patients',PatientController)
 
 app.listen(PORT, HOST);
 console.log(`Running on http://${HOST}:${PORT}`)

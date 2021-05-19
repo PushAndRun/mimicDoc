@@ -1,8 +1,6 @@
-// path mit dem er aufgerufen wurde: /api/patient
+// path mit dem er aufgerufen wurde: /api/patients
 var express = require('express');
 var router = express.Router();
-
-const diagnoses = require('./endpoints').csvData
 
 var VerifyToken = require(__root + '/routes/auth/VerifyToken');
 
@@ -86,13 +84,23 @@ router.post('/', VerifyToken, function (req, res) {
             })
 });
 
-// RETURNS ALL THE USERS IN THE DATABASE
+// RETURNS ALL THE PATIENTS IN THE DATABASE
 router.get('/', function (req, res) {
     Patient.find({}, function (err, patients) {
         if (err) return res.status(500).send("There was a problem finding all patients.");
         if (!patient) return res.status(404).send("No patient found.");
         res.status(200).send(patients);
     });
+});
+
+// RETURNS ALL PATIENTS FROM  SINGLE USER
+router.get('/getPatientsByUser', VerifyToken, function (req, res) {
+    Patient.find({user: req.userId}, function (err, patients) {
+        if (err) return res.status(500).send("There was a problem finding all users.");
+        if (!patients) return res.status(404).send("No patients found.");
+        res.status(200).send(patients);
+    });
+    
 });
 
 // GETS A SINGLE USER FROM THE DATABASE BY ID

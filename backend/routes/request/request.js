@@ -3,6 +3,7 @@ var express = require('express')
 var router = express.Router()
 const diagnoses = require('../endpoints').csvData
 const DiagnosisModel = require('./DiagnosisModel')
+var User = require('../user/UserModel');
 const Patient = require('../patients/PatientModel')
 const RequestModel = require('./RequestModel')
 const verifyToken = require('../auth/VerifyToken')
@@ -41,7 +42,7 @@ router.post('/', verifyToken, async (req,res,next) => {
         })
         // push patient to user
         User.findByIdAndUpdate(req.userId, 
-            { "$push": { "patients": p._id} },
+            { "$push": { "patients": newPatient._id} },
             function (err, user) {
                 if (err) return res.status(500).send("There was a problem updating the user."+ err);
             })
