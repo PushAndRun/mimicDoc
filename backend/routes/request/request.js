@@ -133,16 +133,16 @@ router.post('/', verifyToken, async (req, res, next) => {
         diagnoses: req.body.patient.medicalData.diagnoses,
         created: new Date(),
         patient: newPatient._id
-    },
-        function (err, request) {
-            if (err) {
-                console.log(err)
-                return res.status(500).send("There was a problem putting the request into DB`.");
-            }
-            request.populate('patient').exec(function (err, request){
-                 // On success send back full request including survival prediction
-                 res.status(200).send(request);   
-                })
+    }).then(request => {
+        console.log("req1:"+request)
+            RequestModel.findById(request._id).populate('patient').exec((err, request) => {
+                if (err) {
+                    console.log(err)
+                    return res.status(500).send("There was a problem putting the request into DB`.");
+                }
+                console.log("req2:"+request)
+                res.status(200).send(request); 
+            })
         })
 })
 
