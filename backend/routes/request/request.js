@@ -132,16 +132,27 @@ router.post('/', verifyToken, async (req, res, next) => {
         diagnoses: req.body.patient.medicalData.diagnoses,
         created: new Date(),
         patient: newPatient._id
-    }).then(request => {
+    },function (err, request) {
+        if (err) {
+            console.log("err:"+err)
+            return res.status(500).send("There was a problem putting the request into DB`.");
+        }
         // update patient with request
-        Patient.findByIdAndUpdate(request.patient, { "$push": { "requests": request._id } })
+        console.log("search patient")
+        Patient.findByIdAndUpdate(newPatient._id, { "$push": { "requests": request._id } }, 
+        function (err,patient){
+            if (err) {
+                console.log("err:"+err)
+                return res.status(500).send("There was a problem putting the request into DB`.");
+            }
+            if (!patient){console.log("no patient with this id")} else {console.log(patient)}
+        })
         // return request - can only populate with find
         RequestModel.findById(request._id).populate('patient').exec((err, request) => {
             if (err) {
-                console.log(err)
+                console.log("err:"+err)
                 return res.status(500).send("There was a problem putting the request into DB`.");
             }
-            console.log("req2:" + request)
             res.status(200).send(request);
         })
     })
