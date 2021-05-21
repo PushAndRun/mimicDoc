@@ -1,19 +1,27 @@
-import axios from 'axios'; 
+import axios from 'axios';
+import store from '../store.js'
+
+
 
 
 const url = 'http://localhost:8081/api';
 
+axios.defaults.headers.common['x-access-token'] = store.state.token; 
+
+
 export default {
-    createPatient(credentials){
+    createPatient(patient){
+        console.log(store.state.token);
         return axios
-            .post(url + '/..../..../', credentials)
-         //  .then(response=>response.data); 
+            .post(url + '/request', patient)
+            //.then(response=>response.data);
+            
     },
 
-    fetchPatients(username){
+    async fetchPatients(){
         return axios
-        .get(url + '/.../...' + (username))
-       // .then(response => response.data);
+        .get(url + "/patients/getPatientsByUser")
+        .then(response => response.data);
 
     }
 }

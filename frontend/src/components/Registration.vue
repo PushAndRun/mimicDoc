@@ -96,14 +96,12 @@
 
      <b-carousel
       id="carousel"
-      v-model="slide"
       :interval="4000"
       background="#ababab"
       img-width="1024"
       img-height="488"
       style="text-shadow: 1px 1px 2px #333;"
-      @sliding-start="onSlideStart"
-      @sliding-end="onSlideEnd"
+     
     >
      
       <!-- Slides with custom text -->
@@ -316,5 +314,42 @@ p {
 
    
 
+   
+.carousel {
+  position:relative;
+    top:0;    
+}
+.navbar {
+    position:absolute;
+    top:0px;
+    z-index:10;
+    background:#fff;
+    width:100%;
+}
+.navbar-inner {
+    background:transparent;
+}
+
+.registerButton {
+
+  position: left;
+
+}
+
+.card {
+  
+  margin-bottom: 50px;
+}
+
+p {
+  margin-top: 50px;
+}
+
+
+
+
+   
+
 </style>
+
 

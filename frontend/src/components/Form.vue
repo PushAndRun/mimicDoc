@@ -5,7 +5,7 @@
 
       <b-navbar-brand href = "#"><b><router-link to="/homepage"  style="text-decoration: none; color:inherit ">RoboDoc</router-link></b></b-navbar-brand>
 
-       <b-button variant="transparent" @click="logout">Logout</b-button>
+      <b-button @click=logout>Logout</b-button> 
     </b-navbar>
      <br>
      <h1> Hi {{username}} </h1>
@@ -34,20 +34,20 @@
 
        <b-form-group 
       id="input-group-3" 
-      label="Patient's Birthdate Age:" 
+      label="Patient's Birthday:" 
       label-for="input-3">
         <b-form-datepicker
           id="input-3"
-          v-model="form.age"
-          placeholder="Enter your birthday"
+          v-model="form.dateOfBirth"
+          placeholder="Enter Patient's birthday"
           required
         ></b-form-datepicker>
       </b-form-group>
 
       <b-form-group id="input-group-7"  label="Please choose Patient's gender:" label-for="input-7" required>
         
-          <b-form-radio v-model="form.gender" value="male">male</b-form-radio>
-          <b-form-radio v-model="form.gender" value="female">female</b-form-radio>
+          <b-form-radio v-model="form.gender" value="M">male</b-form-radio>
+          <b-form-radio v-model="form.gender" value="F">female</b-form-radio>
 
         
       </b-form-group>
@@ -96,7 +96,7 @@
       >
         <b-form-input
           id="input-bpmean"
-          v-model="form.meanpb_mean"
+          v-model="form.meanbp_mean"
           type="number"
           placeholder="Enter mean blood pressure"
           required
@@ -109,11 +109,11 @@
           placeholder="Enter min blood pressure"
           required
         ></b-form-input>
-<br>
+  <br>
 
         <b-form-input
           id="input-bpmax"
-          v-model="form.meanpb_max"
+          v-model="form.meanbp_max"
           type="number"
           placeholder="Enter max blood pressure"
           required
@@ -125,8 +125,7 @@
         id="input-group-resprate"
         label="Enter Patient's resprate:"
         label-for="input-bp"
-        
-      >
+        >
         <b-form-input
           id="input-respratemean"
           v-model="form.resprate_mean"
@@ -142,7 +141,7 @@
           placeholder="Enter min resprate"
           required
         ></b-form-input>
-<br>
+  <br>
 
         <b-form-input
           id="input-respratemax"
@@ -213,7 +212,7 @@
       
 
       <b-button type="submit" variant="success">Submit</b-button>
-      <b-button type="reset" variant="danger">Reset</b-button>
+      <b-button type="onReset" variant="danger">Reset</b-button>
     </b-form>
     
   </div>
@@ -225,30 +224,15 @@ import PatientService from '@/services/PatientService.js'
 
   export default {
 
-    computed: {
-      state() {
-        return this.name.length >= 4
-      },
-      invalidFeedback() {
-        if (this.name.length > 0) {
-          return 'Enter at least 4 characters.'
-        }
-        return 'Please enter something.'
-      }, 
-
-    },
 
     data() {
       return {
-
-        
-        
         username:"",
 
         
         form: {
           name: '',
-          age: '',
+          dateOfBirth: '',
           gender: '',
           weight: '',
           height: '',
@@ -271,6 +255,7 @@ import PatientService from '@/services/PatientService.js'
         
       }
     },
+
     async created(){
           if(!this.$store.getters.isLoggedIn){
             this.$router.push('/registration')
@@ -278,24 +263,20 @@ import PatientService from '@/services/PatientService.js'
           }
           
         this.username = this.$store.getters.getUser.username;
-        
-        //this.secretMessage = await AuthService.getSecretContent();
     },
-    
+
     methods: {
-      submitPatient (event){
-          event.preventDefault();
-          this.$emit("create-Patient", this.form);
+      logout(){
+      this.$router.push('/');
+      this.$store.dispatch('logout'); 
       },
 
-
-        async submit (){
-        try {
-          const credentials = {
-           
-         patient:{
+      async submit (){
+      try {
+        const patientObject = {
+            patient:{
               name:this.form.name,
-              age:this.form.age,
+              dateOfBirth:this.form.dateOfBirth,
               gender:this.form.gender,
               weight:this.form.weight,
               height:this.form.height,
@@ -323,32 +304,21 @@ import PatientService from '@/services/PatientService.js'
                   diagnoses:this.form.diagnoses
                 }
             }
-          };
-          const response = await PatientService.createPatient(credentials);
-          
-          this.msg = response.msg; 
-        
-          
-          
+            
+          }; 
+          const response = await PatientService.createPatient(patientObject);
+          this.msg = response.msg;   
         } catch (error){
             this.msg = error.response.data.msg;
         }
-
         this.$router.push('/homepage');
-
       },
 
-      logout(){
-        this.$store.dispatch('logout'); 
-        this.$router.push('registration'); 
-      },
-     
-
-     onReset(event) {
+    onReset(event) {
         event.preventDefault()
         // Reset our form values
-        this.form.name= ''
-        this.form.age= ''
+       this.form.name= ''
+        this.form.dateOfBirth= ''
          this.form.gender= ''
           this.form.weight= ''
           this.form.height= ''
@@ -365,9 +335,7 @@ import PatientService from '@/services/PatientService.js'
           this.form.glucose_mean= ''
           this.form.patient_history=[]
           this.form.diagnoses=[]
-       
       }
-
     }
   }
 </script>
