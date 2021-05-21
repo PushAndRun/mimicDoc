@@ -72,7 +72,6 @@ router.post('/', verifyToken, async (req, res, next) => {
             function (err, user) {
                 if (err) return res.status(500).send("There was a problem updating the user." + err);
             })
-
     }
 
     //res.status(500).send(await convertDiagsToNums(req.body.patient.medicalData.diagnoses));
@@ -134,16 +133,18 @@ router.post('/', verifyToken, async (req, res, next) => {
         created: new Date(),
         patient: newPatient._id
     }).then(request => {
-        console.log("req1:"+request)
-            RequestModel.findById(request._id).populate('patient').exec((err, request) => {
-                if (err) {
-                    console.log(err)
-                    return res.status(500).send("There was a problem putting the request into DB`.");
-                }
-                console.log("req2:"+request)
-                res.status(200).send(request); 
-            })
+        // update patient with request
+        Patient.findByIdAndUpdate(request.patient, { "$push": { "requests": request._id } })
+        // return request - can only populate with find
+        RequestModel.findById(request._id).populate('patient').exec((err, request) => {
+            if (err) {
+                console.log(err)
+                return res.status(500).send("There was a problem putting the request into DB`.");
+            }
+            console.log("req2:" + request)
+            res.status(200).send(request);
         })
+    })
 })
 
 // get all saved requests
