@@ -1,46 +1,72 @@
 <template>
     <div>
 
-        <b-navbar toggleable="false" type="dark" variant="info">
+          <b-navbar toggleable="false" type="dark" variant="dark">
+    <b-navbar-brand style="color:white">RoboDoc</b-navbar-brand>
 
-      <b-navbar-brand href = "#"><b><router-link to="/homepage" style="text-decoration: none; color:inherit ">RoboDoc</router-link></b></b-navbar-brand>
-    <!-- logout button -->
-      <b-button variant="secondary" @click="logout">Logout</b-button>
-    </b-navbar>
+    <b-navbar-toggle target="navbar-toggle-collapse">
+      <template >
+        <b-icon style="color:white">Menu</b-icon>
+      </template>
+    </b-navbar-toggle>
+
+    <b-collapse id="navbar-toggle-collapse" is-nav>
+      <b-navbar-nav class="ml-auto" >
+          <b-nav-item> <router-link style="text-decoration: none; color:white" to="/homepage" >Homepage</router-link></b-nav-item>
+          <b-nav-item> <router-link style="text-decoration: none; color:white" to="/form" >Submit new Patient</router-link></b-nav-item>
+          <b-nav-item  @click="logout"><p style="color:white">Sign Out</p></b-nav-item>
+      </b-navbar-nav>
+    </b-collapse>
+  </b-navbar>
         <br>
-        <h1>All Patients of {{username}}</h1>
+        <br>
+        <h2>All Patients of {{username}}</h2>
         <!-- Backend sendet noch nicht Name, Gewicht, Grösse, Aufenthaltsdauer, Chances of Survival ... -->
-        <b-button @click=fetchAllPatients> Display all Patients </b-button> 
-
-         <ul>
-         <li v-for="patient in patients" v-bind:key="patient.name">
-            <p> ID: {{ patient._id }} <br>
+       
+ <br>
+       <b-card-group columns style="margin: 30px;">  
+       <b-card   v-for="patient in patients" v-bind:key="patient.name" :title="patient.name" :sub-title="patient._id"
+            class="patientCard">
+            <b-card-text> 
             <!-- Last Request: {{ requests[patient.requests.length-1].created }} <br> -->
-            Name: {{ patient.name }} <br>
-            Date of Birth: {{ patient.medicalData.dateOfBirth }} <br> 
+           <br>
+            Date of Birth: {{ patient.medicalData.dateOfBirth.substring(0,10) }} <br> 
             Gender: {{ patient.medicalData.gender }} <br>
-            Weight: {{ patient.medicalData.weight }} <br>
-            Height: {{ patient.medicalData.height }} <br>
-            Bloodtype: {{ patient.medicalData.bloodtype }} <br>
-           
+            Weight: {{ patient.medicalData.weight }} kg<br>
+            Height: {{ patient.medicalData.height }} cm<br>
+             <br>
             
-             Mean blood pressure: {{ patient.requests[patient.requests.length-1].bloodpressure.meanbp_mean }} <br>
-           Min blood pressure: {{ patient.requests[patient.requests.length-1].bloodpressure.meanbp_min }} <br>
-           
-          Max blood pressure: {{ patient.requests[patient.requests.length-1].bloodpressure.meanbp_max }} <br>
-            Mean resprate: {{ patient.requests[patient.requests.length-1].respiratory.resprate_mean }} <br>
-            Min resprate: {{ patient.requests[patient.requests.length-1].respiratory.resprate_min }} <br>
-            Max resprate: {{ patient.requests[patient.requests.length-1].respiratory.resprate_max }} <br>
-            Mean temperature in C°: {{ patient.requests[patient.requests.length-1].tempc_mean }} <br>
-            Mean glucose: {{ patient.requests[patient.requests.length-1].glucose.glucose_mean }} <br>
-            Min glucose: {{ patient.requests[patient.requests.length-1].glucose.glucose_min }} <br>
-            Max glucose: {{ patient.requests[patient.requests.length-1].glucose.glucose_max }} <br>
-            Patient History: {{ patient.requests[patient.requests.length-1].patient_history }} <br>
-            Diagnoses: {{ patient.requests[patient.requests.length-1].diagnoses }}  <br> 
-            Chances of Survival: {{ patient.survival }}</p><br> 
-           
-          </li>
-          </ul>
+            Bloodtype: {{ patient.medicalData.bloodtype }} <br>
+            <br>
+            <b>Blood Pressure </b><br>
+           Mean: {{ patient.requests[patient.requests.length-1].bloodpressure.meanbp_mean }} mmHg<br>
+           Min: {{ patient.requests[patient.requests.length-1].bloodpressure.meanbp_min }} mmHg<br>
+            Max: {{ patient.requests[patient.requests.length-1].bloodpressure.meanbp_max }} mmHg<br>
+            <br>
+            <b>Glucose Levels </b><br>
+            Mean: {{ patient.requests[patient.requests.length-1].glucose.glucose_mean }} mg/dL<br>
+            Min: {{ patient.requests[patient.requests.length-1].glucose.glucose_min }} mg/dL<br>
+            Max: {{ patient.requests[patient.requests.length-1].glucose.glucose_max }} mg/dL<br>
+           <br>
+          <b> Respiratory Rate </b><br>
+            Mean: {{ patient.requests[patient.requests.length-1].respiratory.resprate_mean }} breaths per minute<br>
+            Min: {{ patient.requests[patient.requests.length-1].respiratory.resprate_min }} breaths per minute<br>
+            Max: {{ patient.requests[patient.requests.length-1].respiratory.resprate_max }} breaths per minute<br>
+            <br>
+            Mean Temperature: {{ patient.requests[patient.requests.length-1].tempc_mean }} C°<br>
+            <br>
+            Patient History: {{ patient.requests[patient.requests.length-1].patient_history.join(', ') }} <br>
+            Diagnoses: {{ patient.requests[patient.requests.length-1].diagnoses.join(', ') }}  <br> 
+            <br>
+            Chances of Survival: {{ patient.survival }} %<br> 
+            
+
+           </b-card-text>
+
+            </b-card>
+          
+</b-card-group>
+          
     </div>
 </template>
 
@@ -98,6 +124,7 @@ export default {
             this.$router.push('/registration')
           }
         this.username = this.$store.getters.getUser.username;
+        this.fetchAllPatients();
 
         //this.secretMessage = await AuthService.getSecretContent();
     },
@@ -132,12 +159,14 @@ export default {
        // }
 
       },
-    }, 
-
-    
+    },    
 }
 
 </script>
 <style scoped>
+
+
+
+
 
 </style>
