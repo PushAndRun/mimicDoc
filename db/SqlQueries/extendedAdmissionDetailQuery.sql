@@ -34,7 +34,7 @@ SELECT
 	FULL JOIN patient_history_aggregated AS Q2 ON Q1.hadm_id = Q2.hadm_id
 	FULL JOIN diagnoses_aggregated AS Q3 ON Q3.hadm_id = Q1.hadm_id		
 	FULL JOIN extended_stay_details AS Q4 ON Q4.hadm_id = Q1.hadm_id
-	FULL JOIN diagnoses_aggregated AS Q5 ON Q5.hadm_id = Q1.hadm_id  
+	FULL JOIN symptoms_aggregated AS Q5 ON Q5.hadm_id = Q1.hadm_id  
 	
 	/* Add vital signs and demographics*/
 	FULL JOIN public.vitals_first_day ON Q1.icustay_id = public.vitals_first_day.icustay_id
