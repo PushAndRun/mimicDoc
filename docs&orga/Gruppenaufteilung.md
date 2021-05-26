@@ -2,12 +2,13 @@
 - Julius
 - Shahin
 - Jana
+- Yousef
 
 ### MIMIC-III Aufbereiten
 - Paul
 - Til
 - Felicitas
-- Yousef
+
 
 ### Frontend
 - Felix
