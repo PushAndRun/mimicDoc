@@ -2,7 +2,7 @@
 
 global.__root   = __dirname + '/'; 
 const express = require('express')
-var logger = require('morgan')
+const logger = require('morgan');
 const cors = require('cors')
 
 
@@ -17,7 +17,7 @@ const requestRouter = require('./routes/request/request')
 // db and user management
 const UserController = require('./routes/user/UserController')
 const PatientController = require('./routes/patients/PatientController')
-// autehtification encryption and json webtokens
+// authentication encryption and json betokens
 const AuthController = require('./routes/auth/AuthController')
 // mongoose db connection
 const db = require('./db')

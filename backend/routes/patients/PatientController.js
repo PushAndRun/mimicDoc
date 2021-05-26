@@ -1,12 +1,12 @@
 // path mit dem er aufgerufen wurde: /api/patients
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-var VerifyToken = require(__root + '/routes/auth/VerifyToken');
+const VerifyToken = require(__root + '/routes/auth/VerifyToken');
 
 router.use(express.urlencoded({ extended: true }));
 router.use(express.json());
-var Patient = require('./PatientModel');
+const Patient = require('./PatientModel');
 
 
 function isEmptyObject(obj) {
@@ -43,7 +43,7 @@ router.post('/',(req,res,next) => {
 router.post('/',(req,res,next) => {
     console.log(Object.keys(format))
     console.log(Object.keys(req.body))
-    missing = ''
+    let missing = ''
     for(let key of Object.keys(format)){
         if(!Object.keys(req.body).includes(key)){
             missing+=key+' '

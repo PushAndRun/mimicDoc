@@ -80,3 +80,6 @@ typings/
 
 #MacOS
 .DS_Store
+
+#jetbrains ide files
+.idea/
