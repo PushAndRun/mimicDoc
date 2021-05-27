@@ -1,5 +1,5 @@
 <template>
- <div  id = "homepage" :height="windowHeight">
+ <div  id = "homepage">
  
 
 
@@ -34,8 +34,34 @@
         Here you can create new patients and get an overview of all your patients.<br>
         Use RoboDoc to optimally plan further procedures and make decisions in an easy way.  
         </p>
+        <br>  
+        <br>
+        <br>
+        <br>  
+        <br>
+        <br>
+        <p id="text" >
+        Übersicht<br>
+        Anzahl Patienten: <br>
+        Zuletzt geänderter Patient: <br>
+        </p>
+        <br>  
+        <br>
+        <br>
+        <br>  
+        <br>
+        <br>
+        <br> 
+        <br> 
         
 
+
+      <v-footer>
+
+          <p> 2021 - RoboDoc </p>    
+
+
+      </v-footer>
 
         
   </div>  
@@ -103,7 +129,12 @@ h1 {
   text-align: left;
    margin-left:20px;
 
+  
+  
    font-size: 20px;
 }
+
+
+
 
 </style>
