@@ -1,10 +1,9 @@
-
 <template>
 <div class="registration">
    <div class = "navigation" >
    <b-navbar toggleable="false" type="dark" variant="transparent">
 
-      <b-navbar-brand href = "#">RoboDoc</b-navbar-brand>
+      <b-navbar-brand href = "#"><b>RoboDoc</b></b-navbar-brand>
 
     <div class="Modal-Register">
     
@@ -175,8 +174,7 @@
 
 
 <script>
-import AuthService from '@/services/AuthService.js'
-
+import AuthService from '../services/AuthService.js'
 
 export default {
     name: 'Registration', 
@@ -299,7 +297,42 @@ export default {
 .registerButton {
 
   margin-right: 5px;
-   position: left;
+
+}
+
+.card {
+  
+  margin-bottom: 50px;
+}
+
+p {
+  margin-top: 50px;
+}
+
+
+
+
+   
+
+   
+.carousel {
+  position:relative;
+    top:0;    
+}
+.navbar {
+    position:absolute;
+    top:0px;
+    z-index:10;
+    background:#fff;
+    width:100%;
+}
+.navbar-inner {
+    background:transparent;
+}
+
+.registerButton {
+
+  position: left;
 
 }
 

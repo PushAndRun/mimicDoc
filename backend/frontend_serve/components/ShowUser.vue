@@ -17,7 +17,7 @@
 
 <script>
 
-import getUserService from '@/services/UserService'
+import getUserService from '../services/UserService'
 export default {
     name: 'ShowUser', 
     data(){
