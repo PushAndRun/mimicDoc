@@ -48,17 +48,14 @@ router.get('/logout', function(req, res) {
 router.post('/register', function(req, res) {
 
   var hashedPassword = bcrypt.hashSync(req.body.password, 8);
-  console.log(req.body)
+
   User.create({
     name : req.body.name,
     email : req.body.email,
     password : hashedPassword
   }, 
   function (err, user) {
-    if (err) {
-      console.log(err)
-      return res.status(500).send("There was a problem registering the user`.");
-    }
+    if (err) return res.status(500).send("There was a problem registering the user`.");
 
     // if user is registered without errors
     // create a token
@@ -77,7 +74,7 @@ router.get('/me', VerifyToken, function(req, res, next) {
     if (err) return res.status(500).send("There was a problem finding the user.");
     if (!user) return res.status(404).send("User not found.");
     res.status(200).send(user);
-  });
+  }).populate('patients');
 
 });
 

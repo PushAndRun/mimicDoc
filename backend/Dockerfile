@@ -1,10 +1,11 @@
-FROM node:16-alpine
+FROM node:15    
 
 # Create app directory
 WORKDIR /usr/src/app
 
 # Install dependencies
 COPY package*.json ./
+
 RUN npm install
 
 # Only for Production
@@ -14,7 +15,7 @@ RUN npm install
 COPY . .
 
 # Open Port
-EXPOSE 8081
+EXPOSE 8080
 
 #Run
 CMD [ "node", "server.js" ]

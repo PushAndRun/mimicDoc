@@ -12,7 +12,8 @@ var UserSchema = new mongoose.Schema({
     type: String
   , required: true
   , min : [6, "password must be at least 6 characters long"]
-  }
+  },
+  patients: [{ type: mongoose.Schema.ObjectId, ref: 'Patient' }]
 });
 mongoose.model('User', UserSchema);
 module.exports = mongoose.model('User');

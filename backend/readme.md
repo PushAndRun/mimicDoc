@@ -12,8 +12,8 @@
 | /api/diagnoses| GET | Alle möglichen Diagnosen ausgeben lassen | ✅ |
 | /api/searchdiagnose/:diagnose | GET | Diagnose in Datenbank (noch csv) suchen, alle passenden | ✅ |
 | /api/reloaddiagnoses | GET | CSV Datei mit Diagnosen neu laden, falls geändert | ✅ |
-|/api/request | GET | Patientendaten einreichen -> vorerst Pseudoantwort | ✅ |
-|/api/request | GET | Patientendaten-Format ausgeben bei leerem request | ✅ |
+|/api/request | POST | (Token benötigt in x-access-token header) Patientendaten einreichen nach bekanntem Schema | ✅ |
+|/api/request | GET | (Token benötigt in x-access-token header) Alle Patientendaten ausgeben | ✅ |
 #
 ##### Regular startup:
 - npm install
