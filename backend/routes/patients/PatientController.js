@@ -59,9 +59,6 @@ router.post('/',(req,res,next) => {
 
 //TODO: check if request parameters are of correct type
 
-//TODO: send request to ML Backend
-
-
 // CREATES A NEW PATIENT
 router.post('/', VerifyToken, function (req, res) {
 
@@ -80,7 +77,7 @@ router.post('/', VerifyToken, function (req, res) {
             { "$push": { "patients": p._id} },
             function (err, user) {
                 if (err) return res.status(500).send("There was a problem updating the user."+ err);
-                res.status(200).send(p);
+                return res.status(200).send(p);
             })
 });
 
@@ -88,9 +85,11 @@ router.post('/', VerifyToken, function (req, res) {
 router.get('/', function (req, res) {
     Patient.find({}, function (err, patients) {
         if (err) return res.status(500).send("There was a problem finding all patients.");
-        if (!patient) return res.status(404).send("No patient found.");
-        res.status(200).send(patients);
-    });
+        if (!patients) return res.status(404).send("No patient found.");  
+    }).populate("requests").exec(function(err, patients) {
+        if (err) return res.status(500).send("There was a problem populating the patients.");
+        return res.status(200).send(patients);
+    })
 });
 
 // RETURNS ALL PATIENTS FROM  SINGLE USER
@@ -99,7 +98,7 @@ router.get('/getPatientsByUser', VerifyToken, function (req, res) {
         if (err) return res.status(500).send("There was a problem finding all users.");
         if (!patients) return res.status(404).send("No patients found.");
     }).populate("requests").exec(function(err, patients) {
-        if (err) return res.status(500).send("There was a problem finding all users.");
+        if (err) return res.status(500).send("There was a problem populating the patients.");
         res.status(200).send(patients);
     })
     
@@ -110,8 +109,10 @@ router.get('/id/:id', function (req, res) {
     Patient.findById(req.params.id, function (err, patient) {
         if (err) return res.status(500).send("There was a problem finding the patient with id:"+ req.params.id);
         if (!patient) return res.status(404).send("No user found.");
-        res.status(200).send(patient);
-    });
+    }).populate("requests").exec(function(err, patient) {
+        if (err) return res.status(500).send("There was a problem populating the patient.");
+        res.status(200).send(patients);
+    })
 });
 
 // DELETES A USER FROM THE DATABASE BY ID
@@ -131,14 +132,4 @@ router.put('/:id', /* VerifyToken, */ function (req, res) {
     });
 });
 
-
-
-
-//TODO: send ML results back as response
-
-
-//Pseudo-Output
-router.get('/',(req,res,next) => {
-    res.send(`Patient will spend ${getRandomInt(365)} days on ICU with a certainty of ${getRandomInt(100)}%.`)
-})
 module.exports = router
