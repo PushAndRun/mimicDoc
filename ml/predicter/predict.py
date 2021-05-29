@@ -3,6 +3,7 @@ import pickle as pk
 import sys
 import numpy as np
 from tensorflow import keras
+import matplotlib.pyplot as plt
 pd.options.mode.chained_assignment = None
 
 def load_diagnose_data():
@@ -94,6 +95,34 @@ def predict():
     model_reg = keras.models.load_model("model_reg")
     result_reg = model_reg.predict(normed_datapoint)
     print(float(result_reg))
+
+
+def print_me(X, predicted, std = 2.3):
+    
+    """
+    Saves an image of a histogram showing the predicted value and it's std.
+
+    Args:
+        X: np array consisting of the length of stay of all patients. 
+        std: The value of the standard deviation.
+        Predicted: The predicted length of stay of the patient.
+        
+    Returns:
+        A saved image with the name "plot.png".
+        
+    An example of a call would be: print_me(X, 1.27, 2.3)
+    where 1.27 is a predicted length of stay returned by the model.
+    """ 
+    
+    plt.figure(figsize=(12,8))
+    plt.hist(patients['length_of_stay_hospital'], bins=300, density=True, alpha=1, rwidth=1, color='black')
+    plt.axvspan(max(0, predicted - std), predicted, color='r', alpha=0.5, lw=0)
+    plt.axvspan(predicted, predicted + std, color='r', alpha=0.5, lw=0)
+    plt.xlim(0, min(predicted + 30, 100))
+    plt.axvline(predicted, ls='--', c='r', label='Predicted = ' + f'{predicted:0.2f}')
+    plt.xlabel("Length of stay", fontsize=15)
+    _=plt.legend(loc='upper right', fontsize=15)
+    plt.savefig('plot.png', dpi=300, bbox_inches='tight')
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
