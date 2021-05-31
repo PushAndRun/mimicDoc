@@ -1,9 +1,9 @@
+
 <template>
 <div class="registration">
-   <div class = "navigation" >
    <b-navbar toggleable="false" type="dark" variant="transparent">
 
-      <b-navbar-brand href = "#"><b>RoboDoc</b></b-navbar-brand>
+      <b-navbar-brand href = "#">RoboDoc</b-navbar-brand>
 
     <div class="Modal-Register">
     
@@ -48,12 +48,16 @@
           type="password"
           v-model=employee.password />
       </b-form-group>
+
+
+      
     </b-modal>
   </div>
 
   <div class="Modal-login">
     <b-button class= "registerButton"  v-b-modal.modal-1 size="sm" variant="outline-light" >Register</b-button>
-    <b-button v-b-modal.modal-2 size="sm" variant="outline-light">Login</b-button>
+    <b-button class= "loginButton" v-b-modal.modal-2 size="sm" variant="outline-light">Login</b-button>
+    <b-button variant="outline-light" size="sm"> <router-link style="text-decoration: none; color:white;" to="/singlePatient"> Get Single Patient Data</router-link></b-button>
     <b-modal id="modal-2" title="Login" @ok="login">
       
 
@@ -87,6 +91,9 @@
 
 
     </b-modal>
+
+
+     
   </div>
 
    
@@ -122,8 +129,9 @@
 
 
     <p>Discover RoboDoc
-      <br>
-     The latest innovation in the field of hospital management</p>
+    <br>
+     The latest innovation in the field of hospital management
+     </p>
 
 
 
@@ -132,49 +140,73 @@
       <b-row>
         <b-col>
 
-    <b-card 
-    class="card"
-    id = "register-card"
-    title="Register"
-    >
-      <b-card-text>
-         If you do not have an account set up yet you will need to register first to access RoboDoc 
-      
-      </b-card-text>
+          <b-card 
+            class="card"
+            id = "register-card"
+            title="Register"
+          >
+            <b-card-text>
+              If you do not have an account set up yet you will need to register first to access RoboDoc
     
-    
-   
-    
+             </b-card-text>
 
-    <b-button v-b-modal.modal-1 variant="outline-dark">Register</b-button>
-  </b-card>
+             
+            <b-button v-b-modal.modal-1 variant="outline-dark">Register</b-button>
+          </b-card>
         </b-col>
+
         <b-col>
 
-  <b-card 
-  class="card"
-  id = "register2-card"
-  title="Log In ">
-      <b-card-text>
-        Log in to account to fill the form to assess patient
+          <b-card 
+              class="card"
+              id = "register2-card"
+              title="Log In ">
+                 
+                 <b-card-text>
+                    Log in to account to fill the form to assess patient
 
-      </b-card-text>
+                  </b-card-text>
+                  <br>
 
-    <br>
-    
-    <b-button v-b-modal.modal-2 variant="outline-dark">Log in</b-button>
-  </b-card>
+                  <b-button v-b-modal.modal-2 variant="outline-dark">Log in</b-button>
+          </b-card>
         </b-col>
       </b-row>
-    </b-container>
-    </div>
+        <b-col>
+
+          <b-card 
+            class="card"
+            id = "register3-card"
+            title="Get Single Patient Data">
+              <b-card-text>
+                You can also use RoboDoc as a patient. <br>
+                 Simply ask your attending doctor for your RoboDoc ID 
+                 and view your personal data here.
+              </b-card-text>
     
-</div>
+              <b-button variant="outline-dark"> <router-link style="text-decoration: none; color:black;" to="/singlePatient"> Get Single Patient Data</router-link></b-button>
+          </b-card>
+        </b-col>
+
+      
+    </b-container>
+
+
+     <v-footer>
+
+          <p style="color:dimgrey"> 2021 - RoboDoc </p>    
+
+
+      </v-footer>
+
+    </div>
+
 </template>
 
 
 <script>
 import AuthService from '@/services/AuthService.js'
+
 
 export default {
     name: 'Registration', 
@@ -202,6 +234,8 @@ export default {
         },
 
         
+
+        
       }
     },
   
@@ -213,6 +247,7 @@ export default {
         
         this.$emit("register-Employee", this.employee);
       },
+
 
       async signUp (){
         try {
@@ -229,6 +264,7 @@ export default {
             this.msg = error.response.data.msg;
         }
       }, 
+
       async login (){
         try {
           const credentials = {
@@ -250,7 +286,10 @@ export default {
         }catch (error){
             this.message = error.response.data.msg
         }
-        }
+
+      },
+          
+      
 
       }
     }
@@ -278,6 +317,8 @@ export default {
       font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
     }
 
+    
+
    
 .carousel {
   position:relative;
@@ -297,59 +338,30 @@ export default {
 .registerButton {
 
   margin-right: 5px;
+   position: left;
+
+}
+
+.loginButton {
+
+  margin-right: 5px;
+   position: left;
 
 }
 
 .card {
-  
   margin-bottom: 50px;
 }
 
 p {
   margin-top: 50px;
 }
-
-
-
-
-   
-
-   
-.carousel {
-  position:relative;
-    top:0;    
-}
-.navbar {
-    position:absolute;
-    top:0px;
-    z-index:10;
-    background:#fff;
-    width:100%;
-}
-.navbar-inner {
-    background:transparent;
-}
-
-.registerButton {
-
-  position: left;
-
-}
-
-.card {
-  
-  margin-bottom: 50px;
-}
-
-p {
-  margin-top: 50px;
-}
-
-
-
 
    
 
 </style>
+
+
+
 
 

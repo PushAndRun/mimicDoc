@@ -11,10 +11,16 @@ export default {
 
     },
 
-    fetchSingleUser (id) {
+    fetchSingleUser(id) {
         axios 
         .get(url + '/user/' + id)
         .then(response => response.data); 
+    },
+
+    deleteUser(id){
+        return axios
+        .delete(url + '/user/id/' + id)
+        .then(response => response.data)
     }
 
 }

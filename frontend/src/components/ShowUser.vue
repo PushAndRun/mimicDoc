@@ -10,7 +10,12 @@
 
         {{users}}
 
+ <v-footer>
 
+          <p style="color:dimgrey"> 2021 - RoboDoc </p>    
+
+
+      </v-footer>
     </div>
 
 </template>

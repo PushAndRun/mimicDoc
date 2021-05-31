@@ -1,16 +1,28 @@
 <template>
   <div>
 
-    <b-navbar toggleable="false" type="dark" variant="info">
+     <b-navbar toggleable="false" type="dark" variant="dark">
+    <b-navbar-brand style="color:white">RoboDoc</b-navbar-brand>
 
-      <b-navbar-brand href = "#"><b><router-link to="/homepage"  style="text-decoration: none; color:inherit ">RoboDoc</router-link></b></b-navbar-brand>
+    <b-navbar-toggle target="navbar-toggle-collapse">
+      <template >
+        <b-icon style="color:white" variant="light">Menu</b-icon>
+      </template>
+    </b-navbar-toggle>
 
-      <b-button @click=logout>Logout</b-button> 
-    </b-navbar>
+    <b-collapse id="navbar-toggle-collapse" is-nav>
+      <b-navbar-nav class="ml-auto" >
+          <b-nav-item> <router-link style="text-decoration: none; color:white" to="/homepage" >Homepage</router-link></b-nav-item>
+          <b-nav-item><router-link style="text-decoration: none; color:white " to="/patients">View all your Patients </router-link></b-nav-item>
+          <b-nav-item  @click="logout"><p style="color:white">Sign Out</p></b-nav-item>
+      </b-navbar-nav>
+    </b-collapse>
+  </b-navbar>
      <br>
-     <h1> Hi {{username}} </h1>
+
      
-    <b-form id="formular" @submit="submit" @reset="onReset">
+     
+    <b-form id="formular" @submit="submit">
       <br>
       <h2>Form for Patient's assessment</h2>
     <br>
@@ -200,36 +212,62 @@
       </b-form-group>
 
  <b-form-group id="input-group-history" label="Enter the Patient's history and add with enter" label-for="input-history">
-        <b-form-tags v-model=form.diagnoses></b-form-tags>
+
+
+        <vue-bootstrap-typeahead
+        v-model = "valueHist"
+        :data=this.availableDiagnoses
+        @hit=appendHistory>
+        </vue-bootstrap-typeahead>
+
+
+        Selected Diagnoses for Patient's History = {{form.patient_history.join(', ') }}
       </b-form-group>
-      
+
 
 
       <b-form-group id="input-group-8" label="Type in several Patient's diagnoses and add with enter" label-for="input-8">
-        <b-form-tags v-model=form.patient_history></b-form-tags>
+        <vue-bootstrap-typeahead
+        v-model = "valueDiag"
+        :data=this.availableDiagnoses
+        @hit=appendDiagnoses>
+        </vue-bootstrap-typeahead>
+
+
+        Selected Diagnoses = {{form.diagnoses.join(', ') }}
       </b-form-group>
 
-      
 
-      <b-button type="submit" variant="success">Submit</b-button>
-      <b-button type="onReset" variant="danger">Reset</b-button>
+      <b-button style= "margin-bottom:30px" type="submit" variant="outline-success">Submit</b-button>
     </b-form>
+
+     <v-footer>
+
+          <p style="color:dimgrey"> 2021 - RoboDoc </p>    
+
+
+      </v-footer>
     
   </div>
 </template>
 
 <script>
 
-import PatientService from '@/services/PatientService.js'
+import PatientService from '../services/PatientService'
+import DiagnosesService from '../services/DiagnosesService'
+
 
   export default {
 
+    
 
     data() {
       return {
         username:"",
-
-        
+        availableDiagnoses:[],
+        valueDiag:'',
+        valueHist:'',
+       
         form: {
           name: '',
           dateOfBirth: '',
@@ -256,6 +294,8 @@ import PatientService from '@/services/PatientService.js'
       }
     },
 
+   
+
     async created(){
           if(!this.$store.getters.isLoggedIn){
             this.$router.push('/registration')
@@ -263,14 +303,40 @@ import PatientService from '@/services/PatientService.js'
           }
           
         this.username = this.$store.getters.getUser.username;
+
+        try{
+          const response = await DiagnosesService.fetchDiagnoses(); 
+          this.availableDiagnoses = response;
+          this.availableDiagnoses = this.availableDiagnoses.map(a => a.short_title).reduce(function (a,b){if(a.indexOf(b)<0)a.push(b);return a;},[]);
+          console.log(this.availableDiagnoses);
+
+        }catch (error){
+          console.log("unable to fetch diagnoses from server");
+        }
     },
 
     methods: {
+
       logout(){
       this.$router.push('/');
       this.$store.dispatch('logout'); 
       },
 
+        appendDiagnoses(){
+        this.form.diagnoses.push(this.valueDiag); 
+        this.valueDiag='';
+      },
+
+      appendHistory(){
+        this.form.patient_history.push(this.valueHist);
+        this.valueHist='';
+      },
+
+      getDiagnoses(){
+        return this.availableDiagnoses;
+      },
+
+      
       async submit (){
       try {
         const patientObject = {
@@ -314,31 +380,11 @@ import PatientService from '@/services/PatientService.js'
         this.$router.push('/homepage');
       },
 
-    onReset(event) {
-        event.preventDefault()
-        // Reset our form values
-       this.form.name= ''
-        this.form.dateOfBirth= ''
-         this.form.gender= ''
-          this.form.weight= ''
-          this.form.height= ''
-          this.form.bloodtypes= null
-          this.form.meanbp_mean=''
-          this.form.meanbp_min=''
-          this.form.meanbp_max=''
-          this.form.resprate_min=''
-          this.form.resprate_max=''
-          this.form.resprate_mean=''
-          this.form.tempc_mean=''
-          this.form.glucose_min=''
-          this.form.glucose_max= ''
-          this.form.glucose_mean= ''
-          this.form.patient_history=[]
-          this.form.diagnoses=[]
-      }
+   
     }
   }
 </script>
+
 
 
 <style scoped>
