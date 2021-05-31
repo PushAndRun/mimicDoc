@@ -4,7 +4,10 @@ RUN pip install Pandas SKlearn
 
 # Create app directory
 RUN mkdir /usr/src/app
-RUN apt install nodejs npm -y
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
+RUN apt install nodejs -y
+RUN node --version
+RUN npm --version
 WORKDIR /usr/src/app
 
 # Install dependencies
