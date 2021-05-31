@@ -23,5 +23,18 @@ export default {
         .get(url + "/patients/getPatientsByUser")
         .then(response => response.data);
 
-    }
+    },
+
+    async fetchSinglePatient(id){
+        return axios
+        .get (url + "/patients/id/" + id)
+        .then(response => response.data); 
+    },
+
+    async allPatients(){
+        return axios
+        .get(url + "/patients")
+        .then(response => response.data);
+
+    },
 }

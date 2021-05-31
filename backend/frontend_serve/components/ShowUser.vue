@@ -10,14 +10,19 @@
 
         {{users}}
 
+ <v-footer>
 
+          <p style="color:dimgrey"> 2021 - RoboDoc </p>    
+
+
+      </v-footer>
     </div>
 
 </template>
 
 <script>
 
-import getUserService from '../services/UserService'
+import getUserService from '@/services/UserService'
 export default {
     name: 'ShowUser', 
     data(){

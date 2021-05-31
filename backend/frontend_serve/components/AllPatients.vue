@@ -1,7 +1,6 @@
 <template>
-    <div>
-
-          <b-navbar toggleable="false" type="dark" variant="dark">
+<div>
+              <b-navbar toggleable="false" type="dark" variant="dark">
     <b-navbar-brand style="color:white">RoboDoc</b-navbar-brand>
 
     <b-navbar-toggle target="navbar-toggle-collapse">
@@ -13,12 +12,13 @@
     <b-collapse id="navbar-toggle-collapse" is-nav>
       <b-navbar-nav class="ml-auto" >
           <b-nav-item> <router-link style="text-decoration: none; color:white" to="/homepage" >Homepage</router-link></b-nav-item>
-          <b-nav-item> <router-link style="text-decoration: none; color:white" to="/form" >Submit new Patient</router-link></b-nav-item>
+          <b-nav-item> <router-link style="text-decoration: none; color:white" to="/userManagement" >User Management</router-link></b-nav-item>
           <b-nav-item  @click="logout"><p style="color:white">Sign Out</p></b-nav-item>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
-        <br>
+
+<br>
         <br>
         <h2>Patients for User: {{username}}</h2>
         <br>
@@ -100,41 +100,7 @@ export default {
         patients:[], 
         patientSelected:'',
         
-        /*{
-            patient:{
-              name:"",
-              age:"",
-              gender:"",
-              weight:"",
-              height:"",
-                medicalData:{
-                  bloodtypes:"",
-                  bloodpressure:{
-                    mean:"", 
-                    min:"", 
-                    max:""
-                  }, 
-                  resprate:{ 
-                  min:"",
-                  max:"", 
-                  mean:""
-                  }, 
-                  temperature:{
-                  mean:"",
-                  }, 
-                  glucose:{
-                  min:"",
-                  max:"",
-                  mean:""
-                  },
-                  patient_history:[],
-                  diagnoses:[],
-                  death_prediction:"", 
-                  stay_prediction:""
-                } 
-
-        }  
-        } */
+      
       }
     },
     
@@ -143,9 +109,8 @@ export default {
             this.$router.push('/registration')
           }
         this.username = this.$store.getters.getUser.username;
-        this.fetchAllPatients();
+        this.adminPatients();
 
-        //this.secretMessage = await AuthService.getSecretContent();
     },
 
     computed:{
@@ -168,12 +133,14 @@ export default {
       requestIsEmpty (patient){
         return patient.requests.lenght>0
       },
-      async fetchAllPatients(){
 
-     //   try{
+
+      async adminPatients(){
+
+ 
 
        this.patients = [];
-        var response = await PatientService.fetchPatients();
+        var response = await PatientService.allPatients();
         for (var i = 0; i < response.length ; i ++){
           this.patients.push(response[i]);
         }
@@ -181,20 +148,13 @@ export default {
         console.log(response);
 
 
-   //     this.message = response.messsage; 
-
-     //   }catch(error){
-       //   this.message = error.response.data.message; 
-       // }
-
       },
     },    
 }
 
 </script>
+
+
 <style scoped>
-
-
-
 
 </style>
