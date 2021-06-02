@@ -104,18 +104,18 @@ router.get('/getPatientsByUser', VerifyToken, function (req, res) {
     
 });
 
-// GETS A SINGLE USER FROM THE DATABASE BY ID
+// GETS A SINGLE PATIENT FROM THE DATABASE BY ID
 router.get('/id/:id', function (req, res) {
     Patient.findById(req.params.id, function (err, patient) {
         if (err) return res.status(500).send("There was a problem finding the patient with id:"+ req.params.id);
         if (!patient) return res.status(404).send("No user found.");
     }).populate("requests").exec(function(err, patient) {
         if (err) return res.status(500).send("There was a problem populating the patient.");
-        res.status(200).send(patients);
+        res.status(200).send(patient);
     })
 });
 
-// DELETES A USER FROM THE DATABASE BY ID
+// DELETES A PATIENT FROM THE DATABASE BY ID
 router.delete('/id/:id', function (req, res) {
     Patient.findByIdAndRemove(req.params.id, function (err, patient) {
         if (err) return res.status(500).send("There was a problem deleting the patient.");
@@ -123,7 +123,7 @@ router.delete('/id/:id', function (req, res) {
     });
 });
 
-// UPDATES A SINGLE USER IN THE DATABASE
+// UPDATES A SINGLE PATIENT IN THE DATABASE
 // Added VerifyToken middleware to make sure only an authenticated user can put to this route
 router.put('/:id', /* VerifyToken, */ function (req, res) {
     Patient.findByIdAndUpdate(req.params.id, req.body, {new: true}, function (err, patient) {
