@@ -6,31 +6,38 @@ from tensorflow import keras
 import matplotlib.pyplot as plt
 pd.options.mode.chained_assignment = None
 
-def load_diagnose_data():
+
+def load_disease_data():
+    symptoms = []
+    history = []
     diagnoses = []
-    vdiagnoses = []
 
-    with open('db_diagnoses_dict.csv', 'r') as f:
-
+    with open('/content/drive/MyDrive/uni/RoboDoc/db/symptoms_dict.csv', 'r') as f:
         for line in f:
-            diagnoses.append(line.strip("\n").split(",")[0])
+            split = line.strip("\n").split(",")
+            symptoms.append([split[0], split[1], split[2]])
 
-    with open('db_patient_history_dict.csv', 'r') as f:
-
+    with open('/content/drive/MyDrive/uni/RoboDoc/db/patient_history_dict.csv', 'r') as f:
         for line in f:
-            vdiagnoses.append(line.strip("\n").split(",")[0])
+            split = line.strip("\n").split(",")
+            history.append([split[0], split[1], split[2]])
 
-    return np.asarray(diagnoses[1:]), np.asarray(vdiagnoses[1:])
+    with open('/content/drive/MyDrive/uni/RoboDoc/db/diagnoses_dict.csv', 'r') as f:
+        for line in f:
+            split = line.strip("\n").split(",")
+            diagnoses.append([split[0], split[1], split[2]])
+
+    return np.asarray(symptoms[1:]), np.asarray(history[1:]), np.asarray(diagnoses[1:])
 
 
-def diagnoses_to_matrix(diagnoses, patient_history, diagnoses_dict, patient_history_dict):
-    Xd = np.zeros((len(diagnoses), len(diagnoses_dict)))
+def diseases_to_matrix(symptoms, patient_history, diagnoses, symptoms_dict, patient_history_dict, diagnoses_dict):
+    Xs = np.zeros((len(diagnoses), len(symptoms_dict)))
 
-    for i, ds in enumerate(diagnoses):
-        lst = str(ds).split(';')
+    for i, ss in enumerate(symptoms):
+        lst = str(ss).split(';')
 
-        for d in lst:
-            Xd[i][diagnoses_dict == d] = 1
+        for s in lst:
+            Xs[i][[symptoms_dict == s]] = 1
 
     Xph = np.zeros((len(diagnoses), len(patient_history_dict)))
 
@@ -40,42 +47,104 @@ def diagnoses_to_matrix(diagnoses, patient_history, diagnoses_dict, patient_hist
         for ph in lst:
             Xph[i][[patient_history_dict == ph]] = 1
 
-    X = np.concatenate((Xd, Xph), axis=1)
-    # X = Xd
+    Xd = np.zeros((len(diagnoses), len(diagnoses_dict)))
+
+    for i, ds in enumerate(diagnoses):
+        lst = str(ds).split(';')
+
+        for d in lst:
+            Xd[i][diagnoses_dict == d] = 1
+
+    X = np.concatenate((Xs, Xph), axis=1)
+    X = np.concatenate((X, Xd), axis=1)
 
     return X
 
 
+def clean_df(raw_df):
+    mean_value_dict = {
+        "age": 50.0,
+        "gender": 0.5,
+        "weight": 70.0,
+        "meanbp_mean": 70.0,
+        "meanbp_min": 70.0,
+        "meanbp_max": 70.0,
+        "resprate_min": 70.0,
+        "resprate_max": 70.0,
+        "resprate_mean": 70.0,
+        "tempc_mean": 38.0,
+        "glucose_min": 70.0,
+        "glucose_max": 70.0,
+        "glucose_mean": 70.0,
+    }
+
+    df = raw_df.copy()
+    df.pop('patient_id')
+    df.pop('hadm_id')
+    df.pop('icustay_id')
+    df.pop('hospstay_seq')
+    df.pop('icustay_seq')
+
+    df.age[raw_df.age > 90] = 90
+    df.age[raw_df.age == None] = mean_value_dict['age']
+
+    df.gender[raw_df.gender == 'M'] = 1
+    df.gender[raw_df.gender == 'F'] = 0
+    df.gender[raw_df.gender == None] = mean_value_dict['gender']
+
+    df.weight[raw_df.weight > 300] = 300
+    df.weight[raw_df.weight == None] = mean_value_dict['weight']
+
+    df.pop('height')
+
+    df.meanbp_mean[raw_df.meanbp_mean == None] = mean_value_dict['meanbp_mean']
+    df.meanbp_min[raw_df.meanbp_min == None] = mean_value_dict['meanbp_min']
+    df.meanbp_max[raw_df.meanbp_max == None] = mean_value_dict['meanbp_max']
+
+    df.resprate_min[raw_df.resprate_min == None] = mean_value_dict['resprate_min']
+    df.resprate_max[raw_df.resprate_max == None] = mean_value_dict['resprate_max']
+    df.resprate_mean[raw_df.resprate_mean == None] = mean_value_dict['resprate_mean']
+
+
+    df.tempc_mean[raw_df.tempc_mean == None] = mean_value_dict['tempc_mean']
+
+    df.glucose_min[raw_df.glucose_min == None] = mean_value_dict['glucose_min']
+    df.glucose_max[raw_df.glucose_max == None] = mean_value_dict['glucose_max']
+    df.glucose_mean[raw_df.glucose_mean == None] = mean_value_dict['glucose_mean']
+
+    symptoms_raw = df.symptoms
+    df.pop('symptoms')
+    diagnoses_raw = df.diagnoses
+    df.pop('diagnoses')
+    patient_history_raw = df.patient_history
+    df.pop('patient_history')
+
+    df.pop('number_of_icu_stays')
+    df.pop('length_of_stay_icu')
+    df.pop('days_to_death')
+    df.pop('length_of_stay_hospital')
+    df.pop('died_in_hospital')
+    df.pop('total_length_of_stay_icu')
+
+    return df, symptoms_raw, diagnoses_raw, patient_history_raw
+
+
 def predict():
-    # input = line as a string with the following headers separated by ',':
-    # age,gender,weight,meanbp_mean,meanbp_min,meanbp_max,resprate_min,resprate_max,resprate_mean,tempc_mean,
-    # glucose_min,glucose_max,glucose_mean,diagnoses,patient_history
-    # Bsp.: input = '76,M,97,76,40,259,5,24,17,37.002880708670915,136,306,232,,0389;78559;5849;4275;41071;4280;6826;4254;2639'
-    patient_data = sys.argv[1]
-    datapoint = np.zeros((453,))
-    data = patient_data.split(',')
-    datapoint[0] = float(data[0])
-    if data[1] == 'M':
-        datapoint[1] = 1
-    else:
-        datapoint[1] = -1
-    datapoint[2] = float(data[2])
-    datapoint[3] = float(data[3])
-    datapoint[4] = float(data[4])
-    datapoint[5] = float(data[5])
-    datapoint[6] = float(data[6])
-    datapoint[7] = float(data[7])
-    datapoint[8] = float(data[8])
-    datapoint[9] = float(data[9])
-    datapoint[10] = float(data[10])
-    datapoint[11] = float(data[11])
-    datapoint[12] = float(data[12])
-    patient_history = [data[13]]
-    diagnoses = [data[14]]
+    # input like in ../../db/admissions.csv
+    header_str = "patient_id,hadm_id,icustay_id,hospstay_seq,icustay_seq,age,gender,weight,height,meanbp_mean,meanbp_min,meanbp_max,resprate_min,resprate_max,resprate_mean,tempc_mean,glucose_min,glucose_max,glucose_mean,symptoms,patient_history,diagnoses,length_of_stay_hospital,number_of_icu_stays,length_of_stay_icu,total_length_of_stay_icu,days_to_death,died_in_hospital"
 
-    diagnoses_dict, patient_history_dict = load_diagnose_data()
-    diagnoses_vector = diagnoses_to_matrix(diagnoses, patient_history, diagnoses_dict, patient_history_dict)
+    headers = header_str.split(',')
 
+    patient_data = np.asarray(sys.argv[1].split(','))[None, :]
+    print(patient_data.shape)
+
+    patient_df = pd.DataFrame(patient_data, columns=headers)
+    df, symptoms_raw, diagnoses_raw, patient_history_raw = clean_df(patient_df)
+
+    symptoms_dict, patient_history_dict, diagnoses_dict = load_disease_data()
+    diagnoses_vector = diseases_to_matrix(symptoms_raw, patient_history_raw, diagnoses_raw, symptoms_dict[:,0], patient_history_dict[:,0], diagnoses_dict[:,0])
+
+    """
     pca_reload = pk.load(open("pca.pkl", 'rb'))
     v = pca_reload.transform(diagnoses_vector)
     print(v.shape)
@@ -95,6 +164,7 @@ def predict():
     model_reg = keras.models.load_model("model_reg")
     result_reg = model_reg.predict(normed_datapoint)
     print(float(result_reg))
+    """
 
 
 def print_me(X, predicted, std = 2.3):
