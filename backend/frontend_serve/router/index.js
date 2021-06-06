@@ -4,7 +4,6 @@ import Form from '../components/Form'
 import Registration from '../components/Registration'
 import Patients from '../components/Patients'
 import Homepage from '../components/Homepage'
-import ShowUser from '../components/ShowUser'
 import AdminHome from '../components/AdminHome'
 import UserManagement from '../components/UserManagement'
 import AllPatients from '../components/AllPatients'
@@ -36,11 +35,7 @@ export default new Router ({
         name:'Homepage',
         component: Homepage
         }, 
-        {
-        path:'/showUser', 
-        name: 'ShowUser', 
-        component: ShowUser
-        },
+        
         {
         path:'/adminHome',
         name:'adminHome', 

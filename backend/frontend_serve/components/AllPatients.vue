@@ -37,42 +37,17 @@
        <b-card   v-for="patient in patientSelection" v-bind:key="patient.name" :title="patient.name" :sub-title="patient._id"
             class="patientCard">
             <b-card-text> 
-            <!-- Last Request: {{ requests[patient.requests.length-1].created }} <br> -->
+           <!-- Last Request: {{ requests[patient.requests.length-1].created }} <br> -->
            <br>
            <b>Requests </b><br>
             Last Request: {{patient.requests[patient.requests.length-1].created.substring(0,10)}} <br>
             Number of Request: {{patient.requests.length }} <br><br>
             Date of Birth: {{ patient.medicalData.dateOfBirth.substring(0,10) }} <br> 
             Gender: {{ patient.medicalData.gender }} <br>
-            Weight: {{ patient.medicalData.weight }} kg<br>
-            Height: {{ patient.medicalData.height }} cm<br>
-             <br>
-            
-            <!-- Bloodtype: {{ patient.medicalData.bloodtype }} <br> -->
-            <br>
-            <b>Blood Pressure </b><br>
-           Mean: {{ patient.requests[patient.requests.length-1].bloodpressure.meanbp_mean }} mmHg<br>
-           Min: {{ patient.requests[patient.requests.length-1].bloodpressure.meanbp_min }} mmHg<br>
-            Max: {{ patient.requests[patient.requests.length-1].bloodpressure.meanbp_max }} mmHg<br>
-            <br>
-            <b>Glucose Levels </b><br>
-            Mean: {{ patient.requests[patient.requests.length-1].glucose.glucose_mean }} mg/dL<br>
-            Min: {{ patient.requests[patient.requests.length-1].glucose.glucose_min }} mg/dL<br>
-            Max: {{ patient.requests[patient.requests.length-1].glucose.glucose_max }} mg/dL<br>
            <br>
-          <b> Respiratory Rate </b><br>
-            Mean: {{ patient.requests[patient.requests.length-1].respiratory.resprate_mean }} breaths per minute<br>
-            Min: {{ patient.requests[patient.requests.length-1].respiratory.resprate_min }} breaths per minute<br>
-            Max: {{ patient.requests[patient.requests.length-1].respiratory.resprate_max }} breaths per minute<br>
+          <b>Chances of Survival:</b> {{ (patient.requests[patient.requests.length-1].survival) * 100 }} % <br> 
+            <b>Estimated Length of Stay:</b> {{  patient.requests[patient.requests.length-1].stay}} days
             <br>
-            Mean Temperature: {{ patient.requests[patient.requests.length-1].tempc_mean }} C°<br>
-            <br>
-            Patient History: {{ patient.requests[patient.requests.length-1].patient_history.join(', ') }} <br>
-            Diagnoses: {{ patient.requests[patient.requests.length-1].diagnoses.join(', ') }}  <br> 
-            <br>
-            Chances of Survival: {{ patient.survival }} %<br> 
-            
-
            </b-card-text>
 
             </b-card>
@@ -134,10 +109,10 @@ export default {
         return patient.requests.lenght>0
       },
 
+      
+
 
       async adminPatients(){
-
- 
 
        this.patients = [];
         var response = await PatientService.allPatients();

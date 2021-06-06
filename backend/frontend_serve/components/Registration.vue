@@ -3,91 +3,107 @@
 <div class="registration">
    <b-navbar toggleable="false" type="dark" variant="transparent">
 
-      <b-navbar-brand href = "#">RoboDoc</b-navbar-brand>
+      <b-navbar-brand href = "#" style="text-decoration: none; color:black;">RoboDoc</b-navbar-brand>
 
     <div class="Modal-Register">
     
-    <b-modal id="modal-1" title="Register Hospital Employee" @ok="signUp">
+    <b-modal id="modal-1" title="Register" hide-footer="true">
 		<p v-if="msg">{{ msg }}</p>
       <b-form-group id="Hospital Employee" 
-          label="Your Name" 
+          
           label-for="input-employee">
-          <b-form-input id="input-employee" 
-          v-model=employee.name trim />
+          <b-form-input id="input-employee"
+           v-model=employee.name 
+          placeholder="Name"
+          />
       </b-form-group>
 
       <b-form-group
         id="email"
-        label="Your Email address"
         label-for="input-email">
         <b-form-input
         id="input-email"
           type= "email"
+          placeholder="Email"
           v-model=employee.email />
       </b-form-group>
 
       <b-form-group
         id="username"
-        label="Enter prefered Username"
         label-for="input-username"
         >
         <b-form-input
           id="input-username"
           type="text"
-          
+          placeholder="Username"
           v-model=employee.username />
       </b-form-group>
 
       <b-form-group
         id="password"
-        label="Enter your prefered password containing at least 8 characters"
         label-for="input-password"
+       
         >
         <b-form-input
           id="input-password"
           type="password"
+
+          placeholder="Password"
           v-model=employee.password />
       </b-form-group>
 
+       <div class="modal-footer">
+        <button type="button" @click="signUp" class="btn btn-success btn-lg btn-block" data-dismiss="modal">Register</button>
 
+      </div>
+
+     
       
     </b-modal>
   </div>
 
   <div class="Modal-login">
-    <b-button class= "registerButton"  v-b-modal.modal-1 size="sm" variant="outline-light" >Register</b-button>
-    <b-button class= "loginButton" v-b-modal.modal-2 size="sm" variant="outline-light">Login</b-button>
-    <b-button variant="outline-light" size="sm"> <router-link style="text-decoration: none; color:white;" to="/singlePatient"> Get Single Patient Data</router-link></b-button>
-    <b-modal id="modal-2" title="Login" @ok="login">
+    <b-button class= "registerButton"  v-b-modal.modal-1 size="sm" variant="outline-dark" style="text-decoration: none; color:black;">Register</b-button>
+    <b-button class= "loginButton" v-b-modal.modal-2 size="sm" variant="outline-dark" style="text-decoration: none; color:black;">Login</b-button>
+    <b-button variant="outline-dark" size="sm"> <router-link style="text-decoration: none; color:black;" to="/singlePatient"> Get Single Patient Data</router-link></b-button>
+   
+   
+   
+    <b-modal id="modal-2" title="Login" hide-footer="true"
+    
+            >
       
 
 
      <b-form-group
                 id="user"
-                label="Username"
                 
                 label-for="user"
                 invalid-feedback="Wrong Input"
                 valid-feedback="Thank you">
                  <b-form-input id= "user"
+                 placeholder="Username"
                  v-model=user.username >
                 </b-form-input>
       </b-form-group>
 
        <b-form-group
                 id="password"
-                label="Password"
                 label-for="password"
                 invalid-feedback="Wrong password"
                 valid-feedback="Thank you">
                  <b-form-input id="password"
           type="password"
+           placeholder="Password"
           v-model=user.password>
                 </b-form-input>
       </b-form-group>
 
 
-    
+     <div class="modal-footer">
+        <button type="button" @click="login" class="btn btn-primary btn-lg btn-block" data-dismiss="modal">Login</button>
+
+      </div>
 
 
     </b-modal>
@@ -192,6 +208,9 @@
     </b-container>
 
 
+   
+
+
      <v-footer>
 
           <p style="color:dimgrey"> 2021 - RoboDoc </p>    
@@ -232,6 +251,10 @@ export default {
           password: '',
          
         },
+
+       
+
+          
 
         
 
@@ -279,8 +302,13 @@ export default {
           const user = this.user;
 
           this.$store.dispatch('login',{token,user}); 
-
+          
+          
+          if(this.$store.getters.getUser.username=="Admin"){
+            this.$router.push('/adminHome'); 
+          }else{
           this.$router.push('/homepage'); 
+          }
 
 
         }catch (error){
@@ -309,12 +337,13 @@ export default {
     h1 {
       color: black;
       margin-bottom: 300px;
-      font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+      font-size: 65px;
+      font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
     }
     h2 {
       color: black;
       margin-bottom: 300px;
-      font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+      font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
     }
 
     
@@ -360,6 +389,5 @@ p {
    
 
 </style>
-
 
 

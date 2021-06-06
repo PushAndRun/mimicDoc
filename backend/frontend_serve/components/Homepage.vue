@@ -3,20 +3,20 @@
  
 
 
-    <b-navbar toggleable="false" type="dark" variant="transparent">
-    <b-navbar-brand style="color:dimgrey">RoboDoc</b-navbar-brand>
+    <b-navbar toggleable="false" type="dark" variant="dark">
+    <b-navbar-brand style="color:white">RoboDoc</b-navbar-brand>
 
     <b-navbar-toggle target="navbar-toggle-collapse">
       <template >
-        <b-icon style="color:dimgrey" icon="chevron-bar-up">Menu</b-icon>
+        <b-icon style="color:white" icon="chevron-bar-up">Menu</b-icon>
       </template>
     </b-navbar-toggle>
 
     <b-collapse id="navbar-toggle-collapse" is-nav>
       <b-navbar-nav class="ml-auto" >
-          <b-nav-item> <router-link style="text-decoration: none; color:dimgrey" to="/form" >Submit new Patient</router-link></b-nav-item>
-          <b-nav-item><router-link style="text-decoration: none; color:dimgrey " to="/patients">View all your Patients </router-link></b-nav-item>
-          <b-nav-item  @click="logout"><p style="color:dimgrey">Sign Out</p></b-nav-item>
+          <b-nav-item> <router-link style="text-decoration: none; color:white" to="/form" >Submit new Patient</router-link></b-nav-item>
+          <b-nav-item><router-link style="text-decoration: none; color:white " to="/patients">View all your Patients </router-link></b-nav-item>
+          <b-nav-item  @click="logout"><p style="color:white">Sign Out</p></b-nav-item>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
@@ -25,7 +25,7 @@
         <br>
         <br>
         <br>
-        <h1> Hi {{username}} </h1>
+        <h2> Hi {{username}} </h2>
         <br>  
         <br>
         <br>
@@ -42,8 +42,8 @@
         <br>
         
         Übersicht<br>
-        Anzahl Patienten: <br>
-        Zuletzt geänderter Patient: <br>
+        Anzahl Patienten: {{ numberOfPatients }} <br>
+        Anzahl Requests: {{ numberOfRequests }}<br>
         </p>
         <br>  
         <br>
@@ -70,7 +70,7 @@
 
 
 <script>
-
+import PatientService from '../services/PatientService'
 
 
 export default {
@@ -79,8 +79,10 @@ export default {
     data() {
       return {
 
-         
+        numberOfPatients:"",
+        numberOfRequests:"",
         username: "",
+        allPatients: []
       }
 
 },
@@ -90,10 +92,17 @@ export default {
       this.$router.push('/login');
     }
     this.username = this.$store.getters.getUser.username;
-        
-    
-    
+    this.numberOfPatients = await PatientService.fetchPatients(); 
+    this.numberOfPatients = this.numberOfPatients.length; 
+    this.allPatients = await PatientService.fetchPatients(); 
+    this.numberOfRequests = 0; 
+    for(let i = 0; i < this.allPatients.length; i ++ ){
+      this.numberOfRequests += this.allPatients[i].requests.length; 
+    }
+
   },
+
+  
 
   methods: {
       
@@ -108,11 +117,11 @@ export default {
 <style scoped>
 
 
-h1 {
+h2 {
    color: black;
    font-size: 65px;
-      margin-top: 5%;
-      font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+      margin-top: 0%;
+      font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
 }
 
 

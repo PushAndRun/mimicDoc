@@ -96,7 +96,7 @@ export default {
         async deleteUser(id){
 
           try {
-          UserService.deleteUser(id); 
+          UserService.deleteUser(id);
           this.fetchAllUsers(); 
           
           }catch (error){

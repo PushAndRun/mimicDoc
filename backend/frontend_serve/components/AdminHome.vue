@@ -24,7 +24,7 @@
     <br>
         <br>
         <br>
-        <h1> Hi {{username}} </h1>
+        <h2> Hi {{username}} </h2>
         <br>  
         <br>
         <br>
@@ -39,8 +39,8 @@
         <br>
         
         Übersicht<br>
-        Anzahl User: <br>
-        Anzahl Patienten: <br>
+        Anzahl User: {{ numberOfUsers }}<br>
+        Anzahl Patienten: {{numberOfPatients}} <br>
         </p>
         <br>  
         <br>
@@ -64,13 +64,15 @@
 
 <script>
 
-//import UserService from '../services/UserService'
-//import PatientService from '../services/PatientService'
+import UserService from '../services/UserService'
+import PatientService from '../services/PatientService'
+
 export default {
     data(){
         return {
-
+          numberOfUsers:"",
          username: "",
+         numberOfPatients: "",
       }
     }, 
 
@@ -79,6 +81,10 @@ export default {
       this.$router.push('/login');
     }
     this.username = this.$store.getters.getUser.username;
+    this.numberOfUsers = await UserService.fetchAllUsers(); 
+    this.numberOfUsers = this.numberOfUsers.length; 
+    this.numberOfPatients = await PatientService.allPatients(); 
+    this.numberOfPatients = this.numberOfPatients.length; 
         
     
     
@@ -98,13 +104,13 @@ export default {
 
 <style scoped>
 
-
-h1 {
+h2 {
    color: black;
    font-size: 65px;
-      margin-top: 5%;
-      font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+      margin-top: 0%;
+      font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
 }
+
 
 
 
