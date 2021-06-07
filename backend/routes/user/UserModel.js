@@ -13,6 +13,10 @@ var UserSchema = new mongoose.Schema({
   , required: true
   , min : [6, "password must be at least 6 characters long"]
   },
+  isAdmin: {
+    type: Boolean,
+    default: false
+  },
   patients: [{ type: mongoose.Schema.ObjectId, ref: 'Patient' }]
 });
 mongoose.model('User', UserSchema);
