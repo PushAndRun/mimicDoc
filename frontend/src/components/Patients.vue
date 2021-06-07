@@ -1,58 +1,177 @@
 <template>
     <div>
 
-        <b-navbar toggleable="false" type="dark" variant="info">
+          <b-navbar toggleable="false" type="dark" variant="dark">
+    <b-navbar-brand style="color:white">RoboDoc</b-navbar-brand>
 
-      <b-navbar-brand href = "#"><b><router-link to="/homepage" style="text-decoration: none; color:inherit ">RoboDoc</router-link></b></b-navbar-brand>
-    <!-- logout button -->
-      <b-button variant="secondary" @click="logout">Logout</b-button>
-    </b-navbar>
+    <b-navbar-toggle target="navbar-toggle-collapse">
+      <template >
+        <b-icon style="color:white">Menu</b-icon>
+      </template>
+    </b-navbar-toggle>
+
+    <b-collapse id="navbar-toggle-collapse" is-nav>
+      <b-navbar-nav class="ml-auto" >
+          <b-nav-item> <router-link style="text-decoration: none; color:white" to="/homepage" >Homepage</router-link></b-nav-item>
+          <b-nav-item> <router-link style="text-decoration: none; color:white" to="/form" >Submit new Patient</router-link></b-nav-item>
+          <b-nav-item  @click="logout"><p style="color:white">Sign Out</p></b-nav-item>
+      </b-navbar-nav>
+    </b-collapse>
+  </b-navbar>
         <br>
-        <h1>All Patients of {{username}}</h1>
-        <!-- Backend sendet noch nicht Name, Gewicht, Grösse, Aufenthaltsdauer, Chances of Survival ... -->
-        <b-button @click=fetchAllPatients> Display all Patients </b-button> 
-
-         <ul>
-         <li v-for="patient in patients" v-bind:key="patient.name">
-            <p> ID: {{ patient._id }} <br>
+        <br>
+        <h2>Patients for User: {{username}}</h2>
+        <br>
+        <b-form-group>
+          <b-row>
+            <b-col></b-col>
+            <b-col>
+        <b-form-input id="searchPatient" type="text" v-model=patientSelected placeholder="Search for Patients by Name or ID ..."></b-form-input>
+          </b-col>
+          <b-col>
+          </b-col>
+          </b-row>
+        </b-form-group>
+      <br>
+       <b-card-group columns style="margin: 30px;">  
+       <b-card   v-for="patient in patientSelection" v-bind:key="patient.name" :title="patient.name" :sub-title="patient._id"
+            class="patientCard">
+            <b-card-text> 
             <!-- Last Request: {{ requests[patient.requests.length-1].created }} <br> -->
-            Name: {{ patient.name }} <br>
-            Date of Birth: {{ patient.medicalData.dateOfBirth }} <br> 
+           <br>
+           <b>Requests </b><br>
+            Last Request: {{patient.requests[patient.requests.length-1].created.substring(0,10)}} <br>
+            Number of Request: {{patient.requests.length }} <br><br>
+            Date of Birth: {{ patient.medicalData.dateOfBirth.substring(0,10) }} <br> 
             Gender: {{ patient.medicalData.gender }} <br>
-            Weight: {{ patient.medicalData.weight }} <br>
-            Height: {{ patient.medicalData.height }} <br>
-            Bloodtype: {{ patient.medicalData.bloodtype }} <br>
+            Weight: {{ patient.medicalData.weight }} kg<br>
+            Height: {{ patient.medicalData.height }} cm<br>
+             <br>
             
+            <!-- Bloodtype: {{ patient.medicalData.bloodtype }} <br> -->
+            <br>
+            <b>Blood Pressure </b><br>
+            Mean: {{ patient.requests[patient.requests.length-1].bloodpressure.meanbp_mean }} mmHg<br>
+            Min: {{ patient.requests[patient.requests.length-1].bloodpressure.meanbp_min }} mmHg<br>
+            Max: {{ patient.requests[patient.requests.length-1].bloodpressure.meanbp_max }} mmHg<br>
+         
+            <b-button @click=createBpChart(patient.requests,patient.name) style="margin:10px" size="sm" variant="primary">Show chart</b-button>
             
-            Mean blood pressure: {{ patient.requests[patient.requests.length-1].bloodpressure.meanbp_mean }} <br>
-            Min blood pressure: {{ patient.requests[patient.requests.length-1].bloodpressure.meanbp_min }} <br>
-            Max blood pressure: {{ patient.requests[patient.requests.length-1].bloodpressure.meanbp_max }} <br>
-            Mean resprate: {{ patient.requests[patient.requests.length-1].respiratory.resprate_mean }} <br>
-            Min resprate: {{ patient.requests[patient.requests.length-1].respiratory.resprate_min }} <br>
-            Max resprate: {{ patient.requests[patient.requests.length-1].respiratory.resprate_max }} <br>
-            Mean temperature in C°: {{ patient.requests[patient.requests.length-1].tempc_mean }} <br>
-            Mean glucose: {{ patient.requests[patient.requests.length-1].glucose.glucose_mean }} <br>
-            Min glucose: {{ patient.requests[patient.requests.length-1].glucose.glucose_min }} <br>
-            Max glucose: {{ patient.requests[patient.requests.length-1].glucose.glucose_max }} <br>
-            Patient History: {{ patient.requests[patient.requests.length-1].patient_history }} <br>
-            Diagnoses: {{ patient.requests[patient.requests.length-1].diagnoses }}  <br> 
-            Chances of Survival: {{ patient.survival }}</p><br>
+            <b-button @click=hideBpChart size="sm" variant="primary">Hide Chart </b-button>
+            <div v-if=samePatient(patient.name)>
+            <div v-if=bpChartEnabled>
+             
+            <GChart type="ColumnChart"
+            :data="BpChartData"
+            :options="BpChartOptions"
+            :settings="{ packages: ['corechart','table'] }"
+            />
+              </div>
+            </div>
+            <br>
+            <b>Glucose Levels </b><br>
+            Mean: {{ patient.requests[patient.requests.length-1].glucose.glucose_mean }} mg/dL<br>
+            Min: {{ patient.requests[patient.requests.length-1].glucose.glucose_min }} mg/dL<br>
+            Max: {{ patient.requests[patient.requests.length-1].glucose.glucose_max }} mg/dL<br>
+            <b-button @click=createGlChart(patient.requests,patient.name) style="margin:10px" size="sm" variant="primary">Show chart</b-button>
+            
+            <b-button @click=hideGlChart size="sm" variant="primary">Hide Chart </b-button>
+            <div v-if=samePatient(patient.name)>
+            <div v-if=glChartEnabled>
+             
+            <GChart type="ColumnChart"
+            :data="GlChartData"
+            :options="GlChartOptions"
+            :settings="{ packages: ['corechart','table'] }"
+            
+            />
+            </div>
+            </div>
+           <br>
+          <b> Respiratory Rate </b><br>
+            Mean: {{ patient.requests[patient.requests.length-1].respiratory.resprate_mean }} breaths per minute<br>
+            Min: {{ patient.requests[patient.requests.length-1].respiratory.resprate_min }} breaths per minute<br>
+            Max: {{ patient.requests[patient.requests.length-1].respiratory.resprate_max }} breaths per minute<br>
+
+            <b-button @click=createReChart(patient.requests,patient.name) style="margin:10px" size="sm" variant="primary">Show chart</b-button>
+            
+            <b-button @click=hideReChart size="sm" variant="primary">Hide Chart </b-button>
+            <div v-if=samePatient(patient.name)>
+            <div v-if=reChartEnabled>
+             
+            <GChart type="ColumnChart"
+            :data="ReChartData"
+            :options="ReChartOptions"
+            :settings="{ packages: ['corechart','table'] }"
+            />
+            </div>
+            </div>
+            
+
+            <br>
+            Mean Temperature: {{ patient.requests[patient.requests.length-1].tempc_mean }} C°<br>
+            <br>
+            Patient History: {{ patient.requests[patient.requests.length-1].patient_history.join(', ') }} <br>
+            Diagnoses: {{ patient.requests[patient.requests.length-1].diagnoses.join(', ') }}  <br> 
+          
+<br>
+          <b>Chances of Survival:</b> {{ (patient.requests[patient.requests.length-1].survival) * 100 }} % <br> 
+            <b>Estimated Length of Stay:</b> {{  patient.requests[patient.requests.length-1].stay}} days
+            <br>
            
-          </li>
-          </ul>
+            
+
+           </b-card-text>
+
+            </b-card>
+          
+</b-card-group>
+ <v-footer>
+
+          <p style="color:dimgrey"> 2021 - RoboDoc </p>    
+
+
+      </v-footer>
+          
     </div>
 </template>
 
 <script>
-
-import PatientService from '../services/PatientService.js'
+import PatientService from '@/services/PatientService.js'
 export default {
     name: 'Patients',
     data(){
       return {
+        bpChartEnabled:false, 
+        glChartEnabled:false,
+        reChartEnabled:false,
+        currentPatient:'',
+
+        BpChartData:[           
+          ['Request','Min','Mean','Max'],               
+          ], 
+        GlChartData:[           
+          ['Request','Glucose_min','Glucose_mean','Glucose_max'],               
+          ], 
+        ReChartData:[           
+          ['Request','Resprate_min','Resprate_mean','Resprate_max'],               
+          ],       
+          BpChartOptions:{                
+              title:'Bloodpressure Values for several Requests',  
+              chartArea:{width:"50%",height:"70%"}           
+          },
+          GlChartOptions:{                
+              title:'Glucose Values for several Requests',  
+              chartArea:{width:"50%",height:"70%"}           
+          },
+          ReChartOptions:{                
+              title:'Resprate Values for several Requests',  
+              chartArea:{width:"50%",height:"70%"}          
+          },
         message:'',
         username:'', 
-        patients:[]
+        patients:[], 
+        patientSelected:'',
         
         /*{
             patient:{
@@ -97,8 +216,19 @@ export default {
             this.$router.push('/registration')
           }
         this.username = this.$store.getters.getUser.username;
+        this.fetchAllPatients();
 
         //this.secretMessage = await AuthService.getSecretContent();
+    },
+
+    computed:{
+      patientSelection:function(){
+        if (this.patientSelected!='') return this.patients.filter(p => p.name.includes(this.patientSelected)||p._id.includes(this.patientSelected)); 
+        else return this.patients; 
+      },
+
+      
+      
     },
 
 
@@ -107,6 +237,76 @@ export default {
         this.$store.dispatch('logout'); 
         this.$router.push('/');
       }, 
+
+      createBpChart(requests,name){
+        this.BpChartData = [           
+          ['Request','Min Bloodpressure','Mean Bloodpressure','Max Bloodpressure']                 
+          ]
+        for(var i = 0; i < requests.length; i ++){
+            let min = requests[i].bloodpressure.meanbp_min != null ? requests[i].bloodpressure.meanbp_min : 0 
+            let mean = requests[i].bloodpressure.meanbp_mean != null ? requests[i].bloodpressure.meanbp_mean : 0
+            let max = requests[i].bloodpressure.meanbp_max != null ? requests[i].bloodpressure.meanbp_max : 0
+          this.BpChartData.push([i + 1 + ". Request", min, mean, max]);          
+        }
+        this.currentPatient = name; 
+        this.bpChartEnabled = true; 
+        this.glChartEnabled = false; 
+        this.reChartEnabled = false; 
+      },
+
+      createGlChart(requests,name){
+        this.GlChartData = [           
+          ['Request','Min Glucose','Mean Glucose','Max Glucose']                 
+          ]
+          for(var i = 0; i < requests.length; i ++){
+            let min = requests[i].glucose.glucose_min != null ? requests[i].glucose.glucose_min : 0 
+            let mean = requests[i].glucose.glucose_mean != null ? requests[i].glucose.glucose_mean : 0
+            let max = requests[i].glucose.glucose_max != null ?requests[i].glucose.glucose_max : 0
+          this.GlChartData.push([i + 1 + ". Request", min, mean, max]);
+          
+        }
+       
+        this.currentPatient = name; 
+        this.glChartEnabled = true; 
+        this.bpChartEnabled = false; 
+        this.reChartEnabled = false; 
+      },
+      createReChart(requests,name){
+        this.ReChartData = [           
+          ['Request','Min Resprate','Mean Resprate','Max Resprate']                 
+          ]
+          for(var i = 0; i < requests.length; i ++){
+              let min = requests[i].respiratory.resprate_min ? requests[i].respiratory.resprate_min : 0 
+            let mean = requests[i].respiratory.resprate_mean != null ? requests[i].respiratory.resprate_mean : 0
+            let max = requests[i].respiratory.resprate_max != null ?requests[i].respiratory.resprate_max : 0
+          this.ReChartData.push([i + 1 + ". Request", min, mean, max]);
+          
+        }
+        this.currentPatient = name; 
+        this.reChartEnabled = true; 
+        this.glChartEnabled = false; 
+        this.bpChartEnabled = false; 
+      },
+          
+
+        
+      
+
+      samePatient(name){
+        return name == this.currentPatient;
+      },
+
+      hideBpChart(){
+        this.bpChartEnabled = false; 
+      },
+      hideGlChart(){
+        this.glChartEnabled = false; 
+      },
+      hideReChart(){
+        this.reChartEnabled = false; 
+      },
+
+    
 
       requestIsEmpty (patient){
         return patient.requests.lenght>0
@@ -131,12 +331,13 @@ export default {
        // }
 
       },
-    }, 
-
-    
+    },    
 }
 
 </script>
 <style scoped>
+
+
+
 
 </style>

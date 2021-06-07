@@ -1,92 +1,115 @@
+
 <template>
 <div class="registration">
-   <div class = "navigation" >
    <b-navbar toggleable="false" type="dark" variant="transparent">
 
-      <b-navbar-brand href = "#"><b>RoboDoc</b></b-navbar-brand>
+      <b-navbar-brand href = "#" style="text-decoration: none; color:black;">RoboDoc</b-navbar-brand>
 
     <div class="Modal-Register">
     
-    <b-modal id="modal-1" title="Register Hospital Employee" @ok="signUp">
+    <b-modal id="modal-1" title="Register" hide-footer="true">
 		<p v-if="msg">{{ msg }}</p>
       <b-form-group id="Hospital Employee" 
-          label="Your Name" 
+          
           label-for="input-employee">
-          <b-form-input id="input-employee" 
-          v-model=employee.name trim />
+          <b-form-input id="input-employee"
+           v-model=employee.name 
+          placeholder="Name"
+          />
       </b-form-group>
 
       <b-form-group
         id="email"
-        label="Your Email address"
         label-for="input-email">
         <b-form-input
         id="input-email"
           type= "email"
+          placeholder="Email"
           v-model=employee.email />
       </b-form-group>
 
       <b-form-group
         id="username"
-        label="Enter prefered Username"
         label-for="input-username"
         >
         <b-form-input
           id="input-username"
           type="text"
-          
+          placeholder="Username"
           v-model=employee.username />
       </b-form-group>
 
       <b-form-group
         id="password"
-        label="Enter your prefered password containing at least 8 characters"
         label-for="input-password"
+       
         >
         <b-form-input
           id="input-password"
           type="password"
+
+          placeholder="Password"
           v-model=employee.password />
       </b-form-group>
+
+       <div class="modal-footer">
+        <button type="button" @click="signUp" class="btn btn-success btn-lg btn-block" data-dismiss="modal">Register</button>
+
+      </div>
+
+     
+      
     </b-modal>
   </div>
 
   <div class="Modal-login">
-    <b-button class= "registerButton"  v-b-modal.modal-1 size="sm" variant="outline-light" >Register</b-button>
-    <b-button v-b-modal.modal-2 size="sm" variant="outline-light">Login</b-button>
-    <b-modal id="modal-2" title="Login" @ok="login">
+    <b-button class= "registerButton"  v-b-modal.modal-1 size="sm" variant="outline-dark" style="text-decoration: none; color:black;">Register</b-button>
+    <b-button class= "loginButton" v-b-modal.modal-2 size="sm" variant="outline-dark" style="text-decoration: none; color:black;">Login</b-button>
+    <b-button variant="outline-dark" size="sm"> <router-link style="text-decoration: none; color:black;" to="/singlePatient"> Get Single Patient Data</router-link></b-button>
+   
+   
+   
+    <b-modal id="modal-2" title="Login" hide-footer="true"
+    
+            >
       
 
 
      <b-form-group
                 id="user"
-                label="Username"
                 
                 label-for="user"
                 invalid-feedback="Wrong Input"
                 valid-feedback="Thank you">
                  <b-form-input id= "user"
+                 placeholder="Username"
                  v-model=user.username >
                 </b-form-input>
       </b-form-group>
 
        <b-form-group
                 id="password"
-                label="Password"
                 label-for="password"
                 invalid-feedback="Wrong password"
                 valid-feedback="Thank you">
                  <b-form-input id="password"
           type="password"
+           placeholder="Password"
           v-model=user.password>
                 </b-form-input>
       </b-form-group>
 
 
-    
+     <div class="modal-footer">
+        <button type="button" @click="login" class="btn btn-primary btn-lg btn-block" data-dismiss="modal">Login</button>
+
+      </div>
 
 
     </b-modal>
+
+
+     
   </div>
 
    
@@ -122,8 +145,9 @@
 
 
     <p>Discover RoboDoc
-      <br>
-     The latest innovation in the field of hospital management</p>
+    <br>
+     The latest innovation in the field of hospital management
+     </p>
 
 
 
@@ -132,49 +156,76 @@
       <b-row>
         <b-col>
 
-    <b-card 
-    class="card"
-    id = "register-card"
-    title="Register"
-    >
-      <b-card-text>
-         If you do not have an account set up yet you will need to register first to access RoboDoc 
-      
-      </b-card-text>
+          <b-card 
+            class="card"
+            id = "register-card"
+            title="Register"
+          >
+            <b-card-text>
+              If you do not have an account set up yet you will need to register first to access RoboDoc
     
-    
-   
-    
+             </b-card-text>
 
-    <b-button v-b-modal.modal-1 variant="outline-dark">Register</b-button>
-  </b-card>
+             
+            <b-button v-b-modal.modal-1 variant="outline-dark">Register</b-button>
+          </b-card>
         </b-col>
+
         <b-col>
 
-  <b-card 
-  class="card"
-  id = "register2-card"
-  title="Log In ">
-      <b-card-text>
-        Log in to account to fill the form to assess patient
+          <b-card 
+              class="card"
+              id = "register2-card"
+              title="Log In ">
+                 
+                 <b-card-text>
+                    Log in to account to fill the form to assess patient
 
-      </b-card-text>
+                  </b-card-text>
+                  <br>
 
-    <br>
-    
-    <b-button v-b-modal.modal-2 variant="outline-dark">Log in</b-button>
-  </b-card>
+                  <b-button v-b-modal.modal-2 variant="outline-dark">Log in</b-button>
+          </b-card>
         </b-col>
       </b-row>
-    </b-container>
-    </div>
+        <b-col>
+
+          <b-card 
+            class="card"
+            id = "register3-card"
+            title="Get Single Patient Data">
+              <b-card-text>
+                You can also use RoboDoc as a patient. <br>
+                 Simply ask your attending doctor for your RoboDoc ID 
+                 and view your personal data here.
+              </b-card-text>
     
-</div>
+              <b-button variant="outline-dark"> <router-link style="text-decoration: none; color:black;" to="/singlePatient"> Get Single Patient Data</router-link></b-button>
+          </b-card>
+        </b-col>
+
+      
+    </b-container>
+
+
+   
+
+
+     <v-footer>
+
+          <p style="color:dimgrey"> 2021 - RoboDoc </p>    
+
+
+      </v-footer>
+
+    </div>
+
 </template>
 
 
 <script>
-import AuthService from '../services/AuthService.js'
+import AuthService from '@/services/AuthService.js'
+
 
 export default {
     name: 'Registration', 
@@ -201,6 +252,12 @@ export default {
          
         },
 
+       
+
+          
+
+        
+
         
       }
     },
@@ -213,6 +270,7 @@ export default {
         
         this.$emit("register-Employee", this.employee);
       },
+
 
       async signUp (){
         try {
@@ -229,6 +287,7 @@ export default {
             this.msg = error.response.data.msg;
         }
       }, 
+
       async login (){
         try {
           const credentials = {
@@ -243,14 +302,22 @@ export default {
           const user = this.user;
 
           this.$store.dispatch('login',{token,user}); 
-
+          
+          
+          if(this.$store.getters.getUser.username=="Admin"){
+            this.$router.push('/adminHome'); 
+          }else{
           this.$router.push('/homepage'); 
+          }
 
 
         }catch (error){
             this.message = error.response.data.msg
         }
-        }
+
+      },
+          
+      
 
       }
     }
@@ -270,13 +337,16 @@ export default {
     h1 {
       color: black;
       margin-bottom: 300px;
-      font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+      font-size: 65px;
+      font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
     }
     h2 {
       color: black;
       margin-bottom: 300px;
-      font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+      font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
     }
+
+    
 
    
 .carousel {
@@ -297,56 +367,24 @@ export default {
 .registerButton {
 
   margin-right: 5px;
+   position: left;
+
+}
+
+.loginButton {
+
+  margin-right: 5px;
+   position: left;
 
 }
 
 .card {
-  
   margin-bottom: 50px;
 }
 
 p {
   margin-top: 50px;
 }
-
-
-
-
-   
-
-   
-.carousel {
-  position:relative;
-    top:0;    
-}
-.navbar {
-    position:absolute;
-    top:0px;
-    z-index:10;
-    background:#fff;
-    width:100%;
-}
-.navbar-inner {
-    background:transparent;
-}
-
-.registerButton {
-
-  position: left;
-
-}
-
-.card {
-  
-  margin-bottom: 50px;
-}
-
-p {
-  margin-top: 50px;
-}
-
-
-
 
    
 

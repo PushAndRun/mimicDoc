@@ -1,20 +1,26 @@
 import axios from 'axios'
 
-const url = 'http://localhost:8081/api';
+import apiURL from '../apiConfig'
 
 export default {
 
     fetchAllUsers () {
         return axios
-                .get(url + '/user/')
+                .get(apiURL + '/user/')
                 .then(response => response.data);  
 
     },
 
-    fetchSingleUser (id) {
+    fetchSingleUser(id) {
         axios 
-        .get(url + '/user/' + id)
+        .get(apiURL + '/user/' + id)
         .then(response => response.data); 
+    },
+
+    deleteUser(id){
+        return axios
+        .delete(apiURL + '/user/id/' + id)
+        .then(response => response.data)
     }
 
 }
