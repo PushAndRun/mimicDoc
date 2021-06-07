@@ -1,17 +1,17 @@
 import axios from 'axios'; 
+import apiURL from '../apiConfig'
 
-const url = 'http://localhost:8081/api';
 
 export default {
     login(credentials){
         return axios
-            .post(url + '/auth/login/', credentials)
+            .post(apiURL + '/auth/login/', credentials)
             .then(response=>response.data);
     }, 
 
     signUp(credentials){
         return axios
-            .post(url + '/auth/register/',credentials)
+            .post(apiURL + '/auth/register/',credentials)
             .then(response => response.data);
     },
 };
