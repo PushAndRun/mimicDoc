@@ -22,7 +22,7 @@ const AuthController = require('./routes/auth/AuthController')
 // mongoose db connection
 const db = require('./db')
 
-app.use(cors('http://localhost:8080'))
+app.use(cors())
 app.use(logger('dev'))
 app.use(
   express.urlencoded({
