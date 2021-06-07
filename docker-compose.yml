@@ -11,10 +11,6 @@ services:
     volumes:
       - ./backend/:/usr/src/app
       - /usr/src/app/node_modules
-    environment:
-      - PORT = '8081'
-      - HOST = server
-      - FRONTEND_HOST = client
     ports:
       - "8081:8081"
     networks:
@@ -30,8 +26,6 @@ services:
     volumes:
       - ./frontend/:/usr/app
       - /usr/app/node_modules
-    environment:
-      - BACKHOST = server
     depends_on:
       - server
     ports:
