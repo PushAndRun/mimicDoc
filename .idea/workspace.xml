@@ -2,7 +2,59 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f6406c5-acae-46cc-99d7-4ed77eb205d9" name="Default Changelist" comment="first data visualization">
-      <change beforePath="$PROJECT_DIR$/ml/playground.py" beforeDir="false" afterPath="$PROJECT_DIR$/ml/playground.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/Graphs/00_with_diagnoses80_and_not/classification_resampled_with.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/Graphs/00_with_diagnoses80_and_not/classification_resampled_without.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/Graphs/00_with_diagnoses80_and_not/metrics_with.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/Graphs/00_with_diagnoses80_and_not/metrics_without.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/Graphs/00_with_diagnoses80_and_not/prc_with.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/Graphs/00_with_diagnoses80_and_not/prc_without.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/Graphs/00_with_diagnoses80_and_not/roc_with.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/Graphs/00_with_diagnoses80_and_not/roc_without.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/Graphs/01_diagnoses80_diagnoses60/classification_resampled_60.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/Graphs/01_diagnoses80_diagnoses60/classification_resampled_80.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/Graphs/01_diagnoses80_diagnoses60/metrics_60.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/Graphs/01_diagnoses80_diagnoses60/metrics_80.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/Graphs/01_diagnoses80_diagnoses60/prc_60.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/Graphs/01_diagnoses80_diagnoses60/prc_80.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/Graphs/01_diagnoses80_diagnoses60/roc_60.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/Graphs/01_diagnoses80_diagnoses60/roc_80.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/Graphs/02_with_history_and_not/class_resampled_without.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/Graphs/02_with_history_and_not/class_weighted_with.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/Graphs/02_with_history_and_not/metrics_with.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/Graphs/02_with_history_and_not/metrics_without.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/Graphs/02_with_history_and_not/prc_with.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/Graphs/02_with_history_and_not/prc_without.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/Graphs/02_with_history_and_not/roc_with.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/Graphs/02_with_history_and_not/roc_without.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/Graphs/03_all_with_history_and_all_without/classification_resampled_80.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/Graphs/03_all_with_history_and_all_without/metrics_80.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/Graphs/03_all_with_history_and_all_without/prc_80.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/Graphs/03_all_with_history_and_all_without/roc_80.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/Graphs/04_node_layer_training/85.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/Graphs/04_node_layer_training/class_01_16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/Graphs/04_node_layer_training/class_02_16-16-16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/Graphs/04_node_layer_training/prc_01_16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/Graphs/04_node_layer_training/prc_02_16-16-16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/Untitled.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/labels.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/means.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/norm_data.ipynb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/normalized_data.npy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/playground.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/predicter/db_diagnoses_dict.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/predicter/db_patient_history_dict.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/predicter/model_class/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/ml/predicter/model_class/saved_model.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/predicter/model_class/variables/variables.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/ml/predicter/model_class/variables/variables.data-00000-of-00001" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/predicter/model_class/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/ml/predicter/model_class/variables/variables.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/predicter/model_reg/keras_metadata.pb" beforeDir="false" afterPath="$PROJECT_DIR$/ml/predicter/model_reg/keras_metadata.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/predicter/model_reg/saved_model.pb" beforeDir="false" afterPath="$PROJECT_DIR$/ml/predicter/model_reg/saved_model.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/predicter/model_reg/variables/variables.data-00000-of-00001" beforeDir="false" afterPath="$PROJECT_DIR$/ml/predicter/model_reg/variables/variables.data-00000-of-00001" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/predicter/model_reg/variables/variables.index" beforeDir="false" afterPath="$PROJECT_DIR$/ml/predicter/model_reg/variables/variables.index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/predicter/pca.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/predicter/predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/ml/predicter/predict.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/predicter/scaler.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ml/train_model.ipynb" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,41 +64,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/admissions.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="40" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="41" />
+            <state>
+              <caret column="100" selection-start-column="100" selection-end-column="100" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/ml/playground.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ml/predicter/predict.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
+            <state relative-caret-position="1860">
+              <caret line="169" column="13" lean-forward="true" selection-start-line="169" selection-start-column="13" selection-end-line="169" selection-end-column="14" />
               <folding>
-                <element signature="e#0#17#0" expanded="true" />
+                <element signature="e#0#19#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/diagnoses.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/diagnoses_dict.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="11895">
-              <caret line="793" selection-start-line="793" selection-end-line="794" />
             </state>
           </provider>
         </entry>
@@ -69,6 +103,7 @@
         <option value="$PROJECT_DIR$/db/diagnoses.csv" />
         <option value="$PROJECT_DIR$/ml/main.py" />
         <option value="$PROJECT_DIR$/ml/playground.py" />
+        <option value="$PROJECT_DIR$/ml/predicter/predict.py" />
       </list>
     </option>
   </component>
@@ -82,7 +117,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="128" />
     <option name="y" value="83" />
     <option name="width" value="768" />
@@ -93,7 +128,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -111,15 +145,23 @@
               <item name="RobotDoc" type="462c0819:PsiDirectoryNode" />
               <item name="ml" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="RobotDoc" type="b2602c69:ProjectViewProjectNode" />
+              <item name="RobotDoc" type="462c0819:PsiDirectoryNode" />
+              <item name="ml" type="462c0819:PsiDirectoryNode" />
+              <item name="predicter" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../IISC/Enowars5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -135,7 +177,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.predict">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="RobotDoc" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -158,8 +200,35 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="predict" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="RobotDoc" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ml/predicter" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ml/predicter/predict.py" />
+      <option name="PARAMETERS" value="9973,100020,282580,5,1,58,M,96,175,87,56,151,8,27,15,35.416666666666664,79,101,90,,V1302,5990;34409;2761;5601;5849;0417;4280;59654;340;2930;0414;5738;3373;3694;4019;34590;53081,10.61,1,1.10,1.10108796296296,95,f" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.predict" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.predict" />
         <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
@@ -177,6 +246,8 @@
       <workItem from="1619343568920" duration="15200000" />
       <workItem from="1619431105278" duration="2270000" />
       <workItem from="1620125685946" duration="19000" />
+      <workItem from="1622280886516" duration="3532000" />
+      <workItem from="1622625168032" duration="4605000" />
     </task>
     <task id="LOCAL-00001" summary="first data visualization">
       <created>1619374410364</created>
@@ -189,12 +260,37 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17489000" />
+    <option name="totallyTimeSpent" value="25626000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="12" width="1024" height="563" extended-state="6" />
+    <frame x="0" y="12" width="1024" height="563" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26229507" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.29713115" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.328125" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989754" weight="0.328125" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010246" side_tool="true" weight="0.421875" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.22544643" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="right" x="0" y="0" width="206" height="363" id="Documentation" side_tool="true" weight="0.32991803" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.46106556" />
+      <window_info anchor="right" id="Database" order="4" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29713115" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -215,7 +311,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" weight="0.46106556" />
       <window_info anchor="right" id="Database" order="4" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -226,19 +322,17 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/RobotDoc$main.coverage" NAME="main Coverage Results" MODIFIED="1619440694207" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ml" />
+    <SUITE FILE_PATH="coverage/RobotDoc$predict.coverage" NAME="predict Coverage Results" MODIFIED="1622625933451" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ml/predicter" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/admissions.csv">
+    <entry file="file://$PROJECT_DIR$/db/diagnoses.csv" />
+    <entry file="file://$PROJECT_DIR$/ml/playground.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="40" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/diagnoses.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="10" selection-start-line="2" selection-start-column="10" selection-end-line="2" selection-end-column="10" />
+        <state relative-caret-position="465">
+          <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -249,13 +343,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ml/playground.py">
+    <entry file="file://$PROJECT_DIR$/ml/predicter/predict.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
+        <state relative-caret-position="1860">
+          <caret line="169" column="13" lean-forward="true" selection-start-line="169" selection-start-column="13" selection-end-line="169" selection-end-column="14" />
           <folding>
-            <element signature="e#0#17#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/admissions.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="100" selection-start-column="100" selection-end-column="100" />
         </state>
       </provider>
     </entry>
