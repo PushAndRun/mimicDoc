@@ -1,22 +1,16 @@
-FROM node:lts-alpine
+# Install Node Image
+FROM node:15 as client
 
-# install simple http server for serving static content
-RUN npm install -g http-server
-
-# make the 'app' folder the current working directory
-WORKDIR /app
-
-# copy both 'package.json' and 'package-lock.json' (if available)
-COPY package*.json ./
-
-# install project dependencies
-RUN npm install
-
-# copy project files and folders to the current working directory (i.e. 'app' folder)
-COPY . .
-
-# build app for production with minification
+# Create app directory
+WORKDIR /usr/src/app
+COPY ./package*.json /usr/src/app/
+RUN npm install --silent
+COPY . /usr/src/app
 RUN npm run build
 
-EXPOSE 8080
-CMD [ "http-server", "dist" ]
+# Build nginx server
+FROM nginx:latest
+COPY --from=client /usr/src/app/dist/ /var/www/html
+COPY ./nginx.conf /etc/nginx/conf.d/default.conf
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]

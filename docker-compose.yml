@@ -1,7 +1,7 @@
 version: '2.0'
 
 services:
-  server:
+  robodoc-backend:
     build:
       context: ./backend
       dockerfile: Dockerfile2
@@ -15,21 +15,19 @@ services:
       - "8081:8081"
     networks:
       - app-network
-  client:
+  robodoc-frontend:
     build:
       context: ./frontend
       dockerfile: Dockerfile
     image: robo-frontend
     container_name: robodoc-frontend
-    command: npm run build
-    command: http-server dist
     volumes:
       - ./frontend/:/usr/app
       - /usr/app/node_modules
     depends_on:
-      - server
+      - robodoc-backend
     ports:
-      - "8080:8080"
+      - "80:80"
     networks:
       - app-network
 
