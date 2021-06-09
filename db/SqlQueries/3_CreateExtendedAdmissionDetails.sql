@@ -39,6 +39,46 @@ SELECT
 			Q7.rrt as received_dialysis,
 			Q8.vent as received_ventilation,
 			Q9.urineoutput,
+			Q10.mingcs,
+			Q10.gcsmotor,
+			Q10.gcsverbal,
+			Q10.gcseyes,
+			Q11.aniongap_min,
+			Q11.aniongap_max,
+			Q11.albumin_min,
+			Q11.albumin_max,
+			Q11.bands_min,
+			Q11.bands_max,
+			Q11.bicarbonate_min,
+			Q11.bicarbonate_max,
+			Q11.bilirubin_min,
+			Q11.bilirubin_max,
+			Q11.creatinine_min,
+			Q11.creatinine_max,
+			Q11.chloride_min,
+			Q11.chloride_max,
+			Q11.hematocrit_min,
+			Q11.hematocrit_max,
+			Q11.hemoglobin_min,
+			Q11.hemoglobin_max,
+			Q11.lactate_min,
+			Q11.lactate_max,
+			Q11.platelet_min,
+			Q11.platelet_max,
+			Q11.potassium_min,
+			Q11.potassium_max,
+			Q11.ptt_min,
+			Q11.ptt_max,
+			Q11.inr_min,
+			Q11.inr_max,
+			Q11.pt_min,
+			Q11.pt_max,
+			Q11.sodium_min,
+			Q11.sodium_max,
+			Q11.bun_min,
+			Q11.bun_max,
+			Q11.wbc_min,
+			Q11.wbc_max,
 	  		Q5.icd9_code as symptoms,
 			Q2.icd9_code as patient_history, 
 			Q3.icd9_code as diagnoses
@@ -59,6 +99,8 @@ SELECT
 	FULL JOIN rrt_first_day AS Q7 ON Q1.icustay_id = Q7.icustay_id 
 	FULL JOIN ventilation_first_day AS Q8 ON Q8.icustay_id = Q1.icustay_id 
 	FULL JOIN urine_output_first_day AS Q9 ON Q9.icustay_id = Q1.icustay_id 
+	FULL JOIN gcs_first_day AS Q10 ON Q10.icustay_id = Q1.icustay_id 
+	FULL JOIN labs_first_day AS Q11 ON Q11.icustay_id = Q1.icustay_id
 	
 	/*Filter certain patients and cases*/
 	WHERE age > 0);
