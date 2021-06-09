@@ -78,4 +78,12 @@ router.get('/me', VerifyToken, function(req, res, next) {
 
 });
 
+router.get('/isAdmin', VerifyToken, function(req, res, next) {
+  if (req.isAdmin){
+    res.status(200).send({ auth: true });
+  } else{
+    res.status(401).send({ auth: false});
+  }
+});
+
 module.exports = router;
