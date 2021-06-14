@@ -41,9 +41,9 @@
         <br>
         <br>
         
-        Übersicht<br>
-        Anzahl Patienten: {{ numberOfPatients }} <br>
-        Anzahl Requests: {{ numberOfRequests }}<br>
+        Overview<br>
+        Number of patients: {{ numberOfPatients }} <br>
+        Number of requests: {{ numberOfRequests }}<br>
         </p>
         <br>  
         <br>
@@ -119,8 +119,8 @@ export default {
 
 h2 {
    color: black;
-   font-size: 65px;
-      margin-top: 0%;
+   font-size: 60px;
+   display: relative;
       font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
 }
 

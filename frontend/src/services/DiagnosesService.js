@@ -2,7 +2,7 @@ import axios from 'axios';
 
 
 
-import apiURL from '../apiConfig'
+const url = 'http://localhost:8081/api';
 
 
 
@@ -11,7 +11,7 @@ export default {
     fetchDiagnoses(){
 
         return axios
-            .get(apiURL + '/diagnoses')
+            .get(url + '/diagnoses')
             .then(response=>response.data);
 
     }

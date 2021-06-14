@@ -33,9 +33,10 @@
           </b-row>
         </b-form-group>
       <br>
-       <b-card-group columns style="margin: 30px;">  
-       <b-card   v-for="patient in patientSelection" v-bind:key="patient.name" :title="patient.name" :sub-title="patient._id"
-            class="patientCard">
+         <b-card-group > 
+       <b-col xl = 4 lg = 4 md = 6 sm = 12  v-for="patient in patientSelection" v-bind:key="patient.name">
+       <b-card :title="patient.name" :sub-title="patient._id"
+            class="patientCard" style="margin: 15px;">
             <b-card-text> 
            <!-- Last Request: {{ requests[patient.requests.length-1].created }} <br> -->
            <br>
@@ -51,7 +52,7 @@
            </b-card-text>
 
             </b-card>
-          
+       </b-col>
 </b-card-group>
  <v-footer>
 

@@ -33,9 +33,12 @@
           </b-row>
         </b-form-group>
       <br>
-       <b-card-group columns style="margin: 30px;">  
-       <b-card   v-for="patient in patientSelection" v-bind:key="patient.name" :title="patient.name" :sub-title="patient._id"
-            class="patientCard">
+
+      
+       <b-card-group > 
+       <b-col xl = 4 lg = 4 md = 6 sm = 12  v-for="patient in patientSelection" v-bind:key="patient.name">
+       <b-card :title="patient.name" :sub-title="patient._id"
+            class="patientCard" style="margin: 15px;">
             <b-card-text> 
             <!-- Last Request: {{ requests[patient.requests.length-1].created }} <br> -->
            <br>
@@ -49,6 +52,10 @@
              <br>
             
             <!-- Bloodtype: {{ patient.medicalData.bloodtype }} <br> -->
+            <br>
+            <b-button @click="showBloodValues(patient.name)">{{ minOrMaxBloodValues(patient.name) }}</b-button>
+            <br>
+            <div v-if="BloodValuesEnabledMethod(patient.name)">
             <br>
             <b>Blood Pressure </b><br>
             Mean: {{ patient.requests[patient.requests.length-1].bloodpressure.meanbp_mean }} mmHg<br>
@@ -106,6 +113,7 @@
             />
             </div>
             </div>
+            </div>
             
 
             <br>
@@ -124,8 +132,12 @@
            </b-card-text>
 
             </b-card>
-          
+       </b-col>
 </b-card-group>
+
+
+     
+
  <v-footer>
 
           <p style="color:dimgrey"> 2021 - RoboDoc </p>    
@@ -142,10 +154,12 @@ export default {
     name: 'Patients',
     data(){
       return {
+        BloodValuesEnabled:false,
         bpChartEnabled:false, 
         glChartEnabled:false,
         reChartEnabled:false,
         currentPatient:'',
+        currentName:'',
 
         BpChartData:[           
           ['Request','Min','Mean','Max'],               
@@ -227,6 +241,9 @@ export default {
         else return this.patients; 
       },
 
+     
+   
+
       
       
     },
@@ -236,6 +253,18 @@ export default {
      logout(){
         this.$store.dispatch('logout'); 
         this.$router.push('/');
+      }, 
+       minOrMaxBloodValues(name){
+        if(this.BloodValuesEnabled&&name==this.currentName)return "Hide Patient's Medical Data" ; 
+        else return "Show Patient's Medical Data";
+      },
+      showBloodValues(name){
+        this.BloodValuesEnabled=!this.BloodValuesEnabled;
+        this.currentName = name; 
+      },
+      BloodValuesEnabledMethod(name){
+        if(name==this.currentName&&this.BloodValuesEnabled)return true; 
+        else return false; 
       }, 
 
       createBpChart(requests,name){
@@ -319,6 +348,7 @@ export default {
         var response = await PatientService.fetchPatients();
         for (var i = 0; i < response.length ; i ++){
           this.patients.push(response[i]);
+          
         }
         
         console.log(response);
@@ -336,7 +366,6 @@ export default {
 
 </script>
 <style scoped>
-
 
 
 

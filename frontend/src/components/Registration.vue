@@ -1,4 +1,3 @@
-
 <template>
 <div class="registration">
    <b-navbar toggleable="false" type="dark" variant="transparent">
@@ -49,11 +48,13 @@
           type="password"
 
           placeholder="Password"
-          v-model=employee.password />
+          v-model=employee.password 
+          @keydown.enter="signUp"
+          />
       </b-form-group>
 
        <div class="modal-footer">
-        <button type="button" @click="signUp" class="btn btn-success btn-lg btn-block" data-dismiss="modal">Register</button>
+        <button type="button"  @click="signUp" class="btn btn-success btn-lg btn-block" data-dismiss="modal">Register</button>
 
       </div>
 
@@ -95,13 +96,14 @@
                  <b-form-input id="password"
           type="password"
            placeholder="Password"
-          v-model=user.password>
+          v-model=user.password
+          @keydown.enter="login">
                 </b-form-input>
       </b-form-group>
 
 
      <div class="modal-footer">
-        <button type="button" @click="login" class="btn btn-primary btn-lg btn-block" data-dismiss="modal">Login</button>
+        <button type="button"  @click="login" class="btn btn-primary btn-lg btn-block" data-dismiss="modal">Login</button>
 
       </div>
 
@@ -130,7 +132,10 @@
       <!-- Slides with custom text -->
       <b-carousel-slide 
       img-src="https://picsum.photos/id/733/1024/488">
+      
+        
         <h1>RoboDoc</h1>
+       
       </b-carousel-slide>
 
        <!-- Text slides with image -->
@@ -157,7 +162,7 @@
         <b-col>
 
           <b-card 
-            class="card"
+            class="card1"
             id = "register-card"
             title="Register"
           >
@@ -173,8 +178,7 @@
 
         <b-col>
 
-          <b-card 
-              class="card"
+          <b-card  class="card2"
               id = "register2-card"
               title="Log In ">
                  
@@ -190,8 +194,8 @@
       </b-row>
         <b-col>
 
-          <b-card 
-            class="card"
+          <b-card  
+            class="card3"
             id = "register3-card"
             title="Get Single Patient Data">
               <b-card-text>
@@ -336,13 +340,34 @@ export default {
 
     h1 {
       color: black;
-      margin-bottom: 300px;
-      font-size: 65px;
+      margin-bottom: 25%;
       font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
     }
+
+    @media (min-width: 500px) {
+      h1, h2 {
+        font-size: 100%;
+      }
+    }
+
+      @media (min-width: 768px) {
+      h1, h2 {
+        font-size: 200%;
+      }
+      }
+
+      @media (min-width: 992px) {
+      h1, h2 {
+        font-size: 300%;
+      }
+      }
+      
+      
+    
+
     h2 {
       color: black;
-      margin-bottom: 300px;
+     margin-bottom: 25%;
       font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
     }
 
@@ -351,8 +376,14 @@ export default {
    
 .carousel {
   position:relative;
-    top:0;    
+      
 }
+.carousel-inner {
+  
+  display: flex;
+  align-items: center;
+}
+
 .navbar {
     position:absolute;
     top:0px;
