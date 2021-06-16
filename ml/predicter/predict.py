@@ -144,11 +144,12 @@ def predict():
     symptoms_dict, patient_history_dict, diagnoses_dict = load_disease_data()
     diagnoses_vector = diseases_to_matrix(symptoms_raw, patient_history_raw, diagnoses_raw, symptoms_dict[:,0], patient_history_dict[:,0], diagnoses_dict[:,0])
 
-    """
+
     pca_reload = pk.load(open("pca.pkl", 'rb'))
     v = pca_reload.transform(diagnoses_vector)
     print(v.shape)
 
+    """
     datapoint[13:] = v
     print(datapoint.shape)
 
@@ -165,7 +166,6 @@ def predict():
     result_reg = model_reg.predict(normed_datapoint)
     print(float(result_reg))
     """
-
 
 def print_me(X, predicted, std = 2.3):
     
