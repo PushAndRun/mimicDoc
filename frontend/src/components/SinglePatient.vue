@@ -36,9 +36,7 @@
             Weight: {{ patient.medicalData.weight }} kg<br>
             Height: {{ patient.medicalData.height }} cm<br>
              <br>
-            
-            Bloodtype: {{ patient.medicalData.bloodtype }} <br> 
-            <br>
+           
             <b>Blood Pressure </b><br>
             Mean: {{ patient.requests[patient.requests.length-1].bloodpressure.meanbp_mean }} mmHg<br> 
             Min: {{ patient.requests[patient.requests.length-1].bloodpressure.meanbp_min }} mmHg<br>
@@ -98,7 +96,16 @@
             Patient History: {{ patient.requests[patient.requests.length-1].patient_history.join(', ') }} <br>
             Diagnoses: {{ patient.requests[patient.requests.length-1].diagnoses.join(', ') }}  <br> 
             <br>
-            Chances of Survival: {{ patient.survival }} %<br>  
+             <b>Chances of Survival:</b> {{ (Math.round(patient.requests[patient.requests.length-1].survival * 100)) / 100 }} 
+          <b-icon icon="exclamation-circle" style="width: 15px; height: 15px;"  variant="info" v-b-tooltip.hover title="A value above 0.5 means that the patient is a high-risk patient.">
+            </b-icon>
+            <br> 
+            
+    
+            <b>Estimated Length of Stay:</b> {{  (Math.round(patient.requests[patient.requests.length-1].stay * 100)) / 100 }} days
+            <b-icon icon="exclamation-circle" style="width: 15px; height: 15px;"  variant="info" v-b-tooltip.hover title="The length of stay has a standard deviation of 4 days">
+            </b-icon>
+            <br>
             
         </b-card>
 

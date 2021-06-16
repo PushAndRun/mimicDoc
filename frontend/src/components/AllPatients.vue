@@ -3,15 +3,14 @@
               <b-navbar toggleable="false" type="dark" variant="dark">
     <b-navbar-brand style="color:white">RoboDoc</b-navbar-brand>
 
-    <b-navbar-toggle target="navbar-toggle-collapse">
-      <template >
-        <b-icon style="color:white">Menu</b-icon>
-      </template>
+   
+       <b-navbar-toggle target="navbar-toggle-collapse" style="color:white;">
+        Menu
     </b-navbar-toggle>
 
     <b-collapse id="navbar-toggle-collapse" is-nav>
       <b-navbar-nav class="ml-auto" >
-          <b-nav-item> <router-link style="text-decoration: none; color:white" to="/homepage" >Homepage</router-link></b-nav-item>
+          <b-nav-item> <router-link style="text-decoration: none; color:white" to="/adminHome" >Homepage</router-link></b-nav-item>
           <b-nav-item> <router-link style="text-decoration: none; color:white" to="/userManagement" >User Management</router-link></b-nav-item>
           <b-nav-item  @click="logout"><p style="color:white">Sign Out</p></b-nav-item>
       </b-navbar-nav>
@@ -20,7 +19,7 @@
 
 <br>
         <br>
-        <h2>Patients for User: {{username}}</h2>
+        <h2>Patients for Admin: {{username}}</h2>
         <br>
         <b-form-group>
           <b-row>
@@ -46,9 +45,17 @@
             Date of Birth: {{ patient.medicalData.dateOfBirth.substring(0,10) }} <br> 
             Gender: {{ patient.medicalData.gender }} <br>
            <br>
-          <b>Chances of Survival:</b> {{ (patient.requests[patient.requests.length-1].survival) * 100 }} % <br> 
-            <b>Estimated Length of Stay:</b> {{  patient.requests[patient.requests.length-1].stay}} days
+           <b>Chances of Survival:</b> {{ (Math.round(patient.requests[patient.requests.length-1].survival * 100)) / 100 }} 
+          <b-icon icon="exclamation-circle" style="width: 15px; height: 15px;"  variant="info" v-b-tooltip.hover title="A value above 0.5 means that the patient is a high-risk patient.">
+            </b-icon>
+            <br> 
+            
+    
+            <b>Estimated Length of Stay:</b> {{  (Math.round(patient.requests[patient.requests.length-1].stay * 100)) / 100 }} days
+            <b-icon icon="exclamation-circle" style="width: 15px; height: 15px;"  variant="info" v-b-tooltip.hover title="The length of stay has a standard deviation of 4 days">
+            </b-icon>
             <br>
+            
            </b-card-text>
 
             </b-card>

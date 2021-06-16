@@ -7,7 +7,7 @@ export default {
     fetchAllUsers () {
         return axios
                 .get(url + '/user/')
-                .then(response => response.data);  
+                .then(response => response.data);
 
     },
 
@@ -21,6 +21,11 @@ export default {
         return axios
         .delete(url + '/user/id/' + id)
         .then(response => response.data)
+    },
+    getUserByUsername(username){
+        return axios
+        .get(url + '/user/username/' + username)
+        .then(response=>response.data)
     }
 
 }

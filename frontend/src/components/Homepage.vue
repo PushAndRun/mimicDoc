@@ -6,10 +6,8 @@
     <b-navbar toggleable="false" type="dark" variant="dark">
     <b-navbar-brand style="color:white">RoboDoc</b-navbar-brand>
 
-    <b-navbar-toggle target="navbar-toggle-collapse">
-      <template >
-        <b-icon style="color:white" icon="chevron-bar-up">Menu</b-icon>
-      </template>
+   <b-navbar-toggle target="navbar-toggle-collapse" style="color:white;">
+        Menu
     </b-navbar-toggle>
 
     <b-collapse id="navbar-toggle-collapse" is-nav>

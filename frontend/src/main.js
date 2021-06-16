@@ -8,6 +8,10 @@ import Axios from 'axios'
 import store from './store'
 import VueBootstrapTypeahead from 'vue-bootstrap-typeahead'
 import GoogleCharts from 'vue-google-charts'
+import { BIcon, BIconExclamationCircle} from 'bootstrap-vue'
+
+Vue.component('BIcon', BIcon)
+Vue.component('BIconExclamationCircle', BIconExclamationCircle)
 
 Vue.use(GoogleCharts)
 

@@ -229,6 +229,7 @@
 
 <script>
 import AuthService from '@/services/AuthService.js'
+import UserService from '../services/UserService'
 
 
 export default {
@@ -308,10 +309,14 @@ export default {
           this.$store.dispatch('login',{token,user}); 
           
           
-          if(this.$store.getters.getUser.username=="Admin"){
+          const responseTwo = await UserService.getUserByUsername(this.user.username); 
+          console.log(responseTwo);
+
+          if (responseTwo.isAdmin){
             this.$router.push('/adminHome'); 
-          }else{
-          this.$router.push('/homepage'); 
+          }
+          else {
+            this.$router.push('/homepage'); 
           }
 
 
@@ -420,5 +425,3 @@ p {
    
 
 </style>
-
-
