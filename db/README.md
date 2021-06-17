@@ -108,13 +108,13 @@ The following columns are included in the export
 	- mEq/L 'POTASSIUM'
 		- potassium_min     
 		- potassium_max     
-	- seconds 'PTT'
+	- seconds 'PTT - Partial Thromboplastin Time'
 		- ptt_min           
 		- ptt_max 
-	- level 'INR'
+	- level 'INR - International Normalized Ratio'
 		- inr_min           
 		- inr_max
-	- seconds 'PT'
+	- seconds 'PT - Prothrombin Time'
 		- pt_min
 		- pt_max
 	- mEq/L == mmol/L 'SODIUM'
