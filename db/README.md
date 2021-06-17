@@ -108,13 +108,13 @@ The following columns are included in the export
 	- mEq/L 'POTASSIUM'
 		- potassium_min     
 		- potassium_max     
-	- sec 'PTT'
+	- seconds 'PTT'
 		- ptt_min           
 		- ptt_max 
-	- 'INR'
+	- level 'INR'
 		- inr_min           
 		- inr_max
-	- sec 'PT'
+	- seconds 'PT'
 		- pt_min
 		- pt_max
 	- mEq/L == mmol/L 'SODIUM'
