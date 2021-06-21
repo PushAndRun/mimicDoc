@@ -181,7 +181,10 @@ def predict(input_csv):
     result_class = model_class.predict(normed_datapoint)
     # print(f"actual: {float(result_class):.4f}, expected: {int(l)}");
 
-    return float(result_class), 4.7
+    print(f"died_in_hospital:{float(result_class)}")
+    print(f"length_of_stay:{4.7}")
+
+    return
 
     """
     
