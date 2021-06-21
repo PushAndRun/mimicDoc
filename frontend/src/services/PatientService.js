@@ -4,7 +4,7 @@ import store from '../store.js'
 
 
 
-const url = 'http://localhost:8081/api';
+const url = 'api';
 
 axios.defaults.headers.common['x-access-token'] = store.state.token; 
 
