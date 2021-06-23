@@ -80,7 +80,8 @@ SELECT
 			Q11.wbc_min,
 			Q11.wbc_max,
 	  		Q5.icd9_code as symptoms,
-			Q2.icd9_code as patient_history, 
+			Q2.icd9_code as patient_history,
+			Q12.icd9_code as accident_causes,
 			Q3.icd9_code as diagnoses
 			
 	FROM extended_patient_details AS Q1
@@ -91,6 +92,7 @@ SELECT
 	FULL JOIN extended_stay_details AS Q4 ON Q4.hadm_id = Q1.hadm_id
 	FULL JOIN symptoms_aggregated AS Q5 ON Q5.hadm_id = Q1.hadm_id  
 	FULL JOIN total_hospstays AS Q6 ON Q6.subject_id = Q1.patient_id
+	FULL JOIN accident_codes_aggregated AS Q12 ON Q12.hadm_id = Q1.hadm_id
 	
 	/* Add vital signs and demographics*/
 	FULL JOIN public.vitals_first_day ON Q1.icustay_id = public.vitals_first_day.icustay_id
@@ -101,6 +103,7 @@ SELECT
 	FULL JOIN urine_output_first_day AS Q9 ON Q9.icustay_id = Q1.icustay_id 
 	FULL JOIN gcs_first_day AS Q10 ON Q10.icustay_id = Q1.icustay_id 
 	FULL JOIN labs_first_day AS Q11 ON Q11.icustay_id = Q1.icustay_id
+	
 	
 	/*Filter certain patients and cases*/
 	WHERE age > 0);
