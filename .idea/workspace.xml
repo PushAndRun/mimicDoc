@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f6406c5-acae-46cc-99d7-4ed77eb205d9" name="Default Changelist" comment="first data visualization">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ml/predicter/predict.py" beforeDir="false" afterPath="$PROJECT_DIR$/ml/predicter/predict.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -11,22 +10,27 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/db/admissions.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="100" selection-start-column="100" selection-end-column="100" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ml/predicter/predict.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2430">
-              <caret line="167" column="4" selection-start-line="151" selection-start-column="7" selection-end-line="167" selection-end-column="4" />
+            <state relative-caret-position="195">
+              <caret line="190" column="46" lean-forward="true" selection-start-line="190" selection-start-column="46" selection-end-line="190" selection-end-column="46" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -52,6 +56,8 @@
         <option value="$PROJECT_DIR$/db/diagnoses.csv" />
         <option value="$PROJECT_DIR$/ml/main.py" />
         <option value="$PROJECT_DIR$/ml/playground.py" />
+        <option value="$PROJECT_DIR$/db/admission_means.csv" />
+        <option value="$PROJECT_DIR$/db/admissions.csv" />
         <option value="$PROJECT_DIR$/ml/predicter/predict.py" />
       </list>
     </option>
@@ -66,7 +72,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="128" />
     <option name="y" value="83" />
     <option name="width" value="768" />
@@ -77,6 +83,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -104,7 +111,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -163,7 +169,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ml/predicter/predict.py" />
-      <option name="PARAMETERS" value="9973,100020,282580,5,1,58,M,96,175,87,56,151,8,27,15,35.416666666666664,79,101,90,,V1302,5990;34409;2761;5601;5849;0417;4280;59654;340;2930;0414;5738;3373;3694;4019;34590;53081,10.61,1,1.10,1.10108796296296,95,f" />
+      <option name="PARAMETERS" value="18473,107345,230063,2,2,9.27,1,1,2.12,2.12016203703704,9,t,58,M,78,,67,59,75,75,54,92,16,12,19,36.166666666666664,35.72222222222222,36.77777777777778,96,90,100,216,184,247,0,0,1140,3,1,1,1,17,17,,,,,27,27,50,50,1.7,1.7,109,111,40.9,41,13.7,14.1,2.2,2.2,60,72,3.2,4.5,65.9,65.9,4.2,4.2,40.3,40.3,148,155,87,87,13.1,14.6,78959,V4986,570;0389;5845;2760;2763;486;5722;99591;4561;2875;5303;5723;5711;5728;5712;53789;4019;5533;53010;30390" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -199,6 +205,9 @@
       <workItem from="1622625168032" duration="4605000" />
       <workItem from="1622907879212" duration="1778000" />
       <workItem from="1623071348208" duration="1127000" />
+      <workItem from="1623830059120" duration="199000" />
+      <workItem from="1624182230754" duration="14070000" />
+      <workItem from="1624272501042" duration="792000" />
     </task>
     <task id="LOCAL-00001" summary="first data visualization">
       <created>1619374410364</created>
@@ -211,18 +220,44 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28531000" />
+    <option name="totallyTimeSpent" value="43592000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="12" width="1024" height="563" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.29713115" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22950819" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.328125" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989754" weight="0.328125" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4989754" visible="true" weight="0.390625" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39955357" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010246" side_tool="true" weight="0.421875" />
+      <window_info anchor="bottom" id="Python Console" order="11" weight="0.328125" />
+      <window_info anchor="bottom" id="Terminal" order="12" weight="0.22544643" />
+      <window_info anchor="bottom" id="Messages" order="13" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" weight="0.32991803" />
+      <window_info anchor="right" id="SciView" order="4" weight="0.46106556" />
+      <window_info anchor="right" x="0" y="0" width="206" height="363" id="Documentation" order="5" side_tool="true" weight="0.32991803" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29713115" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.328125" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4989754" visible="true" weight="0.22544643" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39955357" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -238,29 +273,6 @@
       <window_info anchor="right" id="SciView" order="3" weight="0.46106556" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" x="0" y="0" width="206" height="363" id="Documentation" order="5" side_tool="true" weight="0.32991803" />
-    </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29713115" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.328125" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4989754" visible="true" weight="0.328125" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010246" side_tool="true" weight="0.421875" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.22544643" />
-      <window_info anchor="bottom" id="Python Console" order="12" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" weight="0.46106556" />
-      <window_info anchor="right" id="Database" order="4" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,7 +284,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/RobotDoc$main.coverage" NAME="main Coverage Results" MODIFIED="1619440694207" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ml" />
-    <SUITE FILE_PATH="coverage/RobotDoc$predict.coverage" NAME="predict Coverage Results" MODIFIED="1622625933451" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ml/predicter" />
+    <SUITE FILE_PATH="coverage/RobotDoc$predict.coverage" NAME="predict Coverage Results" MODIFIED="1624273278083" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/ml/predicter" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/db/diagnoses.csv" />
@@ -286,15 +298,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/admissions.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="100" selection-start-column="100" selection-end-column="100" />
+        <state relative-caret-position="45">
+          <caret line="4" column="360" selection-start-line="4" selection-start-column="360" selection-end-line="4" selection-end-column="360" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/admission_means.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="117" selection-start-line="1" selection-start-column="117" selection-end-line="1" selection-end-column="117" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ml/predicter/predict.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2430">
-          <caret line="167" column="4" selection-start-line="151" selection-start-column="7" selection-end-line="167" selection-end-column="4" />
+        <state relative-caret-position="195">
+          <caret line="190" column="46" lean-forward="true" selection-start-line="190" selection-start-column="46" selection-end-line="190" selection-end-column="46" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
