@@ -45,6 +45,7 @@ function convertDiagsToNums(unconvertedDiagnoses) {
     });
 }
 
+
 router.post('/', verifyToken, async (req, res, next) => {
     // Patient in der DB Suchen mit Name und GebDatum
     let newPatient = await Patient.findOne({ name: req.body.patient.name, "medicalData.dateOfBirth": req.body.patient.dateOfBirth })
@@ -86,6 +87,91 @@ router.post('/', verifyToken, async (req, res, next) => {
     // 0389;78559;5849;4275;41071;4280;6826;4254;2639");
     // format age,gender,weight,meanbp_mean,meanbp_min,meanbp_max,resprate_min,resprate_max,resprate_mean,tempc_mean,glucose_min,glucose_max,glucose_mean,patient_history,diagnoses
 
+    // format:  hospstay_seq,total_hospstays,length_of_stay_hospital,length_of_stay_icu,total_length_of_stay_icu
+    //          days_to_death,age,weight,height,heartrate_mean,heartrate_min,heartrate_max,meanbp_mean,meanbp_min,meanbp_max
+    //          resprate_mean,resprate_min,resprate_max,tempc_mean,tempc_min,tempc_max,spo2_mean,spo2_min,spo2_max
+    //          glucose_mean,glucose_min,glucose_max,received_dialysis,received_ventilation,urineoutput,mingcs
+    //          gcsmotor,gcsverbal,gcseyes,aniongap_min,aniongap_max,albumin_min,albumin_max,bands_min,bands_max
+    //          bicarbonate_min,bicarbonate_max,bilirubin_min,bilirubin_max,creatinine_min,creatinine_max
+    //          chloride_min,chloride_max,hematocrit_min,hematocrit_max,hemoglobin_min,hemoglobin_max,lactate_min,lactate_max
+    //          platelet_min,platelet_max,potassium_min,potassium_max,ptt_min,ptt_max,inr_min,inr_max,pt_min,pt_max
+    //          sodium_min,sodium_max,bun_min,bun_max,wbc_min,wbc_max
+
+
+    let prediction = await predict("" +
+        req.body.patient.medicalData.hospstay_seq + "," +
+        req.body.patient.medicalData.total_hospstays + "," + // not shure how total should be calculated?
+        req.body.patient.medicalData.length_of_stay_hospital + "," +
+        req.body.patient.medicalData.length_of_stay_icu + "," +
+        req.body.patient.medicalData.total_length_of_stay_icu + "," + // not shure how total should be calculated?
+        req.body.patient.medicalData.days_to_death + "," +
+        calculateAge(newPatient.medicalData.dateOfBirth) + "," +
+        newPatient.medicalData.weight + "," +
+        newPatient.medicalData.height + "," +
+        req.body.patient.medicalData.heartrate.mean + "," +
+        req.body.patient.medicalData.heartrate.min + "," +
+        req.body.patient.medicalData.heartrate.max + "," +
+        req.body.patient.medicalData.meanbp.mean + "," +
+        req.body.patient.medicalData.meanbp.min + "," +
+        req.body.patient.medicalData.meanbp.max + "," +
+        req.body.patient.medicalData.resprate.mean + "," +
+        req.body.patient.medicalData.resprate.min + "," +
+        req.body.patient.medicalData.resprate.max + "," +
+        req.body.patient.medicalData.tempc.mean + "," +
+        req.body.patient.medicalData.tempc.min + "," +
+        req.body.patient.medicalData.tempc.max + "," +
+        req.body.patient.medicalData.spo2.mean + "," +
+        req.body.patient.medicalData.spo2.min + "," +
+        req.body.patient.medicalData.spo2.max + "," +
+        req.body.patient.medicalData.glucose.mean + "," +
+        req.body.patient.medicalData.glucose.min + "," +
+        req.body.patient.medicalData.glucose.max + "," +
+        req.body.patient.medicalData.received_dialysis + "," +
+        req.body.patient.medicalData.received_ventilation + "," +
+        req.body.patient.medicalData.urineoutput + "," +
+        req.body.patient.medicalData.mingcs + "," +
+        req.body.patient.medicalData.gcsmotor + "," +
+        req.body.patient.medicalData.gcsverbal + "," +
+        req.body.patient.medicalData.gcseyes + "," +
+        req.body.patient.medicalData.aniongap.min + "," +
+        req.body.patient.medicalData.aniongap.max + "," +
+        req.body.patient.medicalData.albumin.min + "," +
+        req.body.patient.medicalData.albumin.max + "," +
+        req.body.patient.medicalData.bands.min + "," +
+        req.body.patient.medicalData.bands.max + "," +
+        req.body.patient.medicalData.bicarbonate.min + "," +
+        req.body.patient.medicalData.bicarbonate.max + "," +
+        req.body.patient.medicalData.bilirubin.min + "," +
+        req.body.patient.medicalData.bilirubin.max + "," +
+        req.body.patient.medicalData.creatinine.min + "," +
+        req.body.patient.medicalData.creatinine.max + "," +
+        req.body.patient.medicalData.chloride.min + "," +
+        req.body.patient.medicalData.chloride.max + "," +
+        req.body.patient.medicalData.hematocrit.min + "," +
+        req.body.patient.medicalData.hematocrit.max + "," +
+        req.body.patient.medicalData.hemoglobin.min + "," +
+        req.body.patient.medicalData.hemoglobin.max + "," +
+        req.body.patient.medicalData.lactate.min + "," +
+        req.body.patient.medicalData.lactate.max + "," +
+        req.body.patient.medicalData.platelet.min + "," +
+        req.body.patient.medicalData.platelet.max + "," +
+        req.body.patient.medicalData.potassium.min + "," +
+        req.body.patient.medicalData.potassium.max + "," +
+        req.body.patient.medicalData.ptt.min + "," +
+        req.body.patient.medicalData.ptt.max + "," +
+        req.body.patient.medicalData.inr.min + "," +
+        req.body.patient.medicalData.inr.max + "," +
+        req.body.patient.medicalData.pt.min + "," +
+        req.body.patient.medicalData.pt.max + "," +
+        req.body.patient.medicalData.sodium.min + "," +
+        req.body.patient.medicalData.sodium.max + "," +
+        req.body.patient.medicalData.bun.min + "," +
+        req.body.patient.medicalData.bun.max + "," +
+        req.body.patient.medicalData.wbc.min + "," +
+        req.body.patient.medicalData.wbc.max
+    );
+    
+    /* 
     let prediction = await predict("" +
         calculateAge(newPatient.medicalData.dateOfBirth) + "," +
         newPatient.medicalData.gender + "," +
@@ -102,7 +188,8 @@ router.post('/', verifyToken, async (req, res, next) => {
         req.body.patient.medicalData.glucose.mean + "," +
         req.body.patient.medicalData.patient_history.join(";").replace(/\[/g, '').replace(/]/g, '') + "," +
         req.body.patient.medicalData.diagnoses.join(";").replace(/\[/g, '').replace(/]/g, '')
-    );
+    ); */
+
     //let prediction = [0,14]   //pseudo
     let death_prediction = prediction[0]
     let stay_prediction = prediction[1]
@@ -117,16 +204,126 @@ router.post('/', verifyToken, async (req, res, next) => {
             meanbp_min: req.body.patient.medicalData.bloodpressure.min,
             meanbp_max: req.body.patient.medicalData.bloodpressure.max
         },
-        respiratory: {
-            resprate_mean: req.body.patient.medicalData.resprate.mean,
-            resprate_min: req.body.patient.medicalData.resprate.min,
-            resprate_max: req.body.patient.medicalData.resprate.max
-        },
         tempc_mean: req.body.patient.medicalData.temperature.mean,
         glucose: {
             glucose_min: req.body.patient.medicalData.glucose.min,
             glucose_max: req.body.patient.medicalData.glucose.max,
             glucose_mean: req.body.patient.medicalData.glucose.mean
+        },
+
+        hospstay_seq: req.body.patient.medicalData.hospstay_seq,
+        total_hospstays: req.body.patient.medicalData.total_hospstays,
+        length_of_stay_hospital: req.body.patient.medicalData.length_of_stay_hospital,
+        length_of_stay_icu: req.body.patient.medicalData.length_of_stay_icu,
+        total_length_of_stay_icu: req.body.patient.medicalData.total_length_of_stay_icu,
+        days_to_death: req.body.patient.medicalData.days_to_death,
+        age: calculateAge(newPatient.medicalData.dateOfBirth),
+        newPatient.medicalData.weight,
+        newPatient.medicalData.height,
+
+        heartrate:{
+            mean: req.body.patient.medicalData.heartrate.mean,
+            min: req.body.patient.medicalData.heartrate.min,
+            max: req.body.patient.medicalData.heartrate.max
+        },
+        meanbp:{
+            mean: req.body.patient.medicalData.meanbp.mean,
+            min: req.body.patient.medicalData.meanbp.min,
+            max: req.body.patient.medicalData.meanbp.max
+        },
+        resprate:{
+            mean: req.body.patient.medicalData.resprate.mean,
+            min: req.body.patient.medicalData.resprate.min,
+            max: req.body.patient.medicalData.resprate.max
+        },
+        tempc: {
+            mean: req.body.patient.medicalData.tempc.mean,
+            min: req.body.patient.medicalData.tempc.min,
+            max: req.body.patient.medicalData.tempc.max
+        },
+        spo2: {
+            mean: req.body.patient.medicalData.spo2.mean,
+            min: req.body.patient.medicalData.spo2.min,
+            max: req.body.patient.medicalData.spo2.max
+        },
+        received_dialysis: req.body.patient.medicalData.received_dialysis,
+        received_ventilation: req.body.patient.medicalData.received_ventilation,
+        urineoutput: req.body.patient.medicalData.urineoutput,
+        mingcs: req.body.patient.medicalData.mingcs,
+        gcsmotor: req.body.patient.medicalData.gcsmotor,
+        gcsverbal: req.body.patient.medicalData.gcsverbal,
+        gcseyes: req.body.patient.medicalData.gcseyes,
+        aniongap: {
+            min: req.body.patient.medicalData.aniongap.min,
+            max: req.body.patient.medicalData.aniongap.max
+        },
+        albumin: {
+            min: req.body.patient.medicalData.albumin.min,
+            max: req.body.patient.medicalData.albumin.max
+        },
+        bands: {
+            min: req.body.patient.medicalData.bands.min,
+            max: req.body.patient.medicalData.bands.max
+        },
+        bicarbonate: {
+            min: req.body.patient.medicalData.bicarbonate.min,
+            max: req.body.patient.medicalData.bicarbonate.max
+        },
+        bilirubin: {
+            min: req.body.patient.medicalData.bilirubin.min,
+            max: req.body.patient.medicalData.bilirubin.max
+        },
+        creatinine:{
+            req.body.patient.medicalData.creatinine.min,
+            req.body.patient.medicalData.creatinine.max
+        },
+        chloride: {
+            req.body.patient.medicalData.chloride.min,
+            req.body.patient.medicalData.chloride.max
+        },
+        hematocrit:{
+            req.body.patient.medicalData.hematocrit.min,
+            req.body.patient.medicalData.hematocrit.max
+        },
+        hemoglobin: {
+            req.body.patient.medicalData.hemoglobin.min,
+            req.body.patient.medicalData.hemoglobin.max
+        },
+        lactate: {
+            req.body.patient.medicalData.lactate.min,
+            req.body.patient.medicalData.lactate.max
+        },
+        platelet: {
+            req.body.patient.medicalData.platelet.min,
+            req.body.patient.medicalData.platelet.max
+        },
+        potassium: {
+            req.body.patient.medicalData.potassium.min,
+            req.body.patient.medicalData.potassium.max
+        },
+        ptt: {
+            req.body.patient.medicalData.ptt.min,
+            req.body.patient.medicalData.ptt.max
+        },
+        inr: {
+            req.body.patient.medicalData.inr.min,
+            req.body.patient.medicalData.inr.max
+        },
+        pt: {
+            req.body.patient.medicalData.pt.min,
+            req.body.patient.medicalData.pt.max
+        },
+        sodium: {
+            req.body.patient.medicalData.sodium.min,
+            req.body.patient.medicalData.sodium.max
+        },
+        bun: {
+            req.body.patient.medicalData.bun.min,
+            req.body.patient.medicalData.bun.max
+        },
+        wbc: {
+            req.body.patient.medicalData.wbc.min,
+            req.body.patient.medicalData.wbc.max
         },
         patient_history: req.body.patient.medicalData.patient_history,
         diagnoses: req.body.patient.medicalData.diagnoses,
