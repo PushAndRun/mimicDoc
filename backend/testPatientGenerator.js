@@ -149,6 +149,7 @@ const rowToAPIFormat = (row) => {
             }
         }
     }
+}
 
 fs.createReadStream("./admissions.csv")
   .pipe(csv())
