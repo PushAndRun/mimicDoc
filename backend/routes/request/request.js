@@ -218,8 +218,6 @@ router.post('/', verifyToken, async (req, res, next) => {
         total_length_of_stay_icu: req.body.patient.medicalData.total_length_of_stay_icu,
         days_to_death: req.body.patient.medicalData.days_to_death,
         age: calculateAge(newPatient.medicalData.dateOfBirth),
-        newPatient.medicalData.weight,
-        newPatient.medicalData.height,
 
         heartrate:{
             mean: req.body.patient.medicalData.heartrate.mean,
@@ -274,56 +272,56 @@ router.post('/', verifyToken, async (req, res, next) => {
             max: req.body.patient.medicalData.bilirubin.max
         },
         creatinine:{
-            req.body.patient.medicalData.creatinine.min,
-            req.body.patient.medicalData.creatinine.max
+            min: req.body.patient.medicalData.creatinine.min,
+            max: req.body.patient.medicalData.creatinine.max
         },
         chloride: {
-            req.body.patient.medicalData.chloride.min,
-            req.body.patient.medicalData.chloride.max
+            min: req.body.patient.medicalData.chloride.min,
+            max: req.body.patient.medicalData.chloride.max
         },
         hematocrit:{
-            req.body.patient.medicalData.hematocrit.min,
-            req.body.patient.medicalData.hematocrit.max
+            min: req.body.patient.medicalData.hematocrit.min,
+            max: req.body.patient.medicalData.hematocrit.max
         },
         hemoglobin: {
-            req.body.patient.medicalData.hemoglobin.min,
-            req.body.patient.medicalData.hemoglobin.max
+            min: req.body.patient.medicalData.hemoglobin.min,
+            max: req.body.patient.medicalData.hemoglobin.max
         },
         lactate: {
-            req.body.patient.medicalData.lactate.min,
-            req.body.patient.medicalData.lactate.max
+            min: req.body.patient.medicalData.lactate.min,
+            max: req.body.patient.medicalData.lactate.max
         },
         platelet: {
-            req.body.patient.medicalData.platelet.min,
-            req.body.patient.medicalData.platelet.max
+            min: req.body.patient.medicalData.platelet.min,
+            max: req.body.patient.medicalData.platelet.max
         },
         potassium: {
-            req.body.patient.medicalData.potassium.min,
-            req.body.patient.medicalData.potassium.max
+            min: req.body.patient.medicalData.potassium.min,
+            max: req.body.patient.medicalData.potassium.max
         },
         ptt: {
-            req.body.patient.medicalData.ptt.min,
-            req.body.patient.medicalData.ptt.max
+            min: req.body.patient.medicalData.ptt.min,
+            max: req.body.patient.medicalData.ptt.max
         },
         inr: {
-            req.body.patient.medicalData.inr.min,
-            req.body.patient.medicalData.inr.max
+            min: req.body.patient.medicalData.inr.min,
+            max: req.body.patient.medicalData.inr.max
         },
         pt: {
-            req.body.patient.medicalData.pt.min,
-            req.body.patient.medicalData.pt.max
+            min: req.body.patient.medicalData.pt.min,
+            max: req.body.patient.medicalData.pt.max
         },
         sodium: {
-            req.body.patient.medicalData.sodium.min,
-            req.body.patient.medicalData.sodium.max
+            min: req.body.patient.medicalData.sodium.min,
+            max: req.body.patient.medicalData.sodium.max
         },
         bun: {
-            req.body.patient.medicalData.bun.min,
-            req.body.patient.medicalData.bun.max
+            min: req.body.patient.medicalData.bun.min,
+            max: req.body.patient.medicalData.bun.max
         },
         wbc: {
-            req.body.patient.medicalData.wbc.min,
-            req.body.patient.medicalData.wbc.max
+            min: req.body.patient.medicalData.wbc.min,
+            max: req.body.patient.medicalData.wbc.max
         },
         patient_history: req.body.patient.medicalData.patient_history,
         diagnoses: req.body.patient.medicalData.diagnoses,
