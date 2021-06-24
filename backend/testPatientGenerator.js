@@ -188,5 +188,11 @@ async function writeWrapper() {
     } catch (error) {
       console.log(error);
     }
+    await sleep(8000)
   }
 }
+function sleep(ms) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms);
+  });
+} 
