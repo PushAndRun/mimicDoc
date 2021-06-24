@@ -19,7 +19,6 @@ let patientArray = []
 
 
 const rowToAPIFormat = (row) => {
-    
     const dateofBirth = new Date(2021-parseInt(row.age),1,1) 
     const gen = row.gender == "M" ? "male":"female"
     const now = new Date()
@@ -157,7 +156,7 @@ const rowToAPIFormat = (row) => {
 fs.createReadStream('./admissions.csv')
     .pipe(csv())
     .on('data', (row) => {
-        if(count < patients_to_read){
+        if(count < patients_to_read && parseInt(row.age)<101){
             patientArray.push(rowToAPIFormat(row))
         }
         count++
