@@ -2,6 +2,7 @@ const getLine = require('get-line')
 const fs = require('fs')
 const csv = require('csv-parser')
 const random_name = require('node-random-name')
+const oneYear = 31556952000
 
 const storeData = (data, path) => {
     try {
@@ -18,16 +19,18 @@ let patientArray = []
 
 
 const rowToAPIFormat = (row) => {
+    
+    const dateofBirth = new Date(2021-parseInt(row.age),1,1) 
     const gen = row.gender == "M" ? "male":"female"
     const now = new Date()
     const dateofbirth = now.setFullYear(now.getFullYear()-row.age)
     let patient = {
-        "name": random_name({gender:gen}),
+        "name": random_name({random:Math.random, gender:gen}),
         "gender": row.gender,
         "weight": row.weight,
         "height": row.height,
         "medicaldata":{
-            "bloodType":"",
+            "bloodType":"A",
             "diagnoses":row.diagnoses,
             "hospstay_seq":row.hospstay_seq,
             "total_hospstays": row.total_hospstays,
@@ -35,7 +38,7 @@ const rowToAPIFormat = (row) => {
             "length_of_stay_icu":row.length_of_stay_icu,
             "total_length_of_stay_icu":row.total_length_of_stay_icu,
             "days_to_death":row.days_to_death,
-            "dateofBirth":"dateofBirth",
+            "dateofBirth":dateofBirth,
             "received_dialysis":row.received_dialysis,
             "received_ventilation":row.received_ventilation,
             "urineoutput":row.urineoutput,
