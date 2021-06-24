@@ -18,9 +18,9 @@ function getRandomInt(max) {
 }
 
 function calculateAge(dob) {
-    dt = new Date();
-    var diff = dt.getTime() - new Date(dob).getTime();
-    return Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25));
+    now = new Date();
+    var diff = now.getFullYear() - new Date(dob).getFullYear()
+    return diff
 }
 
 function convertDiagsToNums(unconvertedDiagnoses) {
@@ -54,15 +54,15 @@ router.post('/', verifyToken, async (req, res, next) => {
     // Patient anlegen
     // Wenn Patient noch nicht angelegt wurde (check mit name+geburtsdatum)
     if (!newPatient) {
+        console.log(req.body.patient.dateOfBirth)
         newPatient = await Patient.create({
             name: req.body.patient.name,
             email: "not implemented in Frontend yet",
             medicalData: {
-                dateOfBirth: req.body.patient.dateOfBirth,
+                dateOfBirth: new Date(req.body.patient.dateOfBirth),
                 gender: req.body.patient.gender,
                 weight: req.body.patient.weight,
                 height: req.body.patient.height,
-                bloodType: req.body.patient.medicalData.bloodtypes,
                 diagnoses: req.body.patient.medicalData.diagnoses
             },
             user: req.userId
@@ -199,12 +199,6 @@ router.post('/', verifyToken, async (req, res, next) => {
     RequestModel.create({
         survival: death_prediction,
         stay: stay_prediction,
-        bloodpressure: {
-            meanbp_mean: req.body.patient.medicalData.bloodpressure.mean,
-            meanbp_min: req.body.patient.medicalData.bloodpressure.min,
-            meanbp_max: req.body.patient.medicalData.bloodpressure.max
-        },
-        tempc_mean: req.body.patient.medicalData.temperature.mean,
         glucose: {
             glucose_min: req.body.patient.medicalData.glucose.min,
             glucose_max: req.body.patient.medicalData.glucose.max,

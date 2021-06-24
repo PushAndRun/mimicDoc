@@ -28,8 +28,9 @@ const rowToAPIFormat = (row) => {
         "gender": row.gender,
         "weight": row.weight,
         "height": row.height,
+        "dateOfBirth":dateofBirth,
         "medicaldata":{
-            "bloodType":"A",
+            "bloodtypes":"A",
             "diagnoses":row.diagnoses,
             "hospstay_seq":row.hospstay_seq,
             "total_hospstays": row.total_hospstays,
@@ -37,7 +38,6 @@ const rowToAPIFormat = (row) => {
             "length_of_stay_icu":row.length_of_stay_icu,
             "total_length_of_stay_icu":row.total_length_of_stay_icu,
             "days_to_death":row.days_to_death,
-            "dateofBirth":dateofBirth,
             "received_dialysis":row.received_dialysis,
             "received_ventilation":row.received_ventilation,
             "urineoutput":row.urineoutput,
