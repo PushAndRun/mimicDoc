@@ -151,7 +151,7 @@ const rowToAPIFormat = (row) => {
     }
 }
 
-fs.createReadStream("./admissions.csv")
+fs.createReadStream("./backend/admissions.csv")
   .pipe(csv())
   .on("data", (row) => {
     if (count < patients_to_read && parseInt(row.age) < 101) {
@@ -168,8 +168,9 @@ fs.createReadStream("./admissions.csv")
 /// ---- WRITE PATIENTS TO DB
 const User = { name: "leon", pw: "leon" };
 const url = "http://robodoc.purryto.de:8081/api";
+const n_users = 10;
 
-function getUserToken() {
+async function getUserToken() {
   return await axios
     .post(url + "/auth/login/", User)
     .then((response) => response.data.token);
@@ -180,14 +181,18 @@ async function writeWrapper() {
 
   axios.defaults.headers.common["x-access-token"] = token;
 
-  for (patient of patients) {
+  for (let [index, patient] of patiens.entries()) {
+    console.log("rqeuested ", patient)
+    if(index >= n_users){
+        break;
+    }
     try {
       const response = await axios.post(url + "/request", patient);
       //.then(response=>response.data);
     } catch (error) {
       console.log(error);
     }
-    await sleep(8000)
+    await sleep(15000)
   }
 }
 function sleep(ms) {
