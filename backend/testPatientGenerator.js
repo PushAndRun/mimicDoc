@@ -1,22 +1,22 @@
-const getLine = require('get-line')
-const fs = require('fs')
-const csv = require('csv-parser')
-const random_name = require('node-random-name')
-const oneYear = 31556952000
+const getLine = require("get-line");
+const fs = require("fs");
+const csv = require("csv-parser");
+const axios = require("axios");
+const random_name = require("node-random-name");
+const oneYear = 31556952000;
 
 const storeData = (data, path) => {
-    try {
-      fs.writeFileSync(path, JSON.stringify(data))
-    } catch (err) {
-      console.error(err)
-    }
-}
+  try {
+    fs.writeFileSync(path, JSON.stringify(data));
+  } catch (err) {
+    console.error(err);
+  }
+};
 
 //SET NUMBER OF PATIENTS TO READ FROM FILE
-let patients_to_read = 100
-let count = 0
-let patientArray = []
-
+let patients_to_read = 100;
+let count = 0;
+let patientArray = [];
 
 const rowToAPIFormat = (row) => {
     const dateofBirth = new Date(2021-parseInt(row.age),1,1) 
@@ -147,25 +147,44 @@ const rowToAPIFormat = (row) => {
                 "min":row.wbc_min,
                 "max":row.wbc_max
             }
-
         }
     }
-    return patient
+
+fs.createReadStream("./admissions.csv")
+  .pipe(csv())
+  .on("data", (row) => {
+    if (count < patients_to_read && parseInt(row.age) < 101) {
+      patientArray.push(rowToAPIFormat(row));
+    }
+    count++;
+  })
+  .on("end", () => {
+    console.log("CSV file successfully processed");
+    storeData(patientArray, "patientdata100.json");
+    writeWrapper();
+  });
+
+/// ---- WRITE PATIENTS TO DB
+const User = { name: "leon", pw: "leon" };
+const url = "http://robodoc.purryto.de:8081/api";
+
+function getUserToken() {
+  return await axios
+    .post(url + "/auth/login/", User)
+    .then((response) => response.data.token);
 }
 
-fs.createReadStream('./admissions.csv')
-    .pipe(csv())
-    .on('data', (row) => {
-        if(count < patients_to_read && parseInt(row.age)<101){
-            patientArray.push(rowToAPIFormat(row))
-        }
-        count++
-    })
-    .on('end', () => {
-        console.log('CSV file successfully processed');
-        storeData(patientArray,'patientdata100.json')
-    });
+async function writeWrapper() {
+  let token = await getUserToken();
 
+  axios.defaults.headers.common["x-access-token"] = token;
 
-
-
+  for (patient of patients) {
+    try {
+      const response = await axios.post(url + "/request", patient);
+      //.then(response=>response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+}
