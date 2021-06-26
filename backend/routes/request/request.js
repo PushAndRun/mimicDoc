@@ -98,7 +98,8 @@ router.post('/', verifyToken, async (req, res, next) => {
     //          sodium_min,sodium_max,bun_min,bun_max,wbc_min,wbc_max
 
 
-    let prediction = await predict("" +
+    let prediction = await predict('predict.py',
+        "" +
         req.body.patient.medicalData.hospstay_seq + "," +
         req.body.patient.medicalData.total_hospstays + "," + // not shure how total should be calculated?
         req.body.patient.medicalData.length_of_stay_hospital + "," +
