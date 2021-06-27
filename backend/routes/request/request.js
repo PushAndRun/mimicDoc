@@ -54,7 +54,7 @@ router.post('/', verifyToken, async (req, res, next) => {
     // Patient anlegen
     // Wenn Patient noch nicht angelegt wurde (check mit name+geburtsdatum)
     if (!newPatient) {
-        console.log(req.body.patient.dateOfBirth)
+        console.log(req.body.patient.medicaldata)
         newPatient = await Patient.create({
             name: req.body.patient.name,
             email: "not implemented in Frontend yet",
@@ -63,7 +63,7 @@ router.post('/', verifyToken, async (req, res, next) => {
                 gender: req.body.patient.gender,
                 weight: req.body.patient.weight,
                 height: req.body.patient.height,
-                diagnoses: req.body.patient.medicalData.diagnoses
+                diagnoses: req.body.patient.medicalData["diagnoses"]
             },
             user: req.userId
         })
@@ -98,14 +98,15 @@ router.post('/', verifyToken, async (req, res, next) => {
     //          sodium_min,sodium_max,bun_min,bun_max,wbc_min,wbc_max
 
 
-    let prediction = await predict("" +
+    let prediction = await predict(",," +
         req.body.patient.medicalData.hospstay_seq + "," +
         req.body.patient.medicalData.total_hospstays + "," + // not shure how total should be calculated?
-        req.body.patient.medicalData.length_of_stay_hospital + "," +
+        req.body.patient.medicalData.length_of_stay_hospital + ",,,," +
         req.body.patient.medicalData.length_of_stay_icu + "," +
         req.body.patient.medicalData.total_length_of_stay_icu + "," + // not shure how total should be calculated?
-        req.body.patient.medicalData.days_to_death + "," +
-        calculateAge(newPatient.medicalData.dateOfBirth) + "," +
+        req.body.patient.medicalData.days_to_death + ",," +
+        calculateAge(newPatient.medicalData.dateOfBirth).toString() + "," +
+        newPatient.medicalData.gender + "," +
         newPatient.medicalData.weight + "," +
         newPatient.medicalData.height + "," +
         req.body.patient.medicalData.heartrate.mean + "," +
@@ -168,7 +169,11 @@ router.post('/', verifyToken, async (req, res, next) => {
         req.body.patient.medicalData.bun.min + "," +
         req.body.patient.medicalData.bun.max + "," +
         req.body.patient.medicalData.wbc.min + "," +
-        req.body.patient.medicalData.wbc.max
+        req.body.patient.medicalData.wbc.max + "," +
+        req.body.patient.medicalData.symptoms + "," +
+        req.body.patient.medicalData.patient_history + "," +
+        req.body.patient.medicalData.accident_causes + "," +
+        req.body.patient.medicalData.diagnoses 
     );
     
     /* 

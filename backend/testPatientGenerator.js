@@ -22,14 +22,14 @@ const rowToAPIFormat = (row) => {
     const dateofBirth = new Date(2021-parseInt(row.age),1,1) 
     const gen = row.gender == "M" ? "male":"female"
     const now = new Date()
-    const dateofbirth = now.setFullYear(now.getFullYear()-row.age)
+    //const dateofbirth = now.setFullYear(now.getFullYear()-row.age)
     let patient = {
         "name": random_name({random:Math.random, gender:gen}),
         "gender": row.gender,
         "weight": row.weight,
         "height": row.height,
         "dateOfBirth":dateofBirth,
-        "medicaldata":{
+        "medicalData":{
             "bloodtypes":"A",
             "diagnoses":row.diagnoses,
             "hospstay_seq":row.hospstay_seq,
@@ -146,9 +146,17 @@ const rowToAPIFormat = (row) => {
             "wbc":{
                 "min":row.wbc_min,
                 "max":row.wbc_max
-            }
+            },
+            "symptoms":row.symptoms,
+            "patient_history":row.patient_history,
+            "accident_causes":row.accident_causes,
+            "diagnoses":row.diagnoses
         }
     }
+    let request = {
+      "patient":patient
+    }
+    return request
 }
 
 fs.createReadStream("./admissions.csv")
@@ -165,7 +173,7 @@ fs.createReadStream("./admissions.csv")
     writeWrapper();
   });
 
-/// ---- WRITE PATIENTS TO DB
+/// ---- WRITE PATIENTS lsTO DB
 const User = { name: "leon", pw: "leon" };
 const url = "http://robodoc.purryto.de:8081/api";
 

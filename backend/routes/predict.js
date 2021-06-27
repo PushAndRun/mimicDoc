@@ -8,7 +8,7 @@ async function predict(params) {
     let options = {
         mode: 'text',
         pythonOptions: ['-u'], // get print results in real-time
-        scriptPath: 'ml/', //If you are having python_test.py script in same folder, then it's optional.
+        scriptPath: 'predicter/', //If you are having python_test.py script in same folder, then it's optional.
         args: [params] //An argument which can be accessed in the script using sys.argv[1]
     };
     
