@@ -29,7 +29,7 @@ const rowToAPIFormat = (row) => {
         "weight": row.weight,
         "height": row.height,
         "dateOfBirth":dateofBirth,
-        "medicaldata":{
+        "medicalData":{
             "bloodtypes":"A",
             "diagnoses":row.diagnoses,
             "hospstay_seq":row.hospstay_seq,
@@ -149,6 +149,10 @@ const rowToAPIFormat = (row) => {
             }
         }
     }
+    format = {
+        "patient":patient
+    }
+    return format
 }
 
 fs.createReadStream("./backend/admissions.csv")

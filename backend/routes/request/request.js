@@ -357,10 +357,136 @@ router.get('/', verifyToken, async (req, res, next) => {
     })
 })
 
-
-//Pseudo-Output
-router.get('/', (req, res, next) => {
-    res.send(`Patient will spend ${getRandomInt(365)} days on ICU with a certainty of ${getRandomInt(100)}%.`)
+router.get('/schema', (req,res,next) => {
+    let format = {
+        "patient": {
+            "name": "String for identifying a patient",
+            "gender": "M or F",
+            "weight": "Weight in kg",
+            "height": "Height in cm",
+            "dateOfBirth":"Date of birth in JS Date Format",
+            "medicalData":{
+                "bloodtypes":"e.g. A+",
+                "diagnoses":"Diagnoses in the form of ICD Codes",
+                "hospstay_seq":"How many times has the patient been to the hospital until now?",
+                "total_hospstays": "Total number of hospital stays",
+                "length_of_stay_hospital": "How long has the patient been in hospital by now?",
+                "length_of_stay_icu":"How long in ICU?",
+                "total_length_of_stay_icu":"Duration of all ICU stays combined.",
+                "days_to_death":"Doesn't need to be filled in",
+                "received_dialysis":"0 or 1",
+                "received_ventilation":"0 or 1",
+                "urineoutput":"Urine output per 24h in ml",
+                "mingcs":"Lowest of the following three glasgoc coma scales",
+                "gcsmotor":"Motor glasgow coma scale (1-6)",
+                "gcsverbal":"Verbal glasgow coma scale (1-5)",
+                "gcseyes":"Eyes glasgow coma scale (1-4)",
+                "heartrate":{
+                    "mean":"Mean heartrate in 1/min integer during 24h",
+                    "min":"Lowest heartrate in 1/min integer during 24h",
+                    "max":"Highest heartrate in 1/min integer during 24h"
+                },
+                "meanbp":{
+                    "mean":"Mean blood pressure in mm Hg integer during 24h",
+                    "min":"Lowest blood pressure in mm Hg integer during 24h",
+                    "max":"Highest blood pressure in mm Hg integer during 24h"
+                },
+                "resprate":{
+                    "mean":"Mean respiratory rate in breaths per min integer during 24h",
+                    "min":"Lowest respiratory rate in breaths per min integer during 24h",
+                    "max":"Highest respiratory rate in breaths per min integer during 24h"
+                },
+                "tempc":{
+                    "mean":"Mean body temperature in deg celcius integer during 24h",
+                    "min":"Lowest body temperature in deg celcius integer during 24h",
+                    "max":"Highest body temperature in deg celcius integer during 24h"
+                },
+                "spo2":{
+                    "mean":"Mean oxygen saturation in % integer during 24h",
+                    "min":"Lowest oxygen saturation in % integer during 24h",
+                    "max":"Highest oxygen saturation in % integer during 24h"
+                },
+                "glucose":{
+                    "mean":"Mean blood sugar in mg/dL integer during 24h",
+                    "min":"Lowest blood sugar in mg/dL integer during 24h",
+                    "max":"Highest blood sugar in mg/dL integer during 24h"
+                },
+                "aniongap":{
+                    "min":"Lowest anion gap in mEq/L integer during 24h",
+                    "max":"Highest anion gap in mEq/L integer during 24h"
+                },
+                "albumin":{
+                    "min":"Lowest albumin in g/dL integer during 24h",
+                    "max":"Highest albumin in g/dL integer during 24h"
+                },
+                "bands":{
+                    "min":"Lowest immature band forms in % integer during 24h",
+                    "max":"Highest immature band forms in % integer during 24h"
+                },
+                "bicarbonate":{
+                    "min":"Lowest bicarbonite in mEq/L integer during 24h",
+                    "max":"Highest bicarbonite in mEq/L integer during 24h"
+                },
+                "bilirubin":{
+                    "min":"Lowest bilirubin in mg/dL integer during 24h",
+                    "max":"Highest bilirubin in mg/dL integer during 24h"
+                },
+                "creatinine":{
+                    "min":"Lowest creatinine in mg/dL integer during 24h",
+                    "max":"Highest creatinine in mg/dL integer during 24h"
+                },
+                "chloride":{
+                    "min":"Lowest chloride in mEq/L integer during 24h",
+                    "max":"Highest chloride in mEq/L integer during 24h"
+                },
+                "hematocrit":{
+                    "min":"Lowest hematocrit in % integer during 24h",
+                    "max":"Highest hematocrit in % integer during 24h"
+                },
+                "hemoglobin":{
+                    "min":"Lowest hemoglobin in g/dL integer during 24h",
+                    "max":"Highest hemoglobin in g/dL integer during 24h"
+                },
+                "lactate":{
+                    "min":"Lowest lactate in mmol/L integer during 24h",
+                    "max":"Highest lactate in mmol/L integer during 24h"
+                },
+                "platelet":{
+                    "min":"Lowest platelet in K/uL integer during 24h",
+                    "max":"Highest platelet in K/uL integer during 24h"
+                },
+                "potassium":{
+                    "min":"Lowest potassium in mEq/L integer during 24h",
+                    "max":"Highest potassium in mEq/L integer during 24h"
+                },
+                "ptt":{
+                    "min":"Lowest partial thromboplastin time in seconds integer during 24h",
+                    "max":"Highest partial thromboplastin time in seconds integer during 24h"
+                },
+                "inr":{
+                    "min":"Lowest international normalized ratio integer during 24h",
+                    "max":"Highest international normalized ratio integer during 24h"
+                },
+                "pt":{
+                    "min":"Lowest prothrombin time in seconds integer during 24h",
+                    "max":"Highest prothrombin time in seconds integer during 24h"
+                },
+                "sodium":{
+                    "min":"Lowest sodium in mmEq/L or mmol/L integer during 24h",
+                    "max":"Highest sodium in mmEq/L or mmol/L integer during 24h"
+                },
+                "bun":{
+                    "min":"Lowest urea nitrongen level in mg/dL integer during 24h",
+                    "max":"Highest urea nitrongen level in mg/dL integer during 24h"
+                },
+                "wbc":{
+                    "min":"Lowest white blood cells count per uL integer during 24h",
+                    "max":"Highest white blood cells count per uL integer during 24h"
+                }
+            }
+        }
+    }
+    res.status(200).json(format)
 })
 
 module.exports = router
