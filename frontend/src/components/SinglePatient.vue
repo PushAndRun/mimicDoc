@@ -36,7 +36,9 @@
             Weight: {{ patient.medicalData.weight }} kg<br>
             Height: {{ patient.medicalData.height }} cm<br>
              <br>
-           
+            
+            Bloodtype: {{ patient.medicalData.bloodtype }} <br> 
+            <br>
             <b>Blood Pressure </b><br>
             Mean: {{ patient.requests[patient.requests.length-1].bloodpressure.meanbp_mean }} mmHg<br> 
             Min: {{ patient.requests[patient.requests.length-1].bloodpressure.meanbp_min }} mmHg<br>

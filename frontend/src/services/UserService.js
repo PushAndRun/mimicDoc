@@ -1,13 +1,13 @@
 import axios from 'axios'
 
-const url = 'api';
+const url = 'http://localhost:8081/api';
 
 export default {
 
     fetchAllUsers () {
         return axios
                 .get(url + '/user/')
-                .then(response => response.data);
+                .then(response => response.data);  
 
     },
 

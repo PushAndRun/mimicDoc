@@ -6,7 +6,7 @@
     <b-navbar toggleable="false" type="dark" variant="dark">
     <b-navbar-brand style="color:white">RoboDoc</b-navbar-brand>
 
-   <b-navbar-toggle target="navbar-toggle-collapse" style="color:white;">
+     <b-navbar-toggle target="navbar-toggle-collapse" style="color:white;">
         Menu
     </b-navbar-toggle>
 
@@ -23,7 +23,7 @@
         <br>
         <br>
         <br>
-        <h2> Hi {{username}} </h2>
+        <h1> Hi {{username}} </h1>
         <br>  
         <br>
         <br>
@@ -39,9 +39,9 @@
         <br>
         <br>
         
-        Overview<br>
-        Number of patients: {{ numberOfPatients }} <br>
-        Number of requests: {{ numberOfRequests }}<br>
+        Übersicht<br>
+        Anzahl Patienten: {{ numberOfPatients }} <br>
+        Anzahl Requests: {{ numberOfRequests }}<br>
         </p>
         <br>  
         <br>
@@ -115,11 +115,11 @@ export default {
 <style scoped>
 
 
-h2 {
+h1 {
    color: black;
-   font-size: 60px;
-   display: relative;
-      font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+   font-size: 65px;
+      margin-top: 5%;
+      font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
 }
 
 

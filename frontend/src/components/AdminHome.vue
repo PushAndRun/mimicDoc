@@ -22,7 +22,7 @@
     <br>
         <br>
         <br>
-        <h2> Hi {{username}} </h2>
+        <h1> Hi {{username}} </h1>
         <br>  
         <br>
         <br>
@@ -44,10 +44,14 @@
         <br>
         <br>
         <br>  
-        <br>
-        <br>
-        <br> 
-        <br> 
+         <div>
+
+   <GChart type="ColumnChart"
+            :data="diagnosesChartData"
+            :options="diagnosesChartOptions"
+            :settings="{ packages: ['corechart','table'] }"
+            />
+    </div>
         
 
    <v-footer>
@@ -71,6 +75,16 @@ export default {
           numberOfUsers:"",
          username: "",
          numberOfPatients: "",
+
+         diagnosesChartData: [], 
+            diagnosesChartOptions:{                
+              title:'The 5 most frequent Diagnoses \n',  
+              chartArea:{width:"50%",height:"70%"}           
+          },
+            patients: [], 
+            diagnoses: [], 
+            diagnosesFrequency: {}, 
+            fiveMostFrequentDiagnoses:[]
       }
     }, 
 
@@ -83,6 +97,7 @@ export default {
     this.numberOfUsers = this.numberOfUsers.length; 
     this.numberOfPatients = await PatientService.allPatients(); 
     this.numberOfPatients = this.numberOfPatients.length; 
+     this.createDiagnosesChart(); 
         
     
     
@@ -93,7 +108,84 @@ export default {
       logout(){
         this.$store.dispatch('logout'); 
         this.$router.push('/');
-      } 
+      },
+
+       async createDiagnosesChart(){
+            this.patients = await PatientService.allPatients(); 
+            
+            for (let i = 0; i < this.patients.length; i++){
+                this.diagnoses.push(this.extractDiagnosesFromRequest(this.patients[i].requests));
+            }
+            var newArr = []; 
+            for(let i = 0; i < this.diagnoses.length; i++){
+                newArr = newArr.concat(this.diagnoses[i]);
+            }
+            this.diagnoses = newArr; 
+            
+
+            
+            this.computeFrequency(this.diagnoses);
+           
+            let sortable = []; 
+            for (var diagnose in this.diagnosesFrequency){
+                sortable.push([diagnose, this.diagnosesFrequency[diagnose]])
+            }
+
+            sortable.sort(function(a,b){
+                return b[1]-a[1];
+            }); 
+            this.fiveMostFrequentDiagnoses = sortable.slice(0,5);
+            console.log(this.fiveMostFrequentDiagnoses)
+            
+
+            this.diagnosesChartData = []; 
+            this.diagnosesChartData.push(["Diagnose", "Frequency"]); 
+            
+            for(let i = 0; i < this.fiveMostFrequentDiagnoses.length;i++){
+                let diagnose = this.fiveMostFrequentDiagnoses[i][0]; 
+                let frequency = this.fiveMostFrequentDiagnoses[i][1];
+                this.diagnosesChartData.push([diagnose, frequency]);
+            }
+            
+           
+            console.log(this.diagnosesChartData);
+            
+
+        },
+        
+        
+        computeFrequency(array) {
+    var frequency = {};
+
+    array.forEach(function(value) { frequency[value] = 0; });
+
+    var uniques = array.filter(function(value) {
+        return ++frequency[value] == 1;
+    });
+    this.diagnosesFrequency = frequency; 
+
+    return uniques.sort(function(a, b) {
+        return frequency[b] - frequency[a];
+    });
+},
+
+        extractDiagnosesFromRequest(requestArray){
+           let diagnosesArray = []
+           for(let i = 0; i < requestArray.length; i++){
+            for(let j = 0; j < requestArray[i].diagnoses.length; j ++){
+                diagnosesArray.push(requestArray[i].diagnoses[j]); 
+            }
+            for(let k = 0; k < requestArray[i].patient_history.length;k++){
+                diagnosesArray.push(requestArray[i].patient_history[k])
+            }
+           }
+
+           let uniqueDiagnosesArray = [...new Set(diagnosesArray)]; 
+           
+           return uniqueDiagnosesArray;
+
+            
+        }
       },
 
 
@@ -102,13 +194,13 @@ export default {
 
 <style scoped>
 
-h2 {
+
+h1 {
    color: black;
    font-size: 65px;
-      margin-top: 0%;
-      font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+      margin-top: 5%;
+      font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
 }
-
 
 
 
