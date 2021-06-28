@@ -15,17 +15,17 @@ def load_disease_data():
     history = []
     diagnoses = []
 
-    with open('../../db/symptoms_dict.csv', 'r') as f:
+    with open('symptoms_dict.csv', 'r') as f:
         for line in f:
             split = line.strip("\n").split(",")
             symptoms.append([split[0], split[1], split[2]])
 
-    with open('../../db/patient_history_dict.csv', 'r') as f:
+    with open('patient_history_dict.csv', 'r') as f:
         for line in f:
             split = line.strip("\n").split(",")
             history.append([split[0], split[1], split[2]])
 
-    with open('../../db/diagnoses_dict.csv', 'r') as f:
+    with open('diagnoses_dict.csv', 'r') as f:
         for line in f:
             split = line.strip("\n").split(",")
             diagnoses.append([split[0], split[1], split[2]])
@@ -77,7 +77,7 @@ def get_sparse_columns(raw_df, limit):
     return sparse_columns
 
 def fill_nan_with_mean(df, column):
-    mean_df = pd.read_csv("../../db/admission_means.csv")
+    mean_df = pd.read_csv("admission_means.csv")
     df[column][0] = mean_df[column][0] if df[column][0] == "" else df[column][0]
 
     return df
@@ -154,12 +154,12 @@ def clean_df(raw_df, limit=0.2):
 
 
 def predict(input_csv):
-    with open("../../db/admissions.csv") as f:
+    with open("admissions.csv") as f:
         header_str = f.readline()
 
     headers = header_str.strip("\n").split(',')
     patient_data = np.asarray(input_csv.strip("\n").split(','))[None, :]
-
+    print(header_str)
     patient_df = pd.DataFrame(patient_data, columns=headers)
     df, symptoms_raw, diagnoses_raw, patient_history_raw = clean_df(patient_df)
 
