@@ -96,6 +96,7 @@ def clean_df(raw_df, limit=0.2):
     df.pop('number_of_icu_stays')
     df.pop('length_of_stay_icu')
     df.pop('total_length_of_stay_icu')
+    df.pop('accident_causes')
 
     if(len(df) > 1):
         # pop sparse columns
