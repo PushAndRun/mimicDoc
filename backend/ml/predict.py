@@ -96,6 +96,7 @@ def clean_df(raw_df, limit=0.2):
     df.pop('number_of_icu_stays')
     df.pop('length_of_stay_icu')
     df.pop('total_length_of_stay_icu')
+    df.pop('accident_causes')
 
     if(len(df) > 1):
         # pop sparse columns
@@ -170,8 +171,8 @@ def predict(input_csv):
 
     df = pd.concat([df, pd.DataFrame(v)], axis=1)
 
-    l = df.pop("died_in_hospital")
-    df.pop("length_of_stay_hospital")
+    dih = df.pop("died_in_hospital")[0]
+    losh = df.pop("length_of_stay_hospital")[0]
     df.pop("days_to_death")
 
     scaler = pk.load(open("scaler.pkl", 'rb'))
@@ -179,27 +180,17 @@ def predict(input_csv):
 
     model_class = keras.models.load_model("model_class")
     result_class = model_class.predict(normed_datapoint)
-    # print(f"actual: {float(result_class):.4f}, expected: {int(l)}");
-
-    print(f"died_in_hospital:{float(result_class)}")
-    print(f"length_of_stay:{4.7}")
-
-    return
-
-    """
-    
-    scaler = pk.load(open("scaler.pkl", 'rb'))
-    normed_datapoint = scaler.transform(datapoint)
-    print(normed_datapoint.shape)
-
-    model_class = keras.models.load_model("model_class")
-    result_class = model_class.predict(normed_datapoint)
-    print(float(result_class))
 
     model_reg = keras.models.load_model("model_reg")
     result_reg = model_reg.predict(normed_datapoint)
-    print(float(result_reg))
-    """
+
+    #print(f"actual: {float(result_class):.4f}, expected: {dih}");
+    #print(f"actual: {float(result_reg):.4f}, expected: {losh}");
+
+    print(f"died_in_hospital:{float(result_class)}")
+    print(f"length_of_stay:{float(result_reg)}")
+
+    return
 
 if __name__ == '__main__':
     predict(sys.argv[1])
