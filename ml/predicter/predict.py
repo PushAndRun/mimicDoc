@@ -187,8 +187,9 @@ def predict(input_csv):
     #print(f"actual: {float(result_class):.4f}, expected: {dih}");
     #print(f"actual: {float(result_reg):.4f}, expected: {losh}");
 
-    print(f"died_in_hospital:{float(result_class)}")
-    print(f"length_of_stay:{float(result_reg)}")
+    print(f"died_in_hospital:{float(result_class):.4f}")
+    print(f"length_of_stay:{float(result_reg):.4f}")
+
 
     return
 
