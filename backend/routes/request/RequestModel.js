@@ -1,57 +1,67 @@
 var mongoose = require('mongoose');  
 var RequestSchema = new mongoose.Schema({
+  patient: { type: mongoose.Schema.ObjectId, ref: 'Patient', required: true },
+  created: Date,
   survival: Number,
   stay : Number,
-  respiratory: {
-    resprate_min: Number,
-    resprate_max: Number,
-    resprate_mean: Number,
+
+  hadm_id: Number,
+  icustay_id: Number,
+  hospstay_seq: Number,
+  total_hospstays: Number,
+  length_of_stay_hospital: Number,
+  icustay_seq: Number,
+  number_of_icu_stays: Number,
+  length_of_stay_icu: Number,
+  total_length_of_stay_icu: Number,
+  days_to_death: Number,
+  died_in_hospital: Number,
+
+  age: Number,
+  gender: String,
+  weight: Number,
+  height: Number,
+
+  heartrate:{
+    mean: Number,
+    min: Number,
+    max: Number
+  },
+  meanbp:{
+    mean: Number,
+    min: Number,
+    max: Number
+  },
+  resprate:{
+    mean: Number,
+    min: Number,
+    max: Number
+  },
+  tempc: {
+    mean: Number,
+    min: Number,
+    max: Number
+  },
+  spo2: {
+    mean: Number,
+    min: Number,
+    max: Number
   },
   glucose: {
     glucose_min: Number,
     glucose_max: Number, 
     glucose_mean: Number,
   },
-  hospstay_seq: Number,
-  total_hospstays: Number,
-  length_of_stay_hospital: Number,
-  length_of_stay_icu: Number,
-  total_length_of_stay_icu: Number,
-  days_to_death: Number,
-  age: Number,
 
-  heartrate:{
-      mean: Number,
-      min: Number,
-      max: Number
-  },
-  meanbp:{
-      mean: Number,
-      min: Number,
-      max: Number
-  },
-  resprate:{
-      mean: Number,
-      min: Number,
-      max: Number
-  },
-  tempc: {
-      mean: Number,
-      min: Number,
-      max: Number
-  },
-  spo2: {
-      mean: Number,
-      min: Number,
-      max: Number
-  },
   received_dialysis: Number,
   received_ventilation: Number,
+
   urineoutput: Number,
   mingcs: Number,
   gcsmotor: Number,
   gcsverbal: Number,
   gcseyes: Number,
+
   aniongap: {
       min: Number,
       max: Number
@@ -123,11 +133,12 @@ var RequestSchema = new mongoose.Schema({
   wbc: {
       min: Number,
       max: Number
-  }, 
+  },
+
+  symptoms: [String],
   patient_history: [String],
-  diagnoses: [String],
-  created: Date,
-  patient: { type: mongoose.Schema.ObjectId, ref: 'Patient', required: true }
+  accident_causes: [String],
+  diagnoses: [String]
 });
 mongoose.model('Request', RequestSchema);
 module.exports = mongoose.model('Request');
