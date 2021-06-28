@@ -3,8 +3,7 @@
               <b-navbar toggleable="false" type="dark" variant="dark">
     <b-navbar-brand style="color:white">RoboDoc</b-navbar-brand>
 
-   
-       <b-navbar-toggle target="navbar-toggle-collapse" style="color:white;">
+    <b-navbar-toggle target="navbar-toggle-collapse" style="color:white;">
         Menu
     </b-navbar-toggle>
 
@@ -19,7 +18,7 @@
 
 <br>
         <br>
-        <h2>Patients for Admin: {{username}}</h2>
+        <h2>All Patients in the System</h2>
         <br>
         <b-form-group>
           <b-row>

@@ -1,6 +1,6 @@
 import axios from 'axios'; 
 
-const url = 'api';
+const url = 'http://localhost:8081/api';
 
 export default {
     login(credentials){
@@ -14,4 +14,10 @@ export default {
             .post(url + '/auth/register/',credentials)
             .then(response => response.data);
     },
+
+    isAdmin(){
+        return axios
+            .get(url + '/auth/isAdmin')
+            .then(response=>response.data);
+    }
 };
