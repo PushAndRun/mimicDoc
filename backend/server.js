@@ -14,6 +14,7 @@ const HOST = process.env.HOST || '0.0.0.0'
 const app = express();
 const endpointRouter = require('./routes/endpoints').router
 const requestRouter = require('./routes/request/request')
+const symptomsRouter = require('./routes/request/symptoms')
 // db and user management
 const UserController = require('./routes/user/UserController')
 const PatientController = require('./routes/patients/PatientController')
@@ -34,6 +35,7 @@ app.use(express.json())
 
 app.use('/api',endpointRouter)
 app.use('/api/request',requestRouter)
+app.use('/api/symptoms',symptomsRouter)
 app.get('/', express.static("./static"))
 
 app.use('/api/user',UserController)
