@@ -10,6 +10,9 @@ from tensorflow import keras
 pd.options.mode.chained_assignment = None
 np.set_printoptions(threshold=sys.maxsize)
 
+path = os.getcwd()
+os.chdir(path+"/ml/")
+
 
 def load_disease_data():
     symptoms = []
@@ -157,10 +160,8 @@ def clean_df(raw_df, limit=0.2):
 def predict(input_csv):
     with open("admissions.csv") as f:
         header_str = f.readline()
-
     headers = header_str.strip("\n").split(',')
     patient_data = np.asarray(input_csv.strip("\n").split(','))[None, :]
-    #print(header_str)
     patient_df = pd.DataFrame(patient_data, columns=headers)
     df, symptoms_raw, diagnoses_raw, patient_history_raw = clean_df(patient_df)
 
@@ -188,11 +189,11 @@ def predict(input_csv):
     #print(f"actual: {float(result_class):.4f}, expected: {dih}");
     #print(f"actual: {float(result_reg):.4f}, expected: {losh}");
 
-    print(f"died_in_hospital:{float(result_class):.4f}")
-    print(f"length_of_stay:{float(result_reg):.4f}")
+    print(f"{float(result_class):.4f}")
+    print(f"{float(result_reg):.4f}")
 
 
-    return
+    return 
 
 if __name__ == '__main__':
     predict(sys.argv[1])

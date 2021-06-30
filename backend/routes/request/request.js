@@ -51,12 +51,9 @@ router.post("/", verifyToken, async (req, res, next) => {
     name: req.body.patient.name,
     "medicalData.dateOfBirth": req.body.patient.dateOfBirth,
   });
-  console.log(newPatient);
-  console.log(req.body);
   // Patient anlegen
   // Wenn Patient noch nicht angelegt wurde (check mit name+geburtsdatum)
   if (!newPatient) {
-    console.log(req.body.patient.medicaldata);
     newPatient = await Patient.create({
       name: req.body.patient.name,
       email: "not implemented in Frontend yet",
@@ -359,9 +356,8 @@ router.post("/", verifyToken, async (req, res, next) => {
         req.body.patient.medicalData.patient_history.join(";").replace(/\[/g, '').replace(/]/g, '') + "," +
         req.body.patient.medicalData.diagnoses.join(";").replace(/\[/g, '').replace(/]/g, '')
     ); */
-
-  //let prediction = [0,14]   //pseudo
-  console.log(prediction)
+  console.log(typeof prediction)  
+  console.log("prediction:"+ prediction)
   let death_prediction = prediction[0];
   let stay_prediction = prediction[1];
   console.log(
@@ -534,8 +530,6 @@ router.post("/", verifyToken, async (req, res, next) => {
           }
           if (!patient) {
             console.log("no patient with this id");
-          } else {
-            console.log(patient);
           }
         }
       );

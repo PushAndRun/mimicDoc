@@ -2,7 +2,7 @@
 const {PythonShell} =require('python-shell');
 
 async function predict(script, params) {
-    console.log('running ml '+script+' script with "'+params+'"');
+    console.log('running ml '+script+' script with '+params);
     let dataToSend = [];
 
     let options = {
@@ -13,29 +13,27 @@ async function predict(script, params) {
     };
     
     let runPy = new Promise(function(success, nosuccess) {
-        let shell = new PythonShell(script, options);
+        let shell = new PythonShell("predict.py", options);
         shell.on('error', function (error) {
-            console.error("ml error: "+error);
-            nosuccess(error);
-        });
-        shell.on('stderr', function (stderr) {
             console.error("ml error: "+stderr);
             nosuccess(stderr);
         });
         shell.on('message', function (message) {
-            console.log("new data: "+message)
+            console.log("new data")
             dataToSend.push(message);
         });
         shell.on('close', (message) => {
+            console.log(message)
             console.log("ml done")
-            console.log("result: "+dataToSend)
+            console.log(dataToSend)
             success(dataToSend);
+            return dataToSend
          });
     });
     
 
     let res = await runPy;
-    return dataToSend
+    return res+dataToSend;
 }
 
 
