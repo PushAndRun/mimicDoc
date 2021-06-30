@@ -44,27 +44,27 @@ router.post('/', async (req, res, next) => {
         // if (x_acc >= threshold){ // uncomment if threshold is wanted
         if (!isNaN(x)) {
             console.log(x + " is a number");
-            DiagnosisModel.findOne({ icd9_code: x }, function (err, diagnosisRes) {
+            deseases.push(DiagnosisModel.findOne({ icd9_code: x }, function (err, diagnosisRes) {
                 if (err) {
                     console.log("error while searching " + x + " in our db" + err)
                 } else if (!diagnosisRes) {
                     console.log(x + ' is not a short_titel diagnosis')
-                } else {
-                    let diag_short_title = diagnosisRes.short_title;
-                    let diag_long_title = diagnosisRes.long_title;
-                    console.log("found " + x + " in Db as " + diag_short_title);
-                    let entry = {"icd9_code": x ,
-                                "desease_short_title": diag_short_title,
-                                "deseases_long_title": diag_long_title,
-                                "accuracy": x_acc};
-                    deseases.push(entry);
                 }
-            });
+            }))
         }
+    }
         //}         // uncomment if threshold is wanted
-        // problem -> await bd lookup
-        res.send(JSON.stringify({"deseases": deseases}));
-    };
+    Promise.allSettled(deseases).then((results)=>{
+         let deseasesParsed = results.map((prom, index) =>{
+            let val = prom.value;
+            console.log("found " + val.icd9_code + " in Db as " + val.short_title);
+            return {"icd9_code": val.icd9_code,
+            "desease_short_title": val.short_title,
+            "deseases_long_title": val.long_title,
+            "accuracy": getting_diagnoses.deseases[index].accuracy};
+        })
+        res.status(200).send(JSON.stringify({"deseases": deseasesParsed}))
+        })
 })
 
 module.exports = router
