@@ -2,32 +2,19 @@
 var express = require('express')
 var router = express.Router()
 const DiagnosisModel = require("./DiagnosisModel");
-const csv = require('csv-parser')
-const fs = require('fs')
-const diagnoses = './diagnoses_dict.csv'
-let csvData = []
 
-const loadDiagnoses = () => {
-    fs.createReadStream(diagnoses)
-    .pipe(csv())
-    .on('data', (data) => csvData.push(data))
-    .on('end', () => { console.log('csv diagnoses loaded')})
-}
-
-loadDiagnoses()
 
 const verifyToken = require('../auth/VerifyToken')
 const predict = require('../predict');
 const { json } = require('express');
+const { wait } = require('assume');
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
+
 
 function isEmptyObject(obj) {
     return !Object.keys(obj).length;
 }
 
-function getRandomProb(max) {
-    return Math.floor(Math.random()* 100) / 100
-
-}
 
 router.post('/', (req, res, next) => {
     //res.data = JSON.parse(req.body)
@@ -41,26 +28,15 @@ router.post('/', async (req, res, next) => {
     next();
 })
 
-
-
-
 //Pseudo-Output
-router.post('/', (req, res, next) => {
+router.post('/', async (req, res, next) => {
     console.log("sending pseudo response")
     //let symptoms = req.body.symptoms;
     //let threshold = req.body.threshold;   // uncomment if threshold is wanted
-    let symtoms = [];
+    let symptoms = [];
     let getting_diagnoses = await predict('symptoms_dummy.py', symptoms);
     getting_diagnoses = JSON.parse(getting_diagnoses);
-    let whole_diags = [];
-    for (let i = 0; i < getting_diagnoses.length; i++) {
-        let filteredDiag = csvData.filter(e => e.icd9_code.includes(getting_diagnoses[i].icd9_code));
-        if(filteredDiags.length>0){
-            whole_diags.push(filteredDiag);
-        } else {
-            console.log("errror, diag not found");
-        }
-    }
+
     let deseases = []
     for (let i = 0; i < getting_diagnoses.deseases.length; i++) {
         let x = getting_diagnoses.deseases[i].icd9_code;
@@ -76,7 +52,7 @@ router.post('/', (req, res, next) => {
                 } else {
                     let diag_short_title = diagnosisRes.short_title;
                     let diag_long_title = diagnosisRes.long_title;
-                    console.log("found " + x + " in Db as " + diagT_short_title);
+                    console.log("found " + x + " in Db as " + diag_short_title);
                     let entry = {"icd9_code": x ,
                                 "desease_short_title": diag_short_title,
                                 "deseases_long_title": diag_long_title,
@@ -86,9 +62,9 @@ router.post('/', (req, res, next) => {
             });
         }
         //}         // uncomment if threshold is wanted
+        // problem -> await bd lookup
+        res.send(JSON.stringify({"deseases": deseases}));
     };
-    
-    res.send(JSON.stringify({"deseases": deseases}));
 })
 
 module.exports = router
