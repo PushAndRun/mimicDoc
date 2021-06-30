@@ -1,10 +1,11 @@
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
 import pandas as pd
 import pickle as pk
 import sys
 import numpy as np
 import sklearn
 from tensorflow import keras
-import matplotlib.pyplot as plt
 
 pd.options.mode.chained_assignment = None
 np.set_printoptions(threshold=sys.maxsize)
@@ -125,7 +126,7 @@ def clean_df(raw_df, limit=0.2):
 
     df.gender[df.gender != df.gender] = 0.5
 
-    print()
+    #print()
     # clean data
     df = df.astype({"age": float,
                             "weight": float,
@@ -159,7 +160,7 @@ def predict(input_csv):
 
     headers = header_str.strip("\n").split(',')
     patient_data = np.asarray(input_csv.strip("\n").split(','))[None, :]
-    print(header_str)
+    #print(header_str)
     patient_df = pd.DataFrame(patient_data, columns=headers)
     df, symptoms_raw, diagnoses_raw, patient_history_raw = clean_df(patient_df)
 
