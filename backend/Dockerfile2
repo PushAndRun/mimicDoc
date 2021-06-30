@@ -1,6 +1,6 @@
 FROM tensorflow/tensorflow
 
-RUN pip install Pandas SKlearn
+RUN pip install Pandas SKlearn matplotlib
 
 # Create app directory
 RUN mkdir /usr/src/app

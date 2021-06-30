@@ -23,6 +23,7 @@ async function predict(script, params) {
         });
         shell.on('close', (message) => {
             console.log("ml done")
+            console.log(dataToSend)
             success(dataToSend);
          });
     });
