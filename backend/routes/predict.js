@@ -33,8 +33,12 @@ async function predict(script, params) {
          });
     });
     
-
-    let res = await runPy;
+    try {
+        let res = await runPy;
+    } catch(err) {
+        console.log(err)
+        res.send(500).send("Robodoc was unable to get a prediction")
+    }
     return dataToSend
 }
 

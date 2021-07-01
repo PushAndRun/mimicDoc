@@ -31,11 +31,17 @@ router.post('/', async (req, res, next) => {
 //Pseudo-Output
 router.post('/', async (req, res, next) => {
     console.log("sending pseudo response")
-    //let symptoms = req.body.symptoms;
+    let symptoms = req.body.symptoms;
     //let threshold = req.body.threshold;   // uncomment if threshold is wanted
-    let symptoms = [];
-    let getting_diagnoses = await predict('symptoms_dummy.py', symptoms);
-    getting_diagnoses = JSON.parse(getting_diagnoses);
+    //let symptoms = [];
+    let getting_diagnoses = []
+    try {
+        getting_diagnoses = await predict('symptoms_dummy.py', symptoms);
+        getting_diagnoses = JSON.parse(getting_diagnoses);
+    } catch(err){
+        console.log(err)
+        return res.status(500).send("Robodoc was unable to get diagnoses")
+    }
 
     let deseases = []
     for (let i = 0; i < getting_diagnoses.deseases.length; i++) {
