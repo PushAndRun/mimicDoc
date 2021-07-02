@@ -4,7 +4,9 @@ var router = express.Router()
 const csv = require('csv-parser')
 const fs = require('fs')
 const diagnoses = './diagnoses_dict.csv'
+const symptoms = './symptoms_dict.csv'
 let csvData = []
+let csvDataSymptoms = []
 
 const loadDiagnoses = () => {
     fs.createReadStream(diagnoses)
@@ -13,7 +15,16 @@ const loadDiagnoses = () => {
     .on('end', () => { console.log('csv diagnoses loaded')})
 }
 
+const loadSymptoms = () => {
+    fs.createReadStream(symptoms)
+    .pipe(csv())
+    .on('data', (data) => csvDataSymptoms.push(data))
+    .on('end',()=>{console.log('csv symptoms loaded')})
+    
+}
+
 loadDiagnoses()
+loadSymptoms()
 
 router.get('/diagnoses', (req,res,next) => {
     if(csvData){
@@ -21,6 +32,15 @@ router.get('/diagnoses', (req,res,next) => {
         return
     } else {
         loadDiagnoses.then(res.send(csvData))
+    }
+})
+
+router.get('/symptoms', (req,res,next) => {
+    if(csvDataSymptoms){
+        res.send(csvDataSymptoms)
+        return
+    } else {
+        loadSymptoms.then(res.send(csvDataSymptoms))
     }
 })
 
