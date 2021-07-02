@@ -16,11 +16,9 @@ async function predict(script, params) {
         let shell = new PythonShell(script, options);
         shell.on('error', function (error) {
             console.error("ml error: "+error);
-            nosuccess(error);
         });
         shell.on('stderr', function (stderr) {
             console.error("ml error: "+stderr);
-            nosuccess(stderr);
         });
         shell.on('message', function (message) {
             console.log("new data: "+message)
@@ -37,7 +35,6 @@ async function predict(script, params) {
         let res = await runPy;
     } catch(err) {
         console.log(err)
-        res.send(500).send("Robodoc was unable to get a prediction")
     }
     return dataToSend
 }

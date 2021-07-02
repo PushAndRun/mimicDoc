@@ -30,36 +30,35 @@ router.post('/', async (req, res, next) => {
 
 //Pseudo-Output
 router.post('/', async (req, res, next) => {
-    console.log("sending pseudo response")
     let symptoms = req.body.symptoms;
     //let threshold = req.body.threshold;   // uncomment if threshold is wanted
     //let symptoms = [];
-    let getting_diagnoses = []
-    try {
-        getting_diagnoses = await predict('symptoms_dummy.py', symptoms);
-        getting_diagnoses = JSON.parse(getting_diagnoses);
-    } catch(err){
-        console.log(err)
-        return res.status(500).send("Robodoc was unable to get diagnoses")
-    }
 
+    // Joint array in einen einzigen String. Mit leerzeichen als trennelement
+    symptoms = symptoms.join(' ')
+    console.log(symptoms)
+
+        res.status(200).json({
+            "deseases":await predict('predict_diagnoses.py', symptoms)
+        })
+        //getting_diagnoses = JSON.parse(getting_diagnoses);
     let deseases = []
-    for (let i = 0; i < getting_diagnoses.deseases.length; i++) {
-        let x = getting_diagnoses.deseases[i].icd9_code;
-        let x_acc = getting_diagnoses.deseases[i].accuracy;
-        // if (x_acc >= threshold){ // uncomment if threshold is wanted
-        if (!isNaN(x)) {
-            console.log(x + " is a number");
-            deseases.push(DiagnosisModel.findOne({ icd9_code: x }, function (err, diagnosisRes) {
-                if (err) {
-                    console.log("error while searching " + x + " in our db" + err)
-                } else if (!diagnosisRes) {
-                    console.log(x + ' is not a short_titel diagnosis')
-                }
-            }))
-        }
-    }
-        //}         // uncomment if threshold is wanted
+/*     for (let i = 0; i < getting_diagnoses.deseases.length; i++) {
+            let x = getting_diagnoses.deseases[i].icd9_code;
+            let x_acc = getting_diagnoses.deseases[i].accuracy;
+            // if (x_acc >= threshold){ // uncomment if threshold is wanted
+            if (!isNaN(x)) {
+                    console.log(x + " is a number");
+                    deseases.push(DiagnosisModel.findOne({ icd9_code: x }, function (err, diagnosisRes) {
+                            if (err) {
+                                    console.log("error while searching " + x + " in our db" + err)
+                                } else if (!diagnosisRes) {
+                                        console.log(x + ' is not a short_titel diagnosis')
+                                    }
+                                }))
+                            }
+                        }
+                        
     Promise.allSettled(deseases).then((results)=>{
          let deseasesParsed = results.map((prom, index) =>{
             let val = prom.value;
@@ -70,7 +69,7 @@ router.post('/', async (req, res, next) => {
             "accuracy": getting_diagnoses.deseases[index].accuracy};
         })
         res.status(200).send(JSON.stringify({"deseases": deseasesParsed}))
-        })
+        }) */
 })
 
 module.exports = router
