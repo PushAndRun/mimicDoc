@@ -26,7 +26,7 @@ const loadSymptoms = () => {
 loadDiagnoses()
 loadSymptoms()
 
-router.get('/diagnoses', (req,res,next) => {
+router.get('/getdiagnoses', (req,res,next) => {
     if(csvData){
         res.send(csvData)
         return
@@ -35,7 +35,7 @@ router.get('/diagnoses', (req,res,next) => {
     }
 })
 
-router.get('/symptoms', (req,res,next) => {
+router.get('/getsymptoms', (req,res,next) => {
     if(csvDataSymptoms){
         res.send(csvDataSymptoms)
         return
