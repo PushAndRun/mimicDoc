@@ -2,9 +2,7 @@ import pandas as pd
 import pickle as pk
 import sys
 import numpy as np
-import sklearn
 from tensorflow import keras
-import matplotlib.pyplot as plt
 
 pd.options.mode.chained_assignment = None
 np.set_printoptions(threshold=sys.maxsize)
@@ -190,11 +188,8 @@ def predict(input_csv):
     print(f"died_in_hospital:{float(result_class):.4f}")
     print(f"length_of_stay:{float(result_reg):.4f}")
 
-
     return
+
 
 if __name__ == '__main__':
     predict(sys.argv[1])
-
-
-
