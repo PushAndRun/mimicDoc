@@ -79,100 +79,8 @@ router.post("/", verifyToken, async (req, res, next) => {
     );
   }
 
-  //res.status(500).send(await convertDiagsToNums(req.body.patient.medicalData.diagnoses));
-  //return res.status(500).send(unconvertedDiagnoses);
 
-  // TODO: Prediction von ML einholen - placeholder for now
-  // let prediction = await predict("76,M,97,
-  // 76,40,259,
-  // 5,24,17,
-  // 37.002880708670915,
-  // 136,306,232,,
-  // 0389;78559;5849;4275;41071;4280;6826;4254;2639");
-  // format age,gender,weight,meanbp_mean,meanbp_min,meanbp_max,resprate_min,resprate_max,resprate_mean,tempc_mean,glucose_min,glucose_max,glucose_mean,patient_history,diagnoses
 
-  // format:
-  // patient_id
-  // hadm_id
-  // icustay_id
-  // hospstay_seq
-  // total_hospstays
-  // length_of_stay_hospital
-  // icustay_seq
-  // number_of_icu_stays
-  // length_of_stay_icu
-  // total_length_of_stay_icu
-  // days_to_death
-  // died_in_hospital
-  // age
-  // gender
-  // weight
-  // height
-  // heartrate_mean
-  // heartrate_min
-  // heartrate_max
-  // meanbp_mean
-  // meanbp_min
-  // meanbp_max
-  // resprate_mean
-  // resprate_min
-  // resprate_max
-  // tempc_mean
-  // tempc_min
-  // tempc_max
-  // spo2_mean
-  // spo2_min
-  // spo2_max
-  // glucose_mean
-  // glucose_min
-  // glucose_max
-  // received_dialysis
-  // received_ventilation
-  // urineoutput
-  // mingcs
-  // gcsmotor
-  // gcsverbal
-  // gcseyes
-  // aniongap_min
-  // aniongap_max
-  // albumin_min
-  // albumin_max
-  // bands_min
-  // bands_max
-  // bicarbonate_min
-  // bicarbonate_max
-  // bilirubin_min
-  // bilirubin_max
-  // creatinine_min
-  // creatinine_max
-  // chloride_min
-  // chloride_max
-  // hematocrit_min
-  // hematocrit_max
-  // hemoglobin_min
-  // hemoglobin_max
-  // lactate_min
-  // lactate_max
-  // platelet_min
-  // platelet_max
-  // potassium_min
-  // potassium_max
-  // ptt_min
-  // ptt_max
-  // inr_min
-  // inr_max
-  // pt_min
-  // pt_max
-  // sodium_min
-  // sodium_max
-  // bun_min
-  // bun_max
-  // wbc_min
-  // wbc_max
-  // symptoms
-  // patient_history
-  // accident_causes
-  // diagnoses
 
   let prediction = await predict('predict.py',
       (req.body.patient.patient_id || "") +
@@ -329,7 +237,10 @@ router.post("/", verifyToken, async (req, res, next) => {
       "," +
       (req.body.patient.medicalData.wbc.max || "") +
       "," +
-      (req.body.patient.medicalData.symptoms || "") +
+      (
+        // commented out in case symptoms are not used in prediction
+        //req.body.patient.medicalData.symptoms.join(" ") || 
+      "") +
       "," +
       (req.body.patient.medicalData.patient_history || "") +
       "," +
@@ -338,24 +249,8 @@ router.post("/", verifyToken, async (req, res, next) => {
       (req.body.patient.medicalData.diagnoses || "")
   );
 
-  /* 
-    let prediction = await predict("" +
-        calculateAge(newPatient.medicalData.dateOfBirth) + "," +
-        newPatient.medicalData.gender + "," +
-        newPatient.medicalData.weight + "," +
-        req.body.patient.medicalData.bloodpressure.mean + "," +
-        req.body.patient.medicalData.bloodpressure.min + "," +
-        req.body.patient.medicalData.bloodpressure.max + "," +
-        req.body.patient.medicalData.resprate.min + "," +
-        req.body.patient.medicalData.resprate.max + "," +
-        req.body.patient.medicalData.resprate.mean + "," +
-        req.body.patient.medicalData.temperature.mean + "," +
-        req.body.patient.medicalData.glucose.min + "," +
-        req.body.patient.medicalData.glucose.max + "," +
-        req.body.patient.medicalData.glucose.mean + "," +
-        req.body.patient.medicalData.patient_history.join(";").replace(/\[/g, '').replace(/]/g, '') + "," +
-        req.body.patient.medicalData.diagnoses.join(";").replace(/\[/g, '').replace(/]/g, '')
-    ); */
+
+  console.log(req.body.patient.medicalData.symptoms)
   console.log(typeof prediction)  
   console.log("prediction:"+ prediction)
   let death_prediction = prediction[0];
