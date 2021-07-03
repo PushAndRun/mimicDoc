@@ -5,8 +5,10 @@ const csv = require('csv-parser')
 const fs = require('fs')
 const diagnoses = './diagnoses_dict.csv'
 const symptoms = './symptoms_dict.csv'
+const mcid = './icd9.csv'
 let csvData = []
 let csvDataSymptoms = []
+let csvDataMCID = {}
 
 const loadDiagnoses = () => {
     fs.createReadStream(diagnoses)
@@ -22,9 +24,18 @@ const loadSymptoms = () => {
     .on('end',()=>{console.log('csv symptoms loaded')})
     
 }
+const loadMCIDs = () => {
+    fs.createReadStream(mcid)
+    .pipe(csv())
+    .on('data', (data) => {
+        csvDataMCID[data.ICD9CM] = data.McId;
+    })
+    .on('end',()=>{console.log('csv McIds loaded')})
+}
 
 loadDiagnoses()
 loadSymptoms()
+loadMCIDs()
 
 router.get('/getdiagnoses', (req,res,next) => {
     if(csvData){
@@ -61,4 +72,4 @@ router.get('/reloadDiagnoses', (req,res,next) => {
     return
 })
 
-module.exports = {router, csvData}
+module.exports = {router, csvData, csvDataSymptoms, csvDataMCID}

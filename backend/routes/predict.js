@@ -21,7 +21,6 @@ async function predict(script, params) {
             console.error("ml error: "+stderr);
         });
         shell.on('message', function (message) {
-            console.log("new data: "+message)
             dataToSend.push(message);
         });
         shell.on('close', (message) => {

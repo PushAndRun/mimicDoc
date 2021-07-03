@@ -3,6 +3,10 @@ import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
 import numpy as np
 from joblib import load
+import warnings
+import json
+
+warnings.filterwarnings("ignore")
 
 path = os.getcwd()
 os.chdir(path+"/ml/")
@@ -31,7 +35,8 @@ def predict(input=''):
     ans = np.reshape(ans, (1, 4121))
     ans = mlb.inverse_transform(ans)[0]
 
-    print(f"diagnoses:{ans}")
+    output = json.dumps(list(ans))
+    print("{\"diagnoses\" : "+output+"}")
 
     return ans
 
