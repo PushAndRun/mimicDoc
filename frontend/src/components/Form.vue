@@ -5,7 +5,7 @@
 
       <b-navbar-toggle target="navbar-toggle-collapse" style="color:white;">
         Menu
-      </b-navbar-toggle>
+    </b-navbar-toggle>
 
       <b-collapse id="navbar-toggle-collapse" is-nav>
         <b-navbar-nav class="ml-auto">
@@ -31,6 +31,8 @@
     </b-navbar>
     <br />
 
+    
+
     <b-form id="formular" @submit="submit">
       <br />
       <h2>Patient processing form</h2>
@@ -38,205 +40,222 @@
       <br />
       <b-row>
         <b-col>
-          <b-form-group id="input-group-2" label-for="input-2">
-            <b-form-input
-              id="input-2"
-              type="text"
-              v-model="form.name"
-              placeholder="Patient's name"
-            ></b-form-input>
-          </b-form-group>
+      <b-form-group id="input-group-2" label-for="input-2">
+        <b-form-input
+          id="input-2"
+          type="text"
+          v-model="form.name"
+          placeholder="Patient's name"
+         
+        ></b-form-input>
+      </b-form-group>
         </b-col>
         <b-col>
-          <b-input-group id="input-group-3" label-for="input-3">
-            <b-form-input
-              id="input-3"
-              v-model="form.dateOfBirth"
-              type="text"
-              placeholder="YYYY-MM-DD"
-            ></b-form-input>
-            <b-input-group-append>
-              <b-form-datepicker
-                v-model="form.dateOfBirth"
-                button-only
-                right
-                dark="true"
-                locale="en-US"
-              ></b-form-datepicker>
-            </b-input-group-append>
-          </b-input-group>
+      <b-input-group id="input-group-3" label-for="input-3">
+        <b-form-input
+          id="input-3"
+          v-model="form.dateOfBirth"
+          type="text"
+          placeholder="YYYY-MM-DD"
+        ></b-form-input>
+        <b-input-group-append>
+          <b-form-datepicker
+            v-model="form.dateOfBirth"
+            button-only
+            right
+            dark
+            locale="en-US"
+          ></b-form-datepicker>
+        </b-input-group-append>
+      </b-input-group>
         </b-col>
       </b-row>
+
+   
 
       <b-form-group
         id="input-group-7"
         label-for="input-7"
         label-class="font-weight-bold"
+        
       >
         <b-form-radio v-model="form.gender" value="M">male</b-form-radio>
         <b-form-radio v-model="form.gender" value="F">female</b-form-radio>
       </b-form-group>
       <b-row>
         <b-col>
-          <b-form-group id="input-group-4" label-for="input-4">
-            <b-form-input
-              id="input-4"
-              type="number"
-              v-model="form.weight"
-              placeholder="Patient's Weight in kg"
-            ></b-form-input>
-          </b-form-group>
+      <b-form-group id="input-group-4" label-for="input-4">
+        <b-form-input
+          id="input-4"
+          type="number"
+          v-model="form.weight"
+          placeholder="Patient's Weight in kg"
+          
+        ></b-form-input>
+      </b-form-group>
         </b-col>
         <b-col>
-          <b-form-group id="input-group-5" label-for="input-5">
-            <b-form-input
-              type="number"
-              id="input-5"
-              v-model="form.height"
-              placeholder="Patient's Height in cm"
-            ></b-form-input>
-          </b-form-group>
+      <b-form-group id="input-group-5" label-for="input-5">
+        <b-form-input
+          type="number"
+          id="input-5"
+          v-model="form.height"
+          placeholder="Patient's Height in cm"
+          
+        ></b-form-input>
+      </b-form-group>
         </b-col>
       </b-row>
-      <br />
+      <br>
+
+        <b-row>
+        <b-col>
+
+          
+
+      <b-form-group id="input-hospstay_seq" label-for="input-hospstay_seq"
+          label="How many times has the patient been to the hospital until now?" label-class="font-weight-bold">
+        <b-form-input
+          id="input-hospstay_seq"
+          type="number"
+          v-model="form.hospstay_seq"
+          placeholder="One if this is the first"
+         
+        ></b-form-input>
+      </b-form-group>
+
+    
+        </b-col>
+        <b-col>
+
+
+        <b-form-group id="input-total_hospstays" label-for="input-total_hospstays"
+          label="Total Number of hospital stays" label-class="font-weight-bold">
+        <b-form-input
+          id="input-total_hospstays"
+          type="number"
+          v-model="form.total_hospstays"
+          placeholder="One if this is the first"
+         
+        ></b-form-input>
+      </b-form-group>
+
+        </b-col>
+        </b-row>
+
+
+
+        <b-row>
+        <b-col>
+
+          
+
+      <b-form-group id="input-length_of_stay_hospital" label-for="input-length_of_stay_hospital"
+          label="Length of stay in the hospital for this specific admission" label-class="font-weight-bold">
+        <b-form-input
+          id="input-length_of_stay_hospital"
+          type="number"
+          v-model="form.length_of_stay_hospital"
+         placeholder="in days"
+        ></b-form-input>
+      </b-form-group>
+        </b-col>
+        <b-col>
+
+
+     
+
+<b-form-group id="input-number_of_icu_stays" label-for="input-number_of_icu_stays"
+          label="Number of ICU stays during this hospital admission" label-class="font-weight-bold">
+        <b-form-input
+          id="input-number_of_icu_stays"
+          type="number"
+          v-model="form.number_of_icu_stays"
+          
+         
+        ></b-form-input>
+      </b-form-group>
+        </b-col>
+        </b-row>
+
+     
 
       <b-row>
         <b-col>
-          <b-form-group
-            id="input-hospstay_seq"
-            label-for="input-hospstay_seq"
-            label="Information about the sequence of hospital stays"
-            label-class="font-weight-bold"
-          >
-            <b-form-input
-              id="input-hospstay_seq"
-              type="number"
-              v-model="form.hospstay_seq"
-              placeholder="One if this is the first"
-            ></b-form-input>
-          </b-form-group>
-        </b-col>
-        <b-col>
-          <b-form-group
-            id="input-total_hospstays"
-            label-for="input-total_hospstays"
-            label="Number of hospital stays"
-            label-class="font-weight-bold"
-          >
-            <b-form-input
-              id="input-total_hospstays"
-              type="number"
-              v-model="form.total_hospstays"
-              placeholder="One if this is the first"
-            ></b-form-input>
-          </b-form-group>
-        </b-col>
-      </b-row>
 
-      <b-row>
-        <b-col>
-          <b-form-group
-            id="input-length_of_stay_hospital"
-            label-for="input-length_of_stay_hospital"
-            label="Length of stay in the hospital for this specific admission"
-            label-class="font-weight-bold"
-          >
-            <b-form-input
-              id="input-length_of_stay_hospital"
-              type="number"
-              v-model="form.length_of_stay_hospital"
-            ></b-form-input>
-          </b-form-group>
-        </b-col>
-        <b-col>
-          <b-form-group
-            id="input-number_of_icu_stays"
-            label-for="input-number_of_icu_stays"
-            label="Number of ICU stays during this hospital admission"
-            label-class="font-weight-bold"
-          >
-            <b-form-input
-              id="input-number_of_icu_stays"
-              type="number"
-              v-model="form.number_of_icu_stays"
-            ></b-form-input>
-          </b-form-group>
-        </b-col>
-      </b-row>
 
-      <b-row>
-        <b-col>
-          <b-form-group
-            id="input-length_of_stay_icu"
-            label-for="input-length_of_stay_icu"
-            label="The length of stay of the first ICU stay"
-            label-class="font-weight-bold"
-          >
-            <b-form-input
-              id="input-length_of_stay_icu"
-              type="number"
-              v-model="form.length_of_stay_icu"
-              placeholder="In fractional days"
-            ></b-form-input>
-          </b-form-group>
-        </b-col>
-        <b-col>
-          <b-form-group
-            id="input-total_length_of_stay_icu"
-            label-for="input-total_length_of_stay_icu"
-            label="The total length of all ICU stays during this hospital admission"
-            label-class="font-weight-bold"
-          >
-            <b-form-input
-              id="input-total_length_of_stay_icu"
-              type="number"
-              v-model="form.total_length_of_stay_icu"
-              placeholder="In fractional days"
-            ></b-form-input>
-          </b-form-group>
-        </b-col>
-      </b-row>
+          
+          <b-form-group id="input-length_of_stay_icu" label-for="input-length_of_stay_icu"
+          label="The length of stay of the first ICU stay" label-class="font-weight-bold">
+        <b-form-input
+          id="input-length_of_stay_icu"
+          type="number"
+          v-model="form.length_of_stay_icu"
+          placeholder="In days"
+         
+        ></b-form-input>
+      </b-form-group>
 
-      <b-row>
-        <b-col>
-          <b-form-group
-            id="input-group-died_in_hos"
-            label="Did the patient died during this hospital admission?"
-            label-class="font-weight-bold"
-          >
-            <b-form-radio
-              v-model="form.died_in_hospital"
-              :aria-describedby="ariaDescribedby"
-              name="yes"
-              value="true"
-              >Yes</b-form-radio
-            >
-            <b-form-radio
-              v-model="form.died_in_hospital"
-              :aria-describedby="ariaDescribedby"
-              name="no"
-              value="false"
-              >No</b-form-radio
-            >
-          </b-form-group>
-        </b-col>
-        <b-col>
-          <b-form-group
-            id="input-group-days_to_death"
-            label-for="input-days_to_death"
-            label="If yes, please select the number of days from the hospital admission to the death in hospital"
-            label-class="font-weight-bold"
-          >
-            <b-form-input
-              id="input-days_to_death"
-              type="number"
-              v-model="form.days_to_death"
-            ></b-form-input>
-          </b-form-group>
-        </b-col>
-      </b-row>
 
-      <br />
+       </b-col>
+        <b-col>
+
+          <b-form-group id="input-total_length_of_stay_icu" label-for="input-total_length_of_stay_icu"
+          label="The total length of all ICU stays during this hospital admission" label-class="font-weight-bold">
+        <b-form-input
+          id="input-total_length_of_stay_icu"
+          type="number"
+          v-model="form.total_length_of_stay_icu"
+          placeholder="In days"
+          
+         
+        ></b-form-input>
+      </b-form-group>
+
+        </b-col>
+</b-row>
+
+
+<b-row>
+        
+
+ <!--
+  <b-col>
+
+<b-form-group
+        id="input-group-died_in_hos"
+        label="Did the patient died during this hospital admission?"
+         label-class="font-weight-bold"
+        >
+
+         <b-form-radio v-model="form.died_in_hospital"  name="yes" value="1">Yes</b-form-radio>
+      <b-form-radio v-model="form.died_in_hospital"  name="no" value="0">No</b-form-radio>
+          </b-form-group>
+
+        </b-col>
+     
+       
+        <b-col>
+
+          <b-form-group id="input-group-days_to_death" label-for="input-days_to_death"
+          label="If yes, please select the number of days from the hospital admission to the death in hospital" label-class="font-weight-bold">
+        <b-form-input
+          id="input-days_to_death"
+          type="number"
+          v-model="form.days_to_death"
+         
+        ></b-form-input>
+      </b-form-group>
+
+        </b-col>
+
+        -->
+</b-row>
+
+
+
+  
+      <br>
 
       <b-form-group
         id="input-group-labValues"
@@ -244,1222 +263,1224 @@
         label-class="font-weight-bold"
         label-for="input-labValues"
       >
-        <b-button
-          @click="activateLabValues"
-          variant="outline-primary"
-          size=""
-          >{{ minOrMaxLabValues }}</b-button
+
+    <b-button @click=activateLabValues variant="outline-primary" size="">{{ minOrMaxLabValues}}</b-button>
+      
+      <div v-if=labValuesActive>
+
+        <br>
+
+        <b-row>
+        <b-col>
+
+       <b-form-group
+        id="input-group-bp"
+        label="Heartrate:"
+        label-class="font-weight-bold"
+        label-for="input-bp"
+      >
+      <b-button @click=activateHr variant="outline-primary" size="sm">{{ minOrMaxHr}}</b-button>
+      
+      <div v-if=heartrateActive>
+      <br>
+        
+      <b-row>
+        <b-col>
+        <b-form-input
+          id="input-hr_mean"
+          v-model="form.heartrate_mean"
+          type="number"
+          placeholder="Mean"
+          
+        ></b-form-input>
+        </b-col>
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-hrmin"
+          v-model="form.heartrate_min"
+          type="number"
+          placeholder="Min"
+        ></b-form-input>
+        </b-col>
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-hrmax"
+          v-model="form.heartrate_max"
+          type="number"
+          placeholder="Max"
+          
+        ></b-form-input>
+        </b-col>
+        </b-row>
+        </div>
+      </b-form-group>
+
+</b-col>
+        <b-col>
+
+      <b-form-group
+        id="input-group-bp"
+        label="Bloodpressure levels:"
+        label-class="font-weight-bold"
+        label-for="input-bp"
+      >
+      <b-button @click=activateBp variant="outline-primary" size="sm">{{ minOrMaxBp}}</b-button>
+      
+      <div v-if=bloodpressureActive>
+      <br>
+        
+      <b-row>
+        <b-col>
+        <b-form-input
+          id="input-bpmean"
+          v-model="form.meanbp_mean"
+          type="number"
+          placeholder="Mean"
+         
+        ></b-form-input>
+        </b-col>
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-bpmin"
+          v-model="form.meanbp_min"
+          type="number"
+          placeholder="Min"
+         
+        ></b-form-input>
+        </b-col>
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-bpmax"
+          v-model="form.meanbp_max"
+          type="number"
+          placeholder="Max"
+          
+        ></b-form-input>
+        </b-col>
+        </b-row>
+        </div>
+      </b-form-group>
+      
+
+      <br />
+      </b-col>
+        <b-col>
+      <b-form-group
+        id="input-group-resprate"
+        label="Resprate:"
+        label-class="font-weight-bold"
+        label-for="input-bp"
+      >
+      <b-button @click=activateRe variant="outline-primary" size="sm">{{ minOrMaxRe}}</b-button>
+      <div v-if=resprateActive>
+        <br>
+      <b-row>
+        <b-col>
+        <b-form-input
+          id="input-respratemean"
+          v-model="form.resprate_mean"
+          type="number"
+          placeholder="Mean"
+        
+        ></b-form-input>
+        </b-col>
+        <br />
+        <b-col>
+        <b-form-input
+          id="input-respratemin"
+          v-model="form.resprate_min"
+          type="number"
+          placeholder="Min"
+       
+        ></b-form-input>
+        </b-col>
+        <br />
+        <b-col>
+        <b-form-input
+          id="input-respratemax"
+          v-model="form.resprate_max"
+          type="number"
+          placeholder="Max"
+        
+        ></b-form-input>
+        </b-col>
+      </b-row>
+      </div>
+      </b-form-group>
+      <br />
+
+      </b-col>
+      </b-row>
+
+      
+      <b-row>
+      <b-col>
+
+        <b-form-group
+        id="input-group-temp"
+        label="Body Temperature values in C°"
+        label-class="font-weight-bold"
+        label-for="input-bp"
+      >
+      <b-button @click=activateTemp variant="outline-primary" size="sm">{{ minOrMaxTemp}}</b-button>
+      <div v-if=tempActive>
+        <br>
+      <b-row>
+        <b-col>
+        <b-form-input
+          id="input-tempmean"
+          v-model="form.tempc_mean"
+          type="number"
+          placeholder="Mean"
+        
+        ></b-form-input>
+        </b-col>
+        <br />
+        <b-col>
+        <b-form-input
+          id="input-tempmin"
+          v-model="form.tempc_min"
+          type="number"
+          placeholder="Min"
+       
+        ></b-form-input>
+        </b-col>
+        <br />
+        <b-col>
+        <b-form-input
+          id="input-tempmax"
+          v-model="form.tempc_max"
+          type="number"
+          placeholder="Max"
+        
+        ></b-form-input>
+        </b-col>
+      </b-row>
+      </div>
+      </b-form-group>
+
+
+      </b-col>
+        <b-col>
+      
+      <b-form-group
+        id="input-group-glucose"
+        label="Glucose values:"
+        label-class="font-weight-bold"
+        label-for="input-bp"
+      >
+      
+      <b-button @click=activateGl variant="outline-primary" size="sm">{{ minOrMaxGl}}</b-button>
+      <div v-if=glucoseActive>
+        <br>
+      <b-row>
+        <b-col>
+        <b-form-input
+          id="input-glucosemean"
+          v-model="form.glucose_mean"
+          type="number"
+          placeholder="Mean"
+        ></b-form-input>
+        </b-col>
+        <br />
+        <b-col>
+        <b-form-input
+          id="input-glucosemin"
+          v-model="form.glucose_min"
+          type="number"
+          placeholder="Min"
+          
+        ></b-form-input>
+        </b-col>
+        <br />
+        <b-col>
+        <b-form-input
+          id="input-glucosemax"
+          v-model="form.glucose_max"
+          type="number"
+          placeholder="Max"
+          
+        ></b-form-input>
+        </b-col>
+      </b-row>
+      </div>
+      </b-form-group>
+
+       </b-col>
+        
+        <b-col>
+
+      <b-form-group
+        id="input-group-spo2"
+        label="Blood oxygen values:"
+        label-class="font-weight-bold"
+        label-for="input-bp"
+      >
+      <b-button @click=activateSpo2 variant="outline-primary" size="sm">{{ minOrMaxSpo2}}</b-button>
+      
+      <div v-if=spo2Active>
+      <br>
+        
+      <b-row>
+        <b-col>
+        <b-form-input
+          id="input-spo2_mean"
+          v-model="form.spo2_mean"
+          type="number"
+          placeholder="Mean"
+          
+        ></b-form-input>
+        </b-col>
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-spo2_min"
+          v-model="form.spo2_min"
+          type="number"
+          placeholder="Min"
+          
+        ></b-form-input>
+        </b-col>
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-spo2_max"
+          v-model="form.spo2_max"
+          type="number"
+          placeholder="Max"
+          
+        ></b-form-input>
+
+
+        </b-col>
+        </b-row>
+        </div>
+      </b-form-group>
+
+      </b-col>
+        </b-row>
+
+      <br />
+
+      <b-row>
+        <b-col>
+
+      <b-form-group
+        id="input-group-received_dialysis"
+        label="Did the patient receive dialysis:"
+         label-class="font-weight-bold"
         >
 
-        <div v-if="labValuesActive">
-          <br />
-
-          <b-row>
-            <b-col>
-              <b-form-group
-                id="input-group-bp"
-                label="Heartrate:"
-                label-class="font-weight-bold"
-                label-for="input-bp"
-              >
-                <b-button
-                  @click="activateHr"
-                  variant="outline-primary"
-                  size="sm"
-                  >{{ minOrMaxHr }}</b-button
-                >
-
-                <div v-if="heartrateActive">
-                  <br />
-
-                  <b-row>
-                    <b-col>
-                      <b-form-input
-                        id="input-hr_mean"
-                        v-model="form.meanhr_mean"
-                        type="number"
-                        placeholder="Mean"
-                      ></b-form-input>
-                    </b-col>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-hrmin"
-                        v-model="form.meanhr_min"
-                        type="number"
-                        placeholder="Min"
-                      ></b-form-input>
-                    </b-col>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-hrmax"
-                        v-model="form.meanhr_max"
-                        type="number"
-                        placeholder="Max"
-                      ></b-form-input>
-                    </b-col>
-                  </b-row>
-                </div>
-              </b-form-group>
-            </b-col>
-            <b-col>
-              <b-form-group
-                id="input-group-bp"
-                label="Bloodpressure levels:"
-                label-class="font-weight-bold"
-                label-for="input-bp"
-              >
-                <b-button
-                  @click="activateBp"
-                  variant="outline-primary"
-                  size="sm"
-                  >{{ minOrMaxBp }}</b-button
-                >
-
-                <div v-if="bloodpressureActive">
-                  <br />
-
-                  <b-row>
-                    <b-col>
-                      <b-form-input
-                        id="input-bpmean"
-                        v-model="form.meanbp_mean"
-                        type="number"
-                        placeholder="Mean"
-                      ></b-form-input>
-                    </b-col>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-bpmin"
-                        v-model="form.meanbp_min"
-                        type="number"
-                        placeholder="Min"
-                      ></b-form-input>
-                    </b-col>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-bpmax"
-                        v-model="form.meanbp_max"
-                        type="number"
-                        placeholder="Max"
-                      ></b-form-input>
-                    </b-col>
-                  </b-row>
-                </div>
-              </b-form-group>
-
-              <br />
-            </b-col>
-            <b-col>
-              <b-form-group
-                id="input-group-resprate"
-                label="Resprate:"
-                label-class="font-weight-bold"
-                label-for="input-bp"
-              >
-                <b-button
-                  @click="activateRe"
-                  variant="outline-primary"
-                  size="sm"
-                  >{{ minOrMaxRe }}</b-button
-                >
-                <div v-if="resprateActive">
-                  <br />
-                  <b-row>
-                    <b-col>
-                      <b-form-input
-                        id="input-respratemean"
-                        v-model="form.resprate_mean"
-                        type="number"
-                        placeholder="Mean"
-                      ></b-form-input>
-                    </b-col>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-respratemin"
-                        v-model="form.resprate_min"
-                        type="number"
-                        placeholder="Min"
-                      ></b-form-input>
-                    </b-col>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-respratemax"
-                        v-model="form.resprate_max"
-                        type="number"
-                        placeholder="Max"
-                      ></b-form-input>
-                    </b-col>
-                  </b-row>
-                </div>
-              </b-form-group>
-              <br />
-            </b-col>
-          </b-row>
-
-          <b-row>
-            <b-col>
-              <b-form-group
-                id="input-group-temp"
-                label="Body Temperature values in C°"
-                label-class="font-weight-bold"
-                label-for="input-bp"
-              >
-                <b-button
-                  @click="activateTemp"
-                  variant="outline-primary"
-                  size="sm"
-                  >{{ minOrMaxTemp }}</b-button
-                >
-                <div v-if="tempActive">
-                  <br />
-                  <b-row>
-                    <b-col>
-                      <b-form-input
-                        id="input-tempmean"
-                        v-model="form.temp_mean"
-                        type="number"
-                        placeholder="Mean"
-                      ></b-form-input>
-                    </b-col>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-tempmin"
-                        v-model="form.temp_min"
-                        type="number"
-                        placeholder="Min"
-                      ></b-form-input>
-                    </b-col>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-tempmax"
-                        v-model="form.temp_max"
-                        type="number"
-                        placeholder="Max"
-                      ></b-form-input>
-                    </b-col>
-                  </b-row>
-                </div>
-              </b-form-group>
-            </b-col>
-            <b-col>
-              <b-form-group
-                id="input-group-glucose"
-                label="Glucose values:"
-                label-class="font-weight-bold"
-                label-for="input-bp"
-              >
-                <b-button
-                  @click="activateGl"
-                  variant="outline-primary"
-                  size="sm"
-                  >{{ minOrMaxGl }}</b-button
-                >
-                <div v-if="glucoseActive">
-                  <br />
-                  <b-row>
-                    <b-col>
-                      <b-form-input
-                        id="input-glucosemean"
-                        v-model="form.glucose_mean"
-                        type="number"
-                        placeholder="Mean"
-                      ></b-form-input>
-                    </b-col>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-glucosemin"
-                        v-model="form.glucose_min"
-                        type="number"
-                        placeholder="Min"
-                      ></b-form-input>
-                    </b-col>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-glucosemax"
-                        v-model="form.glucose_max"
-                        type="number"
-                        placeholder="Max"
-                      ></b-form-input>
-                    </b-col>
-                  </b-row>
-                </div>
-              </b-form-group>
-            </b-col>
-
-            <b-col>
-              <b-form-group
-                id="input-group-spo2"
-                label="Blood oxygen values:"
-                label-class="font-weight-bold"
-                label-for="input-bp"
-              >
-                <b-button
-                  @click="activateSpo2"
-                  variant="outline-primary"
-                  size="sm"
-                  >{{ minOrMaxSpo2 }}</b-button
-                >
-
-                <div v-if="spo2Active">
-                  <br />
-
-                  <b-row>
-                    <b-col>
-                      <b-form-input
-                        id="input-spo2_mean"
-                        v-model="form.spo2_mean"
-                        type="number"
-                        placeholder="Mean"
-                      ></b-form-input>
-                    </b-col>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-spo2_min"
-                        v-model="form.spo2_min"
-                        type="number"
-                        placeholder="Min"
-                      ></b-form-input>
-                    </b-col>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-spo2_max"
-                        v-model="form.spo2_max"
-                        type="number"
-                        placeholder="Max"
-                      ></b-form-input>
-                    </b-col>
-                  </b-row>
-                </div>
-              </b-form-group>
-            </b-col>
-          </b-row>
-
-          <br />
-
-          <b-row>
-            <b-col>
-              <b-form-group
-                id="input-group-received_dialysis"
-                label="Did the patient receive dialysis:"
-                label-class="font-weight-bold"
-              >
-                <b-form-radio
-                  v-model="form.received_dialysis"
-                  :aria-describedby="ariaDescribedby"
-                  name="yes"
-                  value="A"
-                  >Yes</b-form-radio
-                >
-                <b-form-radio
-                  v-model="form.received_dialysis"
-                  :aria-describedby="ariaDescribedby"
-                  name="no"
-                  value="B"
-                  >No</b-form-radio
-                >
-              </b-form-group>
-
-              <br />
-            </b-col>
-            <b-col>
-              <b-form-group
-                id="input-group-received_ventilation"
-                label="Did the patient receive ventilation:"
-                label-class="font-weight-bold"
-              >
-                <b-form-radio
-                  v-model="form.received_ventilation"
-                  :aria-describedby="ariaDescribedby"
-                  name="yes"
-                  value="1"
-                  >Yes</b-form-radio
-                >
-                <b-form-radio
-                  v-model="form.received_ventilation"
-                  :aria-describedby="ariaDescribedby"
-                  name="no"
-                  value="0"
-                  >No</b-form-radio
-                >
-              </b-form-group>
-            </b-col>
-          </b-row>
-
-          <b-form-group
-            id="input-group-urineoutput"
-            label="Urine Output:"
-            label-class="font-weight-bold"
-          >
-            <b-form-input
-              id="input-urineoutput"
-              v-model="form.urineoutput"
-              type="number"
-              placeholder="Urine Output in ml"
-            ></b-form-input>
+         <b-form-radio v-model="form.received_dialysis"  name="yes" value="1">Yes</b-form-radio>
+      <b-form-radio v-model="form.received_dialysis"  name="no" value="0">No</b-form-radio>
           </b-form-group>
 
-          <b-form-group
-            id="input-group-gcs"
-            label="Glasgow coma score:"
-            label-class="font-weight-bold"
-            label-for="input-gcs"
-          >
-            <b-button
-              @click="activateGcs"
-              variant="outline-primary"
-              size="sm"
-              >{{ minOrMaxGcs }}</b-button
-            >
+        <br>
+            </b-col>
+            <b-col>
+            <b-form-group
+        id="input-group-received_ventilation"
+        label="Did the patient receive ventilation:"
+         label-class="font-weight-bold"
+        >
 
-            <div v-if="gcsActive">
-              <br />
-
-              <b-row>
-                <b-col>
-                  <b-form-select
-                    id="input-gcsmotor"
-                    v-model="form.gcsMotor"
-                    :options="gcsMotorOptions"
-                  ></b-form-select>
-                </b-col>
-                <br />
-                <b-col>
-                  <b-form-select
-                    id="input-gcsverbal"
-                    v-model="form.gcsVerbal"
-                    :options="gcsVerbalOptions"
-                  ></b-form-select>
-                </b-col>
-                <br />
-                <b-col>
-                  <b-form-select
-                    id="input-gcseyes"
-                    v-model="form.gcsEyes"
-                    :options="gcsEyesOptions"
-                  ></b-form-select>
-                </b-col>
-              </b-row>
-            </div>
+         <b-form-radio v-model="form.received_ventilation" name="yes" value="1">Yes</b-form-radio>
+      <b-form-radio v-model="form.received_ventilation"  name="no" value="0">No</b-form-radio>
           </b-form-group>
-          <br />
+
+
+
+        </b-col>
+          </b-row>
+        
+
+
+        
+        <b-form-group
+        id="input-group-urineoutput"
+        label="Urine Output:"
+        label-class="font-weight-bold"
+        >
+
+         <b-form-input
+          id="input-urineoutput"
+          v-model="form.urineoutput"
+          type="number"
+          placeholder="Urine Output in ml"
+          
+        ></b-form-input>
+
+        </b-form-group>
+
+
+
+        <b-form-group
+        id="input-group-gcs"
+        label="Glasgow coma score:"
+        label-class="font-weight-bold"
+        label-for="input-gcs"
+      >
+      <b-button @click=activateGcs variant="outline-primary" size="sm">{{ minOrMaxGcs}}</b-button>
+      
+      <div v-if=gcsActive>
+      <br>
+        
+      <b-row>
+        <b-col>
+        <b-form-select
+          id="input-gcsmotor"
+          v-model="form.gcsMotor"
+          :options="gcsMotorOptions"
+          
+        ></b-form-select>
+        </b-col>
+        <br>
+        <b-col>
+         <b-form-select
+          id="input-gcsverbal"
+          v-model="form.gcsVerbal"
+          :options="gcsVerbalOptions"
+          
+          
+        ></b-form-select>
+        </b-col>
+        <br>
+        <b-col>
+        <b-form-select
+          id="input-gcseyes"
+          v-model="form.gcsEyes"
+          :options="gcsEyesOptions"
+          
+          
+        ></b-form-select>
+        </b-col>
+        </b-row>
+        </div>
+      </b-form-group>
+          <br>
+
+  
+      <b-row>
+        <b-col>
+        
+          <b-form-group
+        id="input-group-anionGap"
+        label="Anion Gap:"
+        label-class="font-weight-bold"
+        label-for="input-ag"
+      >
+      <b-button @click=activateAnionGap variant="outline-primary" size="sm">{{ minOrMaxAnionGap}}</b-button>
+      
+      <div v-if=anionGapActive>
+      <br>
+        
+      <b-row>
+        
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-anionGap_min"
+          v-model="form.anionGap_min"
+          type="number"
+          placeholder="Min"
+          
+        ></b-form-input>
+        </b-col>
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-anionGap_max"
+          v-model="form.anionGap_max"
+          type="number"
+          placeholder="Max"
+          
+        ></b-form-input>
+        </b-col>
+        </b-row>
+        </div>
+      </b-form-group>
+
+      <br />
+</b-col>
+        
+        <b-col>
+
+        <b-form-group
+        id="input-group-albumin"
+        label="Albumin value:"
+        label-class="font-weight-bold"
+        label-for="input-albumin"
+      >
+
+      <b-button @click=activateAlbumin variant="outline-primary" size="sm">{{ minOrMaxAlbumin}}</b-button>
+      
+      <div v-if=albuminActive>
+      <br>
+        
+      <b-row>
+        
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-albumin_min"
+          v-model="form.albumin_min"
+          type="number"
+          placeholder="Min"
+          
+        ></b-form-input>
+        </b-col>
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-albumin_max"
+          v-model="form.albumin_max"
+          type="number"
+          placeholder="Max"
+          
+        ></b-form-input>
+        </b-col>
+        </b-row>
+        </div>
+      </b-form-group>
+
+      <br />
+      </b-col>
+        
+        <b-col>
+
+
+        <b-form-group
+        id="input-group-ibf"
+        label="Immature band forms in %:"
+        label-class="font-weight-bold"
+        label-for="input-albumin"
+      >
+
+      <b-button @click=activateIbf variant="outline-primary" size="sm">{{ minOrMaxIbf}}</b-button>
+      
+      <div v-if=ibfActive>
+      <br>
+        
+      <b-row>
+        
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-ibf_min"
+          v-model="form.ibf_min"
+          type="number"
+          placeholder="Min"
+          
+        ></b-form-input>
+        </b-col>
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-ibf_max"
+          v-model="form.ibf_max"
+          type="number"
+          placeholder="Max"
+          
+        ></b-form-input>
+        </b-col>
+        </b-row>
+        </div>
+      </b-form-group>
+
+      <br />
+      </b-col>
+        </b-row>
 
           <b-row>
-            <b-col>
-              <b-form-group
-                id="input-group-anionGap"
-                label="Anion Gap:"
-                label-class="font-weight-bold"
-                label-for="input-ag"
-              >
-                <b-button
-                  @click="activateAnionGap"
-                  variant="outline-primary"
-                  size="sm"
-                  >{{ minOrMaxAnionGap }}</b-button
-                >
-
-                <div v-if="anionGapActive">
-                  <br />
-
-                  <b-row>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-anionGap_min"
-                        v-model="form.anionGap_min"
-                        type="number"
-                        placeholder="Min"
-                      ></b-form-input>
-                    </b-col>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-anionGap_max"
-                        v-model="form.anionGap_max"
-                        type="number"
-                        placeholder="Max"
-                      ></b-form-input>
-                    </b-col>
-                  </b-row>
-                </div>
-              </b-form-group>
-
-              <br />
-            </b-col>
-
-            <b-col>
-              <b-form-group
-                id="input-group-albumin"
-                label="Albumin value:"
-                label-class="font-weight-bold"
-                label-for="input-albumin"
-              >
-                <b-button
-                  @click="activateAlbumin"
-                  variant="outline-primary"
-                  size="sm"
-                  >{{ minOrMaxAlbumin }}</b-button
-                >
-
-                <div v-if="albuminActive">
-                  <br />
-
-                  <b-row>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-albumin_min"
-                        v-model="form.albumin_min"
-                        type="number"
-                        placeholder="Min"
-                      ></b-form-input>
-                    </b-col>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-anionGap_max"
-                        v-model="form.anionGap_max"
-                        type="number"
-                        placeholder="Max"
-                      ></b-form-input>
-                    </b-col>
-                  </b-row>
-                </div>
-              </b-form-group>
-
-              <br />
-            </b-col>
-
-            <b-col>
-              <b-form-group
-                id="input-group-ibf"
-                label="Immature band forms in %:"
-                label-class="font-weight-bold"
-                label-for="input-albumin"
-              >
-                <b-button
-                  @click="activateIbf"
-                  variant="outline-primary"
-                  size="sm"
-                  >{{ minOrMaxIbf }}</b-button
-                >
-
-                <div v-if="ibfActive">
-                  <br />
-
-                  <b-row>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-ibf_min"
-                        v-model="form.ibf_min"
-                        type="number"
-                        placeholder="Min"
-                      ></b-form-input>
-                    </b-col>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-ibf_max"
-                        v-model="form.ibf_max"
-                        type="number"
-                        placeholder="Max"
-                      ></b-form-input>
-                    </b-col>
-                  </b-row>
-                </div>
-              </b-form-group>
-
-              <br />
-            </b-col>
-          </b-row>
-
-          <b-row>
-            <b-col>
-              <b-form-group
-                id="input-group-bicarbonate"
-                label="Bicarbonate Value:"
-                label-class="font-weight-bold"
-                label-for="input-bicarbonate"
-              >
-                <b-button
-                  @click="activateBicarbonate"
-                  variant="outline-primary"
-                  size="sm"
-                  >{{ minOrMaxBicarbonate }}</b-button
-                >
-
-                <div v-if="bicarbonateActive">
-                  <br />
-
-                  <b-row>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-bicarbonate_min"
-                        v-model="form.bicarbonate_min"
-                        type="number"
-                        placeholder="Min"
-                      ></b-form-input>
-                    </b-col>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-bicarbonate_max"
-                        v-model="form.bicarbonate_max"
-                        type="number"
-                        placeholder="Max"
-                      ></b-form-input>
-                    </b-col>
-                  </b-row>
-                </div>
-              </b-form-group>
-
-              <br />
-            </b-col>
-
-            <b-col>
-              <b-form-group
-                id="input-group-bilirubin"
-                label="Bilirubin Value:"
-                label-class="font-weight-bold"
-                label-for="input-bilirubin"
-              >
-                <b-button
-                  @click="activateBilirubin"
-                  variant="outline-primary"
-                  size="sm"
-                  >{{ minOrMaxBilirubin }}</b-button
-                >
-
-                <div v-if="bilirubinActive">
-                  <br />
-
-                  <b-row>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-bilirubin_min"
-                        v-model="form.bilirubin_min"
-                        type="number"
-                        placeholder="Min"
-                      ></b-form-input>
-                    </b-col>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-bilirubin_max"
-                        v-model="form.bilirubin_max"
-                        type="number"
-                        placeholder="Max"
-                      ></b-form-input>
-                    </b-col>
-                  </b-row>
-                </div>
-              </b-form-group>
-
-              <br />
-            </b-col>
-
-            <b-col>
-              <b-form-group
-                id="input-group-creatinine"
-                label="Creatinine Value:"
-                label-class="font-weight-bold"
-                label-for="input-creatinine"
-              >
-                <b-button
-                  @click="activateCreatinine"
-                  variant="outline-primary"
-                  size="sm"
-                  >{{ minOrMaxCreatinine }}</b-button
-                >
-
-                <div v-if="creatinineActive">
-                  <br />
-
-                  <b-row>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-creatinine_min"
-                        v-model="form.creatinine_min"
-                        type="number"
-                        placeholder="Min"
-                      ></b-form-input>
-                    </b-col>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-creatinine_max"
-                        v-model="form.creatinine_max"
-                        type="number"
-                        placeholder="Max"
-                      ></b-form-input>
-                    </b-col>
-                  </b-row>
-                </div>
-              </b-form-group>
-
-              <br />
-            </b-col>
-          </b-row>
-
-          <b-row>
-            <b-col>
-              <b-form-group
-                id="input-group-chloride"
-                label="Chloride Value:"
-                label-class="font-weight-bold"
-                label-for="input-chloride"
-              >
-                <b-button
-                  @click="activateChloride"
-                  variant="outline-primary"
-                  size="sm"
-                  >{{ minOrMaxChloride }}</b-button
-                >
-
-                <div v-if="chlorideActive">
-                  <br />
-
-                  <b-row>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-chloride_min"
-                        v-model="form.chloride_min"
-                        type="number"
-                        placeholder="Min"
-                      ></b-form-input>
-                    </b-col>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-chloride_max"
-                        v-model="form.chloride_max"
-                        type="number"
-                        placeholder="Max"
-                      ></b-form-input>
-                    </b-col>
-                  </b-row>
-                </div>
-              </b-form-group>
-
-              <br />
-            </b-col>
-
-            <b-col>
-              <b-form-group
-                id="input-group-hematocrit"
-                label="Hematocrit Value:"
-                label-class="font-weight-bold"
-                label-for="input-hematocrit"
-              >
-                <b-button
-                  @click="activateHematocrit"
-                  variant="outline-primary"
-                  size="sm"
-                  >{{ minOrMaxHematocrit }}</b-button
-                >
-
-                <div v-if="hematocritActive">
-                  <br />
-
-                  <b-row>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-hematocrit_min"
-                        v-model="form.hematocrit_min"
-                        type="number"
-                        placeholder="Min"
-                      ></b-form-input>
-                    </b-col>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-hematocrit_max"
-                        v-model="form.hematocrit_max"
-                        type="number"
-                        placeholder="Max"
-                      ></b-form-input>
-                    </b-col>
-                  </b-row>
-                </div>
-              </b-form-group>
-
-              <br />
-            </b-col>
-
-            <b-col>
-              <b-form-group
-                id="input-group-hemoglobin"
-                label="Hemoglobin Value:"
-                label-class="font-weight-bold"
-                label-for="input-hemoglobin"
-              >
-                <b-button
-                  @click="activateHemoglobin"
-                  variant="outline-primary"
-                  size="sm"
-                  >{{ minOrMaxHemoglobin }}</b-button
-                >
-
-                <div v-if="hemoglobinActive">
-                  <br />
-
-                  <b-row>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-hemoglobin_min"
-                        v-model="form.hemoglobin_min"
-                        type="number"
-                        placeholder="Min"
-                      ></b-form-input>
-                    </b-col>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-hemoglobin_max"
-                        v-model="form.hemoglobin_max"
-                        type="number"
-                        placeholder="Max"
-                      ></b-form-input>
-                    </b-col>
-                  </b-row>
-                </div>
-              </b-form-group>
-
-              <br />
-            </b-col>
-          </b-row>
-
-          <b-row>
-            <b-col>
-              <b-form-group
-                id="input-group-lactate"
-                label="Lactate Value:"
-                label-class="font-weight-bold"
-                label-for="input-lactate"
-              >
-                <b-button
-                  @click="activateLactate"
-                  variant="outline-primary"
-                  size="sm"
-                  >{{ minOrMaxLactate }}</b-button
-                >
-
-                <div v-if="lactateActive">
-                  <br />
-
-                  <b-row>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-lactate_min"
-                        v-model="form.lactate_min"
-                        type="number"
-                        placeholder="Min"
-                      ></b-form-input>
-                    </b-col>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-lactate_max"
-                        v-model="form.lactate_max"
-                        type="number"
-                        placeholder="Max"
-                      ></b-form-input>
-                    </b-col>
-                  </b-row>
-                </div>
-              </b-form-group>
-
-              <br />
-            </b-col>
-
-            <b-col>
-              <b-form-group
-                id="input-group-platelet"
-                label="Platelet Value:"
-                label-class="font-weight-bold"
-                label-for="input-platelet"
-              >
-                <b-button
-                  @click="activatePlatelet"
-                  variant="outline-primary"
-                  size="sm"
-                  >{{ minOrMaxPlatelet }}</b-button
-                >
-
-                <div v-if="plateletActive">
-                  <br />
-
-                  <b-row>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-platelet_min"
-                        v-model="form.platelet_min"
-                        type="number"
-                        placeholder="Min"
-                      ></b-form-input>
-                    </b-col>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-platelet_max"
-                        v-model="form.platelet_max"
-                        type="number"
-                        placeholder="Max"
-                      ></b-form-input>
-                    </b-col>
-                  </b-row>
-                </div>
-              </b-form-group>
-
-              <br />
-            </b-col>
-
-            <b-col>
-              <b-form-group
-                id="input-group-potassium"
-                label="Potassium Value:"
-                label-class="font-weight-bold"
-                label-for="input-potassium"
-              >
-                <b-button
-                  @click="activatePotassium"
-                  variant="outline-primary"
-                  size="sm"
-                  >{{ minOrMaxPotassium }}</b-button
-                >
-
-                <div v-if="potassiumActive">
-                  <br />
-
-                  <b-row>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-potassium_min"
-                        v-model="form.potassium_min"
-                        type="number"
-                        placeholder="Min"
-                      ></b-form-input>
-                    </b-col>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-potassium_max"
-                        v-model="form.potassium_max"
-                        type="number"
-                        placeholder="Max"
-                      ></b-form-input>
-                    </b-col>
-                  </b-row>
-                </div>
-              </b-form-group>
-
-              <br />
-            </b-col>
-          </b-row>
-
-          <b-row>
-            <b-col>
-              <b-form-group
-                id="input-group-ptt"
-                label="Partial Thromboplastin Time in seconds:"
-                label-class="font-weight-bold"
-                label-for="input-ptt"
-              >
-                <b-button
-                  @click="activatePtt"
-                  variant="outline-primary"
-                  size="sm"
-                  >{{ minOrMaxPtt }}</b-button
-                >
-
-                <div v-if="pttActive">
-                  <br />
-
-                  <b-row>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-ptt_min"
-                        v-model="form.ptt_min"
-                        type="number"
-                        placeholder="Min"
-                      ></b-form-input>
-                    </b-col>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-ptt_max"
-                        v-model="form.ptt_max"
-                        type="number"
-                        placeholder="Max"
-                      ></b-form-input>
-                    </b-col>
-                  </b-row>
-                </div>
-              </b-form-group>
-
-              <br />
-            </b-col>
-
-            <b-col>
-              <b-form-group
-                id="input-group-inr"
-                label="International Normalized Ratio:"
-                label-class="font-weight-bold"
-                label-for="input-inr"
-              >
-                <b-button
-                  @click="activateInr"
-                  variant="outline-primary"
-                  size="sm"
-                  >{{ minOrMaxInr }}</b-button
-                >
-
-                <div v-if="inrActive">
-                  <br />
-
-                  <b-row>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-inr_min"
-                        v-model="form.inr_min"
-                        type="number"
-                        placeholder="Min"
-                      ></b-form-input>
-                    </b-col>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-inr_max"
-                        v-model="form.inr_max"
-                        type="number"
-                        placeholder="Max"
-                      ></b-form-input>
-                    </b-col>
-                  </b-row>
-                </div>
-              </b-form-group>
-
-              <br />
-            </b-col>
-
-            <b-col>
-              <b-form-group
-                id="input-group-pt"
-                label="Prothrombin Time in seconds:"
-                label-class="font-weight-bold"
-                label-for="input-pt"
-              >
-                <b-button
-                  @click="activatePt"
-                  variant="outline-primary"
-                  size="sm"
-                  >{{ minOrMaxPt }}</b-button
-                >
-
-                <div v-if="ptActive">
-                  <br />
-
-                  <b-row>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-pt_min"
-                        v-model="form.pt_min"
-                        type="number"
-                        placeholder="Min"
-                      ></b-form-input>
-                    </b-col>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-pt_max"
-                        v-model="form.pt_max"
-                        type="number"
-                        placeholder="Max"
-                      ></b-form-input>
-                    </b-col>
-                  </b-row>
-                </div>
-              </b-form-group>
-
-              <br />
-            </b-col>
-          </b-row>
-
-          <b-row>
-            <b-col>
-              <b-form-group
-                id="input-group-sodium"
-                label="Sodium Value:"
-                label-class="font-weight-bold"
-                label-for="input-sodium"
-              >
-                <b-button
-                  @click="activateSodium"
-                  variant="outline-primary"
-                  size="sm"
-                  >{{ minOrMaxSodium }}</b-button
-                >
-
-                <div v-if="sodiumActive">
-                  <br />
-
-                  <b-row>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-sodium_min"
-                        v-model="form.sodium_min"
-                        type="number"
-                        placeholder="Min"
-                      ></b-form-input>
-                    </b-col>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-sodium_max"
-                        v-model="form.sodium_max"
-                        type="number"
-                        placeholder="Max"
-                      ></b-form-input>
-                    </b-col>
-                  </b-row>
-                </div>
-              </b-form-group>
-
-              <br />
-            </b-col>
-            <b-col>
-              <b-form-group
-                id="input-group-bun"
-                label="Urea nitrogen levels:"
-                label-class="font-weight-bold"
-                label-for="input-bun"
-              >
-                <b-button
-                  @click="activateBun"
-                  variant="outline-primary"
-                  size="sm"
-                  >{{ minOrMaxBun }}</b-button
-                >
-
-                <div v-if="bunActive">
-                  <br />
-
-                  <b-row>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-bun_min"
-                        v-model="form.bun_min"
-                        type="number"
-                        placeholder="Min"
-                      ></b-form-input>
-                    </b-col>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-bun_max"
-                        v-model="form.bun_max"
-                        type="number"
-                        placeholder="Max"
-                      ></b-form-input>
-                    </b-col>
-                  </b-row>
-                </div>
-              </b-form-group>
-
-              <br />
-            </b-col>
-
-            <b-col>
-              <b-form-group
-                id="input-group-wbc"
-                label="WBCs per microliter:"
-                label-class="font-weight-bold"
-                label-for="input-wbc"
-              >
-                <b-button
-                  @click="activateWbc"
-                  variant="outline-primary"
-                  size="sm"
-                  >{{ minOrMaxWbc }}</b-button
-                >
-
-                <div v-if="wbcActive">
-                  <br />
-
-                  <b-row>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-wbc_min"
-                        v-model="form.wbc_min"
-                        type="number"
-                        placeholder="Min"
-                      ></b-form-input>
-                    </b-col>
-                    <br />
-                    <b-col>
-                      <b-form-input
-                        id="input-wbc_max"
-                        v-model="form.wbc_max"
-                        type="number"
-                        placeholder="Max"
-                      ></b-form-input>
-                    </b-col>
-                  </b-row>
-                </div>
-              </b-form-group>
-            </b-col>
-          </b-row>
+          <b-col>
+       <b-form-group
+        id="input-group-bicarbonate"
+        label="Bicarbonate Value:"
+        label-class="font-weight-bold"
+        label-for="input-bicarbonate"
+      >
+
+      <b-button @click=activateBicarbonate variant="outline-primary" size="sm">{{ minOrMaxBicarbonate}}</b-button>
+      
+      <div v-if=bicarbonateActive>
+      <br>
+        
+      <b-row>
+        
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-bicarbonate_min"
+          v-model="form.bicarbonate_min"
+          type="number"
+          placeholder="Min"
+          
+        ></b-form-input>
+        </b-col>
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-bicarbonate_max"
+          v-model="form.bicarbonate_max"
+          type="number"
+          placeholder="Max"
+          
+        ></b-form-input>
+        </b-col>
+        </b-row>
+        </div>
+      </b-form-group>
+
+      <br />
+      </b-col>
+        
+        <b-col>
+
+      <b-form-group
+        id="input-group-bilirubin"
+        label="Bilirubin Value:"
+        label-class="font-weight-bold"
+        label-for="input-bilirubin"
+      >
+
+      <b-button @click=activateBilirubin variant="outline-primary" size="sm">{{ minOrMaxBilirubin}}</b-button>
+      
+      <div v-if=bilirubinActive>
+      <br>
+        
+      <b-row>
+        
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-bilirubin_min"
+          v-model="form.bilirubin_min"
+          type="number"
+          placeholder="Min"
+          
+        ></b-form-input>
+        </b-col>
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-bilirubin_max"
+          v-model="form.bilirubin_max"
+          type="number"
+          placeholder="Max"
+          
+        ></b-form-input>
+        </b-col>
+        </b-row>
+        </div>
+      </b-form-group>
+
+      <br />
+      </b-col>
+        
+        <b-col>
+
+      <b-form-group
+        id="input-group-creatinine"
+        label="Creatinine Value:"
+        label-class="font-weight-bold"
+        label-for="input-creatinine"
+      >
+
+      <b-button @click=activateCreatinine variant="outline-primary" size="sm">{{ minOrMaxCreatinine}}</b-button>
+      
+      <div v-if=creatinineActive>
+      <br>
+        
+      <b-row>
+        
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-creatinine_min"
+          v-model="form.creatinine_min"
+          type="number"
+          placeholder="Min"
+          
+        ></b-form-input>
+        </b-col>
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-creatinine_max"
+          v-model="form.creatinine_max"
+          type="number"
+          placeholder="Max"
+          
+        ></b-form-input>
+        </b-col>
+        </b-row>
         </div>
       </b-form-group>
 
       <br />
 
-      <b-form-group
-        id="input-group-8"
-        label="Patient's symptoms:"
-        label-class="font-weight-bold"
-        label-for="input-8"
-      >
-        <vue-bootstrap-typeahead
-          v-model="valueSymp"
-          placeholder="Select Symptoms"
-          :data="this.availableSymptoms"
-          @hit="appendSymptoms"
-        >
-        </vue-bootstrap-typeahead>
+      </b-col>
+        </b-row>
 
-        Selected Symptomes: {{ form.symptoms.join(", ") }}
+         <b-row>
+           <b-col>
+
+      <b-form-group
+        id="input-group-chloride"
+        label="Chloride Value:"
+        label-class="font-weight-bold"
+        label-for="input-chloride"
+      >
+
+      <b-button @click=activateChloride variant="outline-primary" size="sm">{{ minOrMaxChloride}}</b-button>
+      
+      <div v-if=chlorideActive>
+      <br>
+        
+      <b-row>
+        
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-chloride_min"
+          v-model="form.chloride_min"
+          type="number"
+          placeholder="Min"
+          
+        ></b-form-input>
+        </b-col>
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-chloride_max"
+          v-model="form.chloride_max"
+          type="number"
+          placeholder="Max"
+          
+        ></b-form-input>
+        </b-col>
+        </b-row>
+        </div>
       </b-form-group>
 
       <br />
+
+       </b-col>
+        
+        <b-col>
+
+       <b-form-group
+        id="input-group-hematocrit"
+        label="Hematocrit Value:"
+        label-class="font-weight-bold"
+        label-for="input-hematocrit"
+      >
+
+      <b-button @click=activateHematocrit variant="outline-primary" size="sm">{{ minOrMaxHematocrit}}</b-button>
+      
+      <div v-if=hematocritActive>
+      <br>
+        
+      <b-row>
+        
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-hematocrit_min"
+          v-model="form.hematocrit_min"
+          type="number"
+          placeholder="Min"
+          
+        ></b-form-input>
+        </b-col>
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-hematocrit_max"
+          v-model="form.hematocrit_max"
+          type="number"
+          placeholder="Max"
+          
+        ></b-form-input>
+        </b-col>
+        </b-row>
+        </div>
+      </b-form-group>
+
+      <br />
+     </b-col>
+       
+        <b-col>
+
+       <b-form-group
+        id="input-group-hemoglobin"
+        label="Hemoglobin Value:"
+        label-class="font-weight-bold"
+        label-for="input-hemoglobin"
+      >
+
+      <b-button @click=activateHemoglobin variant="outline-primary" size="sm">{{ minOrMaxHemoglobin}}</b-button>
+      
+      <div v-if=hemoglobinActive>
+      <br>
+        
+      <b-row>
+        
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-hemoglobin_min"
+          v-model="form.hemoglobin_min"
+          type="number"
+          placeholder="Min"
+          
+        ></b-form-input>
+        </b-col>
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-hemoglobin_max"
+          v-model="form.hemoglobin_max"
+          type="number"
+          placeholder="Max"
+          
+        ></b-form-input>
+        </b-col>
+        </b-row>
+        </div>
+      </b-form-group>
+
+      <br />
+
+       </b-col>
+        </b-row>
+
+        <b-row>
+<b-col>
+
+      <b-form-group
+        id="input-group-lactate"
+        label="Lactate Value:"
+        label-class="font-weight-bold"
+        label-for="input-lactate"
+      >
+
+      <b-button @click=activateLactate variant="outline-primary" size="sm">{{ minOrMaxLactate}}</b-button>
+      
+      <div v-if=lactateActive>
+      <br>
+        
+      <b-row>
+        
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-lactate_min"
+          v-model="form.lactate_min"
+          type="number"
+          placeholder="Min"
+          
+        ></b-form-input>
+        </b-col>
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-lactate_max"
+          v-model="form.lactate_max"
+          type="number"
+          placeholder="Max"
+          
+        ></b-form-input>
+        </b-col>
+        </b-row>
+        </div>
+      </b-form-group>
+
+      <br />
+ </b-col>
+        
+        <b-col>
+
+      <b-form-group
+        id="input-group-platelet"
+        label="Platelet Value:"
+        label-class="font-weight-bold"
+        label-for="input-platelet"
+      >
+
+      <b-button @click=activatePlatelet variant="outline-primary" size="sm">{{ minOrMaxPlatelet}}</b-button>
+      
+      <div v-if=plateletActive>
+      <br>
+        
+      <b-row>
+        
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-platelet_min"
+          v-model="form.platelet_min"
+          type="number"
+          placeholder="Min"
+          
+        ></b-form-input>
+        </b-col>
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-platelet_max"
+          v-model="form.platelet_max"
+          type="number"
+          placeholder="Max"
+          
+        ></b-form-input>
+        </b-col>
+        </b-row>
+        </div>
+      </b-form-group>
+
+      <br />
+
+
+ </b-col>
+        
+        <b-col>
+
+      <b-form-group
+        id="input-group-potassium"
+        label="Potassium Value:"
+        label-class="font-weight-bold"
+        label-for="input-potassium"
+      >
+
+      <b-button @click=activatePotassium variant="outline-primary" size="sm">{{ minOrMaxPotassium}}</b-button>
+      
+      <div v-if=potassiumActive>
+      <br>
+        
+      <b-row>
+        
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-potassium_min"
+          v-model="form.potassium_min"
+          type="number"
+          placeholder="Min"
+          
+        ></b-form-input>
+        </b-col>
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-potassium_max"
+          v-model="form.potassium_max"
+          type="number"
+          placeholder="Max"
+          
+        ></b-form-input>
+        </b-col>
+        </b-row>
+        </div>
+      </b-form-group>
+
+      <br />
+
+      </b-col>
+        </b-row>
+
+        <b-row>
+           <b-col>
+      
+
+      <b-form-group
+        id="input-group-ptt"
+        label="Partial Thromboplastin Time in seconds:"
+        label-class="font-weight-bold"
+        label-for="input-ptt"
+      >
+
+      <b-button @click=activatePtt variant="outline-primary" size="sm">{{ minOrMaxPtt}}</b-button>
+      
+      <div v-if=pttActive>
+      <br>
+        
+      <b-row>
+        
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-ptt_min"
+          v-model="form.ptt_min"
+          type="number"
+          placeholder="Min"
+          
+        ></b-form-input>
+        </b-col>
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-ptt_max"
+          v-model="form.ptt_max"
+          type="number"
+          placeholder="Max"
+          
+        ></b-form-input>
+        </b-col>
+        </b-row>
+        </div>
+      </b-form-group>
+
+      <br />
+
+
+</b-col>
+        
+        <b-col>
+       <b-form-group
+        id="input-group-inr"
+        label="International Normalized Ratio:"
+        label-class="font-weight-bold"
+        label-for="input-inr"
+      >
+
+      <b-button @click=activateInr variant="outline-primary" size="sm">{{ minOrMaxInr}}</b-button>
+      
+      <div v-if=inrActive>
+      <br>
+        
+      <b-row>
+        
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-inr_min"
+          v-model="form.inr_min"
+          type="number"
+          placeholder="Min"
+          
+        ></b-form-input>
+        </b-col>
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-inr_max"
+          v-model="form.inr_max"
+          type="number"
+          placeholder="Max"
+          
+        ></b-form-input>
+        </b-col>
+        </b-row>
+        </div>
+      </b-form-group>
+
+      <br />
+
+      </b-col>
+        
+        <b-col>
+
+
+      <b-form-group
+        id="input-group-pt"
+        label="Prothrombin Time in seconds:"
+        label-class="font-weight-bold"
+        label-for="input-pt"
+      >
+
+      <b-button @click=activatePt variant="outline-primary" size="sm">{{ minOrMaxPt}}</b-button>
+      
+      <div v-if=ptActive>
+      <br>
+        
+      <b-row>
+        
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-pt_min"
+          v-model="form.pt_min"
+          type="number"
+          placeholder="Min"
+          
+        ></b-form-input>
+        </b-col>
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-pt_max"
+          v-model="form.pt_max"
+          type="number"
+          placeholder="Max"
+          
+        ></b-form-input>
+        </b-col>
+        </b-row>
+        </div>
+      </b-form-group>
+
+      <br />
+
+      </b-col>
+        </b-row>
+
+         <b-row>
+           <b-col>
+
+
+       <b-form-group
+        id="input-group-sodium"
+        label="Sodium Value:"
+        label-class="font-weight-bold"
+        label-for="input-sodium"
+      >
+
+      <b-button @click=activateSodium variant="outline-primary" size="sm">{{ minOrMaxSodium}}</b-button>
+      
+      <div v-if=sodiumActive>
+      <br>
+        
+      <b-row>
+        
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-sodium_min"
+          v-model="form.sodium_min"
+          type="number"
+          placeholder="Min"
+          
+        ></b-form-input>
+        </b-col>
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-sodium_max"
+          v-model="form.sodium_max"
+          type="number"
+          placeholder="Max"
+          
+        ></b-form-input>
+        </b-col>
+        </b-row>
+        </div>
+      </b-form-group>
+
+      <br />
+
+      </b-col>
+        <b-col>
+
+       <b-form-group
+        id="input-group-bun"
+        label="Urea nitrogen levels:"
+        label-class="font-weight-bold"
+        label-for="input-bun"
+      >
+
+      <b-button @click=activateBun variant="outline-primary" size="sm">{{ minOrMaxBun}}</b-button>
+      
+      <div v-if=bunActive>
+      <br>
+        
+      <b-row>
+        
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-bun_min"
+          v-model="form.bun_min"
+          type="number"
+          placeholder="Min"
+          
+        ></b-form-input>
+        </b-col>
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-bun_max"
+          v-model="form.bun_max"
+          type="number"
+          placeholder="Max"
+          
+        ></b-form-input>
+        </b-col>
+        </b-row>
+        </div>
+      </b-form-group>
+
+      <br />
+
+
+      </b-col>
+      
+        <b-col>
+
+
+      <b-form-group
+        id="input-group-wbc"
+        label="WBCs per microliter:"
+        label-class="font-weight-bold"
+        label-for="input-wbc"
+      >
+
+      <b-button @click=activateWbc variant="outline-primary" size="sm">{{ minOrMaxWbc}}</b-button>
+      
+      <div v-if=wbcActive>
+      <br>
+        
+      <b-row>
+        
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-wbc_min"
+          v-model="form.wbc_min"
+          type="number"
+          placeholder="Min"
+          
+        ></b-form-input>
+        </b-col>
+        <br>
+        <b-col>
+        <b-form-input
+          id="input-wbc_max"
+          v-model="form.wbc_max"
+          type="number"
+          placeholder="Max"
+          
+        ></b-form-input>
+        </b-col>
+        </b-row>
+        </div>
+      </b-form-group>
+
+      </b-col>
+        </b-row>
+
+      </div>
+
+      </b-form-group>
+     
+
+
+      <br>
+
+
+
+    
+
+
+      
+   <diagnoses @clicked="submit"></diagnoses>
+     
+     
+    <br>
 
       <b-form-group
         id="input-group-history"
@@ -1480,25 +1501,28 @@
       </b-form-group>
 
       <br />
-
-      <b-form-group
-        id="input-group-ac"
-        label="Patient's accident causes:"
+   
+      
+ <b-form-group
+        id="input-group-8"
+        label="Patient's Accident Cause:"
         label-class="font-weight-bold"
-        label-for="input-8"
+        label-for= "Type in Accident Causes and press Enter"
       >
-        <vue-bootstrap-typeahead
-          v-model="valueAccidentCauses"
-          placeholder="Select Accident Causes"
-          :data="this.availableAC"
-          @hit="appendAC"
-        >
-        </vue-bootstrap-typeahead>
+    
 
-        Selected AccidentCauses: {{ form.accident_causes.join(", ") }}
+    <b-form-tags 
+    input-id="input-accidentCauses" 
+    v-model="form.accident_causes"
+    placeholder="Enter Accident Causes Code">
+    </b-form-tags>
+      
+
       </b-form-group>
 
-      <br />
+     
+      
+    <br>
       <b-form-group
         id="input-group-8"
         label="Patient's diagnoses:"
@@ -1515,6 +1539,7 @@
 
         Selected Diagnoses: {{ form.diagnoses.join(", ") }}
       </b-form-group>
+
 
       <b-button
         style="margin-bottom:30px"
@@ -1533,70 +1558,76 @@
 <script>
 import PatientService from "../services/PatientService";
 import DiagnosesService from "../services/DiagnosesService";
+import Diagnoses from "../components/Diagnoses.vue"
 
 export default {
+  components:{
+    Diagnoses
+  },
   data() {
     return {
       username: "",
       availableDiagnoses: [],
       valueDiag: "",
       valueHist: "",
-      valueSymp: "",
-      gcsMotor: null,
-      gcsMotorOptions: [
-        { value: null, text: "Best motor response" },
-        { value: 1, text: "No movement" },
-        { value: 2, text: "Stretch synergies" },
-        { value: 3, text: "Flex synergies" },
-        { value: 4, text: "Incomplete defense" },
-        { value: 5, text: "Specific defence" },
-        { value: 6, text: "Adequate" },
-      ],
+       gcsMotor: null,
+        gcsMotorOptions: [
+          { value: null, text: "Best motor response" },
+          { value: 1, text: 'No movement' },
+          { value: 2, text: 'Stretch synergies' },
+          { value: 3, text: 'Flex synergies' },
+          { value: 4, text: 'Incomplete defense' },
+          { value: 5, text: 'Specific defence' },
+          { value: 6, text: 'Adequate' },
+        ],
 
-      gcsVerbal: null,
-      gcsVerbalOptions: [
-        { value: null, text: "Best verbal response" },
-        { value: 1, text: "None" },
-        { value: 2, text: "Incomprehensible" },
-        { value: 3, text: "Confused" },
-        { value: 4, text: "Incompletely oriented" },
-        { value: 5, text: "Fully oriented" },
-      ],
+          gcsVerbal: null,
+        gcsVerbalOptions: [
+          { value: null, text: "Best verbal response" },
+          { value: 1, text: 'None' },
+          { value: 2, text: 'Incomprehensible' },
+          { value: 3, text: 'Confused' },
+          { value: 4, text: 'Incompletely oriented' },
+          { value: 5, text: 'Fully oriented' },
+        ],
 
-      gcsEyes: null,
-      gcsEyesOptions: [
-        { value: null, text: "Best eye response" },
-        { value: 1, text: "No eye opening" },
-        { value: 2, text: "Reaction to pain stimulus" },
-        { value: 3, text: "Reaction to prompt" },
-        { value: 4, text: "Spontaneous" },
-      ],
-      heartrateActive: false,
-      bloodpressureActive: false,
-      glucoseActive: false,
-      resprateActive: false,
-      spo2Active: false,
-      gcsActive: false,
-      anionGapActive: false,
-      albuminActive: false,
-      ibfActive: false,
-      bicarbonateActive: false,
-      bilirubinActive: false,
-      creatinineActive: false,
-      chlorideActive: false,
-      hematocritActive: false,
-      hemoglobinActive: false,
-      lactateActive: false,
-      plateletActive: false,
-      potassiumActive: false,
-      pttActive: false,
-      inrActive: false,
-      ptActive: false,
-      sodiumActive: false,
-      bunActive: false,
-      wbcActive: false,
-      labValuesActive: false,
-      tempActive: false,
+         gcsEyes: null,
+        gcsEyesOptions: [
+          { value: null, text: "Best eye response" },
+          { value: 1, text: 'No eye opening' },
+          { value: 2, text: 'Reaction to pain stimulus' },
+          { value: 3, text: 'Reaction to prompt' },
+          { value: 4, text: 'Spontaneous' },
+        ],
+      heartrateActive:false,
+      bloodpressureActive:false, 
+      glucoseActive:false, 
+      resprateActive:false, 
+      spo2Active:false,
+      gcsActive:false,
+      anionGapActive:false,
+      albuminActive:false,
+      ibfActive:false,
+      bicarbonateActive:false,
+      bilirubinActive:false,
+      creatinineActive:false,
+      chlorideActive:false,
+      hematocritActive:false,
+      hemoglobinActive:false,
+      lactateActive:false,
+      plateletActive:false,
+      potassiumActive:false,
+      pttActive:false,
+      inrActive:false,
+      ptActive:false,
+      sodiumActive:false,
+      bunActive:false,
+      wbcActive:false,
+      labValuesActive:false,
+      tempActive:false,
+      
+
+    
 
       form: {
         name: "",
@@ -1604,14 +1635,14 @@ export default {
         gender: "",
         weight: "",
         height: "",
-        hospstay_seq: "",
+       hospstay_seq: "",
         total_hospstays: "",
         length_of_stay_hospital: "",
         number_of_icu_stays: "",
         length_of_stay_icu: "",
         total_length_of_stay_icu: "",
-        days_to_death: "",
-        died_in_hospital: "",
+    //    days_to_death: "",
+    //  died_in_hospital: "",
         heartrate_mean: "",
         heartrate_min: "",
         heartrate_max: "",
@@ -1623,7 +1654,7 @@ export default {
         resprate_mean: "",
         tempc_mean: "",
         tempc_min: "",
-        tempc_max: "",
+        tempc_max:"",
         glucose_min: "",
         glucose_max: "",
         glucose_mean: "",
@@ -1677,6 +1708,7 @@ export default {
         accident_causes: [],
         diagnoses: [],
       },
+     
     };
   },
 
@@ -1701,328 +1733,338 @@ export default {
       console.log("unable to fetch diagnoses from server");
     }
   },
-  computed: {
-    minOrMaxHr() {
-      if (this.heartrateActive) {
+  computed:{
+    minOrMaxHr(){
+      if(this.heartrateActive){
         return "-";
-      } else {
+      }else{
         return "+";
       }
-    },
-    minOrMaxBp() {
-      if (this.bloodpressureActive) {
+    }, 
+    minOrMaxBp(){
+      if(this.bloodpressureActive){
         return "-";
-      } else {
+      }else{
         return "+";
       }
-    },
-    minOrMaxGl() {
-      if (this.glucoseActive) {
+    }, 
+      minOrMaxGl(){
+      if(this.glucoseActive){
         return "-";
-      } else {
+      }else{
         return "+";
       }
-    },
-    minOrMaxRe() {
-      if (this.resprateActive) {
+    }, 
+    minOrMaxRe(){
+      if(this.resprateActive){
         return "-";
-      } else {
+      }else{
+        return "+";
+      }
+    }, 
+
+     minOrMaxTemp(){
+      if(this.tempActive){
+        return "-";
+      }else{
+        return "+";
+      }
+    }, 
+
+     minOrMaxSpo2(){
+      if(this.spo2Active){
+        return "-";
+      }else{
+        return "+";
+      }
+    }, 
+
+     minOrMaxGcs(){
+      if(this.gcsActive){
+        return "-";
+      }else{
         return "+";
       }
     },
 
-    minOrMaxTemp() {
-      if (this.tempActive) {
+     minOrMaxAnionGap(){ 
+      if(this.anionGapActive){
         return "-";
-      } else {
+      }else{
         return "+";
       }
     },
 
-    minOrMaxSpo2() {
-      if (this.spo2Active) {
+      minOrMaxAlbumin(){ 
+      if(this.albuminActive){
         return "-";
-      } else {
+      }else{
         return "+";
       }
     },
 
-    minOrMaxGcs() {
-      if (this.gcsActive) {
+       minOrMaxIbf(){ 
+      if(this.ibfActive){
         return "-";
-      } else {
+      }else{
         return "+";
       }
     },
 
-    minOrMaxAnionGap() {
-      if (this.anionGapActive) {
+     minOrMaxBicarbonate(){ 
+      if(this.bicarbonateActive){
         return "-";
-      } else {
+      }else{
         return "+";
       }
     },
 
-    minOrMaxAlbumin() {
-      if (this.albuminActive) {
+     minOrMaxBilirubin(){ 
+      if(this.bilirubinActive){
         return "-";
-      } else {
+      }else{
         return "+";
       }
     },
 
-    minOrMaxIbf() {
-      if (this.ibfActive) {
+     minOrMaxCreatinine(){ 
+      if(this.creatinineActive){
         return "-";
-      } else {
+      }else{
         return "+";
       }
     },
 
-    minOrMaxBicarbonate() {
-      if (this.bicarbonateActive) {
+     minOrMaxChloride(){ 
+      if(this.chlorideActive){
         return "-";
-      } else {
+      }else{
         return "+";
       }
     },
 
-    minOrMaxBilirubin() {
-      if (this.bilirubinActive) {
+
+     minOrMaxHematocrit(){ 
+      if(this.hematocritActive){
         return "-";
-      } else {
+      }else{
         return "+";
       }
     },
 
-    minOrMaxCreatinine() {
-      if (this.creatinineActive) {
+     minOrMaxHemoglobin(){ 
+      if(this.hemoglobinActive){
         return "-";
-      } else {
+      }else{
         return "+";
       }
     },
 
-    minOrMaxChloride() {
-      if (this.chlorideActive) {
+
+
+         minOrMaxLactate(){ 
+      if(this.lactateActive){
         return "-";
-      } else {
+      }else{
         return "+";
       }
     },
 
-    minOrMaxHematocrit() {
-      if (this.hematocritActive) {
+    minOrMaxPlatelet(){ 
+      if(this.plateletActive){
         return "-";
-      } else {
+      }else{
         return "+";
       }
     },
 
-    minOrMaxHemoglobin() {
-      if (this.hemoglobinActive) {
+      minOrMaxPotassium(){ 
+      if(this.potassiumActive){
         return "-";
-      } else {
+      }else{
         return "+";
       }
     },
 
-    minOrMaxLactate() {
-      if (this.lactateActive) {
+      minOrMaxPtt(){ 
+      if(this.pttActive){
         return "-";
-      } else {
+      }else{
         return "+";
       }
     },
 
-    minOrMaxPlatelet() {
-      if (this.plateletActive) {
+      minOrMaxInr(){ 
+      if(this.inrActive){
         return "-";
-      } else {
+      }else{
         return "+";
       }
     },
 
-    minOrMaxPotassium() {
-      if (this.potassiumActive) {
+    minOrMaxPt(){ 
+      if(this.ptActive){
         return "-";
-      } else {
+      }else{
         return "+";
       }
     },
 
-    minOrMaxPtt() {
-      if (this.pttActive) {
+  minOrMaxSodium(){ 
+    if(this.sodiumActive){
         return "-";
-      } else {
+    } else{
         return "+";
       }
     },
 
-    minOrMaxInr() {
-      if (this.inrActive) {
+      minOrMaxBun(){ 
+    if(this.bunActive){
         return "-";
-      } else {
+    } else{
         return "+";
       }
     },
 
-    minOrMaxPt() {
-      if (this.ptActive) {
+    minOrMaxWbc(){ 
+    if(this.wbcActive){
         return "-";
-      } else {
+    } else{
         return "+";
       }
     },
 
-    minOrMaxSodium() {
-      if (this.sodiumActive) {
+    minOrMaxLabValues(){ 
+    if(this.labValuesActive){
         return "-";
-      } else {
+    } else{
         return "+";
       }
     },
 
-    minOrMaxBun() {
-      if (this.bunActive) {
-        return "-";
-      } else {
-        return "+";
-      }
-    },
-
-    minOrMaxWbc() {
-      if (this.wbcActive) {
-        return "-";
-      } else {
-        return "+";
-      }
-    },
-
-    minOrMaxLabValues() {
-      if (this.labValuesActive) {
-        return "-";
-      } else {
-        return "+";
-      }
-    },
   },
   methods: {
-    activateBp() {
-      this.bloodpressureActive = !this.bloodpressureActive;
-    },
-    activateHr() {
-      this.heartrateActive = !this.heartrateActive;
-    },
-    activateGl() {
-      this.glucoseActive = !this.glucoseActive;
-    },
-    activateRe() {
-      this.resprateActive = !this.resprateActive;
+
+    
+
+    activateBp(){
+      this.bloodpressureActive=!this.bloodpressureActive; 
+    }, 
+    activateHr(){
+      this.heartrateActive=!this.heartrateActive; 
+    }, 
+    activateGl(){
+      this.glucoseActive=!this.glucoseActive; 
+    }, 
+    activateRe(){
+      this.resprateActive=!this.resprateActive;
     },
 
-    activateTemp() {
-      this.tempActive = !this.tempActive;
+    activateTemp(){
+      this.tempActive=!this.tempActive;
     },
 
-    activateSpo2() {
-      this.spo2Active = !this.spo2Active;
+    activateSpo2(){
+      this.spo2Active=!this.spo2Active; 
+    },
+    
+     activateGcs(){
+      this.gcsActive=!this.gcsActive; 
+    }, 
+
+    activateAnionGap () {
+      this.anionGapActive=!this.anionGapActive;
     },
 
-    activateGcs() {
-      this.gcsActive = !this.gcsActive;
+    activateAlbumin () {
+      this.albuminActive=!this.albuminActive;
     },
 
-    activateAnionGap() {
-      this.anionGapActive = !this.anionGapActive;
+    activateIbf () {
+      this.ibfActive=!this.ibfActive;
     },
 
-    activateAlbumin() {
-      this.albuminActive = !this.albuminActive;
+    activateBicarbonate () {
+      this.bicarbonateActive=!this.bicarbonateActive;
     },
 
-    activateIbf() {
-      this.ibfActive = !this.ibfActive;
+    activateBilirubin () {
+      this.bilirubinActive=!this.bilirubinActive;
     },
 
-    activateBicarbonate() {
-      this.bicarbonateActive = !this.bicarbonateActive;
+     activateCreatinine () {
+      this.creatinineActive=!this.creatinineActive;
     },
 
-    activateBilirubin() {
-      this.bilirubinActive = !this.bilirubinActive;
+     activateChloride () {
+      this.chlorideActive=!this.chlorideActive;
     },
 
-    activateCreatinine() {
-      this.creatinineActive = !this.creatinineActive;
+      activateHematocrit () {
+      this.hematocritActive=!this.hematocritActive;
     },
 
-    activateChloride() {
-      this.chlorideActive = !this.chlorideActive;
+      activateHemoglobin () {
+      this.hemoglobinActive=!this.hemoglobinActive;
     },
 
-    activateHematocrit() {
-      this.hematocritActive = !this.hematocritActive;
+      activateLactate () {
+      this.lactateActive=!this.lactateActive;
     },
 
-    activateHemoglobin() {
-      this.hemoglobinActive = !this.hemoglobinActive;
+
+      activatePlatelet () {
+      this.plateletActive=!this.plateletActive;
     },
 
-    activateLactate() {
-      this.lactateActive = !this.lactateActive;
+      activatePotassium () {
+      this.potassiumActive=!this.potassiumActive;
     },
 
-    activatePlatelet() {
-      this.plateletActive = !this.plateletActive;
+     activatePtt () {
+      this.pttActive=!this.pttActive;
     },
 
-    activatePotassium() {
-      this.potassiumActive = !this.potassiumActive;
+    activateInr () {
+      this.inrActive=!this.inrActive;
     },
 
-    activatePtt() {
-      this.pttActive = !this.pttActive;
+    activatePt () {
+      this.ptActive=!this.ptActive;
     },
 
-    activateInr() {
-      this.inrActive = !this.inrActive;
+    activateSodium () {
+      this.sodiumActive=!this.sodiumActive;
     },
 
-    activatePt() {
-      this.ptActive = !this.ptActive;
-    },
-
-    activateSodium() {
-      this.sodiumActive = !this.sodiumActive;
-    },
 
     activateBun() {
-      this.bunActive = !this.bunActive;
+      this.bunActive=!this.bunActive;
     },
 
-    activateWbc() {
-      this.wbcActive = !this.wbcActive;
-    },
+     activateWbc(){
+      this.wbcActive=!this.wbcActive; 
+    }, 
 
-    activateLabValues() {
-      this.labValuesActive = !this.labValuesActive;
-    },
+    activateLabValues(){
+      this.labValuesActive=!this.labValuesActive; 
+    }, 
 
-    logout() {
+   
+    
+      logout() {
       this.$router.push("/");
       this.$store.dispatch("logout");
     },
 
-    appendSymptoms() {
-      this.form.symptoms.push(this.valueSymp);
-      this.valueSymp = "";
-    },
+  
+
 
     appendAC() {
       this.form.accident_causes.push(this.valueAC);
       this.valueAC = "";
     },
+   
     appendDiagnoses() {
       this.form.diagnoses.push(this.valueDiag);
       this.valueDiag = "";
@@ -2037,56 +2079,33 @@ export default {
       return this.availableDiagnoses;
     },
 
-    async submit() {
-      if (this.form.meanbp_mean == "") {
-        this.form.meanbp_mean = this.defaultBpMean;
-      }
-      if (this.form.meanbp_min == "") {
-        this.form.meanbp_min = this.defaultBpMin;
-      }
-      if (this.form.meanbp_max == "") {
-        this.form.meanbp_max = this.defaultBpMax;
-      }
+    
 
-      if (this.form.glucose_min == "") {
-        this.form.glucose_min = this.defaultGlMin;
-      }
-      if (this.form.glucose_mean == "") {
-        this.form.glucose_mean = this.defaultGlMean;
-      }
-      if (this.form.glucose_max == "") {
-        this.form.glucose_max = this.defaultGlMax;
-      }
+    async submit(symptoms) {
 
-      if (this.form.resprate_mean == "") {
-        this.form.resprate_mean = this.defaultReMean;
-      }
-      if (this.form.resprate_min == "") {
-        this.form.resprate_min = this.defaultReMin;
-      }
-      if (this.form.resprate_max == "") {
-        this.form.resprate_max = this.defaultReMax;
-      }
+      this.form.symptoms = symptoms;
+      
+      
 
       try {
         const patientObject = {
           patient: {
             name: this.form.name,
-
+            
             dateOfBirth: this.form.dateOfBirth,
             gender: this.form.gender,
             weight: this.form.weight,
             height: this.form.height,
             medicalData: {
-              hospstay_seq: this.form.hospstay_seq,
-              total_hospstays: this.form.total_hospstays,
-              length_of_stay_hospital: this.form.length_of_stay_hospital,
-              icustay_seq: 1,
-              number_of_icu_stays: this.form.number_of_icu_stays,
-              length_of_stay_icu: this.form.length_of_stay_icu,
-              total_length_of_stay_icu: this.form.total_length_of_stay_icu,
-              days_to_death: this.form.days_to_death,
-              died_in_hospital: this.form.died_in_hospital,
+           hospstay_seq: this.form.hospstay_seq,
+            total_hospstays: this.form.total_hospstays,
+            length_of_stay_hospital: this.form.length_of_stay_hospital,
+            icustay_seq: 1,
+            number_of_icu_stays: this.form.number_of_icu_stays,
+            length_of_stay_icu: this.form.length_of_stay_icu,
+            total_length_of_stay_icu: this.form.total_length_of_stay_icu,
+        //    days_to_death: this.form.days_to_death,
+       //     died_in_hospital: this.form.died_in_hospital,
               heartrate: {
                 mean: this.form.heartrate_mean,
                 min: this.form.heartrate_min,
@@ -2106,7 +2125,7 @@ export default {
                 min: this.form.tempc_min,
                 max: this.form.tempc_max,
                 mean: this.form.tempc_mean,
-              },
+              }, 
               spo2: {
                 min: this.form.spo2_min,
                 max: this.form.spo2_max,
@@ -2120,24 +2139,23 @@ export default {
               received_dialysis: this.form.received_dialysis,
               received_ventilation: this.form.received_ventilation,
               urineoutput: this.form.urineoutput,
-
-              gcsmotor: this.form.gcsMotor,
-              gcsverbal: this.form.gcsVerbal,
-              gcseyes: this.form.gcsEyes,
-              mingcs:
-                this.form.gcsMotor + this.form.gcsVerbal + this.form.gcsEyes,
-
+              
+                gcsmotor: this.form.gcsMotor,
+                gcsverbal: this.form.gcsVerbal,
+                gcseyes: this.form.gcsEyes,
+                mingcs: this.form.gcsMotor + this.form.gcsVerbal + this.form.gcsEyes,
+              
               aniongap: {
-                min: this.form.aniongap_min,
-                max: this.form.aniongap_max,
+                min: this.form.anionGap_min,
+                max: this.form.anionGap_max,
               },
               albumin: {
                 min: this.form.albumin_min,
                 max: this.form.albumin_max,
               },
               bands: {
-                min: this.form.bands_min,
-                max: this.form.bands_max,
+                min: this.form.ibf_min,
+                max: this.form.ibf_max,
               },
               bicarbonate: {
                 min: this.form.bicarbonate_min,
@@ -2159,11 +2177,11 @@ export default {
                 min: this.form.hematocrit_min,
                 max: this.form.hematocrit_max,
               },
-              hemoglobin: {
+               hemoglobin: {
                 min: this.form.hemoglobin_min,
                 max: this.form.hemoglobin_max,
               },
-              lactate: {
+               lactate: {
                 min: this.form.lactate_min,
                 max: this.form.lactate_max,
               },
@@ -2199,13 +2217,15 @@ export default {
                 min: this.form.wbc_min,
                 max: this.form.wbc_max,
               },
+            
               symptoms: this.form.symptoms,
               patient_history: this.form.patient_history,
-              accident_causes: this.fomr.accident_causes,
+              accident_causes: this.form.accident_causes,
               diagnoses: this.form.diagnoses,
             },
           },
         };
+        console.log(patientObject)
         const response = await PatientService.createPatient(patientObject);
         this.msg = response.msg;
       } catch (error) {
