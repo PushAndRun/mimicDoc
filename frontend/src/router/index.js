@@ -8,6 +8,7 @@ import AdminHome from '../components/AdminHome'
 import UserManagement from '../components/UserManagement'
 import AllPatients from '../components/AllPatients'
 import SinglePatient from '../components/SinglePatient'
+import Diagnoses from '../components/Diagnoses'
 
 
 Vue.use(Router)
@@ -55,6 +56,11 @@ export default new Router ({
         path:"/singlePatient", 
         name: "SinglePatient", 
         component:SinglePatient
+        },
+        {
+        path:"/diagnoses", 
+        name: "Diagnoses", 
+        component:Diagnoses
         }
     ]
 })

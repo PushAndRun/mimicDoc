@@ -1,8 +1,36 @@
 <template>
-<div>
+    <div>
+      
+  <b-navbar toggleable="false" type="dark" variant="dark">
+    <b-navbar-brand style="color:white">RoboDoc</b-navbar-brand>
 
+     <b-navbar-toggle target="navbar-toggle-collapse" style="color:white;">
+        Menu
+    </b-navbar-toggle>
 
-<b-form-group
+    <b-collapse id="navbar-toggle-collapse" is-nav>
+      <b-navbar-nav class="ml-auto" >
+          <b-nav-item> <router-link style="text-decoration: none; color:white" to="/homepage" >Homepage</router-link></b-nav-item>
+          <b-nav-item><router-link style="text-decoration: none; color:white " to="/patients">View all your Patients </router-link></b-nav-item>
+          <b-nav-item><router-link style="text-decoration: none; color:white " to="/form">Submit new Patient</router-link></b-nav-item>
+          
+          <b-nav-item  @click="logout"><p style="color:white">Sign Out</p></b-nav-item>
+      </b-navbar-nav>
+    </b-collapse>
+  </b-navbar>
+
+        <br>
+        <br>
+        <br>
+        <h2>Diagnosis suggestion</h2>
+        <br>
+        Here you can have diagnoses suggested based on your patient's symptoms
+
+        <br>
+        <br>
+        <br>
+
+  <b-form-group size="mg" class="id"
         id="input-group-8"
         label="Patient's symptoms:"
         label-class="font-weight-bold"
@@ -78,6 +106,10 @@ export default {
     },
 
     methods:{
+       logout(){
+        this.$store.dispatch('logout'); 
+        this.$router.push('/');
+      },
 
 
 
@@ -86,7 +118,7 @@ export default {
     async getDiagnoses(){
 
 
-      this.$emit('clicked', this.symptoms)
+      
 
     
 
@@ -142,5 +174,12 @@ computed:{
 </script>
 
 <style scoped>
+
+ .id {
+        margin-top: 50px;
+        margin-left: 150px;
+        margin-right: 150px;
+        margin-bottom: 150px;
+    }
 
 </style>

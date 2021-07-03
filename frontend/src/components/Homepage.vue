@@ -14,6 +14,8 @@
       <b-navbar-nav class="ml-auto" >
           <b-nav-item> <router-link style="text-decoration: none; color:white" to="/form" >Submit new Patient</router-link></b-nav-item>
           <b-nav-item><router-link style="text-decoration: none; color:white " to="/patients">View all your Patients </router-link></b-nav-item>
+          <b-nav-item><router-link style="text-decoration: none; color:white " to="/Diagnoses">Get a diagnosis suggest</router-link></b-nav-item>
+          
           <b-nav-item  @click="logout"><p style="color:white">Sign Out</p></b-nav-item>
       </b-navbar-nav>
     </b-collapse>
