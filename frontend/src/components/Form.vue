@@ -1477,7 +1477,7 @@
 
 
       
-   <diagnoses @clicked="submit"></diagnoses>
+   <diagnoses @clicked="symptomsToForm"></diagnoses>
      
      
     <br>
@@ -1944,6 +1944,10 @@ export default {
 
   },
   methods: {
+    symptomsToForm(symptoms){
+          this.form.symptoms = symptoms
+          console.log(this.form.symptoms)
+    },
 
     
 
@@ -2081,9 +2085,9 @@ export default {
 
     
 
-    async submit(symptoms) {
+    async submit() {
 
-      this.form.symptoms = symptoms;
+      
       
       
 
