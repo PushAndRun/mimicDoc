@@ -3,8 +3,8 @@ var express = require('express')
 var router = express.Router()
 const csv = require('csv-parser')
 const fs = require('fs')
-const diagnoses = './diagnoses_dict.csv'
-const symptoms = './symptoms_dict.csv'
+const diagnoses = './ml/diagnoses_dict.csv'
+const symptoms = './ml/symptoms_dict.csv'
 const mcid = './icd9.csv'
 let csvData = []
 let csvDataSymptoms = []
@@ -32,6 +32,7 @@ const loadMCIDs = () => {
     })
     .on('end',()=>{console.log('csv McIds loaded')})
 }
+
 
 loadDiagnoses()
 loadSymptoms()

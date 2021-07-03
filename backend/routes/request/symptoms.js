@@ -15,6 +15,43 @@ function isEmptyObject(obj) {
   return !Object.keys(obj).length;
 }
 
+async function lookUpPatches(cards){
+    console.log("looking up missing malacards in icd9 info")
+    let patches = []
+    let fixedCards = cards.map((card, index) => {
+        let mala = card.value;
+        if (!mala) {
+          // use icd9 code and title
+          patches.push(DiagnosisModel.findOne({ icd9_code: diseases[index] }).exec());
+          return {mcId: "not found"}
+        } else {
+          return {
+            mcId: mala.McId,
+            disease: mala.DiseaseName,
+            summary: mala.Summaries[0].Summary,
+            source: mala.Summaries[0].Source,
+          };
+        }
+      });
+      return [fixedCards, await Promise.allSettled(patches)]
+}
+async function fixPatches(cards, patches){
+    console.log("patching missing info")
+    return cards.map((card) => {
+        if (card.mcId == "not found") {
+            let info = patches.shift().value;
+            return {  
+              mcId:"[ICD9CM]:"+info.icd9_code,
+              disease: info.short_title,
+              summary: info.long_title+" - summary not found",
+              source : "---"
+            }
+        } else {
+          return card
+        }
+      });
+}
+
 router.post("/", (req, res, next) => {
   //res.data = JSON.parse(req.body)
   //if(isEmptyObject(res.data)){
@@ -43,42 +80,44 @@ router.post("/", async (req, res, next) => {
   // MALACARDS SETUP - Leon
   // get script output
   let output = await predict("predict_diagnoses.py", symptoms);
-  deseases = JSON.parse(output).diagnoses;
-  console.log("parsed:" + deseases);
-  let cards = deseases.map(async (icd9) => {
+  diseases = JSON.parse(output).diagnoses;
+  console.log("parsed:", diseases);
+  let cards = diseases.map(async (icd9) => {
     // ICD9 -> MC-ID
     let mcid = icd9ToMCID[icd9];
     console.log("icd9, mcid:", icd9, mcid);
     // get Malacard info
-    return await MalaCard.findOne({ McId: mcid }, (err, doc) =>{
-        if (err){
-            console.log("lookup error on "+mcid+": "+err)
-        }
-        else if (!doc) {
-            console.log("could not find malacard with "+mcid)
-        } else {
-            console.log("found "+mcid+": "+err)
-        }
+    return await MalaCard.findOne({ McId: mcid }, (err, doc) => {
+      if (err) {
+        console.log("lookup error on " + mcid + ": " + err);
+      } else if (!doc) {
+        console.log("could not find malacard with " + mcid);
+      } else {
+        console.log("found " + mcid);
+      }
     }).exec();
   });
-  cards = await Promise.allSettled(cards);
-  console.log("cards: ", cards);
-  deseases = cards.map((card) => {
-    let mala = card.value;
-    if (!mala) {
-      console.log("could not find MCard");
-      return {};
-    }
-    return {
-      icd9cm: icd9,
-      mcId: mcid,
-      desease: mala.DeseaseName,
+    Promise.allSettled(cards)
+    .then(await lookUpPatches)
+    .then(([cards,patches]) => fixPatches(cards, patches))
+    .then(cards => {
+        console.log("sending: ",cards);
+        res.status(200).send(cards);
+    })
+  /*
+  return {  
+    mcId:"[ICD9CM]:"+info.icd_9code,
+    disease: info.short_title,
+    summary: info.long_title+" - summary not found",
+    source : "---"
+  };
+      return {
+      mcId: mala.McId,
+      disease: mala.DiseaseName,
       summary: mala.Summaries[0].Summary,
       source: mala.Summaries[0].Source,
     };
-  });
-
-  res.status(200).send(deseases);
+  */
 
   // format and send
 
