@@ -7,9 +7,7 @@ const icd9ToMCID = require("../endpoints").csvDataMCID;
 
 const verifyToken = require("../auth/VerifyToken");
 const predict = require("../predict");
-const { json } = require("express");
-const { wait } = require("assume");
-const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
 
 function isEmptyObject(obj) {
   return !Object.keys(obj).length;
@@ -29,9 +27,8 @@ async function lookUpPatches(cards) {
   console.log("looking up missing malacards in icd9 info");
   let patches = [];
   let fixedCards = cards.map(async (cards, index) => {
-    console.log("looking up cards", cards)
+    console.log("looking up cards")
     let mala = await getFirstSuccessfulLookup(cards);
-    console.log("mala:",mala);
     if (!mala) {
       // use icd9 code and title
       patches.push(
@@ -100,6 +97,10 @@ router.post("/", async (req, res, next) => {
     // ICD9 -> MC-ID
     let mcids = icd9ToMCID[icd9.substring(0, 3)];
     console.log("icd9, mcid:", icd9, mcids);
+    // check if at least one MCID was found
+    if (!mcids) {
+      return [Promise.resolve(null)]
+    }
     // get Malacard info
     let querys =  mcids.map( async (mcid) => {
       return MalaCard.findOne({ McId: mcid }, (err, doc) => {
@@ -115,7 +116,6 @@ router.post("/", async (req, res, next) => {
     console.log("querys for ", mcids," : ", querys);
     return querys
   });
-  console.log("flat:", cards.flat(Infinity), " vs stacked:",cards);
   Promise.allSettled(cards.flat(Infinity))
     .then(async () => await lookUpPatches(cards))
     .then(([cards, patches]) => fixPatches(cards, patches))
