@@ -262,6 +262,9 @@ import PatientService from '@/services/PatientService.js'
 
 export default {
     name: 'SinglePatient', 
+     created(){
+        document.title = "RoboDoc"
+    },
     data(){
         return {
             patient:{},

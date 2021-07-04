@@ -234,9 +234,14 @@ import UserService from '../services/UserService'
 
 export default {
     name: 'Registration', 
+    
     props:{}, 
     components:{
         
+    },
+
+    created(){
+        document.title = "RoboDoc"
     },
  
     data(){
