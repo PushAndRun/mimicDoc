@@ -15,41 +15,55 @@ function isEmptyObject(obj) {
   return !Object.keys(obj).length;
 }
 
-async function lookUpPatches(cards){
-    console.log("looking up missing malacards in icd9 info")
-    let patches = []
-    let fixedCards = cards.map((card, index) => {
-        let mala = card.value;
-        if (!mala) {
-          // use icd9 code and title
-          patches.push(DiagnosisModel.findOne({ icd9_code: diseases[index] }).exec());
-          return {mcId: "not found"}
-        } else {
-          return {
-            mcId: mala.McId,
-            disease: mala.DiseaseName,
-            summary: mala.Summaries[0].Summary,
-            source: mala.Summaries[0].Source,
-          };
-        }
-      });
-      return [fixedCards, await Promise.allSettled(patches)]
+async function getFirstSuccessfulLookup(cards) {
+  for(let card of cards){
+    let val = await card;
+    if(val != null){
+      return val;
+    }
+  }
+  return null
 }
-async function fixPatches(cards, patches){
-    console.log("patching missing info")
-    return cards.map((card) => {
-        if (card.mcId == "not found") {
-            let info = patches.shift().value;
-            return {  
-              mcId:"[ICD9CM]:"+info.icd9_code,
-              disease: info.short_title,
-              summary: info.long_title+" - summary not found",
-              source : "---"
-            }
-        } else {
-          return card
-        }
-      });
+
+async function lookUpPatches(cards) {
+  console.log("looking up missing malacards in icd9 info");
+  let patches = [];
+  let fixedCards = cards.map(async (cards, index) => {
+    console.log("looking up cards", cards)
+    let mala = await getFirstSuccessfulLookup(cards);
+    console.log("mala:",mala);
+    if (!mala) {
+      // use icd9 code and title
+      patches.push(
+        DiagnosisModel.findOne({ icd9_code: diseases[index] }).exec()
+      );
+      return { mcId: "not found" };
+    } else {
+      return {
+        mcId: "[MCID]:" + mala.McId,
+        disease: mala.DiseaseName,
+        summary: mala.Summaries[0].Summary,
+        source: mala.Summaries[0].Source,
+      };
+    }
+  });
+  return [await Promise.allSettled(fixedCards), await Promise.allSettled(patches)];
+}
+async function fixPatches(cards, patches) {
+  console.log("patching missing info");
+  return cards.map((card) => {
+    if (card.value.mcId == "not found") {
+      let info = patches.shift().value;
+      return {
+        mcId: "[ICD9CM]:" + info.icd9_code,
+        disease: info.short_title,
+        summary: info.long_title + " - summary not found",
+        source: "---",
+      };
+    } else {
+      return card.value;
+    }
+  });
 }
 
 router.post("/", (req, res, next) => {
@@ -82,28 +96,33 @@ router.post("/", async (req, res, next) => {
   let output = await predict("predict_diagnoses.py", symptoms);
   diseases = JSON.parse(output).diagnoses;
   console.log("parsed:", diseases);
-  let cards = diseases.map(async (icd9) => {
+  let cards = diseases.map((icd9) => {
     // ICD9 -> MC-ID
-    let mcid = icd9ToMCID[icd9];
-    console.log("icd9, mcid:", icd9, mcid);
+    let mcids = icd9ToMCID[icd9.substring(0, 3)];
+    console.log("icd9, mcid:", icd9, mcids);
     // get Malacard info
-    return await MalaCard.findOne({ McId: mcid }, (err, doc) => {
-      if (err) {
-        console.log("lookup error on " + mcid + ": " + err);
-      } else if (!doc) {
-        console.log("could not find malacard with " + mcid);
-      } else {
-        console.log("found " + mcid);
-      }
-    }).exec();
+    let querys =  mcids.map( async (mcid) => {
+      return MalaCard.findOne({ McId: mcid }, (err, doc) => {
+        if (err) {
+          console.log("lookup error on " + mcid + ": " + err);
+        } else if (!doc) {
+          console.log("could not find summary for " + mcid);
+        } else {
+          console.log("found " + mcid);
+        }
+      }).exec();
+    });
+    console.log("querys for ", mcids," : ", querys);
+    return querys
   });
-    Promise.allSettled(cards)
-    .then(await lookUpPatches)
-    .then(([cards,patches]) => fixPatches(cards, patches))
-    .then(cards => {
-        console.log("sending: ",cards);
-        res.status(200).send(cards);
-    })
+  console.log("flat:", cards.flat(Infinity), " vs stacked:",cards);
+  Promise.allSettled(cards.flat(Infinity))
+    .then(async () => await lookUpPatches(cards))
+    .then(([cards, patches]) => fixPatches(cards, patches))
+    .then((cards) => {
+      console.log("sending: ", cards);
+      res.status(200).send(cards);
+    });
   /*
   return {  
     mcId:"[ICD9CM]:"+info.icd_9code,

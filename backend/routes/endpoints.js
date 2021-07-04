@@ -28,7 +28,12 @@ const loadMCIDs = () => {
     fs.createReadStream(mcid)
     .pipe(csv())
     .on('data', (data) => {
-        csvDataMCID[data.ICD9CM] = data.McId;
+        let entry = csvDataMCID[data.ICD9CM];
+        if(!entry){
+            entry = [];
+        }
+        entry.push(data.McId);
+        csvDataMCID[data.ICD9CM] = entry;
     })
     .on('end',()=>{console.log('csv McIds loaded')})
 }
