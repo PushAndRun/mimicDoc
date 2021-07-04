@@ -74,7 +74,7 @@
         <br>
         <br>
         <br>
-        <div  v-for="disease in diseases" v-bind:key=disease.disease>
+        <div id='disease' v-for="disease in diseases" v-bind:key=disease.disease>
             <b> Disease:  </b>{{ disease.disease }} <br>
             <b> Summary: </b>{{ disease.summary}} <br>
             <b> Source: </b>{{ disease.source }} <br>
@@ -225,5 +225,11 @@ computed:{
         margin-right: 150px;
         margin-bottom: 150px;
     }
+
+ #disease {
+    margin-top: 30px;
+        margin-left: 100px;
+        margin-right: 100px;
+ }   
 
 </style>
