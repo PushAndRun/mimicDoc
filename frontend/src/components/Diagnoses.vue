@@ -53,14 +53,32 @@
 
     <b-button @click=getDiagnoses variant="outline-primary">Get Diagnoses predicted by Symptoms</b-button>
 
+      <div v-if="mlScriptRunning()">
+
+        <br>
+        <br>
+
+      
+      <p id="RunningML"> <b>ML Script is Running ...</b></p>
+      </div>
+
+      <div v-if="mlScriptDone()">
+        <br>
+        <br>
+        <p id="DoneML"> ML Script is Done</p>
+
+      </div>
+
+
     <div v-if="diseasesNotEmpty">
         <br>
         <br>
         <br>
-        <div  v-for="disease in diseases" v-bind:key=disease.deseases_long_title>
-            Long title: {{ disease.deseases_long_title }} <br>
-            Short title: {{ disease.desease_short_title }} <br>
-            with Accuracy of <b>{{disease.accuracy}}</b><br><br>
+        <div  v-for="disease in diseases" v-bind:key=disease.disease>
+            <b> Disease:  </b>{{ disease.disease }} <br>
+            <b> Summary: </b>{{ disease.summary}} <br>
+            <b> Source: </b>{{ disease.source }} <br>
+            <!-- with Accuracy of <b>{{disease.accuracy}}</b> --> <br><br>
         </div>
     </div>
 
@@ -82,12 +100,15 @@ export default {
             valueSymp:'',
             availableSymptoms: [],
             allSymptoms: [],
+            mlScriptInvoked: false, 
 
 
         }
     }, 
      async created(){
-        console.log("created is invoked")
+       
+
+        console.log("created is invoked",this.mlScriptRunning())
           try {
       const response = await DiagnosesService.fetchSymptoms();
       this.availableSymptoms = response;
@@ -111,6 +132,16 @@ export default {
         this.$router.push('/');
       },
 
+      mlScriptRunning(){
+        if(this.mlScriptInvoked&&this.diseases.length==0)return true; 
+        else return false; 
+          
+      },
+      mlScriptDone(){
+        if(this.mlScriptInvoked&&this.diseases.length>0)return true; 
+        else return false; 
+      },
+
 
 
    
@@ -118,7 +149,7 @@ export default {
     async getDiagnoses(){
 
 
-      
+      this.mlScriptInvoked=true; 
 
     
 
@@ -144,12 +175,13 @@ export default {
          this.diagnoses = await DiagnosesService.getDiagnosesFromSymptoms(data);
 
         console.log(this.diagnoses);
-        this.diseases = this.diagnoses.deseases;
+        this.diseases = this.diagnoses;
         console.log(this.diseases);
 
         this.requestInvoked=true;
        
     }, 
+    
 
     diseasesNotEmpty(){
         return this.diseases.length>0;
@@ -174,6 +206,14 @@ computed:{
 </script>
 
 <style scoped>
+
+
+#RunningML{
+  color:tomato;
+}
+#DoneML{
+  color:green; 
+}
 
  .id {
         margin-top: 50px;

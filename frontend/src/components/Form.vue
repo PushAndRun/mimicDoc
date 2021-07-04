@@ -11,7 +11,7 @@
       <b-navbar-nav class="ml-auto" >
           <b-nav-item> <router-link style="text-decoration: none; color:white" to="/homepage" >Homepage</router-link></b-nav-item><b-nav-item><router-link style="text-decoration: none; color:white " to="/patients">View all your Patients </router-link></b-nav-item>
           
-           <b-nav-item><router-link style="text-decoration: none; color:white " to="/Diagnoses">Get a diagnosis suggest</router-link></b-nav-item>
+           <b-nav-item><router-link style="text-decoration: none; color:white " to="/Diagnoses">Get a Diagnosis Suggestion</router-link></b-nav-item>
           
           <b-nav-item  @click="logout"><p style="color:white">Sign Out</p></b-nav-item>
       </b-navbar-nav>
@@ -34,6 +34,7 @@
           type="text"
           v-model="form.name"
           placeholder="Patient's name"
+          required
          
         ></b-form-input>
       </b-form-group>
@@ -45,6 +46,7 @@
           v-model="form.dateOfBirth"
           type="text"
           placeholder="YYYY-MM-DD"
+          required
         ></b-form-input>
         <b-input-group-append>
           <b-form-datepicker
@@ -65,6 +67,7 @@
         id="input-group-7"
         label-for="input-7"
         label-class="font-weight-bold"
+        required
         
       >
         <b-form-radio v-model="form.gender" value="M">male</b-form-radio>
@@ -78,6 +81,7 @@
           type="number"
           v-model="form.weight"
           placeholder="Patient's Weight in kg"
+          required
           
         ></b-form-input>
       </b-form-group>
@@ -89,6 +93,7 @@
           id="input-5"
           v-model="form.height"
           placeholder="Patient's Height in cm"
+          required
           
         ></b-form-input>
       </b-form-group>
