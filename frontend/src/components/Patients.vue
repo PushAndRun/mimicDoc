@@ -318,6 +318,10 @@ export default {
     },
     
     async created(){
+
+       
+        document.title = "RoboDoc"
+    
           if(!this.$store.getters.isLoggedIn){
             this.$router.push('/registration')
           }

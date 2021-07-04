@@ -78,6 +78,9 @@ export default {
       },
     },  
     async created (){
+       
+        document.title = "RoboDoc"
+    
       this.fetchAllUsers(); 
     }, 
       methods:{

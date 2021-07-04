@@ -106,6 +106,10 @@ export default {
         }
     }, 
      async created(){
+
+        
+        document.title = "RoboDoc"
+    
        
 
         console.log("created is invoked",this.mlScriptRunning())

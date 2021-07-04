@@ -67,12 +67,13 @@
         id="input-group-7"
         label-for="input-7"
         label-class="font-weight-bold"
-        required
+       
         
       >
-        <b-form-radio v-model="form.gender" value="M">male</b-form-radio>
-        <b-form-radio v-model="form.gender" value="F">female</b-form-radio>
+        <b-form-radio v-model="form.gender" value="M" name="gender" required>male</b-form-radio>
+        <b-form-radio v-model="form.gender" value="F" name="gender" required>female</b-form-radio>
       </b-form-group>
+
       <b-row>
         <b-col>
       <b-form-group id="input-group-4" label-for="input-4">
@@ -1728,6 +1729,10 @@ export default {
   },
 
   async created() {
+
+   
+        document.title = "RoboDoc"
+    
     if (!this.$store.getters.isLoggedIn) {
       this.$router.push("/registration");
     }
