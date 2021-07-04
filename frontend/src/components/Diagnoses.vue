@@ -34,13 +34,17 @@
         id="input-group-8"
         label="Patient's symptoms:"
         label-class="font-weight-bold"
-        label-for= "Type in Symptomes and press Enter">
+        label-for= "Type in Symptomes and press Enter"
+        required
+        >
 
 <vue-bootstrap-typeahead
           v-model="valueSymp"
           placeholder="Select Symptoms"
           :data="this.availableSymptoms"
-          @hit="appendSymptoms">
+          @hit="appendSymptoms"
+          required
+          >
 
 
         </vue-bootstrap-typeahead>
@@ -52,12 +56,20 @@
       
 
     <b-button @click=getDiagnoses variant="outline-primary">Get Diagnoses predicted by Symptoms</b-button>
+    <div v-if="symptomsEmpty">
+
+        <br>
+        <br>
+
+      
+      <p> <b>Please insert symptoms</b></p>
+      </div>
 
       <div v-if="mlScriptRunning()">
 
         <br>
         <br>
-
+          
       
       <p id="RunningML"> <b>ML Script is Running ...</b></p>
       </div>
@@ -101,6 +113,7 @@ export default {
             availableSymptoms: [],
             allSymptoms: [],
             mlScriptInvoked: false, 
+            symptomsEmpty: false, 
 
 
         }
@@ -138,7 +151,8 @@ export default {
 
       mlScriptRunning(){
         if(this.mlScriptInvoked&&this.diseases.length==0)return true; 
-        else return false; 
+        else 
+        return false; 
           
       },
       mlScriptDone(){
@@ -146,11 +160,22 @@ export default {
         else return false; 
       },
 
+      
+
+
 
 
    
 
     async getDiagnoses(){
+
+
+      if(this.symptoms.length == 0) {
+        this.symptomsEmpty = true;
+        return
+      } else {
+        this.symptomsEmpty = false;
+      }
 
 
       this.mlScriptInvoked=true; 
