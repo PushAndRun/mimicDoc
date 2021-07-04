@@ -84,7 +84,7 @@
     </div>
 
     <div v-if="diseasesNotEmpty" class="container">
-      <div v-for="disease in diseases" v-bind:key="disease.disease">
+      <div v-for="disease in diseases" v-bind:key="disease.disease" class="card">
         <!-- <b> Disease:  </b>{{ disease.disease }} <br>
             <b> Summary: </b>{{ disease.summary}} <br>
             <b> Source: </b>{{ disease.source }} <br>
