@@ -55,7 +55,7 @@
 
        <div class="modal-footer">
         <button type="button"  @click="signUp" class="btn btn-success btn-lg btn-block" data-dismiss="modal">Register</button>
-
+       <p class="center">Please Log In after your Registration</p>
       </div>
 
      
@@ -339,11 +339,20 @@ export default {
 </script>
 
 <style scoped>
+
+.center{
+      margin-left:20%;
+      margin-right:20%;
+
+}
     #register-card{
         margin-top: 30%; 
         
 
     }
+
+   
+
     #register2-card{
          margin-top:30%;
     }
