@@ -57,7 +57,7 @@ router.get('/username/:username', function (req, res) {
 router.delete('/id/:id', function (req, res) {
     User.findByIdAndRemove(req.params.id, function (err, user) {
         if (err) return res.status(500).send("There was a problem deleting the user.");
-        res.status(200).send("User: "+ user.email +" was deleted.");
+        res.status(200).send("User was deleted.");
     });
 });
 
@@ -65,7 +65,7 @@ router.delete('/id/:id', function (req, res) {
 router.delete('/username/:username', function (req, res) {
     User.findOneAndRemove({name: req.params.username}, function (err, user) {
         if (err) return res.status(500).send("There was a problem deleting the user.");
-        res.status(200).send("User: "+ user.email +" was deleted.");
+        res.status(200).send("User was deleted.");
     });
 });
 
