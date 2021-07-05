@@ -44,7 +44,7 @@
             Date of Birth: {{ patient.medicalData.dateOfBirth.substring(0,10) }} <br> 
             Gender: {{ patient.medicalData.gender }} <br>
            <br>
-           <b>Chances of Survival:</b> {{ (Math.round(patient.requests[patient.requests.length-1].survival * 100)) / 100 }} 
+           <b>Probability of death:</b> {{ (Math.round(patient.requests[patient.requests.length-1].survival * 100)) / 100 }} 
           <b-icon icon="exclamation-circle" style="width: 15px; height: 15px;"  variant="info" v-b-tooltip.hover title="A value above 0.5 means that the patient is a high-risk patient.">
             </b-icon>
             <br> 
