@@ -5,6 +5,11 @@ const express = require('express')
 const logger = require('morgan');
 const cors = require('cors')
 
+process.on('uncaughtException', function (err) {
+  console.error(err);
+  console.log("Node NOT Exiting...");
+});
+
 
 // Constants
 const PORT = process.env.PORT || 8081
