@@ -83,7 +83,7 @@ router.post("/", verifyToken, async (req, res, next) => {
 
 
   let prediction = await predict('predict.py',
-      (req.body.patient.patient_id || "") +
+      "'"+(req.body.patient.patient_id || "") +
       "," +
       (req.body.patient.medicalData.hadm_id || "") +
       "," +
@@ -239,14 +239,14 @@ router.post("/", verifyToken, async (req, res, next) => {
       "," +
       (
         // commented out in case symptoms are not used in prediction
-        //req.body.patient.medicalData.symptoms.join(" ") || 
+        req.body.patient.medicalData.symptoms.join(";") || 
       "") +
       "," +
       (req.body.patient.medicalData.patient_history || "") +
       "," +
       (req.body.patient.medicalData.accident_causes || "") +
       "," +
-      (req.body.patient.medicalData.diagnoses || "")
+      (req.body.patient.medicalData.diagnoses || "") + "'"
   );
 
 
