@@ -80,11 +80,7 @@
 
       </div>
 
-    <div v-if="mlScriptDone()">
-      <br />
-      <br />
-      <p id="DoneML">ML Script is Done</p>
-    </div>
+   
 
     <div v-if="diseasesNotEmpty" class="container">
       <div v-for="disease in diseases" v-bind:key="disease.disease" class="card">
