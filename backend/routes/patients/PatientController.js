@@ -107,8 +107,7 @@ router.get('/getPatientsByUser', VerifyToken, function (req, res) {
 // GETS A SINGLE PATIENT FROM THE DATABASE BY ID
 router.get('/id/:id', function (req, res) {
     Patient.findById(req.params.id, function (err, patient) {
-        if (err) return res.status(500).send("There was a problem finding the patient with id:"+ req.params.id);
-        if (!patient) return res.status(404).send("No user found.");
+        if (err || !patient) return res.status(500).send("There was a problem finding the patient with id:"+ req.params.id);
     }).populate("requests").exec(function(err, patient) {
         if (err) return res.status(500).send("There was a problem populating the patient.");
         res.status(200).send(patient);
