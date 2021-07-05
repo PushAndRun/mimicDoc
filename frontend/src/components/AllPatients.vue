@@ -3,15 +3,13 @@
               <b-navbar toggleable="false" type="dark" variant="dark">
     <b-navbar-brand style="color:white">RoboDoc</b-navbar-brand>
 
-    <b-navbar-toggle target="navbar-toggle-collapse">
-      <template >
-        <b-icon style="color:white">Menu</b-icon>
-      </template>
+    <b-navbar-toggle target="navbar-toggle-collapse" style="color:white;">
+        Menu
     </b-navbar-toggle>
 
     <b-collapse id="navbar-toggle-collapse" is-nav>
       <b-navbar-nav class="ml-auto" >
-          <b-nav-item> <router-link style="text-decoration: none; color:white" to="/homepage" >Homepage</router-link></b-nav-item>
+          <b-nav-item> <router-link style="text-decoration: none; color:white" to="/adminHome" >Homepage</router-link></b-nav-item>
           <b-nav-item> <router-link style="text-decoration: none; color:white" to="/userManagement" >User Management</router-link></b-nav-item>
           <b-nav-item  @click="logout"><p style="color:white">Sign Out</p></b-nav-item>
       </b-navbar-nav>
@@ -20,7 +18,7 @@
 
 <br>
         <br>
-        <h2>Patients for User: {{username}}</h2>
+        <h2>All Patients in the System</h2>
         <br>
         <b-form-group>
           <b-row>
@@ -33,50 +31,34 @@
           </b-row>
         </b-form-group>
       <br>
-       <b-card-group columns style="margin: 30px;">  
-       <b-card   v-for="patient in patientSelection" v-bind:key="patient.name" :title="patient.name" :sub-title="patient._id"
-            class="patientCard">
+         <b-card-group > 
+       <b-col xl = 4 lg = 4 md = 6 sm = 12  v-for="patient in patientSelection" v-bind:key="patient.name">
+       <b-card :title="patient.name" :sub-title="patient._id"
+            class="patientCard" style="margin: 15px;">
             <b-card-text> 
-            <!-- Last Request: {{ requests[patient.requests.length-1].created }} <br> -->
+           <!-- Last Request: {{ requests[patient.requests.length-1].created }} <br> -->
            <br>
            <b>Requests </b><br>
             Last Request: {{patient.requests[patient.requests.length-1].created.substring(0,10)}} <br>
             Number of Request: {{patient.requests.length }} <br><br>
             Date of Birth: {{ patient.medicalData.dateOfBirth.substring(0,10) }} <br> 
             Gender: {{ patient.medicalData.gender }} <br>
-            Weight: {{ patient.medicalData.weight }} kg<br>
-            Height: {{ patient.medicalData.height }} cm<br>
-             <br>
-            
-            <!-- Bloodtype: {{ patient.medicalData.bloodtype }} <br> -->
-            <br>
-            <b>Blood Pressure </b><br>
-           Mean: {{ patient.requests[patient.requests.length-1].bloodpressure.meanbp_mean }} mmHg<br>
-           Min: {{ patient.requests[patient.requests.length-1].bloodpressure.meanbp_min }} mmHg<br>
-            Max: {{ patient.requests[patient.requests.length-1].bloodpressure.meanbp_max }} mmHg<br>
-            <br>
-            <b>Glucose Levels </b><br>
-            Mean: {{ patient.requests[patient.requests.length-1].glucose.glucose_mean }} mg/dL<br>
-            Min: {{ patient.requests[patient.requests.length-1].glucose.glucose_min }} mg/dL<br>
-            Max: {{ patient.requests[patient.requests.length-1].glucose.glucose_max }} mg/dL<br>
            <br>
-          <b> Respiratory Rate </b><br>
-            Mean: {{ patient.requests[patient.requests.length-1].respiratory.resprate_mean }} breaths per minute<br>
-            Min: {{ patient.requests[patient.requests.length-1].respiratory.resprate_min }} breaths per minute<br>
-            Max: {{ patient.requests[patient.requests.length-1].respiratory.resprate_max }} breaths per minute<br>
-            <br>
-            Mean Temperature: {{ patient.requests[patient.requests.length-1].tempc_mean }} C°<br>
-            <br>
-            Patient History: {{ patient.requests[patient.requests.length-1].patient_history.join(', ') }} <br>
-            Diagnoses: {{ patient.requests[patient.requests.length-1].diagnoses.join(', ') }}  <br> 
-            <br>
-            Chances of Survival: {{ patient.survival }} %<br> 
+           <b>Chances of Survival:</b> {{ (Math.round(patient.requests[patient.requests.length-1].survival * 100)) / 100 }} 
+          <b-icon icon="exclamation-circle" style="width: 15px; height: 15px;"  variant="info" v-b-tooltip.hover title="A value above 0.5 means that the patient is a high-risk patient.">
+            </b-icon>
+            <br> 
             
-
+    
+            <b>Estimated Length of Stay:</b> {{  (Math.round(patient.requests[patient.requests.length-1].stay * 100)) / 100 }} days
+            <b-icon icon="exclamation-circle" style="width: 15px; height: 15px;"  variant="info" v-b-tooltip.hover title="The length of stay has a standard deviation of 4 days">
+            </b-icon>
+            <br>
+            
            </b-card-text>
 
             </b-card>
-          
+       </b-col>
 </b-card-group>
  <v-footer>
 
@@ -105,6 +87,9 @@ export default {
     },
     
     async created(){
+      
+        document.title = "RoboDoc"
+    
           if(!this.$store.getters.isLoggedIn){
             this.$router.push('/registration')
           }
@@ -134,10 +119,10 @@ export default {
         return patient.requests.lenght>0
       },
 
+      
+
 
       async adminPatients(){
-
- 
 
        this.patients = [];
         var response = await PatientService.allPatients();

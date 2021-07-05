@@ -1,0 +1,42 @@
+version: '2.0'
+
+services:
+  robodoc-backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile2
+    image: robo-backend
+    container_name: robodoc-backend
+    command: npm run start
+    volumes:
+      - ./backend/:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - "8081:8081"
+    networks:
+      - app-network
+  robodoc-frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: robo-frontend
+    container_name: robodoc-frontend
+    volumes:
+      - ./frontend/:/usr/app
+      - /usr/app/node_modules
+    depends_on:
+      - robodoc-backend
+    ports:
+      - "80:80"
+    networks:
+      - app-network
+
+networks:
+    app-network:
+        driver: bridge
+
+volumes:
+    data-volume:
+    node_modules:
+    web-root:
+      driver: local

@@ -1,9 +1,14 @@
+// path mit dem er aufgerufen wurde: /api
 var express = require('express')
 var router = express.Router()
 const csv = require('csv-parser')
 const fs = require('fs')
-const diagnoses = './diagnoses_dict.csv'
+const diagnoses = './ml/diagnoses_dict.csv'
+const symptoms = './ml/symptoms_dict.csv'
+const mcid = './icd9.csv'
 let csvData = []
+let csvDataSymptoms = []
+let csvDataMCID = {}
 
 const loadDiagnoses = () => {
     fs.createReadStream(diagnoses)
@@ -12,14 +17,47 @@ const loadDiagnoses = () => {
     .on('end', () => { console.log('csv diagnoses loaded')})
 }
 
-loadDiagnoses()
+const loadSymptoms = () => {
+    fs.createReadStream(symptoms)
+    .pipe(csv())
+    .on('data', (data) => csvDataSymptoms.push(data))
+    .on('end',()=>{console.log('csv symptoms loaded')})
+    
+}
+const loadMCIDs = () => {
+    fs.createReadStream(mcid)
+    .pipe(csv())
+    .on('data', (data) => {
+        let entry = csvDataMCID[data.ICD9CM];
+        if(!entry){
+            entry = [];
+        }
+        entry.push(data.McId);
+        csvDataMCID[data.ICD9CM] = entry;
+    })
+    .on('end',()=>{console.log('csv McIds loaded')})
+}
 
-router.get('/diagnoses', (req,res,next) => {
+
+loadDiagnoses()
+loadSymptoms()
+loadMCIDs()
+
+router.get('/getdiagnoses', (req,res,next) => {
     if(csvData){
         res.send(csvData)
         return
     } else {
         loadDiagnoses.then(res.send(csvData))
+    }
+})
+
+router.get('/getsymptoms', (req,res,next) => {
+    if(csvDataSymptoms){
+        res.send(csvDataSymptoms)
+        return
+    } else {
+        loadSymptoms.then(res.send(csvDataSymptoms))
     }
 })
 
@@ -40,4 +78,4 @@ router.get('/reloadDiagnoses', (req,res,next) => {
     return
 })
 
-module.exports = {router, csvData}
+module.exports = {router, csvData, csvDataSymptoms, csvDataMCID}

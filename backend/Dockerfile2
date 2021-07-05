@@ -1,0 +1,27 @@
+FROM tensorflow/tensorflow
+
+RUN pip install Pandas SKlearn matplotlib
+
+# Create app directory
+RUN mkdir /usr/src/app
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
+RUN apt install nodejs -y
+RUN node --version
+RUN npm --version
+WORKDIR /usr/src/app
+
+# Install dependencies
+COPY package*.json ./
+RUN npm install
+
+# Only for Production
+# RUN npm ci --only=production
+
+# Copy app source
+COPY . .
+
+# Open Port
+EXPOSE 8081
+
+#Run
+CMD [ "node", "server.js" ]

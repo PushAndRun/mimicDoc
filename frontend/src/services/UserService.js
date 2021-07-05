@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const url = 'http://localhost:8081/api';
+const url = '/api';
 
 export default {
 
@@ -21,6 +21,11 @@ export default {
         return axios
         .delete(url + '/user/id/' + id)
         .then(response => response.data)
+    },
+    getUserByUsername(username){
+        return axios
+        .get(url + '/user/username/' + username)
+        .then(response=>response.data)
     }
 
 }

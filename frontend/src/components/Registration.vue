@@ -1,93 +1,111 @@
-
 <template>
 <div class="registration">
    <b-navbar toggleable="false" type="dark" variant="transparent">
 
-      <b-navbar-brand href = "#">RoboDoc</b-navbar-brand>
+      <b-navbar-brand href = "#" style="text-decoration: none; color:black;">RoboDoc</b-navbar-brand>
 
     <div class="Modal-Register">
     
-    <b-modal id="modal-1" title="Register Hospital Employee" @ok="signUp">
+    <b-modal id="modal-1" title="Register" hide-footer="true">
 		<p v-if="msg">{{ msg }}</p>
       <b-form-group id="Hospital Employee" 
-          label="Your Name" 
+          
           label-for="input-employee">
-          <b-form-input id="input-employee" 
-          v-model=employee.name trim />
+          <b-form-input id="input-employee"
+           v-model=employee.name 
+          placeholder="Name"
+          />
       </b-form-group>
 
       <b-form-group
         id="email"
-        label="Your Email address"
         label-for="input-email">
         <b-form-input
         id="input-email"
           type= "email"
+          placeholder="Email"
           v-model=employee.email />
       </b-form-group>
 
       <b-form-group
         id="username"
-        label="Enter prefered Username"
         label-for="input-username"
         >
         <b-form-input
           id="input-username"
           type="text"
-          
+          placeholder="Username"
           v-model=employee.username />
       </b-form-group>
 
       <b-form-group
         id="password"
-        label="Enter your prefered password containing at least 8 characters"
         label-for="input-password"
+       
         >
         <b-form-input
           id="input-password"
           type="password"
-          v-model=employee.password />
+
+          placeholder="Password"
+          v-model=employee.password 
+          @keydown.enter="signUp"
+          />
       </b-form-group>
 
+       <div class="modal-footer">
+        <button type="button"  @click="signUp" class="btn btn-success btn-lg btn-block" data-dismiss="modal">Register</button>
 
+      </div>
+
+     
       
     </b-modal>
   </div>
 
   <div class="Modal-login">
-    <b-button class= "registerButton"  v-b-modal.modal-1 size="sm" variant="outline-light" >Register</b-button>
-    <b-button class= "loginButton" v-b-modal.modal-2 size="sm" variant="outline-light">Login</b-button>
-    <b-button variant="outline-light" size="sm"> <router-link style="text-decoration: none; color:white;" to="/singlePatient"> Get Single Patient Data</router-link></b-button>
-    <b-modal id="modal-2" title="Login" @ok="login">
+    <b-button class= "registerButton"  v-b-modal.modal-1 size="sm" variant="outline-dark" style="text-decoration: none; color:black;">Register</b-button>
+    <b-button class= "loginButton" v-b-modal.modal-2 size="sm" variant="outline-dark" style="text-decoration: none; color:black;">Login</b-button>
+    <b-button variant="outline-dark" size="sm"> <router-link style="text-decoration: none; color:black;" to="/singlePatient"> Get Single Patient Data</router-link></b-button>
+   
+   
+   
+    <b-modal id="modal-2" title="Login" hide-footer="true"
+    
+            >
       
 
 
      <b-form-group
                 id="user"
-                label="Username"
                 
                 label-for="user"
                 invalid-feedback="Wrong Input"
                 valid-feedback="Thank you">
                  <b-form-input id= "user"
+                 placeholder="Username"
                  v-model=user.username >
                 </b-form-input>
       </b-form-group>
 
        <b-form-group
                 id="password"
-                label="Password"
                 label-for="password"
                 invalid-feedback="Wrong password"
                 valid-feedback="Thank you">
                  <b-form-input id="password"
           type="password"
-          v-model=user.password>
+           placeholder="Password"
+          v-model=user.password
+          @keydown.enter="login">
                 </b-form-input>
       </b-form-group>
 
 
-    
+     <div class="modal-footer">
+        <button type="button"  @click="login" class="btn btn-primary btn-lg btn-block" data-dismiss="modal">Login</button>
+
+      </div>
 
 
     </b-modal>
@@ -114,7 +132,10 @@
       <!-- Slides with custom text -->
       <b-carousel-slide 
       img-src="https://picsum.photos/id/733/1024/488">
+      
+        
         <h1>RoboDoc</h1>
+       
       </b-carousel-slide>
 
        <!-- Text slides with image -->
@@ -141,7 +162,7 @@
         <b-col>
 
           <b-card 
-            class="card"
+            class="card1"
             id = "register-card"
             title="Register"
           >
@@ -157,8 +178,7 @@
 
         <b-col>
 
-          <b-card 
-              class="card"
+          <b-card  class="card2"
               id = "register2-card"
               title="Log In ">
                  
@@ -174,8 +194,8 @@
       </b-row>
         <b-col>
 
-          <b-card 
-            class="card"
+          <b-card  
+            class="card3"
             id = "register3-card"
             title="Get Single Patient Data">
               <b-card-text>
@@ -192,6 +212,9 @@
     </b-container>
 
 
+   
+
+
      <v-footer>
 
           <p style="color:dimgrey"> 2021 - RoboDoc </p>    
@@ -206,13 +229,19 @@
 
 <script>
 import AuthService from '@/services/AuthService.js'
+import UserService from '../services/UserService'
 
 
 export default {
     name: 'Registration', 
+    
     props:{}, 
     components:{
         
+    },
+
+    created(){
+        document.title = "RoboDoc"
     },
  
     data(){
@@ -232,6 +261,10 @@ export default {
           password: '',
          
         },
+
+       
+
+          
 
         
 
@@ -279,8 +312,17 @@ export default {
           const user = this.user;
 
           this.$store.dispatch('login',{token,user}); 
+          
+          
+          const responseTwo = await UserService.getUserByUsername(this.user.username); 
+          console.log(responseTwo);
 
-          this.$router.push('/homepage'); 
+          if (responseTwo.isAdmin){
+            this.$router.push('/adminHome'); 
+          }
+          else {
+            this.$router.push('/homepage'); 
+          }
 
 
         }catch (error){
@@ -308,13 +350,35 @@ export default {
 
     h1 {
       color: black;
-      margin-bottom: 300px;
-      font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+      margin-bottom: 25%;
+      font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
     }
+
+    @media (min-width: 500px) {
+      h1, h2 {
+        font-size: 100%;
+      }
+    }
+
+      @media (min-width: 768px) {
+      h1, h2 {
+        font-size: 200%;
+      }
+      }
+
+      @media (min-width: 992px) {
+      h1, h2 {
+        font-size: 300%;
+      }
+      }
+      
+      
+    
+
     h2 {
       color: black;
-      margin-bottom: 300px;
-      font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+     margin-bottom: 25%;
+      font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
     }
 
     
@@ -322,8 +386,14 @@ export default {
    
 .carousel {
   position:relative;
-    top:0;    
+      
 }
+.carousel-inner {
+  
+  display: flex;
+  align-items: center;
+}
+
 .navbar {
     position:absolute;
     top:0px;
@@ -360,8 +430,5 @@ p {
    
 
 </style>
-
-
-
 
 

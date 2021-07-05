@@ -4,11 +4,11 @@ import Form from '../components/Form'
 import Registration from '../components/Registration'
 import Patients from '../components/Patients'
 import Homepage from '../components/Homepage'
-import ShowUser from '../components/ShowUser'
 import AdminHome from '../components/AdminHome'
 import UserManagement from '../components/UserManagement'
 import AllPatients from '../components/AllPatients'
 import SinglePatient from '../components/SinglePatient'
+import Diagnoses from '../components/Diagnoses'
 
 
 Vue.use(Router)
@@ -36,11 +36,7 @@ export default new Router ({
         name:'Homepage',
         component: Homepage
         }, 
-        {
-        path:'/showUser', 
-        name: 'ShowUser', 
-        component: ShowUser
-        },
+        
         {
         path:'/adminHome',
         name:'adminHome', 
@@ -60,6 +56,11 @@ export default new Router ({
         path:"/singlePatient", 
         name: "SinglePatient", 
         component:SinglePatient
+        },
+        {
+        path:"/diagnoses", 
+        name: "Diagnoses", 
+        component:Diagnoses
         }
     ]
 })
