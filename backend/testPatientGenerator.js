@@ -31,7 +31,7 @@ const rowToAPIFormat = (row) => {
         "dateOfBirth":dateofBirth,
         "medicalData":{
             "bloodtypes":"A",
-            "diagnoses":row.diagnoses,
+            "diagnoses":row.diagnoses.split(";"),
             "hospstay_seq":row.hospstay_seq,
             "total_hospstays": row.total_hospstays,
             "length_of_stay_hospital": row.length_of_stay_hospital,
@@ -46,9 +46,9 @@ const rowToAPIFormat = (row) => {
             "gcsverbal":row.gcsverbal,
             "gcseyes":row.gcseyes,
             "heartrate":{
-                "mean":row.resprate_mean,
-                "min":row.resprate_min,
-                "max":row.resprate_max
+                "mean":row.heartrate_mean,
+                "min":row.heartrate_min,
+                "max":row.heartrate_max
             },
             "meanbp":{
                 "mean":row.meanbp_mean,
@@ -146,7 +146,8 @@ const rowToAPIFormat = (row) => {
             "wbc":{
                 "min":row.wbc_min,
                 "max":row.wbc_max
-            }
+            },
+            "symptoms":row.symptoms.split(";")
         }
     }
     format = {
@@ -155,7 +156,7 @@ const rowToAPIFormat = (row) => {
     return format
 }
 
-fs.createReadStream("./backend/admissions.csv")
+fs.createReadStream("./ml/admissions.csv")
   .pipe(csv())
   .on("data", (row) => {
     if (count < patients_to_read && parseInt(row.age) < 101) {
@@ -166,7 +167,7 @@ fs.createReadStream("./backend/admissions.csv")
   .on("end", () => {
     console.log("CSV file successfully processed");
     storeData(patientArray, "patientdata100.json");
-    writeWrapper();
+    //writeWrapper();
   });
 
 /// ---- WRITE PATIENTS TO DB
