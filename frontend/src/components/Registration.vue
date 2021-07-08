@@ -6,7 +6,7 @@
 
     <div class="Modal-Register">
     
-    <b-modal id="modal-1" title="Register" hide-footer="true">
+    <b-modal id="modal-1" ref="modal-1" title="Register" hide-footer="true">
 		<p v-if="msg">{{ msg }}</p>
       <b-form-group id="Hospital Employee" 
           
@@ -53,6 +53,9 @@
           />
       </b-form-group>
 
+      
+      <span style="color:tomato" v-if="registrationNotSuccessfull"> {{ messageRegistration }}</span>
+
        <div class="modal-footer">
         <button type="button"  @click="signUp" class="btn btn-success btn-lg btn-block" data-dismiss="modal">Register</button>
        <p class="center">Please Log In after your Registration</p>
@@ -97,9 +100,16 @@
           type="password"
            placeholder="Password"
           v-model=user.password
+          
           @keydown.enter="login">
+
+         
+            
+            
                 </b-form-input>
+                
       </b-form-group>
+      <span style="color:tomato">{{ message }}</span>
 
 
      <div class="modal-footer">
@@ -247,7 +257,9 @@ export default {
     data(){
       
       return {
+        messageRegistration:"",
         msg:"",
+        message:"",
         employee:{
           name:"", 
           email:"", 
@@ -273,6 +285,16 @@ export default {
     },
   
   methods: {
+
+    registrationSuccessfull(){
+      if (this.messageRegistration=="Successfully registered!")return true; 
+      else return false; 
+    },
+
+    registrationNotSuccessfull(){
+      if(this.messageRegistration=="Registration failed. Please try again!")return true; 
+      else return false;
+    },
      
 
       registration(event){
@@ -290,11 +312,13 @@ export default {
             password: this.employee.password 
           };
           const response = await AuthService.signUp(credentials);
-          this.msg = response.msg; 
+          console.log(response)
+            this.$refs['modal-1'].hide()
           
           
         } catch (error){
-            this.msg = error.response.data.msg;
+            this.messageRegistration="Registration failed. Please try again!";
+            
         }
       }, 
 
@@ -306,16 +330,22 @@ export default {
           }; 
           const response = await AuthService.login(credentials); 
 
+          console.log(response);
+          console.log("fafafaf")
+          
+
           this.msg = response.msg; 
 
           const token = response.token; 
           const user = this.user;
+          
+          
 
           this.$store.dispatch('login',{token,user}); 
           
           
           const responseTwo = await UserService.getUserByUsername(this.user.username); 
-          console.log(responseTwo);
+        
 
           if (responseTwo.isAdmin){
             this.$router.push('/adminHome'); 
@@ -326,7 +356,15 @@ export default {
 
 
         }catch (error){
-            this.message = error.response.data.msg
+          
+            if(error.response.status==404){
+              this.message="This User is not registered!"
+            }
+            if(error.response.status==401)
+            this.message = "The Password is invalid!"
+            if(error.response.status==500){
+              this.message="Server Error. Please try again!"
+            }
         }
 
       },
@@ -439,5 +477,3 @@ p {
    
 
 </style>
-
-
